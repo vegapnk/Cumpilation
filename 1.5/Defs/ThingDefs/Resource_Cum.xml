@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef Name="Cum" ParentName="OrganicProductBase">
+		<defName>Cum</defName>
+		<label>cum</label>
+		<description>Gathered cum.</description>
+		<thingCategories>
+			<li>AnimalProductRaw</li>
+		</thingCategories>
+		<graphicData>
+			<texPath>Things/Item/GatheredCum</texPath>
+			<drawSize>1</drawSize>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<statBases>
+			<MarketValue>0.1</MarketValue>
+			<Mass>0.1</Mass>
+			<Nutrition>0.01</Nutrition>
+			<Beauty>-5</Beauty>
+			<Cleanliness>-1</Cleanliness>
+			<FoodPoisonChanceFixedHuman>0.00</FoodPoisonChanceFixedHuman>
+			<DeteriorationRate>60</DeteriorationRate>
+			<Flammability>0.1</Flammability>
+		</statBases>
+
+		<ingestible>
+			<foodType>Fluid, AnimalProduct</foodType>
+			<preferability>DesperateOnlyForHumanlikes</preferability>
+			<!--
+                <drugCategory>Any</drugCategory>
+                <tasteThought>AteCum</tasteThought>
+                <specialThoughtAsIngredient>AteCum</specialThoughtAsIngredient> 
+            -->
+			<optimalityOffsetHumanlikes>-10</optimalityOffsetHumanlikes>
+			<optimalityOffsetFeedingAnimals>-10</optimalityOffsetFeedingAnimals>
+			<outcomeDoers>
+                <!-- 
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>CumTolerance</hediffDef>
+					<severity>0.032</severity>
+					<divideByBodySize>true</divideByBodySize>
+				</li>
+				<li Class="IngestionOutcomeDoer_OffsetPsyfocus">
+					<offset>0.05</offset>
+				</li>
+				<li Class="RJWSexperience.Cum.IngestionOutcomeDoer_RecordEatenCum"/>
+                
+                -->
+			</outcomeDoers>
+		</ingestible>
+
+		<ingredient>
+			<mergeCompatibilityTags>
+				<li MayRequire="Ludeon.RimWorld.Ideology">Cum</li>
+			</mergeCompatibilityTags>
+		</ingredient>
+        <!--
+		<comps>
+			<li Class="CompProperties_Drug">
+				<chemical>Cum</chemical>
+				<addictiveness>0.050</addictiveness>
+				<minToleranceToAddict>0.8</minToleranceToAddict>
+				<existingAddictionSeverityOffset>0.1</existingAddictionSeverityOffset>
+				<needLevelOffset>1</needLevelOffset>
+				<listOrder>30</listOrder>
+			</li>
+		</comps>
+    -->
+	</ThingDef>
+
+    <!-- 
+	<ChemicalDef>
+		<defName>Cum</defName>
+		<label>cum</label>
+		<addictionHediff>CumAddiction</addictionHediff>
+		<toleranceHediff>CumTolerance</toleranceHediff>
+		<generateAddictionGenes>false</generateAddictionGenes>
+	</ChemicalDef>
+
+	<NeedDef ParentName="DrugAddictionNeedBase">
+		<defName>Chemical_Cum</defName>
+		<needClass>Need_Chemical</needClass>
+		<label>cum</label>
+		<description>Addicted to cum.</description>
+		<listPriority>10</listPriority>
+	</NeedDef>
+
+	<HediffDef ParentName="DrugToleranceBase">
+		<defName>CumTolerance</defName>
+		<label>cum addictiveness</label>
+		<description>More likely to get addicted to cum.</description>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.020</severityPerDay>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="AddictionBase">
+		<defName>CumAddiction</defName>
+		<hediffClass>Hediff_Addiction</hediffClass>
+		<label>cum addiction</label>
+		<description>cum addiction.</description>
+		<causesNeed>Chemical_Cum</causesNeed>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.1</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<SexSatisfaction>0.25</SexSatisfaction>
+					<SexFrequency>0.25</SexFrequency>
+					<Vulnerability>0.5</Vulnerability>
+				</statOffsets>
+			</li>
+			<li>
+				<label>withdrawal</label>
+				<statOffsets>
+					<SexSatisfaction>0.25</SexSatisfaction>
+					<SexFrequency>1.0</SexFrequency>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThoughtDef>
+		<defName>CumWithdrawal</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>CumAddiction</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<visible>false</visible>
+			</li>
+			<li>
+				<label>cum withdrawal</label>
+				<description>I need it.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+    -->
+    <!--
+	<SpecialThingFilterDef>
+		<defName>AllowWithCum</defName>
+		<label>allow food with cum</label>
+		<description>Allow food that was spiced up by adding sexual fluids.</description>
+		<parentCategory>Foods</parentCategory>
+		<allowedByDefault>true</allowedByDefault>
+		<saveKey>allowWithCum</saveKey>
+		<workerClass>RJWSexperience.Cum.FilterWorkers.SpecialThingFilterWorker_Cum</workerClass>
+	</SpecialThingFilterDef>
+
+	<SpecialThingFilterDef>
+		<defName>AllowWithoutCum</defName>
+		<label>allow food without cum</label>
+		<description>Allow food normal food.</description>
+		<parentCategory>Foods</parentCategory>
+		<allowedByDefault>true</allowedByDefault>
+		<saveKey>allowWithoutCum</saveKey>
+		<workerClass>RJWSexperience.Cum.FilterWorkers.SpecialThingFilterWorker_NoCum</workerClass>
+	</SpecialThingFilterDef>
+    -->
+</Defs>
