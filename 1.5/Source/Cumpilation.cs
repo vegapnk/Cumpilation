@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cumpilation.Gathering;
+using System;
 using Verse;
 
 namespace Cumpilation
@@ -9,6 +10,8 @@ namespace Cumpilation
         static Cumpilation()
         {
             ModLog.Message("Cumpilation Loaded - Let's go you cumsluts");
+
+            GatheringUtility.PrintFluidDefInfo();
         }
     }
 }

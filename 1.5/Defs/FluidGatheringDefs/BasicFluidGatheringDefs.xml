@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <Cumpilation.Gathering.FluidGatheringDef>
+        <defName>Basic_Cum_Gathering</defName>
+        <fluidDef>Cum</fluidDef>
+        <thingDef>Cum</thingDef>
+        <canProduceMoreThanOne>true</canProduceMoreThanOne>
+        <roundUp>true</roundUp>
+        <fluidRequiredForOneUnit>100</fluidRequiredForOneUnit>
+    </Cumpilation.Gathering.FluidGatheringDef>
+
+</Defs>

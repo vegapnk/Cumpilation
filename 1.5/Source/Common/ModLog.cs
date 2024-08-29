@@ -7,7 +7,7 @@ using Verse;
 
 namespace Cumpilation
 {
-    internal class ModLog
+    public class ModLog
     {
         public static string ModId => "Cumpilation";
 
