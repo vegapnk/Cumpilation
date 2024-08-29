@@ -8,7 +8,8 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Cumpilation</RootNamespace>
-    <AssemblyName>Cumpilation</AssemblyName>
+    <AssemblyName>Cumpilation</AssemblyName>   
+    <LangVersion>9</LangVersion>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
