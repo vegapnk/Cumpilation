@@ -16,19 +16,12 @@ namespace Cumpilation.Gathering
 
         public static void FillFluidGatherers(SexProps props)
         {
-            xxx.rjwSextype sextype = props.sexType;
             Pawn pawn = props.pawn;
 
             if (pawn == null || pawn.Map == null || pawn.PositionHeld == null)
                 return;
             /*
-            bool sexFillsCumbuckets =
-                // Base: Fill Cumbuckets on Masturbation. Having no partner means it must be masturbation too
-                sextype == xxx.rjwSextype.Masturbation || props.partner == null
-                || sextype == xxx.rjwSextype.Boobjob || sextype == xxx.rjwSextype.Footjob || sextype == xxx.rjwSextype.Handjob;
-
-            if (!sexFillsCumbuckets)
-                return;
+            
             */
 
             List<Building> gatherersInRange = FindGatherersInRangeInRoom(pawn, max_check_range: max_check_range);
@@ -53,6 +46,32 @@ namespace Cumpilation.Gathering
 
                 //TODO: Fill by "fallback" if I do not have a fluid, but there might be a thingdef in the base-fluid
                 */
+        }
+
+        public static void HandleFluidGatherer(Building gatherer, SexProps props, int numberOfOtherBuildings=0)
+        {
+
+            if (!(gatherer is RimWorld.Building_Storage))
+            {
+                ModLog.Debug($"The Gatherer {gatherer.def.defName}@{gatherer.PositionHeld} trying to gather Cum is not a Rimworld.Building_Storage");
+            }
+
+            FluidGatheringBuilding ext = gatherer.def.GetModExtension<FluidGatheringBuilding>();
+
+
+        }
+
+
+        public static bool IsSexWithFluidFlyingAround(SexProps props)
+        {
+            xxx.rjwSextype sextype = props.sexType;
+            bool fluidFlyingAroundSexType =
+                // Base: Fill Cumbuckets on Masturbation. Having no partner means it must be masturbation too
+                sextype == xxx.rjwSextype.Masturbation || props.partner == null
+                || sextype == xxx.rjwSextype.Boobjob || sextype == xxx.rjwSextype.Footjob || sextype == xxx.rjwSextype.Handjob;
+            return fluidFlyingAroundSexType;
+            //TODO: Return true if there is a heavy missmatch of fluid-amount and body-size, or on full cumflation etc. 
+            //return false;
         }
 
         public static List<Building> FindGatherersInRangeInRoom(Pawn pawn, int max_check_range)
