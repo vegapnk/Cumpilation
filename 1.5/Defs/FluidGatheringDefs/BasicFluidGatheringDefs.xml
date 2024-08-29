@@ -10,4 +10,13 @@
         <fluidRequiredForOneUnit>100</fluidRequiredForOneUnit>
     </Cumpilation.Gathering.FluidGatheringDef>
 
+    <Cumpilation.Gathering.FluidGatheringDef>
+        <defName>Test_Chocolate_Cum</defName>
+        <fluidDef>ChocciCum</fluidDef>
+        <thingDef>Chocolate</thingDef>
+        <canProduceMoreThanOne>true</canProduceMoreThanOne>
+        <roundUp>true</roundUp>
+        <fluidRequiredForOneUnit>50</fluidRequiredForOneUnit>
+    </Cumpilation.Gathering.FluidGatheringDef>
+
 </Defs>

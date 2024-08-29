@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <rjw.SexFluidDef>
+		<defName>ChocciCum</defName>
+		<label>Chocolate Cum</label>
+		<filth>FilthGirlCum</filth>
+		<alwaysProduceFilth>false</alwaysProduceFilth>
+		<!--<baseNutrition>1.5</baseNutrition> -->
+		<consumable>Chocolate</consumable>
+	</rjw.SexFluidDef>
+</Defs>
