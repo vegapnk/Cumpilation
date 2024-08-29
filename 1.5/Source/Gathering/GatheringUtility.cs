@@ -65,19 +65,32 @@ namespace Cumpilation.Gathering
 
             foreach (Hediff genital in relevantGenitals)
             {
-                HediffDef_SexPart sexPart = GetHediffDefSexPart(genital);
-                if (ext.supportedFluids.Contains(sexPart.fluid))
+                ISexPartHediff sexPartHediff = (ISexPartHediff)genital;
+                var fluid = sexPartHediff.GetPartComp().Fluid;
+                //HediffDef_SexPart sexPart = GetHediffDefSexPart(genital);
+                if (ext.supportedFluids.Contains(fluid))
                 {
-                    FluidGatheringDef fgDef = LookupFluidGatheringDef(sexPart.fluid);
+                    FluidGatheringDef fgDef = LookupFluidGatheringDef(fluid);
+                    // TODO: Get the FLuidAmount from my Hediff
+                    float fluidAmount = sexPartHediff.GetPartComp().FluidAmount;
+                    
+
                     // Case 1: There is a FluidGatheringDef - This will have highest Priority
                     if (fgDef != null) {
-                        ModLog.Message("Found a fitting gatherer for the right fluid - and it has a FluidGatheringDef");
+                        ModLog.Message($"Found a fitting gatherer for {fluid} - and it has a FluidGatheringDef {fgDef.defName}");
+
+                        int toMake = (int) Math.Round(fgDef.fluidRequiredForOneUnit / fluidAmount, 0);
                         // TODO
+                        Thing gatheredFluid = ThingMaker.MakeThing(fgDef.thingDef);
+                        gatheredFluid.stackCount = toMake;
+                        GenPlace.TryPlaceThing(gatheredFluid, gatherer.PositionHeld, gatherer.Map, ThingPlaceMode.Direct, out Thing res);
                     } 
                     // Case 2: There is no FluidGatheringDef, but there is a Consumable Def
-                    else if (sexPart.fluid.consumable != null)
+                    else if (fluid.consumable != null)
                     {
+                        ModLog.Message($"Found a fitting gatherer for {fluid} - but no FluidGatheringDef. Falling back to {fluid.consumable.defName}");
 
+                        int toMake = (int)Math.Round(fluid.consumableFluidRatio / fluidAmount, 0);
                     }
                     // Case 3: Nothing is given, Nothing will happen.
                     else
@@ -87,7 +100,7 @@ namespace Cumpilation.Gathering
                 }
                 else
                 {
-                    ModLog.Debug($"{gatherer} tried to gather {sexPart.fluid} but was unsupported - continuing.");
+                    ModLog.Debug($"{gatherer} tried to gather {fluid} but was unsupported - continuing.");
                 }
             }
         }
