@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Verse;
+using Verse.Noise;
 using static HarmonyLib.Code;
 
 namespace Cumpilation.Gathering
@@ -20,6 +21,7 @@ namespace Cumpilation.Gathering
     public class PassiveFluidGatherer : ThingComp
     {
 
+        public Dictionary<ThingDef,int> GatheredFilth = new Dictionary<ThingDef, int>();
 
         public override void CompTick()
         {
@@ -33,6 +35,21 @@ namespace Cumpilation.Gathering
                 var filths = GetNearbyFilth(false, properties.range);
                 var sexFluidFilths = GetNearbyFilth(true, properties.range);
                 ModLog.Message($"{parent.def}@{parent.PositionHeld}:Found {filths.Count()} filths and {sexFluidFilths.Count()} Fluid-Associated Filths in range {properties.range}");
+
+                foreach (var filth in sexFluidFilths) { 
+                    filth.DeSpawn();
+                    if (GatheredFilth.ContainsKey(filth.def))
+                    {
+                        GatheredFilth[filth.def] = filth.stackCount + GatheredFilth[filth.def];
+                    } else
+                    {
+                        GatheredFilth.Add(filth.def, filth.stackCount);
+                    }
+                }
+            }
+
+            foreach (var kk in GatheredFilth.Keys) {
+                ModLog.Message($"{parent.def}@{parent.PositionHeld}:Gathered {GatheredFilth[kk]} {kk}");
             }
 
         }
