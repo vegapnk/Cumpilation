@@ -62,7 +62,6 @@
         <range>3</range>
         <supportedFluids>
           <li>Cum</li>
-          <li>ChocciCum</li>
         </supportedFluids>
       </li>
     </modExtensions>

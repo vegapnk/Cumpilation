@@ -152,5 +152,10 @@ namespace Cumpilation.Gathering
             }
         }
 
+        public static bool CanStore(RimWorld.Building_Storage storage, SexFluidDef fluid)
+        {
+
+            return false;
+        }
     }
 }
