@@ -15,6 +15,10 @@ namespace Cumpilation.Gathering
         public float fluidRequiredForOneUnit;
         public bool canProduceMoreThanOne = true;
         public bool roundUp = false;
+
+        public bool canBeRetrievedFromFilth = false;
+        public int filthNecessaryForOneUnit;
+        public ThingDef filth; // This is meant mostly as a fall-back or to be over-specific. Common Behaviour would be to go over the FluidDefs Filth and then from there "backwards". 
     }
 
 }

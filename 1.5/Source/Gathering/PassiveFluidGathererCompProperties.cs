@@ -14,6 +14,9 @@ namespace Cumpilation.Gathering
         public List<SexFluidDef> supportedFluids;
         public int tickIntervall;
 
+        public float cleanChance = 0.25f;
+        public bool cleanAtmostOne = false;
+
         public PassiveFluidGathererCompProperties()
         {
             compClass= typeof(PassiveFluidGatherer);

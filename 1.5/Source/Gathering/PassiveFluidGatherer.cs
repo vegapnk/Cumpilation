@@ -31,29 +31,67 @@ namespace Cumpilation.Gathering
 
             if (parent.IsHashIntervalTick(properties.tickIntervall))
             {
-                //ModLog.Message("Ticking PassiveFluidGatherer happily");
-                var filths = GetNearbyFilth(false, properties.range);
                 var sexFluidFilths = GetNearbyFilth(true, properties.range);
-                ModLog.Message($"{parent.def}@{parent.PositionHeld}:Found {filths.Count()} filths and {sexFluidFilths.Count()} Fluid-Associated Filths in range {properties.range}");
-
-                foreach (var filth in sexFluidFilths) { 
-                    filth.DeSpawn();
-                    if (GatheredFilth.ContainsKey(filth.def))
-                    {
-                        GatheredFilth[filth.def] = filth.stackCount + GatheredFilth[filth.def];
-                    } else
-                    {
-                        GatheredFilth.Add(filth.def, filth.stackCount);
-                    }
-                }
-            }
-
-            foreach (var kk in GatheredFilth.Keys) {
-                ModLog.Message($"{parent.def}@{parent.PositionHeld}:Gathered {GatheredFilth[kk]} {kk}");
+               // ModLog.Message($"{parent.def}@{parent.PositionHeld}:Found {filths.Count()} filths and {sexFluidFilths.Count()} Fluid-Associated Filths in range {properties.range}");
+                CleanFilth(sexFluidFilths);
+                FilthToItem();
             }
 
         }
 
+        public void FilthToItem()
+        {
+            PassiveFluidGathererCompProperties properties = (props as PassiveFluidGathererCompProperties);
+
+            var GatheredFilthCopy = GatheredFilth.ToDictionary(entry => entry.Key,entry => entry.Value);
+
+            foreach (var kk in GatheredFilthCopy.Keys)
+            {
+                var fgDef = LookupGatheringDef(kk);
+                if (fgDef == null) return;
+
+                if (GatheredFilthCopy[kk] > fgDef.filthNecessaryForOneUnit) {
+                    ModLog.Debug($"Filth {kk} in {this.parent}@{this.parent.PositionHeld} is enough to spawn {GatheredFilthCopy[kk] % fgDef.filthNecessaryForOneUnit} {fgDef.thingDef}'s");
+
+                    Thing gatheredFluid = ThingMaker.MakeThing(fgDef.thingDef);
+                    gatheredFluid.stackCount = GatheredFilthCopy[kk] % fgDef.filthNecessaryForOneUnit;
+                    GenPlace.TryPlaceThing(gatheredFluid, this.parent.PositionHeld, this.parent.Map, ThingPlaceMode.Direct, out Thing res);
+
+                    GatheredFilth[kk] -= gatheredFluid.stackCount * fgDef.filthNecessaryForOneUnit;
+                }
+            }
+        }
+
+        public FluidGatheringDef? LookupGatheringDef(ThingDef filth)
+        {
+            return DefDatabase<FluidGatheringDef>.AllDefs
+                .Where(def => def.canBeRetrievedFromFilth)
+                .Where(def => def.fluidDef.filth == filth || def.filth == filth)
+                .FirstOrFallback();
+        }
+
+        public void CleanFilth(IEnumerable<Filth> filths)
+        {
+            PassiveFluidGathererCompProperties properties = (props as PassiveFluidGathererCompProperties);
+
+            foreach (var filth in filths.Where(IsSupportedFilthType))
+            {
+                // If the cleanChance is not met, we just look at the next.
+                if ((new Random()).NextDouble() > properties.cleanChance) continue;
+                
+                filth.DeSpawn();
+                if (GatheredFilth.ContainsKey(filth.def))
+                {
+                    GatheredFilth[filth.def] = filth.stackCount + GatheredFilth[filth.def];
+                }
+                else
+                {
+                    GatheredFilth.Add(filth.def, filth.stackCount);
+                }
+                // If you cleaned one, and you only clean one, you end this function.
+                if (properties.cleanAtmostOne) return;
+            }
+        }
 
         public IEnumerable<Filth> GetNearbyFilth(bool onlyFluidFilth = true, int range = 50)
         {
@@ -77,6 +115,14 @@ namespace Cumpilation.Gathering
                 .Where(filth => filth.PositionHeld.InHorDistOf(this.parent.PositionHeld,range))
                 .Where(filth => !onlyFluidFilth || knownFluids.Any(fluid => fluid.filth == filth.def));
 
+        }
+
+        public bool IsSupportedFilthType(Filth filth)
+        {
+            PassiveFluidGathererCompProperties properties = (props as PassiveFluidGathererCompProperties);
+            bool isInFluidDefsAsFilth = properties.supportedFluids.Select(fluid => fluid.filth).Any(f => f == filth.def);
+            bool isInFluidGatheringDefsAsBackup = DefDatabase<FluidGatheringDef>.AllDefs.Where(def => def.canBeRetrievedFromFilth && def.filth != null).Select(def => def.filth).Any(f => f == filth.def);
+            return isInFluidDefsAsFilth || isInFluidGatheringDefsAsBackup;
         }
     }
 }

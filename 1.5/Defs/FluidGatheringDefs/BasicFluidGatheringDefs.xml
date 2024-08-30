@@ -8,6 +8,9 @@
         <canProduceMoreThanOne>true</canProduceMoreThanOne>
         <roundUp>true</roundUp>
         <fluidRequiredForOneUnit>100</fluidRequiredForOneUnit>
+
+        <canBeRetrievedFromFilth>true</canBeRetrievedFromFilth>
+        <filthNecessaryForOneUnit>10</filthNecessaryForOneUnit>
     </Cumpilation.Gathering.FluidGatheringDef>
 
     <Cumpilation.Gathering.FluidGatheringDef>
