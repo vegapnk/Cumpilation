@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 using static HarmonyLib.Code;
+using Cumpilation.Common;
 
 namespace Cumpilation.Gathering
 {
@@ -21,9 +22,9 @@ namespace Cumpilation.Gathering
 
             if (pawn == null || pawn.Map == null || pawn.PositionHeld == null)
                 return;
-            /*
-            
-            */
+
+            if (!FluidUtility.IsSexWithFluidFlyingAround(props))
+                return; 
 
             List<Building> gatherersInRange = FindGatherersInRangeInRoom(pawn, max_check_range: max_check_range);
 
@@ -33,24 +34,10 @@ namespace Cumpilation.Gathering
                 ModLog.Debug($"Triggering Behaviour for {gatherer.def.defName}@{gatherer.PositionHeld} (has {ext})");
                 HandleFluidGatherer(gatherer, props, gatherersInRange.Count-1);
             }
-
-            // Enumerable throws System.InvalidOperationException: Collection was modified; enumeration operation may not execute.
-                /*
-                List<Building_FluidGatherer> NearbyGatherers = props.pawn.GetAdjacentBuildings<Building_FluidGatherer>().ToList();
-
-                if (NearbyGatherers?.Count > 0)
-                {
-                    //var initialCum = GetCumVolume(props.pawn);
-                    foreach (Building_FluidGatherer gatherer in NearbyGatherers)
-                    {
-                        //gatherer.AddCum(initialCum / NearbyGatherers.Count);
-                    }
-                }
-
-                //TODO: Fill by "fallback" if I do not have a fluid, but there might be a thingdef in the base-fluid
-                */
         }
 
+        // TODO update with different number of collectors ... 
+        // Split "load" on all that are free. Right now we multiply.
         public static void HandleFluidGatherer(Building gatherer, SexProps props, int numberOfOtherBuildings=0)
         {
 
@@ -61,18 +48,24 @@ namespace Cumpilation.Gathering
 
             FluidGatheringBuilding ext = gatherer.def.GetModExtension<FluidGatheringBuilding>();
 
-            var relevantGenitals = GetGenitalsWithFluids(props.pawn, true);
+            var relevantGenitals = FluidUtility.GetGenitalsWithFluids(props.pawn, true);
 
             foreach (Hediff genital in relevantGenitals)
             {
                 ISexPartHediff sexPartHediff = (ISexPartHediff)genital;
                 var fluid = sexPartHediff.GetPartComp().Fluid;
-                //HediffDef_SexPart sexPart = GetHediffDefSexPart(genital);
+
+                //TODO: This was just a test
+                //ChangeFluidType(sexPartHediff, DefOfs.ChocciCum);
+
                 if (ext.supportedFluids.Contains(fluid))
                 {
                     FluidGatheringDef fgDef = LookupFluidGatheringDef(fluid);
-                    // TODO: Get the FLuidAmount from my Hediff
                     float fluidAmount = sexPartHediff.GetPartComp().FluidAmount;
+                    if (numberOfOtherBuildings > 0)
+                    {
+                        fluidAmount = fluidAmount / numberOfOtherBuildings + 1;
+                    }
                     
 
                     // Case 1: There is a FluidGatheringDef - This will have highest Priority
@@ -80,7 +73,6 @@ namespace Cumpilation.Gathering
                         ModLog.Message($"Found a fitting gatherer for {fluid} - and it has a FluidGatheringDef {fgDef.defName}");
 
                         int toMake = (int) Math.Round(fgDef.fluidRequiredForOneUnit / fluidAmount, 0);
-                        // TODO
                         Thing gatheredFluid = ThingMaker.MakeThing(fgDef.thingDef);
                         gatheredFluid.stackCount = toMake;
                         GenPlace.TryPlaceThing(gatheredFluid, gatherer.PositionHeld, gatherer.Map, ThingPlaceMode.Direct, out Thing res);
@@ -91,6 +83,9 @@ namespace Cumpilation.Gathering
                         ModLog.Message($"Found a fitting gatherer for {fluid} - but no FluidGatheringDef. Falling back to {fluid.consumable.defName}");
 
                         int toMake = (int)Math.Round(fluid.consumableFluidRatio / fluidAmount, 0);
+                        Thing gatheredFluid = ThingMaker.MakeThing(fluid.consumable);
+                        gatheredFluid.stackCount = toMake;
+                        GenPlace.TryPlaceThing(gatheredFluid, gatherer.PositionHeld, gatherer.Map, ThingPlaceMode.Direct, out Thing res);
                     }
                     // Case 3: Nothing is given, Nothing will happen.
                     else
@@ -113,65 +108,6 @@ namespace Cumpilation.Gathering
             return defs.FirstOrFallback(fgDef => fgDef.fluidDef == def);
         }
 
-        public static List<Hediff> GetGenitalsWithFluids(Pawn pawn, bool filterForShootsOnOrgasm = false)
-        {
-            List<Hediff> results = new List<Hediff>();
-            var all_parts  = rjw.Genital_Helper.get_AllPartsHediffList(pawn);
-
-            ModLog.Debug($"Found {all_parts.Count} parts for {pawn}");
-            foreach(var part in all_parts)
-            {
-                var def = GetHediffDefSexPart(part);
-                if (def == null) continue;
-                if (def.fluid == null) continue;
-                if (filterForShootsOnOrgasm && !def.produceFluidOnOrgasm) continue;
-
-                results.Add(part);
-            }
-            return results;
-        } 
-
-        public static HediffDef_SexPart? GetHediffDefSexPart(Hediff hediff)
-        {
-            if (hediff == null) return null;
-            if (hediff.def is HediffDef_SexPart)
-                return (HediffDef_SexPart)(hediff.def);
-            return null;
-        } 
-
-        /*
-        public void AddCum(float amount, ThingDef cumDef)
-        {
-            Thing cum = ThingMaker.MakeThing(cumDef);
-            AddCum(amount, cum);
-        }
-
-        public void AddCum(float amount, Thing cum)
-        {
-            storedDecimalRemainder += amount;
-            totalGathered += amount;
-            int num = (int)storedDecimalRemainder;
-
-            cum.stackCount = num;
-            if (cum.stackCount > 0 && !GenPlace.TryPlaceThing(cum, PositionHeld, Map, ThingPlaceMode.Direct, out Thing res))
-            {
-                FilthMaker.TryMakeFilth(PositionHeld, Map, RsDefOf.Thing.FilthCum, num);
-            }
-            storedDecimalRemainder -= num;
-        }
-        */
-
-        public static bool IsSexWithFluidFlyingAround(SexProps props)
-        {
-            xxx.rjwSextype sextype = props.sexType;
-            bool fluidFlyingAroundSexType =
-                // Base: Fill Cumbuckets on Masturbation. Having no partner means it must be masturbation too
-                sextype == xxx.rjwSextype.Masturbation || props.partner == null
-                || sextype == xxx.rjwSextype.Boobjob || sextype == xxx.rjwSextype.Footjob || sextype == xxx.rjwSextype.Handjob;
-            return fluidFlyingAroundSexType;
-            //TODO: Return true if there is a heavy missmatch of fluid-amount and body-size, or on full cumflation etc. 
-            //return false;
-        }
 
         public static List<Building> FindGatherersInRangeInRoom(Pawn pawn, int max_check_range)
         {
@@ -201,7 +137,7 @@ namespace Cumpilation.Gathering
             return results;
         }
 
-        public static void PrintFluidDefInfo()
+        public static void PrintFluidGatheringDefInfo()
         {
             IEnumerable<FluidGatheringDef> defs = DefDatabase<FluidGatheringDef>.AllDefs;
             ModLog.Debug($"Found {defs.Count()} FluidGatheringDefs.");
@@ -210,5 +146,6 @@ namespace Cumpilation.Gathering
                 ModLog.Debug($"\tFluidGatheringDef {def.defName}: {def.fluidRequiredForOneUnit} {def.fluidDef} => 1 {def.thingDef}");
             }
         }
+
     }
 }

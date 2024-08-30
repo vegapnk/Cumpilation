@@ -11,7 +11,7 @@ namespace Cumpilation
         {
             ModLog.Message("Cumpilation Loaded - Let's go you cumsluts");
 
-            GatheringUtility.PrintFluidDefInfo();
+            GatheringUtility.PrintFluidGatheringDefInfo();
         }
     }
 }
