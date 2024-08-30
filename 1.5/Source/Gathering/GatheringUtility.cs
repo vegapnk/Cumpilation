@@ -154,7 +154,12 @@ namespace Cumpilation.Gathering
 
         public static bool CanStore(RimWorld.Building_Storage storage, SexFluidDef fluid)
         {
+            // From Discord:
+            // took me a moment, but from the looks of it
+            // Building.MaxItemsInCell to get the capacity, and compare against GridsUtility.GetItemCount
+            // (or GridsUtility.GetItems for the actual things in there)
 
+            // There is a building_storage.Accepts(thing thing) which might help
             return false;
         }
     }

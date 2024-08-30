@@ -1,4 +1,5 @@
-﻿using rjw;
+﻿using Cumpilation.Gathering;
+using rjw;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,6 +54,11 @@ namespace Cumpilation.Common
             return fluidFlyingAroundSexType;
             //TODO: Return true if there is a heavy missmatch of fluid-amount and body-size, or on full cumflation etc. 
             //return false;
+        }
+
+        public static IEnumerable<SexFluidDef> GetAllSexFluidDefs()
+        {
+            return DefDatabase<SexFluidDef>.AllDefs;
         }
     }
 }
