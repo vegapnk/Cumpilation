@@ -68,4 +68,39 @@
     </modExtensions>
   </ThingDef>
 
+  <ThingDef ParentName="StorageShelfBase">
+    <defName>CumShelf</defName>
+    <label>cum-shelf</label>
+    <description>This is a test thing, for testing cummies.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/Shelf</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <costStuffCount>20</costStuffCount>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints> 
+      <Mass>8</Mass>
+      <WorkToBuild>500</WorkToBuild>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">5</StyleDominance>
+    </statBases>
+    <size>(2,1)</size>
+    <designationHotKey>Misc12</designationHotKey>
+    <building>
+      <relatedBuildCommands>
+        <li>ShelfSmall</li>
+      </relatedBuildCommands>
+    </building>
+    
+    <modExtensions>
+      <li Class="Cumpilation.Gathering.FluidGatheringBuilding">
+        <range>3</range>
+        <supportedFluids>
+          <li>Cum</li>
+          <li>ChocciCum</li>
+        </supportedFluids>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
 </Defs>

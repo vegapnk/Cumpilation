@@ -68,7 +68,6 @@
     <Compile Include="Gathering\FluidGatheringDef.cs" />
     <Compile Include="Gathering\GatheringUtility.cs" />
     <Compile Include="Gathering\Patch_SatisfyPersonal_FillFluidGatherers.cs" />
-    <Compile Include="Gathering\PawnExtensions.cs" />
     <Compile Include="HarmonyInit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

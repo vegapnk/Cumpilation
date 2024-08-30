@@ -16,7 +16,7 @@
         <thingDef>Chocolate</thingDef>
         <canProduceMoreThanOne>true</canProduceMoreThanOne>
         <roundUp>true</roundUp>
-        <fluidRequiredForOneUnit>50</fluidRequiredForOneUnit>
+        <fluidRequiredForOneUnit>250</fluidRequiredForOneUnit>
     </Cumpilation.Gathering.FluidGatheringDef>
 
 </Defs>

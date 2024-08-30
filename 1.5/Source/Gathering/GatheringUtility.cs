@@ -70,9 +70,10 @@ namespace Cumpilation.Gathering
 
                     // Case 1: There is a FluidGatheringDef - This will have highest Priority
                     if (fgDef != null) {
-                        ModLog.Message($"Found a fitting gatherer for {fluid} - and it has a FluidGatheringDef {fgDef.defName}");
+                        ModLog.Debug($"Found a fitting gatherer for {fluid} - and it has a FluidGatheringDef {fgDef.defName}");
 
-                        int toMake = (int) Math.Round(fgDef.fluidRequiredForOneUnit / fluidAmount, 0);
+                        int toMake = (int) Math.Round( fluidAmount/fgDef.fluidRequiredForOneUnit + (fgDef.roundUp?0.5: 0), 0);
+                        toMake = fgDef.canProduceMoreThanOne ? toMake : 1; 
                         Thing gatheredFluid = ThingMaker.MakeThing(fgDef.thingDef);
                         gatheredFluid.stackCount = toMake;
                         GenPlace.TryPlaceThing(gatheredFluid, gatherer.PositionHeld, gatherer.Map, ThingPlaceMode.Direct, out Thing res);
@@ -80,9 +81,13 @@ namespace Cumpilation.Gathering
                     // Case 2: There is no FluidGatheringDef, but there is a Consumable Def
                     else if (fluid.consumable != null)
                     {
-                        ModLog.Message($"Found a fitting gatherer for {fluid} - but no FluidGatheringDef. Falling back to {fluid.consumable.defName}");
+                        /// Relevant RJW File: https://gitgud.io/Ed86/rjw/-/blob/Dev/1.5/Defs/SexFluidDefs/Example.xml?ref_type=heads
+                        /// States: "consumableFluidRatio = <!-- Number of consumables to ingest per unit fluid. -->
+                        /// So, with a rate of 1, 10 fluid will result in 10 ingestions. With a ratio of 0.5, 10 fluid will result in 5 etc. 
+                        ModLog.Debug($"Found a fitting gatherer for {fluid} - but no FluidGatheringDef. Falling back to {fluid.consumable.defName}");
 
-                        int toMake = (int)Math.Round(fluid.consumableFluidRatio / fluidAmount, 0);
+                        
+                        int toMake = (int)Math.Round(fluid.consumableFluidRatio * fluidAmount, 0);
                         Thing gatheredFluid = ThingMaker.MakeThing(fluid.consumable);
                         gatheredFluid.stackCount = toMake;
                         GenPlace.TryPlaceThing(gatheredFluid, gatherer.PositionHeld, gatherer.Map, ThingPlaceMode.Direct, out Thing res);
