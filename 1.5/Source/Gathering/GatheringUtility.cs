@@ -13,7 +13,7 @@ namespace Cumpilation.Gathering
 {
     public class GatheringUtility
     {
-        // Maximum Distance for which nearby buildings are checked. 
+        // Maximum Distance for which nearby buildings are checked. TODO: Move this to settings.
         const int max_check_range = 30;
 
         public static void FillFluidGatherers(SexProps props)
@@ -105,15 +105,6 @@ namespace Cumpilation.Gathering
             }
         }
 
-        public static FluidGatheringDef? LookupFluidGatheringDef(SexFluidDef def)
-        {
-            if (def == null) return null;
-
-            IEnumerable<FluidGatheringDef> defs = DefDatabase<FluidGatheringDef>.AllDefs;
-            return defs.FirstOrFallback(fgDef => fgDef.fluidDef == def);
-        }
-
-
         public static List<Building> FindGatherersInRangeInRoom(Pawn pawn, int max_check_range)
         {
             List<Building> results = new List<Building>();
@@ -141,6 +132,24 @@ namespace Cumpilation.Gathering
             ModLog.Debug($"Found {cells} cells in range {max_check_range} with {gatherers} gatherers of {buildings} buildings");
             return results;
         }
+
+        public static FluidGatheringDef? LookupFluidGatheringDef(SexFluidDef def)
+        {
+            if (def == null) return null;
+
+            IEnumerable<FluidGatheringDef> defs = DefDatabase<FluidGatheringDef>.AllDefs;
+            return defs.FirstOrFallback(fgDef => fgDef.fluidDef == def);
+        }
+
+
+        public static FluidGatheringDef? LookupGatheringDef(ThingDef filth)
+        {
+            return DefDatabase<FluidGatheringDef>.AllDefs
+                .Where(def => def.canBeRetrievedFromFilth)
+                .Where(def => def.fluidDef.filth == filth || def.filth == filth)
+                .FirstOrFallback();
+        }
+
 
         public static void PrintFluidGatheringDefInfo()
         {
