@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/rjw.SexFluidDef[defName="Cum"]</xpath>
+		<value>
+            <tags>
+                <li>CanCumflate</li>
+            </tags>
+		</value>
+	</Operation>
+		
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/rjw.SexFluidDef[defName="InsectSpunk"]</xpath>
+		<value>
+            <tags>
+                <li>CanCumflate</li>
+            </tags>
+		</value>
+	</Operation>
+
+</Patch>

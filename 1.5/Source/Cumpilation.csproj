@@ -62,6 +62,8 @@
   <ItemGroup>
     <Compile Include="Common\FluidUtility.cs" />
     <Compile Include="Common\ModLog.cs" />
+    <Compile Include="Cumflation\CumflationUtility.cs" />
+    <Compile Include="Cumflation\Patch_TransferFluids_Cumflate.cs" />
     <Compile Include="Cumpilation.cs" />
     <Compile Include="DefOfs.cs" />
     <Compile Include="Gathering\FluidGatheringBuilding.cs" />

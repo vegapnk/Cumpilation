@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>GotOverCumflated</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>2.0</durationDays>
+    <stackLimit>3</stackLimit>
+    <stackedEffectMultiplier>0.4</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>overinflated with cum</label>
+        <description>I think I can still feel the cum in my belly.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+	  <li>LikesCumflation</li>
+      <li>Masochist</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>GotOverCumflatedEnjoyed</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>2.0</durationDays>
+    <stackLimit>3</stackLimit>
+    <stackedEffectMultiplier>0.4</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>enjoyed being overinflated with cum</label>
+        <description>I loved the feeling of being filled to the brim with cum.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+    <requiredTraits>
+	  <li>LikesCumflation</li>
+      <li>Masochist</li>
+    </requiredTraits>
+  </ThoughtDef>
+
+</Defs>

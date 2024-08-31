@@ -12,5 +12,10 @@ namespace Cumpilation
     public static class DefOfs
     {
         public static readonly SexFluidDef ChocciCum;
+
+        public static readonly TraitDef LikesCumflation;
+
+        public static readonly ThoughtDef GotOverCumflated;
+        public static readonly ThoughtDef GotOverCumflatedEnjoyed;
     }
 }
