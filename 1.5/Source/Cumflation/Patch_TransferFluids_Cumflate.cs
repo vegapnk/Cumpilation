@@ -13,7 +13,11 @@ namespace Cumpilation.Cumflation
     {
         public static void Postfix(SexProps props)
         {
+            //TODO: Add Settings to Turn Off
+
             ModLog.Debug($"Runnig TransferFluid Postfix for Cumflation, {props.pawn} -> {props.partner}");
+
+            CumflationUtility.CumflatePawn(props.pawn, props.partner,props);
         }
 
     }

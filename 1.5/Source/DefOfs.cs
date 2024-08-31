@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Verse;
 
 namespace Cumpilation
 {
@@ -17,5 +18,7 @@ namespace Cumpilation
 
         public static readonly ThoughtDef GotOverCumflated;
         public static readonly ThoughtDef GotOverCumflatedEnjoyed;
+
+        public static readonly HediffDef Cumflation;
     }
 }
