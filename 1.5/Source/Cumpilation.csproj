@@ -66,6 +66,7 @@
     <Compile Include="Cumflation\FluidSource.cs" />
     <Compile Include="Cumflation\HediffCompProperties_SourceStorage.cs" />
     <Compile Include="Cumflation\HediffComp_SourceStorage.cs" />
+    <Compile Include="Cumflation\JobDriver_OverflowingCumflation.cs" />
     <Compile Include="Cumflation\Patch_TransferFluids_Cumflate.cs" />
     <Compile Include="Cumpilation.cs" />
     <Compile Include="DefOfs.cs" />

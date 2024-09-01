@@ -40,11 +40,21 @@ namespace Cumpilation.Cumflation
                     Hediff cumflationHediff = GetOrCreateCumflationHediff(inflated);
                     cumflationHediff.Severity += resultingSeverity;
                     // Only give thoughts on more serious cumflations.
-                    if (cumflationHediff.Severity >= 0.5)
+                    if (cumflationHediff.Severity >= 0.6)
                         GiveCumflationThoughts(inflated);
                     StoreCumflationOrigin(cumflationHediff,inflator,genital.GetPartComp().Fluid,genital.GetPartComp().FluidAmount);
+
+                    if (cumflationHediff.Severity > 1.01) 
+                        TryQueueOverflowingCumflation(inflated);
                 }
             }
+        }
+
+        public static void TryQueueOverflowingCumflation(Pawn inflated)
+        {
+            var overflowingJob = JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed("OverflowingCumflation"), inflated);
+            inflated.jobs.jobQueue.EnqueueFirst(overflowingJob);
+
         }
 
         public static void StoreCumflationOrigin(Hediff cumflationHediff, Pawn origin, SexFluidDef fluid, float amount)

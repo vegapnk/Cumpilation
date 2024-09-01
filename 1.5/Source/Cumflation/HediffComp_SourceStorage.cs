@@ -35,7 +35,7 @@ namespace Cumpilation.Cumflation
             else
             {
                 sources.Add(incoming);
-                ModLog.Debug($"Added a new FluidSource to Cumflation-Hediff, now there are {sources.Count} sources in");
+                //ModLog.Debug($"Added a new FluidSource to Cumflation-Hediff, now there are {sources.Count} sources in");
             }
         }
 
