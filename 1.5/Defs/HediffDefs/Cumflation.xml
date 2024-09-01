@@ -16,6 +16,7 @@
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-0.75</severityPerDay>
       </li>
+      <li Class="Cumpilation.Cumflation.HediffCompProperties_SourceStorage"/>
     </comps>
     <stages>
       <li>

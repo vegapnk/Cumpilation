@@ -42,8 +42,18 @@ namespace Cumpilation.Cumflation
                     // Only give thoughts on more serious cumflations.
                     if (cumflationHediff.Severity >= 0.5)
                         GiveCumflationThoughts(inflated);
+                    StoreCumflationOrigin(cumflationHediff,inflator,genital.GetPartComp().Fluid,genital.GetPartComp().FluidAmount);
                 }
             }
+        }
+
+        public static void StoreCumflationOrigin(Hediff cumflationHediff, Pawn origin, SexFluidDef fluid, float amount)
+        {
+            var storage_comp = cumflationHediff.TryGetComp<HediffComp_SourceStorage>();
+            if (storage_comp == null) return;
+
+            FluidSource source = new FluidSource() { pawn = origin, fluid = fluid, amount = amount };
+            storage_comp.AddOrMerge(source);
         }
 
         public static bool IsSexTypeThatCanCumflate(SexProps props) {
