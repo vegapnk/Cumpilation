@@ -66,22 +66,30 @@ namespace Cumpilation.Cumflation
             // Due to logic, we have to go over one genital after the other. 
             foreach (ISexPartHediff genital in inflatorGenitals)
             {
+                ModLog.Debug($"Stuffing {inflated} with {inflator}s {genital}, adding {genital.GetPartComp().Fluid}");
                 float necessaryAmount = FluidAmountRequiredToStuffPawn(inflated, genital.GetPartComp().Fluid);
                 float incomingSeverity = DetermineStuffingSeverity(inflated, genital.GetPartComp().FluidAmount, genital.GetPartComp().Fluid);
 
-                int existingCumflationHediffs = GetAllSharedSeverityHediffsInPawn(inflated).Count();
+                int existingStuffingHediffs = GetAllSharedSeverityHediffsInPawn(inflated).Count();
                 float accumulatedExistingSeverity = SumUpAllStuffingSeverities(inflated);
                 float overflow = accumulatedExistingSeverity + incomingSeverity - 1;
 
+                ModLog.Debug($"Adding {incomingSeverity} to {accumulatedExistingSeverity} in {inflated}, doing an overflow of {overflow} on {existingStuffingHediffs} existing stuffing-hediffs.");
                 if (incomingSeverity > 0)
                 {
-                    Hediff stuffedHediff = GetOrCreateCumflationHediff(inflated);
+                    Hediff stuffedHediff = GetOrCreateStuffHediff(inflated, genital.GetPartComp().Fluid);
                     stuffedHediff.Severity += Math.Min(1.0f,incomingSeverity);
+                    ModLog.Debug($"Added or increased severity of {stuffedHediff} to Severity {stuffedHediff.Severity}");
 
-                    foreach (Hediff sharedSeverityHediff in GetAllSharedSeverityHediffsInPawn(inflated))
-                    {
-                        if (sharedSeverityHediff.def != stuffedHediff.def && existingCumflationHediffs > 0)
-                            sharedSeverityHediff.Severity -= overflow / (existingCumflationHediffs - 1);
+                    if (overflow > 0) { 
+                        foreach (Hediff sharedSeverityHediff in GetAllSharedSeverityHediffsInPawn(inflated))
+                        {
+                            if (sharedSeverityHediff.def != stuffedHediff.def && existingStuffingHediffs > 0) {
+                                float reduction = overflow / (float)(existingStuffingHediffs);
+                                ModLog.Debug($"Due to overflow of {overflow} in {existingStuffingHediffs-1} Stuff-Hediffs in {inflated}, reducing all old ones by {reduction}");
+                                sharedSeverityHediff.Severity -= reduction;
+                            }
+                        }
                     }
                     StoreFluidSource(stuffedHediff, inflator, genital.GetPartComp().Fluid, genital.GetPartComp().FluidAmount);
 
@@ -289,7 +297,10 @@ namespace Cumpilation.Cumflation
             return 100.0f;
         }
 
-        public static bool CanStuff(ISexPartHediff part) => CanStuff(part.GetPartComp().Fluid);
+        public static bool CanStuff(ISexPartHediff part)
+        {
+            return part.Def.genitalTags.Contains(GenitalTag.CanPenetrate) &&  CanStuff(part.GetPartComp().Fluid);
+        }
         public static bool CanStuff(SexFluidDef def) =>  DefDatabase<StuffingDef>.AllDefs.Any(stuffingDef => stuffingDef.fluid == def);
         
 

@@ -31,7 +31,6 @@ namespace Cumpilation.Cumflation
                 float severityPerDay = this.severityPerDay + this.severityPerDayRange.RandomInRange;
                 if (Rand.Chance(this.reverseSeverityChangeChance))
                     severityPerDay *= -1f;
-
                 return severityPerDay;
             }
         }

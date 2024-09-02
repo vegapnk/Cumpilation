@@ -2,10 +2,17 @@
 <Defs>
 
     <Cumpilation.Cumflation.StuffingDef>
-        <defName>Basic_Cumflation</defName>
+        <defName>Basic_Cumstuffed</defName>
         <fluid>Cum</fluid>
         <resultingStuffedHediff>Cumstuffed</resultingStuffedHediff>
         <amountOfFluidForFullStuffing>200</amountOfFluidForFullStuffing>
+    </Cumpilation.Cumflation.StuffingDef>
+
+    <Cumpilation.Cumflation.StuffingDef>
+        <defName>Chocci_Stuffing</defName>
+        <fluid>ChocciCum</fluid>
+        <resultingStuffedHediff>ChocciStuffed</resultingStuffedHediff>
+        <amountOfFluidForFullStuffing>100</amountOfFluidForFullStuffing>
     </Cumpilation.Cumflation.StuffingDef>
 
 </Defs>

@@ -21,6 +21,10 @@ namespace Cumpilation.Cumflation
         /// </summary>
         public float amountOfFluidForFullStuffing = 100;
 
+        /// <summary>
+        /// How much severity does the resulting stuffing must have to give a thought?
+        /// </summary>
+        public float thoughtThreshold = 0.3f;
         public ThoughtDef positiveThought;
         public ThoughtDef neutralThought;
         public ThoughtDef negativeThought;

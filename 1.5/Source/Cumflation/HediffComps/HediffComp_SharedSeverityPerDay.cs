@@ -20,7 +20,7 @@ namespace Cumpilation.Cumflation
     {
         public float sharedSeverityPerDay;
 
-        private HediffCompProperties_SeverityPerDay Props => (HediffCompProperties_SeverityPerDay)this.props;
+        private HediffCompProperties_SharedSeverityPerDay Props => (HediffCompProperties_SharedSeverityPerDay)this.props;
 
         public override void CompPostPostAdd(DamageInfo? dinfo)
         {
@@ -30,7 +30,9 @@ namespace Cumpilation.Cumflation
 
         public override void CompExposeData()
         {
+            ModLog.Debug("Test D");
             base.CompExposeData();
+            ModLog.Debug("Test E");
             Scribe_Values.Look<float>(ref this.sharedSeverityPerDay, "sharedSeverityPerDay");
             if (Scribe.mode != LoadSaveMode.PostLoadInit || (double)this.sharedSeverityPerDay != 0.0 || (double)this.Props.severityPerDay == 0.0 || !(this.Props.severityPerDayRange == FloatRange.Zero))
                 return;
@@ -47,9 +49,7 @@ namespace Cumpilation.Cumflation
             double num1 = curStage != null ? (double)curStage.severityGainFactor : 1.0;
             float num2 = (float)(severityPerDay * num1);
 
-            num2 /= GetNumberOfHediffsWithSharedSeverity();
-
-            return num2;
+            return num2 / ((float)GetNumberOfHediffsWithSharedSeverity());
         }
 
         private int GetNumberOfHediffsWithSharedSeverity()
