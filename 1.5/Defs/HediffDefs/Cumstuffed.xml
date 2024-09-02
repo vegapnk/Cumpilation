@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef Abstract="True" Name="BaseStuffed">
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(240,200,110)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <tendable>false</tendable>
+    <comps>
+      <li Class="Cumpilation.Cumflation.HediffCompProperties_SharedSeverityPerDay">
+        <severityPerDay>-0.75</severityPerDay>
+      </li>
+      <li Class="Cumpilation.Cumflation.HediffCompProperties_SourceStorage"/>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="BaseStuffed">
+    <defName>Cumstuffed</defName>
+    <label>cumstuffed</label>
+    <labelNoun>cumstuffed</labelNoun>
+    <description>Drinking a large quantity of cum at once has to send the cum somewhere.</description>
+    <stages>
+      <li>
+        <label>slightly bloated</label>
+        <becomeVisible>false</becomeVisible>
+      </li>
+      <li>
+        <label>bloated</label>
+        <minSeverity>0.2</minSeverity>
+        <hungerRateFactor>0.95</hungerRateFactor>
+        <statOffsets>
+          <Vulnerability>0.05</Vulnerability>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.03</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>full</label>
+        <minSeverity>0.4</minSeverity>
+        <hungerRateFactor>0.9</hungerRateFactor>
+        <statOffsets>
+          <Vulnerability>0.1</Vulnerability>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>stuffed</label>
+        <minSeverity>0.6</minSeverity>
+        <hungerRateFactor>0.75</hungerRateFactor>
+        <statOffsets>
+          <Vulnerability>0.15</Vulnerability>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.2</offset>
+          </li>
+        </capMods>
+        <painOffset>0.15</painOffset>
+      </li>
+      <li>
+        <label>overstuffed</label>
+        <minSeverity>0.8</minSeverity>
+        <hungerRateFactor>0.5</hungerRateFactor>
+        <statOffsets>
+          <Vulnerability>0.2</Vulnerability>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.3</offset>
+          </li>
+        </capMods>
+        <painOffset>0.3</painOffset>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>
