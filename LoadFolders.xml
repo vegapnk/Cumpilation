@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <loadFolders>
+
 	<v1.5>
 		<li>Common</li>
-		<li>1.5</li>
+		<li>1.5</li>		
+		<li IfModActive="ludeon.rimworld.Biotech">1.5/Mods/Biotech</li>
 	</v1.5>
+
 </loadFolders>

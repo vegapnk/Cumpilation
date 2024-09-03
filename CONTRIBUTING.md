@@ -18,3 +18,4 @@ But please consider also the following:
 ## Acknowledgements
 
 - The Cum-Bucket, and Cum-item have been taken from [Ameravashi`s Sexperience](https://gitgud.io/amevarashi/rjw-sexperience/)
+- Basics for Cumflation and Cum-Stuffed are from [Licentia Labs](https://gitgud.io/John-the-Anabaptist/licentia-labs) so mostly thanks to John-The-Anabaptist
