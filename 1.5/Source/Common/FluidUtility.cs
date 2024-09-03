@@ -1,4 +1,5 @@
-﻿using Cumpilation.Gathering;
+﻿using Cumpilation.Cumflation;
+using Cumpilation.Gathering;
 using rjw;
 using System;
 using System.Collections.Generic;
@@ -55,6 +56,53 @@ namespace Cumpilation.Common
             //TODO: Return true if there is a heavy missmatch of fluid-amount and body-size, or on full cumflation etc. 
             //return false;
         }
+
+        /// <summary>
+        /// Tries to store a record of `FluidSource` in a given Hediff.
+        /// In case the Hediff does not have a `HediffComp_SourceStorage` nothing will happen. 
+        /// If there already exists a Storage Entry for this Pawn and this fluid, it will be increased by the incoming amount.
+        /// </summary>
+        /// <param name="cumflationHediff">The hediff to store a record in</param>
+        /// <param name="origin">The pawn that originated the Fluid</param>
+        /// <param name="fluid">The type of fluid</param>
+        /// <param name="amount">The amount of fluid</param>
+        public static void StoreFluidSource(Hediff cumflationHediff, Pawn origin, SexFluidDef fluid, float amount)
+        {
+            var storage_comp = cumflationHediff.TryGetComp<HediffComp_SourceStorage>();
+            if (storage_comp == null) return;
+
+            FluidSource source = new FluidSource() { pawn = origin, fluid = fluid, amount = amount };
+            storage_comp.AddOrMerge(source);
+        }
+
+
+        /// <summary>
+        /// Returns true if the pawn likes cumflation / cumstuffing for one or the other reason. 
+        /// Important: This is a separate method intentionally, so it can be patched. 
+        /// </summary>
+        /// <param name="inflated">The pawn that maybe likes cumflation</param>
+        /// <returns>True, if the pawn likes cumflation from traits, quirks or zoophile.</returns>
+        public static bool LikesCumflation(Pawn inflated)
+        {
+            bool likesCumflation = inflated?.story?.traits?.HasTrait(DefOfs.LikesCumflation) ?? false;
+            if (likesCumflation)
+            {
+                return likesCumflation;
+            }
+
+            string pawn_quirks = CompRJW.Comp(inflated).quirks.ToString();
+            if (pawn_quirks.Contains("Impregnation fetish") ||
+                pawn_quirks.Contains("Teratophile") ||
+                pawn_quirks.Contains("Incubator") ||
+                pawn_quirks.Contains("Breeder") ||
+                pawn_quirks.Contains("Messy") ||
+                xxx.is_zoophile(inflated))
+            {
+                return true;
+            }
+            return false;
+        }
+
 
         public static IEnumerable<SexFluidDef> GetAllSexFluidDefs()
         {
