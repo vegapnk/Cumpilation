@@ -12,12 +12,15 @@
                 <!-- default: Last ~1 Week -->
                 <severityPerDay>-0.15</severityPerDay>
             </li>
-            <li Class="Cumpilation.Common.HediffCompProperties_FluidChange">
+            <li Class="Cumpilation.Common.HediffCompProperties_FluidChangeWithPenalty">
                 <fluid>Slug</fluid>
                 <changePenis>true</changePenis>
                 <changeVagina>false</changeVagina>
                 <changeBreast>false</changeBreast>
                 <changeOther>false</changeOther>
+
+                <penaltyHediff>ToxicBuildup</penaltyHediff>
+                <penaltySeverity>0.4</penaltySeverity>
             </li>
         </comps>
         <stages>

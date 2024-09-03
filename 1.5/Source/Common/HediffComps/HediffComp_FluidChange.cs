@@ -50,7 +50,7 @@ namespace Cumpilation.Common
                     }
                 }
             }
-            ModLog.Debug($"Changed {changedParts.Count()} fluids for {this.parent.pawn}");
+            ModLog.Debug($"Changed {changedParts.Count()} fluids for {this.parent.pawn} to {Props.fluid}");
         }
 
 
@@ -70,7 +70,7 @@ namespace Cumpilation.Common
         public override void CompExposeData()
         {
             base.CompExposeData();
-            Scribe_Collections.Look<Hediff>(ref changedParts, "changedParts");
+            Scribe_Collections.Look<Hediff>(ref changedParts, "changedParts", lookMode:LookMode.Reference);
         }
 
 

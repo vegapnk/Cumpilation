@@ -78,6 +78,8 @@
     <Compile Include="Cumflation\StuffingUtility.cs" />
     <Compile Include="Cumpilation.cs" />
     <Compile Include="DefOfs.cs" />
+    <Compile Include="Common\HediffComps\HediffCompProperties_FluidChangeWithPenalty.cs" />
+    <Compile Include="Common\HediffComps\HediffComp_FluidChangeWithPenalty.cs" />
     <Compile Include="Fluids\Slug\IngestionOutcomeDoer_PermanentSlugChange.cs" />
     <Compile Include="Gathering\FluidGatheringBuilding.cs" />
     <Compile Include="Gathering\FluidGatheringDef.cs" />

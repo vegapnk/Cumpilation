@@ -30,9 +30,7 @@ namespace Cumpilation.Cumflation
 
         public override void CompExposeData()
         {
-            ModLog.Debug("Test D");
             base.CompExposeData();
-            ModLog.Debug("Test E");
             Scribe_Values.Look<float>(ref this.sharedSeverityPerDay, "sharedSeverityPerDay");
             if (Scribe.mode != LoadSaveMode.PostLoadInit || (double)this.sharedSeverityPerDay != 0.0 || (double)this.Props.severityPerDay == 0.0 || !(this.Props.severityPerDayRange == FloatRange.Zero))
                 return;
