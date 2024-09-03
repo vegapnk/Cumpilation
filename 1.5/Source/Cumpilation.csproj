@@ -61,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\FluidUtility.cs" />
+    <Compile Include="Common\HediffComps\HediffCompProperties_FluidChange.cs" />
+    <Compile Include="Common\HediffComps\HediffComp_FluidChange.cs" />
     <Compile Include="Common\IngestionOutcomeDoer_PermanentFluidChange.cs" />
     <Compile Include="Common\ModLog.cs" />
     <Compile Include="Cumflation\CumflationUtility.cs" />
