@@ -13,6 +13,11 @@
         <severityPerDay>-0.75</severityPerDay>
       </li>
       <li Class="Cumpilation.Cumflation.HediffCompProperties_SourceStorage"/>
+      <!-- For mtb in VomitFluidMtb keep in mind that this chance triggers for every potential stuffing. -->
+      <li Class="Cumpilation.Cumflation.HediffCompProperties_VomitFluidMtb">
+        <mtbDays>1.0</mtbDays>
+        <scaleWithSeverity>true</scaleWithSeverity>
+      </li>
     </comps>
   </HediffDef>
 

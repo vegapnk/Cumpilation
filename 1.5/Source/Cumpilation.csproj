@@ -70,9 +70,12 @@
     <Compile Include="Cumflation\FluidSource.cs" />
     <Compile Include="Cumflation\HediffComps\HediffCompProperties_SharedSeverityPerDay.cs" />
     <Compile Include="Cumflation\HediffComps\HediffCompProperties_SourceStorage.cs" />
+    <Compile Include="Cumflation\HediffComps\HediffCompProperties_VomitFluidMtb.cs" />
     <Compile Include="Cumflation\HediffComps\HediffComp_SharedSeverityPerDay.cs" />
     <Compile Include="Cumflation\HediffComps\HediffComp_SourceStorage.cs" />
+    <Compile Include="Cumflation\HediffComps\HediffComp_VomitFluidMtb.cs" />
     <Compile Include="Cumflation\JobDriver_OverflowingCumflation.cs" />
+    <Compile Include="Cumflation\JobDriver_VomitFluid.cs" />
     <Compile Include="Cumflation\Patch_TransferFluids_Cumflate.cs" />
     <Compile Include="Cumflation\Patch_TransferFluids_Stuff.cs" />
     <Compile Include="Cumflation\StuffingUtility.cs" />
