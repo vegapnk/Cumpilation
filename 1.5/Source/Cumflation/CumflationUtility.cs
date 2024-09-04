@@ -105,13 +105,14 @@ namespace Cumpilation.Cumflation
 
         /// <summary>
         /// Modding - Hook. 
-        /// Default: All Pawns can be cumflated.
+        /// Default: All Pawns can be cumflated. Animals cannot be cumflated.
         /// </summary>
         /// <param name="pawn">The pawn that might be cumflated.</param>
         /// <returns>True, unless patched.</returns>
         public static bool CanBeCumflated(Pawn pawn)
         {
             if (pawn == null) return false;
+            if (pawn.IsAnimal()) return false;
             return true;
         }
 
