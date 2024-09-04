@@ -38,6 +38,8 @@ namespace Cumpilation.Cumflation
             // Due to logic, we have to go over one genital after the other. 
             foreach (ISexPartHediff genital in inflatorGenitals)
             {
+                if (inflated.IsAnimal() && !CanStuffAnimals(genital.GetPartComp().Fluid)) continue; 
+
                 ModLog.Debug($"Stuffing {inflated} with {inflator}s {genital}, adding {genital.GetPartComp().Fluid}");
                 float necessaryAmount = FluidAmountRequiredToStuffPawn(inflated, genital.GetPartComp().Fluid);
                 float incomingSeverity = DetermineStuffingSeverity(inflated, genital.GetPartComp().FluidAmount, genital.GetPartComp().Fluid);
@@ -45,6 +47,7 @@ namespace Cumpilation.Cumflation
                 int existingStuffingHediffs = GetAllSharedSeverityHediffsInPawn(inflated).Count();
                 float accumulatedExistingSeverity = SumUpAllStuffingSeverities(inflated);
                 float overflow = accumulatedExistingSeverity + incomingSeverity - 1;
+
 
                 ModLog.Debug($"Adding {incomingSeverity} to {accumulatedExistingSeverity} in {inflated}, doing an overflow of {overflow} on {existingStuffingHediffs} existing stuffing-hediffs.");
                 if (incomingSeverity > 0)
@@ -83,6 +86,12 @@ namespace Cumpilation.Cumflation
         {
             if (pawn == null) return false;
             return true;
+        }
+
+        public static bool CanStuffAnimals(SexFluidDef fluid)
+        {
+            var stuffDef = DefDatabase<StuffingDef>.AllDefs.FirstOrDefault(stuffingDef => stuffingDef.fluid == fluid);
+            return stuffDef != null ? stuffDef.canStuffAnimals : false;
         }
 
         public static IEnumerable<Hediff> GetAllSharedSeverityHediffsInPawn(Pawn pawn)

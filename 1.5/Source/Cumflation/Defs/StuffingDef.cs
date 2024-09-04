@@ -21,6 +21,9 @@ namespace Cumpilation.Cumflation
         /// </summary>
         public float amountOfFluidForFullStuffing = 100;
 
+
+        public bool canStuffAnimals = false;
+
         /// <summary>
         /// How much severity does the resulting stuffing must have to give a thought?
         /// </summary>

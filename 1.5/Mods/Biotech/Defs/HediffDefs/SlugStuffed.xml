@@ -53,6 +53,7 @@
     <defName>Slug_Stuffing</defName>
     <fluid>Slug</fluid>
     <resultingStuffedHediff>SlugStuffed</resultingStuffedHediff>
+    <canStuffAnimals>true</canStuffAnimals>
     <amountOfFluidForFullStuffing>25</amountOfFluidForFullStuffing>
   </Cumpilation.Cumflation.StuffingDef>
 
