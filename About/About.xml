@@ -1,10 +1,28 @@
 <ModMetaData>
 	<name>Cumpilation</name>
 	<author>Vegapnk</author>
-    <packageId>Vegapnk.Cumpilation</packageId>
+    <packageId>vegapnk.cumpilation</packageId>
 	<supportedVersions>
 		<li>1.5</li>
 	</supportedVersions>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+		</li>
+		<li>
+			<packageId>rim.job.world</packageId>
+			<displayName>RimJobWorld</displayName>
+			<downloadUrl>https://gitgud.io/Ed86/rjw</downloadUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>brrainz.harmony</li>
+		<li>rim.job.world</li>
+	</loadAfter>
+
 	<description>Various fluid-based mechanics for RJW</description>
 	<url>https://steamcommunity.com/id/Vegapnk/myworkshopfiles/?appid=294100</url>
 </ModMetaData>
