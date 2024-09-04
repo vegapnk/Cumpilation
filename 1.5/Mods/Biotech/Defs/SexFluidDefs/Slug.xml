@@ -15,6 +15,9 @@
 		<filth>SlugFilth</filth>
 		<alwaysProduceFilth>true</alwaysProduceFilth>
 		<baseNutrition>0.1</baseNutrition>
+		<tags>
+			<li>canCumflate</li>
+		</tags>
 	</rjw.SexFluidDef>
 	
 </Defs>

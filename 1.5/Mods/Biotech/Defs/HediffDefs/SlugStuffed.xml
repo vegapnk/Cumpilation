@@ -1,0 +1,59 @@
+<Defs>
+    
+  <HediffDef ParentName="BaseStuffed">
+    <defName>SlugStuffed</defName>
+    <label>slug-stuffed</label>
+    <labelNoun>slug-stuffed</labelNoun>
+    <description>You came too close to someone currently slugging.</description>
+    <comps>
+        <!-- DevNote: The "normal" comps are inherited, apparently. -->
+        <li Class="Cumpilation.Fluids.Slug.HediffCompProperties_SlugExplosionOnDeath">
+            <baseRadius>4</baseRadius>
+            <radiusMultipliedByBodySize>true</radiusMultipliedByBodySize>
+            <radiusMultipliedBySeverity>true</radiusMultipliedBySeverity>
+            <doToxicCloud>true</doToxicCloud>
+            <doFireExplosion>true</doFireExplosion>
+        </li>
+      </comps>
+    <stages>
+      <li>
+        <label>slightly bloated</label>
+        <becomeVisible>false</becomeVisible>
+      </li>
+      <li>
+        <label>bloated</label>
+        <minSeverity>0.2</minSeverity>
+        <statOffsets>
+          <Vulnerability>0.05</Vulnerability>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>+0.05</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>full</label>
+        <minSeverity>0.4</minSeverity>
+        <statOffsets>
+          <Vulnerability>-0.1</Vulnerability>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>+0.1</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <Cumpilation.Cumflation.StuffingDef>
+    <defName>Slug_Stuffing</defName>
+    <fluid>Slug</fluid>
+    <resultingStuffedHediff>SlugStuffed</resultingStuffedHediff>
+    <amountOfFluidForFullStuffing>25</amountOfFluidForFullStuffing>
+  </Cumpilation.Cumflation.StuffingDef>
+
+</Defs>
