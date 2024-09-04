@@ -92,6 +92,7 @@
     <Compile Include="Gathering\GatheringUtility.cs" />
     <Compile Include="Gathering\PassiveFluidGatherer.cs" />
     <Compile Include="Gathering\PassiveFluidGathererCompProperties.cs" />
+    <Compile Include="Gathering\Patch_JobDriverCleaning_TrySpawnItem.cs" />
     <Compile Include="Gathering\Patch_SatisfyPersonal_FillFluidGatherers.cs" />
     <Compile Include="HarmonyInit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

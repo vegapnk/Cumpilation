@@ -15,7 +15,6 @@ namespace Cumpilation.Cumflation
         {
             //TODO: Add Settings to Turn Off
 
-            ModLog.Debug($"Runnig TransferFluid Postfix for Stuffing, {props.pawn} -> {props.partner}");
             StuffingUtility.StuffPawn(props.pawn, props.partner, props);
         }
     }
