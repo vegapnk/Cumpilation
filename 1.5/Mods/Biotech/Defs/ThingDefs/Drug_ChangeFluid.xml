@@ -2,9 +2,9 @@
 <Defs>
 
   <ThingDef ParentName="MakeableDrugBase">
-    <defName>sluginjection</defName>
-    <label>slug injection</label>
-    <description>A dangerous and creative way to deal with Wastepacks - distilled into a concentrated serum, it changes the users cum into a toxic slug.</description>
+    <defName>slugmorpher</defName>
+    <label>slug morpher</label>
+    <description>A dangerous and creative way to deal with Wastepacks - distilled into a concentrated serum, it permanently changes the users cum into a toxic slug.</description>
     <!--<descriptionHyperlinks>
       <HediffDef>FlakeHigh</HediffDef>
       <HediffDef>PsychiteTolerance</HediffDef>
@@ -12,9 +12,10 @@
       <HediffDef>ChemicalDamageSevere</HediffDef>
     </descriptionHyperlinks>-->
     <graphicData>
-      <texPath>Things/Item/Drug/Yayo</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
-      <color>(150,170,150)</color>
+      <!-- <texPath>Things/Item/Drug/Yayo</texPath> -->
+      <texPath>Things/Item/Special/Genepack/Genepack_f</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(190, 90, 245)</color>
       <drawSize>0.75</drawSize>
     </graphicData>
     <rotatable>false</rotatable>
@@ -27,9 +28,7 @@
     <minRewardCount>10</minRewardCount>
     <ingestible>
       <foodType>Processed</foodType>
-      <joyKind>Chemical</joyKind>
-      <joy>0.70</joy>
-      <baseIngestTicks>650</baseIngestTicks>
+      <baseIngestTicks>1200</baseIngestTicks>
       <nurseable>true</nurseable>
       <!-- 
       <drugCategory>Hard</drugCategory>
@@ -70,27 +69,41 @@
       <displayPriority>1800</displayPriority>
     </recipeMaker>
     <costList>
-      <Wastepack>15</Wastepack>
-      <Neutroamine>10</Neutroamine>
+      <Wastepack>100</Wastepack>
+      <Neutroamine>25</Neutroamine>
     </costList>
+    
+    <comps>
+      <li Class="CompProperties_GasOnDamage">
+        <type>ToxGas</type>
+        <damageFactor>40</damageFactor>
+        <useStackCountAsFactor>true</useStackCountAsFactor>
+      </li>
+      <li Class="CompProperties_Dissolution">
+        <dissolutionAfterDays>2</dissolutionAfterDays>
+        <dissolutinFactorIndoors>0.5</dissolutinFactorIndoors>
+        <dissolutionFactorRain>6</dissolutionFactorRain>
+      </li>
+      <li Class="CompProperties_DissolutionEffectPollution">
+        <cellsToPollutePerDissolution>180</cellsToPollutePerDissolution> <!-- Normal Wastepack: 6, but we take 30 for one of these babies -->
+        <tilePollutionPerDissolution>0.0015</tilePollutionPerDissolution><!-- 2000 wastepacks fill a tile -->
+        <waterTilePollutionFactor>24</waterTilePollutionFactor>
+      </li>
+      <li>
+        <compClass>CompDissolutionEffect_Goodwill</compClass>
+      </li>
+    </comps>
   </ThingDef>
 
 
-
   <ThingDef ParentName="MakeableDrugBase">
-    <defName>tempsluginjection</defName>
-    <label>temp slug injection</label>
+    <defName>sluggerdrop</defName>
+    <label>slugger drops</label>
     <description>A dangerous and creative way to deal with Wastepacks - distilled into a concentrated serum, it changes the users cum temporary into a toxic slug.</description>
-    <!--<descriptionHyperlinks>
-      <HediffDef>FlakeHigh</HediffDef>
-      <HediffDef>PsychiteTolerance</HediffDef>
-      <HediffDef>PsychiteAddiction</HediffDef>
-      <HediffDef>ChemicalDamageSevere</HediffDef>
-    </descriptionHyperlinks>-->
     <graphicData>
       <texPath>Things/Item/Drug/Yayo</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
-      <color>(150,170,150)</color>
+      <color>(170, 70, 220)</color>
       <drawSize>0.75</drawSize>
     </graphicData>
     <rotatable>false</rotatable>
@@ -103,8 +116,6 @@
     <minRewardCount>10</minRewardCount>
     <ingestible>
       <foodType>Processed</foodType>
-      <joyKind>Chemical</joyKind>
-      <joy>0.70</joy>
       <baseIngestTicks>650</baseIngestTicks>
       <nurseable>true</nurseable>
       <ingestHoldUsesTable>false</ingestHoldUsesTable>
@@ -130,9 +141,30 @@
       <displayPriority>1800</displayPriority>
     </recipeMaker>
     <costList>
-      <Wastepack>15</Wastepack>
-      <Neutroamine>10</Neutroamine>
+      <Wastepack>30</Wastepack>
+      <Neutroamine>5</Neutroamine>
     </costList>
+    
+    <comps>
+      <li Class="CompProperties_GasOnDamage">
+        <type>ToxGas</type>
+        <damageFactor>10</damageFactor>
+        <useStackCountAsFactor>true</useStackCountAsFactor>
+      </li>
+      <li Class="CompProperties_Dissolution">
+        <dissolutionAfterDays>4</dissolutionAfterDays>
+        <dissolutinFactorIndoors>0.5</dissolutinFactorIndoors>
+        <dissolutionFactorRain>4</dissolutionFactorRain>
+      </li>
+      <li Class="CompProperties_DissolutionEffectPollution">
+        <cellsToPollutePerDissolution>180</cellsToPollutePerDissolution> <!-- Normal Wastepack: 6, but we take 30 for one of these babies -->
+        <tilePollutionPerDissolution>0.0015</tilePollutionPerDissolution><!-- 2000 wastepacks fill a tile -->
+        <waterTilePollutionFactor>24</waterTilePollutionFactor>
+      </li>
+      <li>
+        <compClass>CompDissolutionEffect_Goodwill</compClass>
+      </li>
+    </comps>
   </ThingDef>
 
   </Defs>
