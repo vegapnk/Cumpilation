@@ -33,12 +33,24 @@ namespace Cumpilation.Reactions
             return DefDatabase<Fluid_Record_Mapping>.AllDefs.FirstOrFallback(f => f.fluid == fluid);
         }
 
+        public static ThoughtDef LookupThought(RecordDef record) {
+            return DefDatabase<ThoughtDef>.AllDefs
+                .FirstOrFallback(p => { 
+                    var ext = p.GetModExtension<ThoughtDefExtension_StageFromConsumption>(); 
+                    if (ext == null) return false;
+                    return ext.recordDef == record;    
+                }, null);
+        }
 
         public static void PrintFluidRecordInfo()
         {
             IEnumerable<Fluid_Record_Mapping> defs = DefDatabase<Fluid_Record_Mapping>.AllDefs;
 
-            ModLog.Debug($"Found {defs.Count()} Fluid_Record_Mapping");
+            var relevantThoughtDefs = DefDatabase<ThoughtDef>.AllDefs
+                .Where(p => p.GetModExtension<ThoughtDefExtension_StageFromConsumption>() != null);
+
+            ModLog.Debug($"Found {defs.Count()} Fluid_Record_Mapping, and {relevantThoughtDefs.Count()} Thoughts with a relevant ThoughtDefExtension");
         }
+
     }
 }

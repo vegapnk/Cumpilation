@@ -1,6 +1,7 @@
 ﻿using Cumpilation.Common;
 using Cumpilation.Cumflation;
 using HarmonyLib;
+using RimWorld;
 using rjw;
 using System;
 using System.Collections.Generic;
@@ -38,6 +39,13 @@ namespace Cumpilation.Reactions
                 partner.records.Increment(recordMapping.numConsumedRecord);
                 partner.records.AddTo(recordMapping.amountConsumedRecord, part.GetPartComp().FluidAmount);
                 ModLog.Debug($"Bumping {partner}s records for {part.GetPartComp().Fluid} by {part.GetPartComp().FluidAmount}. New:#{partner.records.GetValue(recordMapping.numConsumedRecord)} dinings ({partner.records.GetValue(recordMapping.amountConsumedRecord)} ml total)");
+
+                ThoughtDef thoughtDef = ReactionUtility.LookupThought(recordMapping.numConsumedRecord);
+                if (thoughtDef == null) continue;
+                //thoughtDef.Worker.
+                
+                ModLog.Debug($"Found {thoughtDef} for Record {recordMapping.numConsumedRecord}");
+                partner.needs?.mood?.thoughts?.memories?.TryGainMemory(thoughtDef);
             }
         }
     }

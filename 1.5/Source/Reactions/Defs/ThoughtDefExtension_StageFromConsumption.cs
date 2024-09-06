@@ -52,6 +52,8 @@ namespace Cumpilation.Reactions
             return 0;
         }
 
+        //TODO: Add Helper Methods for these checks, to have something patchable. 
+
         public override IEnumerable<string> ConfigErrors()
         {
             foreach (string error in base.ConfigErrors())
