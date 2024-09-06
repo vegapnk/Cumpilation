@@ -2,30 +2,32 @@
 
 <Defs>
 
-    <RJW_Genes.Reactions.Fluid_Record_Mapping>
+    <Cumpilation.Reactions.Fluid_Record_Mapping>
         <defName>CumRecordMapping</defName>
         <fluid>Cum</fluid>
         <numConsumedRecord>NumOfConsumedCum</numConsumedRecord>
         <amountConsumedRecord>AmountConsumedCum</amountConsumedRecord>
-    </RJW_Genes.Reactions.Fluid_Record_Mapping>
+    </Cumpilation.Reactions.Fluid_Record_Mapping>
     
-    <RJW_Genes.Reactions.Fluid_Record_Mapping>
+    <Cumpilation.Reactions.Fluid_Record_Mapping>
         <defName>InsectSpunkRecordMapping</defName>
         <fluid>InsectSpunk</fluid>
         <numConsumedRecord>NumOfConsumedInsectSpunk</numConsumedRecord>
         <amountConsumedRecord>AmountConsumedInsectSpunk</amountConsumedRecord>
-    </RJW_Genes.Reactions.Fluid_Record_Mapping>
+    </Cumpilation.Reactions.Fluid_Record_Mapping>
 
-    <RJW_Genes.Reactions.Fluid_Record_Mapping>
+    <Cumpilation.Reactions.Fluid_Record_Mapping>
+        <defName>MilkRecordMapping</defName>
         <fluid>Milk</fluid>
         <numConsumedRecord>NumOfConsumedBreastMilk</numConsumedRecord>
         <amountConsumedRecord>AmountConsumedBreastMilk</amountConsumedRecord>
-    </RJW_Genes.Reactions.Fluid_Record_Mapping>
+    </Cumpilation.Reactions.Fluid_Record_Mapping>
 
-    <RJW_Genes.Reactions.Fluid_Record_Mapping>
+    <Cumpilation.Reactions.Fluid_Record_Mapping>
+        <defName>GirlcumRecordMapping</defName>
         <fluid>GirlCum</fluid>
         <numConsumedRecord>NumOfConsumedGirlCum</numConsumedRecord>
         <amountConsumedRecord>AmountConsumedGirlCum</amountConsumedRecord>
-    </RJW_Genes.Reactions.Fluid_Record_Mapping>
+    </Cumpilation.Reactions.Fluid_Record_Mapping>
 
 </Defs>

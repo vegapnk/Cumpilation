@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+<ThoughtDef>
+    <defName>ConsumedSlug</defName>
+    <durationDays>1.0</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackedEffectMultiplier>0.3</stackedEffectMultiplier>
+    <thoughtClass>Cumpilation.Reactions.Thought_Recordbased</thoughtClass>
+    <stages>
+        <li>
+            <label>ate slug</label>
+            <description>i am worried about my health</description>
+            <baseMoodEffect>-7</baseMoodEffect>
+        </li>
+        <li>
+            <label>ate slug</label>
+            <description>i hope it gives them relief to dump it in me</description>
+            <baseMoodEffect>-1</baseMoodEffect>
+        </li>
+        <li>
+            <label>ate slug</label>
+            <description>it really gives me a kick</description>
+            <baseMoodEffect>5</baseMoodEffect>
+        </li>
+    </stages>
+    <modExtensions>
+        <li Class="Cumpilation.Reactions.ThoughtDefExtension_StageFromConsumption">
+            <recordDef>NumOfConsumedSlug</recordDef>
+            <minimumValueforStage>
+                <li>0</li>
+                <li>30</li>
+                <li>150</li>
+            </minimumValueforStage>
+            <traitsThatLike>
+                <li>Nymphomaniac</li>
+                <li>Transhumanist</li>
+                <li>Masochist</li>
+                <li>Pyromaniac</li>
+            </traitsThatLike>
+            <traitsThatDislike>
+                <li>BodyPurist</li>
+            </traitsThatDislike>
+        </li>
+    </modExtensions>
+</ThoughtDef>
+
+</Defs>

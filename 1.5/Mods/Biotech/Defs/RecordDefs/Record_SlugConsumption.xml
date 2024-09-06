@@ -2,17 +2,24 @@
 
 <Defs>
 	<RecordDef>
-		<defName>NumOfAteSlug</defName>
-		<label>ate slug</label>
-		<description>The number of times that i swallowed slug.</description>
+		<defName>NumOfConsumedSlug</defName>
+		<label>consumed slug</label>
+		<description>The number of times that i consumed slug.</description>
 		<type>Int</type>
 	</RecordDef>
 
 	<RecordDef>
-		<defName>AmountAteSlug</defName>
-		<label>swallowed slug(mL)</label>
-		<description>The amount of slug that i swallowed.</description>
-		<type>Long</type>
+		<defName>AmountConsumedSlug</defName>
+		<label>consumed slug(mL)</label>
+		<description>The amount of slug that i consumed.</description>
+		<type>Int</type>
 	</RecordDef>
+
+    <Cumpilation.Reactions.Fluid_Record_Mapping>
+        <defName>SlugRecordMapping</defName>
+        <fluid>Slug</fluid>
+        <numConsumedRecord>NumOfConsumedSlug</numConsumedRecord>
+        <amountConsumedRecord>AmountConsumedSlug</amountConsumedRecord>
+    </Cumpilation.Reactions.Fluid_Record_Mapping>
 
 </Defs>

@@ -14,7 +14,7 @@
 		<defName>AmountConsumedCum</defName>
 		<label>consumed cum(mL)</label>
 		<description>The amount of cum that i consumed.</description>
-		<type>Long</type>
+		<type>Int</type>
 	</RecordDef>
 
 	<RecordDef>
@@ -28,7 +28,7 @@
 		<defName>AmountConsumedInsectSpunk</defName>
 		<label>consumed insect spunk(mL)</label>
 		<description>The amount of insect spunk that i consumed.</description>
-		<type>Long</type>
+		<type>Int</type>
 	</RecordDef>
 
 	<RecordDef>
@@ -42,7 +42,7 @@
 		<defName>AmountConsumedBreastMilk</defName>
 		<label>consumed breast milk(mL)</label>
 		<description>The amount of  breast milk that i consumed.</description>
-		<type>Long</type>
+		<type>Int</type>
 	</RecordDef>
 
 	<RecordDef>
@@ -56,7 +56,7 @@
 		<defName>AmountConsumedGirlCum</defName>
 		<label>consumed girl cum(mL)</label>
 		<description>The amount of  girl cum that i consumed.</description>
-		<type>Long</type>
+		<type>Int</type>
 	</RecordDef>
 
 </Defs>

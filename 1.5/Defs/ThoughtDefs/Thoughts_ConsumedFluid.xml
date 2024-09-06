@@ -6,7 +6,7 @@
 		<durationDays>0.5</durationDays>
 		<stackLimit>1</stackLimit>
 		<stackedEffectMultiplier>0.4</stackedEffectMultiplier>
-		<thoughtClass>Cumflation.Thought_Recordbased</thoughtClass>
+		<thoughtClass>Cumpilation.Reactions.Thought_Recordbased</thoughtClass>
 		<stages>
 			<li>
 				<label>ate cum</label>
@@ -30,14 +30,24 @@
 			</li>
 		</stages>
 		<modExtensions>
-			<li Class="RJW_Genes.Reactions.ThoughtDefExtension_StageFromConsumption">
-				<recordDef>NumofEatenCum</recordDef>
+			<li Class="Cumpilation.Reactions.ThoughtDefExtension_StageFromConsumption">
+				<recordDef>NumOfConsumedCum</recordDef>
 				<minimumValueforStage>
 					<li>0</li>
 					<li>10</li>
 					<li>60</li>
 					<li>120</li>
 				</minimumValueforStage>
+				<traitsThatLike>
+					<li>LikesCumflation</li>
+					<li>Nymphomaniac</li>
+				</traitsThatLike>
+				<traitsThatDislike>
+					<li>Asexual</li>
+				</traitsThatDislike>
+				<quirksThatLike>
+					<li>Cumslut</li>
+				</quirksThatLike>
 			</li>
 		</modExtensions>
 	</ThoughtDef>
@@ -47,7 +57,7 @@
 		<durationDays>0.75</durationDays>
 		<stackLimit>1</stackLimit>
 		<stackedEffectMultiplier>0.5</stackedEffectMultiplier>
-		<thoughtClass>Cumflation.Thought_Recordbased</thoughtClass>
+		<thoughtClass>Cumpilation.Reactions.Thought_Recordbased</thoughtClass>
 		<stages>
 			<li>
 				<label>ate insect spunk</label>
@@ -71,14 +81,24 @@
 			</li>
 		</stages>
 		<modExtensions>
-			<li Class="RJW_Genes.Reactions.ThoughtDefExtension_StageFromConsumption">
-				<recordDef>NumofEatenCum</recordDef>
+			<li Class="Cumpilation.Reactions.ThoughtDefExtension_StageFromConsumption">
+				<recordDef>NumOfConsumedInsectSpunk</recordDef>
 				<minimumValueforStage>
 					<li>0</li>
 					<li>30</li>
 					<li>50</li>
 					<li>90</li>
 				</minimumValueforStage>
+				<traitsThatLike>
+					<li>LikesCumflation</li>
+					<li>Nymphomaniac</li>
+					<li>Masochist</li>
+					<li>Zoophile</li>
+				</traitsThatLike>
+				<quirksThatLike>
+					<li>Cumslut</li>
+					<li>ChitinLover</li>
+				</quirksThatLike>
 			</li>
 		</modExtensions>
 	</ThoughtDef>

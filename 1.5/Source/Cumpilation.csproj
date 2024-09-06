@@ -98,6 +98,11 @@
     <Compile Include="Gathering\Patch_SatisfyPersonal_FillFluidGatherers.cs" />
     <Compile Include="HarmonyInit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reactions\Defs\Fluid_Record_Mapping.cs" />
+    <Compile Include="Reactions\Defs\ThoughtDefExtension_StageFromConsumption.cs" />
+    <Compile Include="Reactions\Patches\Patch_TransferFluid_UpdateRecordAndGiveThoughts.cs" />
+    <Compile Include="Reactions\ReactionUtility.cs" />
+    <Compile Include="Reactions\Thoughts\Thought_RecordBased.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

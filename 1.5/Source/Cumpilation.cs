@@ -1,5 +1,6 @@
 ﻿using Cumpilation.Cumflation;
 using Cumpilation.Gathering;
+using Cumpilation.Reactions;
 using System;
 using Verse;
 
@@ -14,6 +15,7 @@ namespace Cumpilation
 
             GatheringUtility.PrintFluidGatheringDefInfo();
             CumflationUtility.PrintCumflatableInfo();
+            ReactionUtility.PrintFluidRecordInfo();
         }
     }
 }
