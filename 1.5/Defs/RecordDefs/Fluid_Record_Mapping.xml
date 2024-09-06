@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+    <RJW_Genes.Reactions.Fluid_Record_Mapping>
+        <defName>CumRecordMapping</defName>
+        <fluid>Cum</fluid>
+        <numConsumedRecord>NumOfConsumedCum</numConsumedRecord>
+        <amountConsumedRecord>AmountConsumedCum</amountConsumedRecord>
+    </RJW_Genes.Reactions.Fluid_Record_Mapping>
+    
+    <RJW_Genes.Reactions.Fluid_Record_Mapping>
+        <defName>InsectSpunkRecordMapping</defName>
+        <fluid>InsectSpunk</fluid>
+        <numConsumedRecord>NumOfConsumedInsectSpunk</numConsumedRecord>
+        <amountConsumedRecord>AmountConsumedInsectSpunk</amountConsumedRecord>
+    </RJW_Genes.Reactions.Fluid_Record_Mapping>
+
+    <RJW_Genes.Reactions.Fluid_Record_Mapping>
+        <fluid>Milk</fluid>
+        <numConsumedRecord>NumOfConsumedBreastMilk</numConsumedRecord>
+        <amountConsumedRecord>AmountConsumedBreastMilk</amountConsumedRecord>
+    </RJW_Genes.Reactions.Fluid_Record_Mapping>
+
+    <RJW_Genes.Reactions.Fluid_Record_Mapping>
+        <fluid>GirlCum</fluid>
+        <numConsumedRecord>NumOfConsumedGirlCum</numConsumedRecord>
+        <amountConsumedRecord>AmountConsumedGirlCum</amountConsumedRecord>
+    </RJW_Genes.Reactions.Fluid_Record_Mapping>
+
+</Defs>

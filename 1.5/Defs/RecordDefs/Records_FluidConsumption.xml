@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+    <!-- While originally taken from Sexperience, I tried to give things a different defName for potential compatability. -->
+
+	<RecordDef>
+		<defName>NumOfConsumedCum</defName>
+		<label>consumed cum</label>
+		<description>The number of times that i consumed cum.</description>
+		<type>Int</type>
+	</RecordDef>
+
+	<RecordDef>
+		<defName>AmountConsumedCum</defName>
+		<label>consumed cum(mL)</label>
+		<description>The amount of cum that i consumed.</description>
+		<type>Long</type>
+	</RecordDef>
+
+	<RecordDef>
+		<defName>NumOfConsumedInsectSpunk</defName>
+		<label>consumed insect spunk</label>
+		<description>The number of times that i consumed insect spunk.</description>
+		<type>Int</type>
+	</RecordDef>
+
+	<RecordDef>
+		<defName>AmountConsumedInsectSpunk</defName>
+		<label>consumed insect spunk(mL)</label>
+		<description>The amount of insect spunk that i consumed.</description>
+		<type>Long</type>
+	</RecordDef>
+
+	<RecordDef>
+		<defName>NumOfConsumedBreastMilk</defName>
+		<label>consumed breast milk</label>
+		<description>The number of times that i consumed breast milk.</description>
+		<type>Int</type>
+	</RecordDef>
+
+	<RecordDef>
+		<defName>AmountConsumedBreastMilk</defName>
+		<label>consumed breast milk(mL)</label>
+		<description>The amount of  breast milk that i consumed.</description>
+		<type>Long</type>
+	</RecordDef>
+
+	<RecordDef>
+		<defName>NumOfConsumedGirlCum</defName>
+		<label>consumed girl cum</label>
+		<description>The number of times that i consumed girl cum.</description>
+		<type>Int</type>
+	</RecordDef>
+
+	<RecordDef>
+		<defName>AmountConsumedGirlCum</defName>
+		<label>consumed girl cum(mL)</label>
+		<description>The amount of  girl cum that i consumed.</description>
+		<type>Long</type>
+	</RecordDef>
+
+</Defs>

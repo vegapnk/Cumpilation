@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<ThoughtDef>
+		<defName>ConsumedCum</defName>
+		<durationDays>0.5</durationDays>
+		<stackLimit>1</stackLimit>
+		<stackedEffectMultiplier>0.4</stackedEffectMultiplier>
+		<thoughtClass>Cumflation.Thought_Recordbased</thoughtClass>
+		<stages>
+			<li>
+				<label>ate cum</label>
+				<description>Disgusting.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>ate cum</label>
+				<description>It's stinky and tastes bad.</description>
+				<baseMoodEffect>-2</baseMoodEffect>
+			</li>
+			<li>
+				<label>ate cum</label>
+				<description>Tastes bad. But I liked it.</description>
+				<baseMoodEffect>1</baseMoodEffect>
+			</li>
+			<li>
+				<label>ate cum</label>
+				<description>Delicious.</description>
+				<baseMoodEffect>3</baseMoodEffect>
+			</li>
+		</stages>
+		<modExtensions>
+			<li Class="RJW_Genes.Reactions.ThoughtDefExtension_StageFromConsumption">
+				<recordDef>NumofEatenCum</recordDef>
+				<minimumValueforStage>
+					<li>0</li>
+					<li>10</li>
+					<li>60</li>
+					<li>120</li>
+				</minimumValueforStage>
+			</li>
+		</modExtensions>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>ConsumedInsectSpunk</defName>
+		<durationDays>0.75</durationDays>
+		<stackLimit>1</stackLimit>
+		<stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+		<thoughtClass>Cumflation.Thought_Recordbased</thoughtClass>
+		<stages>
+			<li>
+				<label>ate insect spunk</label>
+				<description>So humiliating.</description>
+				<baseMoodEffect>-7</baseMoodEffect>
+			</li>
+			<li>
+				<label>ate insect spunk</label>
+				<description>It's stinky and tastes bad.</description>
+				<baseMoodEffect>-1</baseMoodEffect>
+			</li>
+			<li>
+				<label>ate insect spunk</label>
+				<description>I think it is nutritious. They mean well.</description>
+				<baseMoodEffect>0</baseMoodEffect>
+			</li>
+			<li>
+				<label>ate insect spunk</label>
+				<description>Can I have some extra?</description>
+				<baseMoodEffect>4</baseMoodEffect>
+			</li>
+		</stages>
+		<modExtensions>
+			<li Class="RJW_Genes.Reactions.ThoughtDefExtension_StageFromConsumption">
+				<recordDef>NumofEatenCum</recordDef>
+				<minimumValueforStage>
+					<li>0</li>
+					<li>30</li>
+					<li>50</li>
+					<li>90</li>
+				</minimumValueforStage>
+			</li>
+		</modExtensions>
+	</ThoughtDef>
+	
+</Defs>
