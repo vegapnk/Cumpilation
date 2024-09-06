@@ -25,6 +25,7 @@
         <minSeverity>0.2</minSeverity>
         <statOffsets>
           <Vulnerability>0.05</Vulnerability>
+          <ComfyTemperatureMax>-5</ComfyTemperatureMax>
         </statOffsets>
         <capMods>
           <li>
@@ -37,16 +38,55 @@
         <label>full</label>
         <minSeverity>0.4</minSeverity>
         <statOffsets>
-          <Vulnerability>-0.1</Vulnerability>
+          <ComfyTemperatureMax>-10</ComfyTemperatureMax>
+          <Vulnerability>-0.2</Vulnerability>
+          <RestFallRateFactor>0.25</RestFallRateFactor>
+          <MoveSpeed>0.1</MoveSpeed>
+          <ArmorRating_Heat>-0.5</ArmorRating_Heat>
         </statOffsets>
         <capMods>
           <li>
             <capacity>Moving</capacity>
             <offset>+0.1</offset>
           </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.05</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.05</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>full</label>
+        <minSeverity>0.7</minSeverity>
+        <statOffsets>
+          <Vulnerability>-0.3</Vulnerability>
+          <ComfyTemperatureMax>-20</ComfyTemperatureMax>
+          <RestFallRateFactor>0.5</RestFallRateFactor>
+          <MoveSpeed>0.25</MoveSpeed>
+          <ImmunityGainSpeed>-0.10</ImmunityGainSpeed>
+          <ArmorRating_Heat>-1.5</ArmorRating_Heat>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>+0.25</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.1</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.10</offset>
+          </li>
         </capMods>
       </li>
     </stages>
+
   </HediffDef>
 
   <Cumpilation.Cumflation.StuffingDef>

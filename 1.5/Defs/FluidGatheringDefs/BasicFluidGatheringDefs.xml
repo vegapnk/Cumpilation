@@ -13,6 +13,21 @@
         <filthNecessaryForOneUnit>10</filthNecessaryForOneUnit>
     </Cumpilation.Gathering.FluidGatheringDef>
 
+
+    <Cumpilation.Gathering.FluidGatheringDef>
+        <defName>Basic_InsectSpunk_Gathering</defName>
+        <fluidDef>InsectSpunk</fluidDef>
+        <thingDef>InsectJelly</thingDef>
+        <canProduceMoreThanOne>true</canProduceMoreThanOne>
+        <roundUp>false</roundUp>
+        <fluidRequiredForOneUnit>25</fluidRequiredForOneUnit>
+
+        <canBeRetrievedFromFilth>true</canBeRetrievedFromFilth>
+        <filthNecessaryForOneUnit>50</filthNecessaryForOneUnit>
+    </Cumpilation.Gathering.FluidGatheringDef>
+
+
+
     <Cumpilation.Gathering.FluidGatheringDef>
         <defName>Test_Chocolate_Cum</defName>
         <fluidDef>ChocciCum</fluidDef>

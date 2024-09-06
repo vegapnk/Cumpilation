@@ -9,6 +9,13 @@
     </Cumpilation.Cumflation.StuffingDef>
 
     <Cumpilation.Cumflation.StuffingDef>
+        <defName>Insect_Stuffing</defName>
+        <fluid>InsectSpunk</fluid>
+        <resultingStuffedHediff>InsectSpunkStuffed</resultingStuffedHediff>
+        <amountOfFluidForFullStuffing>150</amountOfFluidForFullStuffing>
+    </Cumpilation.Cumflation.StuffingDef>
+
+    <Cumpilation.Cumflation.StuffingDef>
         <defName>Chocci_Stuffing</defName>
         <fluid>ChocciCum</fluid>
         <resultingStuffedHediff>ChocciStuffed</resultingStuffedHediff>

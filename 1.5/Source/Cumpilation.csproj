@@ -85,8 +85,10 @@
     <Compile Include="Common\HediffComps\HediffComp_FluidChangeWithPenalty.cs" />
     <Compile Include="Fluids\Slug\HediffCompProperties_SlugExplosionOnDeath.cs" />
     <Compile Include="Fluids\Slug\HediffComp_SlugExplosionOnDeath.cs" />
+    <Compile Include="Fluids\Slug\SexFluidIngestionDoer_ConsumeSlug.cs" />
     <Compile Include="Fluids\Slug\IngestionOutcomeDoer_PermanentSlugChange.cs" />
     <Compile Include="Fluids\Slug\Patch_OnDeath_TriggerSlugExplosions.cs" />
+    <Compile Include="Fluids\Slug\SlugUtility.cs" />
     <Compile Include="Gathering\FluidGatheringBuilding.cs" />
     <Compile Include="Gathering\FluidGatheringDef.cs" />
     <Compile Include="Gathering\GatheringUtility.cs" />

@@ -21,21 +21,10 @@ namespace Cumpilation.Fluids.Slug
             if (!wasSuccessfullyApplied)
             {
                 ModLog.Debug($"IngestionOutcomeDoer_PermanentSlugChange was not successfully applied for {pawn}, adding a penalty ToxicBuildup with severity {nonApplicationPenalityBuildUp}");
-                Hediff toxicBuildup = GetOrCreateToxicBuildUpHediff(pawn);
+                Hediff toxicBuildup = SlugUtility.GetOrCreateToxicBuildUpHediff(pawn);
                 toxicBuildup.Severity += nonApplicationPenalityBuildUp;
             }
         }
 
-        private Hediff GetOrCreateToxicBuildUpHediff(Pawn pawn) {
-
-            Hediff toxicBuildup = pawn.health.hediffSet.GetFirstHediffOfDef(RimWorld.HediffDefOf.ToxicBuildup);
-            if (toxicBuildup == null)
-            {
-                toxicBuildup = HediffMaker.MakeHediff(RimWorld.HediffDefOf.ToxicBuildup, pawn);
-                toxicBuildup.Severity = 0;
-                pawn.health.AddHediff(toxicBuildup);
-            }
-            return toxicBuildup;
-        }
     }
 }
