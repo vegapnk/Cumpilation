@@ -106,6 +106,8 @@
     <Compile Include="Reactions\Patches\Patch_TransferFluid_UpdateRecordAndGiveThoughts.cs" />
     <Compile Include="Reactions\ReactionUtility.cs" />
     <Compile Include="Reactions\Thoughts\Thought_RecordBased.cs" />
+    <Compile Include="Settings\Cumpilation_SettingsController.cs" />
+    <Compile Include="Settings\Settings.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+    <cumpilation_settings_enable_cumflation_key>Inflation</cumpilation_settings_enable_cumflation_key>
+    <cumpilation_settings_enable_cumflation_desc>Enables Cum-flation and other vaginal fluid insertion Hediffs.</cumpilation_settings_enable_cumflation_desc>
+    <cumpilation_settings_cumflation_modifier_key>Global Inflation Modifier</cumpilation_settings_cumflation_modifier_key>
+    <cumpilation_settings_cumflation_modifier_desc>Modifies how much fluid is necessary for a full inflation. Higher number mean more fluid necessary, lower numbers less.</cumpilation_settings_cumflation_modifier_desc>
+
+    <cumpilation_settings_enable_stuffing_key>Stuffing</cumpilation_settings_enable_stuffing_key>
+    <cumpilation_settings_enable_stuffing_desc>Enables Cum-stuffing and other oral+anal fluid insertion Hediffs.</cumpilation_settings_enable_stuffing_desc>
+    <cumpilation_settings_stuffing_modifier_key>Global Stuffing Modifier</cumpilation_settings_stuffing_modifier_key>
+    <cumpilation_settings_stuffing_modifier_desc>Modifies how much fluid is necessary for a full stuffing. Higher number mean more fluid necessary, lower numbers less.</cumpilation_settings_stuffing_modifier_desc>
+
+    <cumpilation_settings_enable_bukkake_key>Bukkake</cumpilation_settings_enable_bukkake_key>
+    <cumpilation_settings_enable_bukkake_desc>Enables Bukkake and other Fluid-based body-covers.</cumpilation_settings_enable_bukkake_desc>
+    <cumpilation_settings_bukkake_modifier_key>Global Covering Modifier</cumpilation_settings_bukkake_modifier_key>
+    <cumpilation_settings_bukkake_modifier_desc>Modifies how much fluid is necessary for a full covering. Higher number mean more fluid necessary, lower numbers less.</cumpilation_settings_bukkake_modifier_desc>
+
+    <cumpilation_settings_max_gathering_check_distance_key>Max-Gathering Check Distance</cumpilation_settings_max_gathering_check_distance_key>
+    <cumpilation_settings_max_gathering_check_distance_desc>The gathering-items use a max-distance to find items in their room. High values might lead to performance issues when placed outside or in big, crowded rooms.</cumpilation_settings_max_gathering_check_distance_desc>
+
+    
+    <cumpilation_settings_enable_progressing_consumption_thoughts_key>Progressing Consumption Thoughts</cumpilation_settings_enable_progressing_consumption_thoughts_key>
+    <cumpilation_settings_enable_progressing_consumption_thoughts_desc>When enabled, the pawns will gain thoughts on Fluid-Consumption, depending on their preferences and how much of it they consumed already.</cumpilation_settings_enable_progressing_consumption_thoughts_desc>
+
+    <cumpilation_settings_enable_debug_logging_key>Debug Logging</cumpilation_settings_enable_debug_logging_key>
+    <cumpilation_settings_enable_debug_logging_desc>When enabled, more detailed logging will take place.</cumpilation_settings_enable_debug_logging_desc>
+
+</LanguageData>
