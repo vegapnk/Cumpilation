@@ -13,6 +13,8 @@ namespace Cumpilation.Reactions
     {
         public static bool PawnHasFittingTrait(Pawn pawn, IEnumerable<TraitDef> traits)
         {
+            if (pawn == null || pawn.story == null || pawn.story.traits == null ||  traits == null) return false;
+
             foreach (TraitDef trait in traits)
                 if (pawn.story.traits.allTraits.Any(t => t.def == trait))
                     return true;
@@ -21,6 +23,8 @@ namespace Cumpilation.Reactions
 
         public static bool PawnHasFittingQuirk(Pawn pawn, IEnumerable<string> quirks)
         {
+            if (pawn == null || quirks == null) return false;
+
             foreach (string quirk in quirks)
                 if (xxx.has_quirk(pawn, quirk))
                     return true;

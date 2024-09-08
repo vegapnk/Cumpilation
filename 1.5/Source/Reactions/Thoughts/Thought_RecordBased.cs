@@ -26,10 +26,24 @@ namespace Cumpilation.Reactions
             return base.TryMergeWithExistingMemory(out showBubble);
         }
 
-        protected virtual void UpdateCurStage()
+        public void UpdateCurStage()
         {
             ModLog.Debug($"Trying to add / update thought {this.def.defName} for {pawn}");
+            if(extension == null)
+            {
+                if (def.modExtensions.Count > 0) {
+                    extension = def.modExtensions.Where(ext => ext is ThoughtDefExtension_StageFromConsumption).Cast<ThoughtDefExtension_StageFromConsumption>().First();
+                }
+                if (extension == null)
+                    ModLog.Debug($"Did not have a Extension for {this.GetType().FullName} ");
+            }
             SetForcedStage(Extension.GetStageIndex(pawn));
+        }
+
+        public override void Init()
+        {
+            base.Init();
+            UpdateCurStage();
         }
 
     }

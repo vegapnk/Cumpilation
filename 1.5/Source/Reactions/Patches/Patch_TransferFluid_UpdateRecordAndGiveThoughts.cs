@@ -46,6 +46,8 @@ namespace Cumpilation.Reactions
                 
                 ModLog.Debug($"Found {thoughtDef} for Record {recordMapping.numConsumedRecord}");
                 partner.needs?.mood?.thoughts?.memories?.TryGainMemory(thoughtDef);
+                //var memory = partner.needs?.mood?.thoughts?.memories?.GetFirstMemoryOfDef(thoughtDef);
+                //TODO: It's always lowest stage right now ...
             }
         }
     }

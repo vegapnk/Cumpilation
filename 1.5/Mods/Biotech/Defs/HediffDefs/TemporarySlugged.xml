@@ -22,6 +22,10 @@
                 <penaltyHediff>ToxicBuildup</penaltyHediff>
                 <penaltySeverity>0.4</penaltySeverity>
             </li>
+            <li Class="Cumpilation.Common.HediffCompProperties_FluidAmountChange">
+                <multiplier>1.2</multiplier>
+                <changePenis>true</changePenis>
+            </li>
         </comps>
         <stages>
             <li>
