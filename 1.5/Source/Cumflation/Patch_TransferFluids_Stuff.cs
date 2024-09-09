@@ -13,9 +13,9 @@ namespace Cumpilation.Cumflation
     {
         public static void Postfix(SexProps props)
         {
-            //TODO: Add Settings to Turn Off
-
-            StuffingUtility.StuffPawn(props.pawn, props.partner, props);
+            if (Settings.Settings.EnableStuffing) { 
+                StuffingUtility.StuffPawn(props.pawn, props.partner, props);
+            }
         }
     }
 }

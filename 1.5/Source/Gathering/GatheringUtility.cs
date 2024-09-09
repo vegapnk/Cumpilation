@@ -13,9 +13,7 @@ namespace Cumpilation.Gathering
 {
     public class GatheringUtility
     {
-        // Maximum Distance for which nearby buildings are checked. TODO: Move this to settings.
-        const int max_check_range = 30;
-
+        
         public static void FillFluidGatherers(SexProps props)
         {
             Pawn pawn = props.pawn;
@@ -26,7 +24,7 @@ namespace Cumpilation.Gathering
             if (!FluidUtility.IsSexWithFluidFlyingAround(props))
                 return; 
 
-            List<Building> gatherersInRange = FindGatherersInRangeInRoom(pawn, max_check_range: max_check_range);
+            List<Building> gatherersInRange = FindGatherersInRangeInRoom(pawn, max_check_range: (int) Settings.Settings.MaxGatheringCheckDistance);
 
             foreach(Building gatherer in gatherersInRange)
             {
@@ -54,9 +52,6 @@ namespace Cumpilation.Gathering
             {
                 ISexPartHediff sexPartHediff = (ISexPartHediff)genital;
                 var fluid = sexPartHediff.GetPartComp().Fluid;
-
-                //TODO: This was just a test
-                //ChangeFluidType(sexPartHediff, DefOfs.ChocciCum);
 
                 if (ext.supportedFluids.Contains(fluid))
                 {
@@ -109,6 +104,11 @@ namespace Cumpilation.Gathering
         {
             List<Building> results = new List<Building>();
             int cells = 0, buildings = 0, gatherers = 0;
+
+            if (max_check_range <= 3)
+            {
+                ModLog.Warning($" `FindGatherersInRangeInRoom` Received a very little check-range for fining gatherers --- max_check_range = {max_check_range}");
+            }
 
             foreach (var cell in pawn.GetRoom().Cells)
             {

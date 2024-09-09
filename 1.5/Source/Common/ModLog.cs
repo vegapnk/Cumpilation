@@ -37,10 +37,10 @@ namespace Cumpilation
 
         public static void Debug(string message)
         {
-            //if (RJW_Genes_Settings.rjw_genes_detailed_debug)
-            //{
+            if (Settings.Settings.EnableCumpilationDebugLogging)
+            {
                 Log.Message($"[{ModId}][debug] {message}");
-            //}
+            }
         }
     }
 }

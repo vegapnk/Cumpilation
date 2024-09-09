@@ -161,8 +161,8 @@ namespace Cumpilation.Cumflation
         public static float FluidAmountRequiredToCumflatePawn(Pawn pawn, SexFluidDef fluid = null)
         {
             if (pawn != null) 
-                return 100.0f * pawn.BodySize;
-            return 100.0f;
+                return 100.0f * pawn.BodySize * Settings.Settings.GlobalCumflationModifier;
+            return 100.0f * Settings.Settings.GlobalCumflationModifier;
         }
 
         public static void PrintCumflatableInfo()

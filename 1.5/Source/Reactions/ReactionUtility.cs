@@ -46,6 +46,15 @@ namespace Cumpilation.Reactions
                 }, null);
         }
 
+        public static void TryGiveThought(Fluid_Record_Mapping recordMapping, Pawn pawn)
+        {
+            ThoughtDef thoughtDef = LookupThought(recordMapping.numConsumedRecord);
+            if (thoughtDef == null) return;
+
+            ModLog.Debug($"Found {thoughtDef} for Record {recordMapping.numConsumedRecord}");
+            pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(thoughtDef);
+        }
+
         public static void PrintFluidRecordInfo()
         {
             IEnumerable<Fluid_Record_Mapping> defs = DefDatabase<Fluid_Record_Mapping>.AllDefs;
