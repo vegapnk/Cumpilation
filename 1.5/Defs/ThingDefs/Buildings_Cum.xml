@@ -141,7 +141,10 @@
           <li>Cum</li>
           <li>InsectSpunk</li>
         </supportedFluids>
-        <tickIntervall>1500</tickIntervall>
+        <cleanAtmostOne>true</cleanAtmostOne>
+        <cleanChance>0.30</cleanChance>
+        <!-- 250 ticks ~ 4 times per hour-->
+        <tickIntervall>250</tickIntervall>
       </li>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
@@ -163,111 +166,6 @@
     <researchPrerequisites>
       <li>Electricity</li>
     </researchPrerequisites>
-  </ThingDef>
-
-  <ThingDef ParentName="StorageShelfBase">
-    <defName>CumShelf</defName>
-    <label>cum-shelf</label>
-    <description>This is a test thing, for testing cummies.</description>
-    <graphicData>
-      <texPath>Things/Building/Furniture/Shelf</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(3,2)</drawSize>
-    </graphicData>
-    <costStuffCount>20</costStuffCount>
-    <statBases>
-      <MaxHitPoints>100</MaxHitPoints>
-      <Mass>8</Mass>
-      <WorkToBuild>500</WorkToBuild>
-      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">5</StyleDominance>
-    </statBases>
-    <size>(2,1)</size>
-    <designationHotKey>Misc12</designationHotKey>
-    <building>
-      <relatedBuildCommands>
-        <li>ShelfSmall</li>
-      </relatedBuildCommands>
-    </building>
-
-    <modExtensions>
-      <li Class="Cumpilation.Gathering.FluidGatheringBuilding">
-        <range>3</range>
-        <supportedFluids>
-          <li>Cum</li>
-          <li>ChocciCum</li>
-          <li>InsectSpunk</li>
-        </supportedFluids>
-      </li>
-    </modExtensions>
-  </ThingDef>
-
-
-  <ThingDef ParentName="FurnitureWithQualityBase">
-    <defName>PassiveCumBucket</defName>
-    <label>passive cum bucket</label>
-    <tickerType>Normal</tickerType>
-    <description>Test Item for passively collecting Cum.</description>
-    <!-- <thingClass>RJWSexperience.Building_CumBucket</thingClass> -->
-    <graphicData>
-      <texPath>Things/Item/CumBucket</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(1,1)</drawSize>
-    </graphicData>
-    <altitudeLayer>Building</altitudeLayer>
-    <passability>PassThroughOnly</passability>
-    <fillPercent>0.4</fillPercent>
-    <castEdgeShadows>true</castEdgeShadows>
-    <pathCost>50</pathCost>
-    <rotatable>false</rotatable>
-    <stuffCategories>
-      <li>Metallic</li>
-      <li>Woody</li>
-      <li>Stony</li>
-    </stuffCategories>
-    <costStuffCount>10</costStuffCount>
-    <statBases>
-      <MaxHitPoints>50</MaxHitPoints>
-      <Mass>8</Mass>
-      <WorkToBuild>200</WorkToBuild>
-      <Flammability>1.0</Flammability>
-      <Beauty>-5</Beauty>
-    </statBases>
-    <size>(1,1)</size>
-    <building>
-      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
-      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
-      <fixedStorageSettings>
-        <filter>
-          <disallowNotEverStorable>true</disallowNotEverStorable>
-          <thingDefs>
-            <li>Cum</li>
-          </thingDefs>
-        </filter>
-      </fixedStorageSettings>
-      <defaultStorageSettings>
-        <priority>Low</priority>
-        <filter>
-          <thingDefs>
-            <li>Cum</li>
-          </thingDefs>
-        </filter>
-      </defaultStorageSettings>
-    </building>
-    <inspectorTabs>
-      <li>ITab_Storage</li>
-    </inspectorTabs>
-    <surfaceType>Item</surfaceType>
-    <canOverlapZones>false</canOverlapZones>
-    <comps>
-      <li Class="Cumpilation.Gathering.PassiveFluidGathererCompProperties">
-        <range>10</range>
-        <supportedFluids>
-          <li>Cum</li>
-          <li>InsectSpunk</li>
-        </supportedFluids>
-        <tickIntervall>100</tickIntervall>
-      </li>
-    </comps>
   </ThingDef>
 
 </Defs>
