@@ -46,10 +46,14 @@ namespace Cumpilation.Cumflation
 
                 int existingStuffingHediffs = GetAllSharedSeverityHediffsInPawn(inflated).Count();
                 float accumulatedExistingSeverity = SumUpAllStuffingSeverities(inflated);
-                float overflow = accumulatedExistingSeverity + incomingSeverity - 1;
+                float overflow = accumulatedExistingSeverity + incomingSeverity - GetMaximumCombinedStuffingSeverity(inflated);
 
-
-                ModLog.Debug($"Adding {incomingSeverity} to {accumulatedExistingSeverity} in {inflated}, doing an overflow of {overflow} on {existingStuffingHediffs} existing stuffing-hediffs.");
+                if (overflow > 0) { 
+                    ModLog.Debug($"Adding {incomingSeverity} to {accumulatedExistingSeverity} in {inflated}, doing an overflow of {overflow} on {existingStuffingHediffs} existing stuffing-hediffs");
+                } else
+                {
+                    ModLog.Debug($"Adding {incomingSeverity} to {accumulatedExistingSeverity} in {inflated} (no overflow)");
+                }
                 if (incomingSeverity > 0)
                 {
                     Hediff stuffedHediff = GetOrCreateStuffHediff(inflated, genital.GetPartComp().Fluid);
@@ -103,6 +107,16 @@ namespace Cumpilation.Cumflation
 
         public static float SumUpAllStuffingSeverities(Pawn pawn) => GetAllSharedSeverityHediffsInPawn(pawn).Sum(hediff => hediff.Severity);
 
+        /// <summary>
+        /// Mod-Hook, no initial behaviour planned. 
+        /// Default: All pawns can have 1 total stuffing severity. 
+        /// </summary>
+        /// <param name="pawn">The pawn that might be stuffed</param>
+        /// <returns>1.0 as default</returns>
+        public static float GetMaximumCombinedStuffingSeverity(Pawn pawn)
+        {
+            return 1.0f;
+        }
 
         /// <summary>
         /// Gets (or creates) a Stuffing Hediff for the `inflated`-pawn, 

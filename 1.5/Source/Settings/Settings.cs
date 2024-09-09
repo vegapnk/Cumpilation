@@ -10,19 +10,53 @@ namespace Cumpilation.Settings
 {
     public class Settings : ModSettings
     {
+        /// <summary>
+        /// Whether or not Cumflation-Code is run at all
+        /// </summary>
         public static bool EnableCumflation = true;
+        /// <summary>
+        /// A global multiplier how much fluid is needed to cumflate all pawns. 
+        /// Their size will also still be taken into account. 
+        /// E.g. if set to 2, you will need twice as much fluid to inflate any given pawn.
+        /// </summary>
         public static float GlobalCumflationModifier = 1.0f;
-
+        /// <summary>
+        /// Whether or not Stuffing-Code is run at all
+        /// </summary>
         public static bool EnableStuffing = true;
+        /// <summary>
+        /// A global multiplier how much fluid is needed to stuff all pawns. 
+        /// Their size will also still be taken into account. 
+        /// E.g. if set to 2, you will need twice as much fluid to stuff any given pawn.
+        /// </summary>
         public static float GlobalStuffingModifier = 1.0f;
-
+        /// <summary>
+        /// Whether or not Covering-Code is run at all
+        /// </summary>
         public static bool EnableBukkake = true;
+        /// <summary>
+        /// A global multiplier how much fluid is needed to cover all pawns. 
+        /// Their size will also still be taken into account. 
+        /// E.g. if set to 2, you will need twice as much fluid to cover any given pawn.
+        /// </summary>
         public static float GlobaleBukkakeModifier = 1.0f;
 
-
+        /// <summary>
+        /// When the Gathering Code runs, it checks all items in the room in a certain distance. 
+        /// This variable keeps track as high numbers can produce performance issues in big rooms (such as outdoors). 
+        /// The buildings themselves still have a check for their in-built distance, this is mostly about finding the right possible candidates. 
+        /// Note: if the buildings distance is higher than the Max-Gathering distance, the Max-Gathering-Check Distance is an upper bound.
+        /// </summary>
         public static float MaxGatheringCheckDistance = 15.0f;
+        /// <summary>
+        /// Whether or not the pawns gain thoughts on fluid-consumption. 
+        /// The records are updated regardless. 
+        /// </summary>
         public static bool EnableProgressingConsumptionThoughts = true;
-
+        /// <summary>
+        /// Whether or not to have debug-prints on the Mod-Log. 
+        /// Passively used in `ModLog.Debug(str)`
+        /// </summary>
         public static bool EnableCumpilationDebugLogging = false;
 
 
