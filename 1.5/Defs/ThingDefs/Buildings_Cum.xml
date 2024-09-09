@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  
+
   <ThingDef ParentName="FurnitureWithQualityBase">
     <defName>CumBucket</defName>
     <label>cum bucket</label>
-    <description>A bucket for collecting cum. Colonists and prisoners will go masturbate near a bucket if the RJW settings allow it.</description>
+    <description>A bucket for collecting cum. Colonists and prisoners will go masturbate near a
+      bucket if the RJW settings allow it.</description>
     <!-- <thingClass>RJWSexperience.Building_CumBucket</thingClass> -->
     <graphicData>
       <texPath>Things/Item/CumBucket</texPath>
@@ -66,6 +67,103 @@
       </li>
     </modExtensions>
   </ThingDef>
+  <ThingDef ParentName="FurnitureBase">
+    <defName>Advanced_Cum_Bucket</defName>
+    <label>Advanced cum bucket</label>
+    <description>A bucket to collect fluid and keep the area around it clean. Slowly removes cum and
+      insect-spunk in a 10 Cell radius.</description>
+    <graphicData>
+      <texPath>Things/Item/Advanced_CumBucket</texPath>
+      <drawSize>(1,1)</drawSize>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <tickerType>Normal</tickerType>
+    <fillPercent>0.20</fillPercent>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>495</WorkToBuild>
+      <Mass>2</Mass>
+      <Flammability>1.0</Flammability>
+      <Cleanliness>2</Cleanliness>
+      <Beauty>4</Beauty>
+    </statBases>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>20</costStuffCount>
+    <costList>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <size>(1,1)</size>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <fixedStorageSettings>
+        <filter>
+          <disallowNotEverStorable>true</disallowNotEverStorable>
+          <thingDefs>
+            <li>Cum</li>
+            <li>InsectJelly</li>
+          </thingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Low</priority>
+        <filter>
+          <thingDefs>
+            <li>Cum</li>
+            <li>InsectJelly</li>
+          </thingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <rotatable>false</rotatable>
+    <surfaceType>Item</surfaceType>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <specialDisplayRadius>10</specialDisplayRadius>
+    <comps>
+      <li Class="Cumpilation.Gathering.PassiveFluidGathererCompProperties">
+        <range>10</range>
+        <supportedFluids>
+          <li>Cum</li>
+          <li>InsectSpunk</li>
+        </supportedFluids>
+        <tickIntervall>1500</tickIntervall>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>50</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+    </comps>
+
+    <modExtensions>
+      <li Class="Cumpilation.Gathering.FluidGatheringBuilding">
+        <range>4</range>
+        <supportedFluids>
+          <li>Cum</li>
+          <li>InsectSpunk</li>
+        </supportedFluids>
+      </li>
+    </modExtensions>
+    <researchPrerequisites>
+      <li>Electricity</li>
+    </researchPrerequisites>
+  </ThingDef>
 
   <ThingDef ParentName="StorageShelfBase">
     <defName>CumShelf</defName>
@@ -78,7 +176,7 @@
     </graphicData>
     <costStuffCount>20</costStuffCount>
     <statBases>
-      <MaxHitPoints>100</MaxHitPoints> 
+      <MaxHitPoints>100</MaxHitPoints>
       <Mass>8</Mass>
       <WorkToBuild>500</WorkToBuild>
       <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">5</StyleDominance>
@@ -90,7 +188,7 @@
         <li>ShelfSmall</li>
       </relatedBuildCommands>
     </building>
-    
+
     <modExtensions>
       <li Class="Cumpilation.Gathering.FluidGatheringBuilding">
         <range>3</range>
@@ -163,7 +261,7 @@
     <comps>
       <li Class="Cumpilation.Gathering.PassiveFluidGathererCompProperties">
         <range>10</range>
-        <supportedFluids> 
+        <supportedFluids>
           <li>Cum</li>
           <li>InsectSpunk</li>
         </supportedFluids>
