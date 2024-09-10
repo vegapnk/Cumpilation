@@ -12,6 +12,7 @@
 			<drawSize>1</drawSize>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
+
 		<socialPropernessMatters>true</socialPropernessMatters>
 		<statBases>
 			<MarketValue>0.1</MarketValue>
@@ -27,6 +28,7 @@
 		<ingestible>
 			<foodType>Fluid, AnimalProduct</foodType>
 			<preferability>DesperateOnlyForHumanlikes</preferability>
+			<baseIngestTicks>250</baseIngestTicks>
 			<!--
                 <drugCategory>Any</drugCategory>
                 <tasteThought>AteCum</tasteThought>
