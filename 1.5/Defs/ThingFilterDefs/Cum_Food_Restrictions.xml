@@ -1,0 +1,23 @@
+<Defs>
+
+    <SpecialThingFilterDef>
+        <defName>Cumpilation_AllowWithCum</defName>
+        <label>allow food with cum</label>
+        <description>Allow food that was spiced up by adding sexual fluids.</description>
+        <parentCategory>Foods</parentCategory>
+        <allowedByDefault>true</allowedByDefault>
+        <saveKey>allowWithCum</saveKey>
+        <workerClass>Cumpilation.Fluids.Cum.SpecialThingFilterWorker_Cum</workerClass>
+    </SpecialThingFilterDef>
+
+    <SpecialThingFilterDef>
+        <defName>Cumpilation_AllowWithoutCum</defName>
+        <label>allow food without cum</label>
+        <description>Allow food normal food.</description>
+        <parentCategory>Foods</parentCategory>
+        <allowedByDefault>true</allowedByDefault>
+        <saveKey>allowWithoutCum</saveKey>
+        <workerClass>Cumpilation.Fluids.Cum.SpecialThingFilterWorker_NoCum</workerClass>
+    </SpecialThingFilterDef>
+
+</Defs>

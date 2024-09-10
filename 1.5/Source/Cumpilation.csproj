@@ -86,6 +86,9 @@
     <Compile Include="DefOfs.cs" />
     <Compile Include="Common\HediffComps\HediffCompProperties_FluidChangeWithPenalty.cs" />
     <Compile Include="Common\HediffComps\HediffComp_FluidChangeWithPenalty.cs" />
+    <Compile Include="Fluids\Cum\FilterWorkers\SpecialThingFilterWorker_Cum.cs" />
+    <Compile Include="Fluids\Cum\FilterWorkers\SpecialThingFilterWorker_CumBase.cs" />
+    <Compile Include="Fluids\Cum\FilterWorkers\SpecialThingFilterWorker_NoCum.cs" />
     <Compile Include="Fluids\Slug\HediffCompProperties_SlugExplosionOnDeath.cs" />
     <Compile Include="Fluids\Slug\HediffComp_SlugExplosionOnDeath.cs" />
     <Compile Include="Fluids\Slug\SexFluidIngestionDoer_ConsumeSlug.cs" />
