@@ -184,9 +184,9 @@ namespace Cumpilation.Cumflation
         {
             StuffingDef sDef = DefDatabase<StuffingDef>.AllDefs.FirstOrDefault(stuffingDef => stuffingDef.fluid == fluid);
             if (pawn != null)
-                return sDef.amountOfFluidForFullStuffing * pawn.BodySize * Settings.Settings.GlobalStuffingModifier;
+                return sDef.amountOfFluidForFullStuffing * pawn.BodySize * Settings.GlobalStuffingModifier;
 
-            return sDef.amountOfFluidForFullStuffing * Settings.Settings.GlobalStuffingModifier;
+            return sDef.amountOfFluidForFullStuffing * Settings.GlobalStuffingModifier;
         }
         public static bool CanStuff(ISexPartHediff part)
         {

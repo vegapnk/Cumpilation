@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
 
-namespace Cumpilation.Settings
+namespace Cumpilation
 {
     public class Cumpilation_SettingsController : Mod
     {

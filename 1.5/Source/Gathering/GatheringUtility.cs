@@ -24,7 +24,7 @@ namespace Cumpilation.Gathering
             if (!FluidUtility.IsSexWithFluidFlyingAround(props))
                 return; 
 
-            List<Building> gatherersInRange = FindGatherersInRangeInRoom(pawn, max_check_range: (int) Settings.Settings.MaxGatheringCheckDistance);
+            List<Building> gatherersInRange = FindGatherersInRangeInRoom(pawn, max_check_range: (int) Settings.MaxGatheringCheckDistance);
 
             foreach(Building gatherer in gatherersInRange)
             {

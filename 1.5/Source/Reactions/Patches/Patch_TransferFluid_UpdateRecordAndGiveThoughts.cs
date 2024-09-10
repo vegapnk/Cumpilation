@@ -40,7 +40,7 @@ namespace Cumpilation.Reactions
                 partner.records.AddTo(recordMapping.amountConsumedRecord, part.GetPartComp().FluidAmount);
                 ModLog.Debug($"Bumping {partner}s records for {part.GetPartComp().Fluid} by {part.GetPartComp().FluidAmount}. New:#{partner.records.GetValue(recordMapping.numConsumedRecord)} dinings ({partner.records.GetValue(recordMapping.amountConsumedRecord)} ml total)");
                 
-                if (Settings.Settings.EnableProgressingConsumptionThoughts)
+                if (Settings.EnableProgressingConsumptionThoughts)
                 {
                     ReactionUtility.TryGiveThought(recordMapping, partner);
                 }

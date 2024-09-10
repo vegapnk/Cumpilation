@@ -67,6 +67,7 @@
     <Compile Include="Common\HediffComps\HediffComp_FluidAmountChange.cs" />
     <Compile Include="Common\IngestionOutcomeDoer_PermanentFluidAmountChange.cs" />
     <Compile Include="Common\IngestionOutcomeDoer_PermanentFluidChange.cs" />
+    <Compile Include="Reactions\IngestionOutcomeDoer_RecordEatenFluid.cs" />
     <Compile Include="Common\ModLog.cs" />
     <Compile Include="Cumflation\CumflationUtility.cs" />
     <Compile Include="Cumflation\Defs\StuffingDef.cs" />

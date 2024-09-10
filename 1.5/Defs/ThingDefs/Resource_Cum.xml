@@ -35,18 +35,10 @@
 			<optimalityOffsetHumanlikes>-10</optimalityOffsetHumanlikes>
 			<optimalityOffsetFeedingAnimals>-10</optimalityOffsetFeedingAnimals>
 			<outcomeDoers>
-                <!-- 
-				<li Class="IngestionOutcomeDoer_GiveHediff">
-					<hediffDef>CumTolerance</hediffDef>
-					<severity>0.032</severity>
-					<divideByBodySize>true</divideByBodySize>
+				<li Class="Cumpilation.Reactions.IngestionOutcomeDoer_RecordEatenFluid">
+					<fluid>Cum</fluid>
+					<unitAmount>1</unitAmount>
 				</li>
-				<li Class="IngestionOutcomeDoer_OffsetPsyfocus">
-					<offset>0.05</offset>
-				</li>
-				<li Class="RJWSexperience.Cum.IngestionOutcomeDoer_RecordEatenCum"/>
-                
-                -->
 			</outcomeDoers>
 		</ingestible>
 
@@ -145,26 +137,5 @@
 		</stages>
 	</ThoughtDef>
 
-    -->
-    <!--
-	<SpecialThingFilterDef>
-		<defName>AllowWithCum</defName>
-		<label>allow food with cum</label>
-		<description>Allow food that was spiced up by adding sexual fluids.</description>
-		<parentCategory>Foods</parentCategory>
-		<allowedByDefault>true</allowedByDefault>
-		<saveKey>allowWithCum</saveKey>
-		<workerClass>RJWSexperience.Cum.FilterWorkers.SpecialThingFilterWorker_Cum</workerClass>
-	</SpecialThingFilterDef>
-
-	<SpecialThingFilterDef>
-		<defName>AllowWithoutCum</defName>
-		<label>allow food without cum</label>
-		<description>Allow food normal food.</description>
-		<parentCategory>Foods</parentCategory>
-		<allowedByDefault>true</allowedByDefault>
-		<saveKey>allowWithoutCum</saveKey>
-		<workerClass>RJWSexperience.Cum.FilterWorkers.SpecialThingFilterWorker_NoCum</workerClass>
-	</SpecialThingFilterDef>
     -->
 </Defs>

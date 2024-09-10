@@ -13,7 +13,7 @@ namespace Cumpilation.Cumflation
     {
         public static void Postfix(SexProps props)
         {
-            if (Settings.Settings.EnableCumflation) {
+            if (Settings.EnableCumflation) {
                 CumflationUtility.CumflatePawn(props.pawn, props.partner,props);
             }
         }

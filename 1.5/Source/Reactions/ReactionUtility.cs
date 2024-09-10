@@ -51,7 +51,7 @@ namespace Cumpilation.Reactions
             ThoughtDef thoughtDef = LookupThought(recordMapping.numConsumedRecord);
             if (thoughtDef == null) return;
 
-            ModLog.Debug($"Found {thoughtDef} for Record {recordMapping.numConsumedRecord}");
+            //ModLog.Debug($"Found {thoughtDef} for Record {recordMapping.numConsumedRecord}");
             pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(thoughtDef);
         }
 

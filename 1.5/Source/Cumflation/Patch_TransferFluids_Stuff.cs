@@ -13,7 +13,7 @@ namespace Cumpilation.Cumflation
     {
         public static void Postfix(SexProps props)
         {
-            if (Settings.Settings.EnableStuffing) { 
+            if (Settings.EnableStuffing) { 
                 StuffingUtility.StuffPawn(props.pawn, props.partner, props);
             }
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
 
-namespace Cumpilation.Settings
+namespace Cumpilation
 {
     public class Settings : ModSettings
     {
@@ -127,7 +127,7 @@ namespace Cumpilation.Settings
             listingStandard.CheckboxLabeled("cumpilation_settings_enable_progressing_consumption_thoughts_key".Translate() + ": ", ref EnableProgressingConsumptionThoughts, "cumpilation_settings_enable_progressing_consumption_thoughts_desc".Translate());
 
             listingStandard.Gap(8f);
-            listingStandard.CheckboxLabeled("cumpilation_settings_enable_debug_logging_key".Translate() + ": ", ref EnableProgressingConsumptionThoughts, "cumpilation_settings_enable_debug_logging_desc".Translate());
+            listingStandard.CheckboxLabeled("cumpilation_settings_enable_debug_logging_key".Translate() + ": ", ref EnableCumpilationDebugLogging, "cumpilation_settings_enable_debug_logging_desc".Translate());
 
             listingStandard.End();
         }

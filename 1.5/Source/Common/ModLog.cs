@@ -37,7 +37,7 @@ namespace Cumpilation
 
         public static void Debug(string message)
         {
-            if (Settings.Settings.EnableCumpilationDebugLogging)
+            if (Settings.EnableCumpilationDebugLogging)
             {
                 Log.Message($"[{ModId}][debug] {message}");
             }
