@@ -171,5 +171,53 @@ namespace Cumpilation.Gathering
             // There is a building_storage.Accepts(thing thing) which might help
             return false;
         }
+
+
+        /// <summary>
+        /// Returns a list of all Filths that are within a given range, and within the same room of this Comps parent.
+        /// When `onlyFluidFilth` is true, only filth that is specified in a rjw.SexFluidDef will be considered. 
+        /// </summary>
+        /// <param name="onlyFluidFilth">If true, only Filth that is mentioned in rjw.SexFluidDefs are returned</param>
+        /// <param name="range">Filter for the horicontal distance to the parent.</param>
+        /// <returns>A list of Fitlhs in the same room of the parent, filtered for SexFluids and/or range.</returns>
+        public static IEnumerable<Filth> GetNearbyFilth(Thing origin, bool onlyFluidFilth = true, int range = 50)
+        {
+            var results = new List<Filth>();
+
+            if (origin.Map == null) return results;
+            if (origin.GetRoom() == null) return results;
+            if (origin.PositionHeld == null) return results;
+            if (origin.IsBrokenDown()) return results;
+
+            var room = origin.GetRoom();
+            var knownFluids = FluidUtility.GetAllSexFluidDefs();
+
+            // DevNote: I first was checking the cells of the room, but I checked the Cleaning Methods from BaseRW and they use the CotnainedAndAdjacentThings. 
+            // So I went with that too.
+            return room.ContainedAndAdjacentThings
+                .OfType<Filth>()
+                .Cast<Filth>()
+                .Where(filth => filth.PositionHeld.InHorDistOf(origin.PositionHeld, range))
+                .Where(filth => !onlyFluidFilth || knownFluids.Any(fluid => fluid.filth == filth.def));
+        }
+
+        /// <summary>
+        /// Small helper that checks for a filth if the Gatherer can handle is. 
+        /// This consist of checking if the filth is in a (supported) fluidDef, 
+        /// or if there is a filth specified in a gatheringDef. 
+        /// </summary>
+        /// <param name="filth"></param>
+        /// <returns></returns>
+        public static bool IsSupportedFilthType(Filth filth, IEnumerable<SexFluidDef> supportedFluids)
+        {
+            bool isInFluidDefsAsFilth = supportedFluids.Select(fluid => fluid.filth).Any(f => f == filth.def);
+            //TODO: Make this check a bit better if the gathering-defs fluid is also supported ...
+            bool isInFluidGatheringDefsAsBackup = DefDatabase<FluidGatheringDef>.AllDefs
+                .Where(def => def.canBeRetrievedFromFilth && def.filth != null)
+                .Select(def => def.filth)
+                .Any(f => f == filth.def);
+            return isInFluidDefsAsFilth || isInFluidGatheringDefsAsBackup;
+        }
+
     }
 }

@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-    <!--
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDefs_Races/ThingDef/[defName="Mech_Cleansweeper"]</xpath>
-        <xpath>Defs/[defName="Mech_Cleansweeper"]</xpath> 
-		<xpath>Defs/ThingDefs/ThingDef/[defName="Mech_Cleansweeper"]/</xpath> 
-		<xpath>Defs/ThingDef[defName="Mech_Cleansweeper"]/</xpath>
+		<xpath>Defs/ThingDef[defName="Mech_Cleansweeper"]</xpath>
 		<value>
             <comps>
-                <li Class="Cumpilation.Gathering.PassiveFluidGathererCompProperties">
-                <range>10</range>
+                <li Class="Cumpilation.Gathering.MechPassiveFluidGathererCompProperties">
+                <range>5</range>
                 <supportedFluids>
                   <li>Cum</li>
                   <li>InsectSpunk</li>
                 </supportedFluids>
                 <cleanAtmostOne>true</cleanAtmostOne>
-                <cleanChance>0.30</cleanChance>
-                <tickIntervall>250</tickIntervall>
+                <cleanChance>1.00</cleanChance>
+                <tickIntervall>150</tickIntervall>
               </li>
             </comps>
 		</value>
 	</Operation>
-    -->
+    
 </Patch>

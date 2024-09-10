@@ -36,7 +36,7 @@ namespace Cumpilation.Gathering
 
             if (parent.IsHashIntervalTick(Props.tickIntervall))
             {
-                var sexFluidFilths = GetNearbyFilth(true, Props.range);
+                var sexFluidFilths = GatheringUtility.GetNearbyFilth(this.parent,true, Props.range);
                // ModLog.Message($"{parent.def}@{parent.PositionHeld}:Found {filths.Count()} filths and {sexFluidFilths.Count()} Fluid-Associated Filths in range {properties.range}");
                 CleanFilth(sexFluidFilths);
                 FilthToItem();
@@ -52,19 +52,21 @@ namespace Cumpilation.Gathering
             // We need top make a copy to not get Runtime Errors about `Concurrent IEnumerable Modifications`
             var GatheredFilthCopy = GatheredFilth.ToDictionary(entry => entry.Key,entry => entry.Value);
 
-            foreach (var kk in GatheredFilthCopy.Keys)
+            foreach (var fluidFilthType in GatheredFilthCopy.Keys)
             {
-                var fgDef = GatheringUtility.LookupGatheringDef(kk);
+                var fgDef = GatheringUtility.LookupGatheringDef(fluidFilthType);
                 if (fgDef == null) return;
 
-                if (GatheredFilthCopy[kk] > fgDef.filthNecessaryForOneUnit) {
-                    ModLog.Debug($"Filth {kk} in {this.parent}@{this.parent.PositionHeld} is enough to spawn {GatheredFilthCopy[kk] % fgDef.filthNecessaryForOneUnit} {fgDef.thingDef}'s");
+                if (GatheredFilthCopy[fluidFilthType] > fgDef.filthNecessaryForOneUnit) {
+                    ModLog.Debug($"Filth {fluidFilthType} in {this.parent}@{this.parent.PositionHeld} is enough to spawn {GatheredFilthCopy[fluidFilthType] % fgDef.filthNecessaryForOneUnit} {fgDef.thingDef}'s");
 
                     Thing gatheredFluid = ThingMaker.MakeThing(fgDef.thingDef);
-                    gatheredFluid.stackCount = GatheredFilthCopy[kk] % fgDef.filthNecessaryForOneUnit;
+                    gatheredFluid.stackCount = GatheredFilthCopy[fluidFilthType] % fgDef.filthNecessaryForOneUnit;
                     GenPlace.TryPlaceThing(gatheredFluid, this.parent.PositionHeld, this.parent.Map, ThingPlaceMode.Direct, out Thing res);
 
-                    GatheredFilth[kk] -= gatheredFluid.stackCount * fgDef.filthNecessaryForOneUnit;
+                    // DevNote: I initially reduced it by the amount, but ... that lead to a weird bug spawning more and more and not resetting anything.
+                    // So I went with this which is way more robust.
+                    GatheredFilth[fluidFilthType] = 0;
                 }
             }
         }
@@ -76,7 +78,7 @@ namespace Cumpilation.Gathering
         /// <param name="filths">A list of all Filths to be considered.</param>
         public void CleanFilth(IEnumerable<Filth> filths)
         {
-            foreach (var filth in filths.Where(IsSupportedFilthType))
+            foreach (var filth in filths.Where(filth => GatheringUtility.IsSupportedFilthType(filth,Props.supportedFluids)))
             {
                 // If the cleanChance is not met, we just look at the next.
                 if ((new Random()).NextDouble() > Props.cleanChance) continue;
@@ -93,52 +95,6 @@ namespace Cumpilation.Gathering
                 // If you cleaned one, and you only clean one, you end this function.
                 if (Props.cleanAtmostOne) return;
             }
-        }
-
-        /// <summary>
-        /// Returns a list of all Filths that are within a given range, and within the same room of this Comps parent.
-        /// When `onlyFluidFilth` is true, only filth that is specified in a rjw.SexFluidDef will be considered. 
-        /// </summary>
-        /// <param name="onlyFluidFilth">If true, only Filth that is mentioned in rjw.SexFluidDefs are returned</param>
-        /// <param name="range">Filter for the horicontal distance to the parent.</param>
-        /// <returns>A list of Fitlhs in the same room of the parent, filtered for SexFluids and/or range.</returns>
-        public IEnumerable<Filth> GetNearbyFilth(bool onlyFluidFilth = true, int range = 50)
-        {
-            var results = new List<Filth>();
-
-            if (this.parent.Map == null) return results;
-            if (this.parent.GetRoom() == null) return results;
-            if (this.parent.PositionHeld == null) return results;
-            if (this.parent.IsBrokenDown()) return results;
-
-            var room = this.parent.GetRoom();
-            var knownFluids = FluidUtility.GetAllSexFluidDefs();
-
-            // DevNote: I first was checking the cells of the room, but I checked the Cleaning Methods from BaseRW and they use the CotnainedAndAdjacentThings. 
-            // So I went with that too.
-            return room.ContainedAndAdjacentThings
-                .OfType<Filth>()
-                .Cast<Filth>()
-                .Where(filth => filth.PositionHeld.InHorDistOf(this.parent.PositionHeld,range))
-                .Where(filth => !onlyFluidFilth || knownFluids.Any(fluid => fluid.filth == filth.def));
-        }
-
-        /// <summary>
-        /// Small helper that checks for a filth if the Gatherer can handle is. 
-        /// This consist of checking if the filth is in a (supported) fluidDef, 
-        /// or if there is a filth specified in a gatheringDef. 
-        /// </summary>
-        /// <param name="filth"></param>
-        /// <returns></returns>
-        public bool IsSupportedFilthType(Filth filth)
-        {
-            bool isInFluidDefsAsFilth = Props.supportedFluids.Select(fluid => fluid.filth).Any(f => f == filth.def);
-            //TODO: Make this check a bit better if the gathering-defs fluid is also supported ...
-            bool isInFluidGatheringDefsAsBackup = DefDatabase<FluidGatheringDef>.AllDefs
-                .Where(def => def.canBeRetrievedFromFilth && def.filth != null)
-                .Select(def => def.filth)
-                .Any(f => f == filth.def);
-            return isInFluidDefsAsFilth || isInFluidGatheringDefsAsBackup;
         }
 
     }
