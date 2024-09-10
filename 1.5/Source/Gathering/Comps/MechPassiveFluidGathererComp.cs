@@ -11,7 +11,7 @@ namespace Cumpilation.Gathering
     /// <summary>
     /// Does basically the same as the Passive-Fluid Gatherer but checks that it's only for mechs that have power. 
     /// </summary>
-    public class MechPassiveFluidGathererComp : PassiveFluidGatherer
+    public class MechPassiveFluidGathererComp : PassiveFluidGathererComp
     {
 
         public override void CompTick()

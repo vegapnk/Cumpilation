@@ -16,7 +16,7 @@ namespace Cumpilation.Gathering
     /// 
     /// Important: For this to work properly, the ThingWithComp needs to have a `<tickerType>Normal</tickerType>` to run CompTick
     /// </summary>
-    public class PassiveFluidGatherer : ThingComp
+    public class PassiveFluidGathererComp : ThingComp
     {
         /// <summary>
         /// Stores the currently running information on how much of which filth was soaked in. 

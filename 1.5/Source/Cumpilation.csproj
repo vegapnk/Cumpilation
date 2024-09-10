@@ -101,7 +101,7 @@
     <Compile Include="Gathering\Defs\FluidGatheringBuilding.cs" />
     <Compile Include="Gathering\Defs\FluidGatheringDef.cs" />
     <Compile Include="Gathering\GatheringUtility.cs" />
-    <Compile Include="Gathering\Comps\PassiveFluidGatherer.cs" />
+    <Compile Include="Gathering\Comps\PassiveFluidGathererComp.cs" />
     <Compile Include="Gathering\Comps\PassiveFluidGathererCompProperties.cs" />
     <Compile Include="Gathering\Patches\Patch_JobDriverCleaning_TrySpawnItem.cs" />
     <Compile Include="Gathering\Patches\Patch_SatisfyPersonal_FillFluidGatherers.cs" />

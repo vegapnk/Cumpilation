@@ -19,7 +19,7 @@ namespace Cumpilation.Gathering
 
         public PassiveFluidGathererCompProperties()
         {
-            compClass= typeof(PassiveFluidGatherer);
+            compClass= typeof(PassiveFluidGathererComp);
         }
 
     
