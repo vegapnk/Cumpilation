@@ -23,6 +23,8 @@ namespace Cumpilation.Reactions.Patches
     {
         public static void Postfix(Pawn ingester, ThingComp __instance)
         {
+            if (ingester == null || ingester.IsAnimal()) return; 
+
             if (__instance is CompIngredients meal)
             {
                 foreach (var ingredient in meal.ingredients)

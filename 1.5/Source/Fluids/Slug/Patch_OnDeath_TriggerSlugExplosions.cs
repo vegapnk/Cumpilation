@@ -18,8 +18,6 @@ namespace Cumpilation.Fluids.Slug
             /// So I do that too. 
             /// Kill might not really "kill" the pawn, that's why. 
 
-            ModLog.Debug($"Running PostFix for Pawn.Kill ({__instance})");
-
             if (__instance == null) return;
             if (__instance.Corpse == null) return;
             if (__instance.health == null) return;

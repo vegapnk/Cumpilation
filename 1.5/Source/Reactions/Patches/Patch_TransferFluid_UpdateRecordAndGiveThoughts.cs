@@ -16,7 +16,7 @@ namespace Cumpilation.Reactions
     public static class Patch_TransferFluid_UpdateRecordAndGiveThoughts
     {
         public static void Postfix(SexProps props) {
-            if (props == null || props.pawn == null || props.partner == null) return;
+            if (props == null || props.pawn == null || props.partner == null || props.partner.IsAnimal() || props.partner.IsColonyMech) return;
             Pawn pawn = props.pawn;
             Pawn partner = props.partner;
 
