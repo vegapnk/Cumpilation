@@ -19,6 +19,8 @@ namespace Cumpilation.Gathering
 
         public static void Postfix(JobDriver __instance)
         {
+            if (!Settings.EnableFluidGatheringWhileCleaning) return;
+
             if (__instance is JobDriver_CleanFilth cleanJob && cleanJob.ended)
             {
                 var type = cleanJob.GetType();

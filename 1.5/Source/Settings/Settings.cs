@@ -42,6 +42,12 @@ namespace Cumpilation
         public static float GlobaleBukkakeModifier = 1.0f;
 
         /// <summary>
+        /// When enabled, there is a chance to gather fluids while doing the normal cleaning Task. 
+        /// The chances are based on the individual FluidGatheringDefs and if there is none, nothing will happen. 
+        /// </summary>
+        public static bool EnableFluidGatheringWhileCleaning = true;
+
+        /// <summary>
         /// When the Gathering Code runs, it checks all items in the room in a certain distance. 
         /// This variable keeps track as high numbers can produce performance issues in big rooms (such as outdoors). 
         /// The buildings themselves still have a check for their in-built distance, this is mostly about finding the right possible candidates. 
@@ -71,6 +77,7 @@ namespace Cumpilation
             Scribe_Values.Look<bool>(ref EnableBukkake, "EnableBukkake", true);
             Scribe_Values.Look<float>(ref GlobaleBukkakeModifier, "GlobaleBukkakeModifier", 1.0f);
 
+            Scribe_Values.Look<bool>(ref EnableFluidGatheringWhileCleaning, "EnableFluidGatheringWhileCleaning", true);
             Scribe_Values.Look<bool>(ref EnableProgressingConsumptionThoughts, "EnableProgressingConsumptionThoughts", true);
             Scribe_Values.Look<float>(ref MaxGatheringCheckDistance, "MaxGatheringCheckDistance", 15.0f);
             Scribe_Values.Look<bool>(ref EnableCumpilationDebugLogging, "EnableCumpilationDebugLogging", true);
@@ -120,7 +127,8 @@ namespace Cumpilation
             }
             listingStandard.Gap(5f);
 
-
+            listingStandard.CheckboxLabeled("cumpilation_settings_enable_fluid_gathering_while_cleaning_key".Translate() + ": ", ref EnableFluidGatheringWhileCleaning, "cumpilation_settings_enable_fluid_gathering_while_cleaning_desc".Translate());
+            listingStandard.Gap(4f);
             listingStandard.Label("cumpilation_settings_max_gathering_check_distance_key".Translate() + ": " + Math.Round((double)(MaxGatheringCheckDistance), 1).ToString() , tooltip: "cumpilation_settings_max_gathering_check_distance_desc".Translate());
             MaxGatheringCheckDistance = listingStandard.Slider(MaxGatheringCheckDistance, 3.0f, 50f);
             listingStandard.Gap(4f);
