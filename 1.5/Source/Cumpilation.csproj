@@ -69,6 +69,7 @@
     <Compile Include="Common\IngestionOutcomeDoer_PermanentFluidChange.cs" />
     <Compile Include="Gathering\Comps\MechPassiveFluidGathererComp.cs" />
     <Compile Include="Gathering\Comps\MechPassiveFluidGathererCompProperties.cs" />
+    <Compile Include="Gathering\Patches\Patch_CasualSexHelper_FindNearbyBucketToMasturbate.cs" />
     <Compile Include="Reactions\IngestionOutcomeDoer_RecordEatenFluid.cs" />
     <Compile Include="Common\ModLog.cs" />
     <Compile Include="Cumflation\CumflationUtility.cs" />

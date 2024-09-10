@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using Verse;
 using static HarmonyLib.Code;
 using Cumpilation.Common;
+using rjw.Modules.Shared.Logs;
+using Verse.AI;
 
 namespace Cumpilation.Gathering
 {
@@ -161,7 +163,7 @@ namespace Cumpilation.Gathering
             }
         }
 
-        public static bool CanStore(RimWorld.Building_Storage storage, SexFluidDef fluid)
+        public static bool CanStore(Thing storage, SexFluidDef fluid)
         {
             // From Discord:
             // took me a moment, but from the looks of it
@@ -169,7 +171,7 @@ namespace Cumpilation.Gathering
             // (or GridsUtility.GetItems for the actual things in there)
 
             // There is a building_storage.Accepts(thing thing) which might help
-            return false;
+            return true;
         }
 
 
@@ -217,6 +219,35 @@ namespace Cumpilation.Gathering
                 .Select(def => def.filth)
                 .Any(f => f == filth.def);
             return isInFluidDefsAsFilth || isInFluidGatheringDefsAsBackup;
+        }
+
+        public static bool IsFluidSink(Building building) => building.def.GetModExtension<FluidGatheringBuilding>() != null;
+
+
+        public static bool IsFluidSinkFor(Building building, FluidGatheringDef fluidGatheringDef) => IsFluidSinkFor(building, fluidGatheringDef.fluidDef);
+
+        public static bool IsFluidSinkFor(Building building, SexFluidDef fluid)
+        {
+            var def = building.def.GetModExtension<FluidGatheringBuilding>();
+            if (def == null) return false;
+            return def.supportedFluids.Contains(fluid);
+        }
+
+        public static bool HasAnySupportedFluidGatheringDefs(ISexPartHediff part) => HasAnySupportedFluidGatheringDefs(part.GetPartComp().Fluid);
+        public static bool HasAnySupportedFluidGatheringDefs(SexFluidDef fluidDef) => LookupFluidGatheringDef(fluidDef) != null;
+
+        public static Building FindClosestFluidSink(Pawn pawn, SexFluidDef fluid)
+        {
+            List<Building> potentialSinks = pawn.Map.listerBuildings.allBuildingsColonist.FindAll(x =>
+                x is Building sink &&
+                IsFluidSinkFor(sink,fluid) &&
+                CanStore(sink, fluid) &&
+                !x.Position.IsForbidden(pawn) &&
+                pawn.CanReach(sink, PathEndMode.ClosestTouch, Danger.Some));
+
+            ModLog.Debug($"Found {potentialSinks.Count} reachable Fluid-Sinks for {pawn}s {fluid}");
+
+            return potentialSinks.OrderBy(f => f.Position.DistanceTo(pawn.Position)).FirstOrFallback();
         }
 
     }
