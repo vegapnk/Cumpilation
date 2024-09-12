@@ -22,7 +22,7 @@ namespace Cumpilation.Cumflation
             if (chance > 0f && base.Pawn.IsHashIntervalTick(60) && Rand.MTBEventOccurs(chance, 60000f, 60f))
             {
                 // TODO: LicentiaLab has Extra behaviour that Likes_Cumflation won't throw up
-                this.Pawn.jobs.StartJob(JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed("VomitFluid")), lastJobEndCondition: Verse.AI.JobCondition.InterruptForced, resumeCurJobAfterwards: true);
+                this.Pawn.jobs.StartJob(JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed("Cumpilation_VomitFluid")), lastJobEndCondition: Verse.AI.JobCondition.InterruptForced, resumeCurJobAfterwards: true);
             }
         }
 

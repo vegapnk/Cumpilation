@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <Defs>
 	<ThoughtDef>
-		<defName>ConsumedCum</defName>
+		<defName>Cumpilation_ConsumedCum</defName>
 		<durationDays>0.5</durationDays>
 		<stackLimit>1</stackLimit>
 		<stackedEffectMultiplier>0.4</stackedEffectMultiplier>
@@ -31,7 +31,7 @@
 		</stages>
 		<modExtensions>
 			<li Class="Cumpilation.Reactions.ThoughtDefExtension_StageFromConsumption">
-				<recordDef>NumOfConsumedCum</recordDef>
+				<recordDef>Cumpilation_NumOfConsumedCum</recordDef>
 				<minimumValueforStage>
 					<li>0</li>
 					<li>10</li>
@@ -39,7 +39,7 @@
 					<li>120</li>
 				</minimumValueforStage>
 				<traitsThatLike>
-					<li>LikesCumflation</li>
+					<li>Cumpilation_LikesCumflation</li>
 					<li>Nymphomaniac</li>
 				</traitsThatLike>
 				<traitsThatDislike>
@@ -53,7 +53,7 @@
 	</ThoughtDef>
 
 	<ThoughtDef>
-		<defName>ConsumedInsectSpunk</defName>
+		<defName>Cumpilation_ConsumedInsectSpunk</defName>
 		<durationDays>0.75</durationDays>
 		<stackLimit>1</stackLimit>
 		<stackedEffectMultiplier>0.5</stackedEffectMultiplier>
@@ -82,7 +82,7 @@
 		</stages>
 		<modExtensions>
 			<li Class="Cumpilation.Reactions.ThoughtDefExtension_StageFromConsumption">
-				<recordDef>NumOfConsumedInsectSpunk</recordDef>
+				<recordDef>Cumpilation_NumOfConsumedInsectSpunk</recordDef>
 				<minimumValueforStage>
 					<li>0</li>
 					<li>30</li>
@@ -90,7 +90,7 @@
 					<li>90</li>
 				</minimumValueforStage>
 				<traitsThatLike>
-					<li>LikesCumflation</li>
+					<li>Cumpilation_LikesCumflation</li>
 					<li>Nymphomaniac</li>
 					<li>Masochist</li>
 					<li>Zoophile</li>
@@ -102,5 +102,5 @@
 			</li>
 		</modExtensions>
 	</ThoughtDef>
-	
+
 </Defs>

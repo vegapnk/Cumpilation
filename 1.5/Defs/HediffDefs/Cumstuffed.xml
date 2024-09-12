@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <HediffDef Abstract="True" Name="BaseStuffed">
+  <HediffDef Abstract="True" Name="Cumpilation_BaseStuffed">
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(240,200,110)</defaultLabelColor>
     <scenarioCanAdd>false</scenarioCanAdd>
@@ -22,8 +22,8 @@
     </comps>
   </HediffDef>
 
-  <HediffDef ParentName="BaseStuffed">
-    <defName>Cumstuffed</defName>
+  <HediffDef ParentName="Cumpilation_BaseStuffed">
+    <defName>Cumpilation_Cumstuffed</defName>
     <label>cumstuffed</label>
     <labelNoun>cumstuffed</labelNoun>
     <description>Drinking a large quantity of cum at once has to send the cum somewhere.</description>
@@ -93,8 +93,8 @@
     </stages>
   </HediffDef>
 
-  <HediffDef ParentName="BaseStuffed">
-    <defName>InsectSpunkStuffed</defName>
+  <HediffDef ParentName="Cumpilation_BaseStuffed">
+    <defName>Cumpilation_InsectSpunkStuffed</defName>
     <label>insect-spunk stuffed</label>
     <labelNoun>insect-spunk stuffed</labelNoun>
     <description>There are not only eggs coming from insects, you know.</description>
@@ -153,48 +153,6 @@
           <li>
             <capacity>Talking</capacity>
             <offset>-0.15</offset>
-          </li>
-        </capMods>
-      </li>
-    </stages>
-  </HediffDef>
-
-
-  <HediffDef ParentName="BaseStuffed">
-    <defName>ChocciStuffed</defName>
-    <label>choccistuffed</label>
-    <labelNoun>choccistuffed</labelNoun>
-    <description>Chocolate is good for you.</description>
-    <stages>
-      <li>
-        <label>slightly bloated</label>
-        <becomeVisible>false</becomeVisible>
-      </li>
-      <li>
-        <label>bloated</label>
-        <minSeverity>0.2</minSeverity>
-        <hungerRateFactor>0.95</hungerRateFactor>
-        <statOffsets>
-          <Vulnerability>0.05</Vulnerability>
-        </statOffsets>
-        <capMods>
-          <li>
-            <capacity>Moving</capacity>
-            <offset>+0.03</offset>
-          </li>
-        </capMods>
-      </li>
-      <li>
-        <label>full</label>
-        <minSeverity>0.4</minSeverity>
-        <hungerRateFactor>0.9</hungerRateFactor>
-        <statOffsets>
-          <Vulnerability>0.1</Vulnerability>
-        </statOffsets>
-        <capMods>
-          <li>
-            <capacity>Moving</capacity>
-            <offset>+0.1</offset>
           </li>
         </capMods>
       </li>

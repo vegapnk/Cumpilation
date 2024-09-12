@@ -2,7 +2,7 @@
 <!-- Note: Unlike the version from LicentiaLabs, the pawns can only be inflated with Fluids that have the tag `canCumflate` -->
 <Defs>
   <HediffDef>
-    <defName>Cumflation</defName>
+    <defName>Cumpilation_Cumflation</defName>
     <hediffClass>HediffWithComps</hediffClass>
     <label>cumflation</label>
     <labelNoun>cumflation</labelNoun>

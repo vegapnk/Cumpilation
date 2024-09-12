@@ -2,11 +2,10 @@
 <Defs>
 
   <ThingDef ParentName="FurnitureWithQualityBase">
-    <defName>CumBucket</defName>
+    <defName>Cumpilation_CumBucket</defName>
     <label>cum bucket</label>
     <description>A bucket for collecting cum. Colonists and prisoners will go masturbate near a
-      bucket if the RJW settings allow it.</description>
-    <!-- <thingClass>RJWSexperience.Building_CumBucket</thingClass> -->
+      bucket if possible.</description>
     <graphicData>
       <texPath>Things/Item/CumBucket</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -39,7 +38,7 @@
         <filter>
           <disallowNotEverStorable>true</disallowNotEverStorable>
           <thingDefs>
-            <li>Cum</li>
+            <li>Cumpilation_Cum</li>
           </thingDefs>
         </filter>
       </fixedStorageSettings>
@@ -47,7 +46,7 @@
         <priority>Low</priority>
         <filter>
           <thingDefs>
-            <li>Cum</li>
+            <li>Cumpilation_Cum</li>
           </thingDefs>
         </filter>
       </defaultStorageSettings>
@@ -68,7 +67,7 @@
     </modExtensions>
   </ThingDef>
   <ThingDef ParentName="FurnitureBase">
-    <defName>Advanced_Cum_Bucket</defName>
+    <defName>Cumpilation_Advanced_Cum_Bucket</defName>
     <label>Advanced cum bucket</label>
     <description>A bucket to collect fluid and keep the area around it clean. Slowly removes cum and
       insect-spunk in a 10 Cell radius.</description>
@@ -112,7 +111,7 @@
         <filter>
           <disallowNotEverStorable>true</disallowNotEverStorable>
           <thingDefs>
-            <li>Cum</li>
+            <li>Cumpilation_Cum</li>
             <li>InsectJelly</li>
           </thingDefs>
         </filter>
@@ -121,7 +120,7 @@
         <priority>Low</priority>
         <filter>
           <thingDefs>
-            <li>Cum</li>
+            <li>Cumpilation_Cum</li>
             <li>InsectJelly</li>
           </thingDefs>
         </filter>

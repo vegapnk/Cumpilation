@@ -2,7 +2,7 @@
 
 <Defs>
 <ThoughtDef>
-    <defName>ConsumedSlug</defName>
+    <defName>Cumpilation_ConsumedSlug</defName>
     <durationDays>1.0</durationDays>
     <stackLimit>1</stackLimit>
     <stackedEffectMultiplier>0.3</stackedEffectMultiplier>
@@ -26,7 +26,7 @@
     </stages>
     <modExtensions>
         <li Class="Cumpilation.Reactions.ThoughtDefExtension_StageFromConsumption">
-            <recordDef>NumOfConsumedSlug</recordDef>
+            <recordDef>Cumpilation_NumOfConsumedSlug</recordDef>
             <minimumValueforStage>
                 <li>0</li>
                 <li>30</li>

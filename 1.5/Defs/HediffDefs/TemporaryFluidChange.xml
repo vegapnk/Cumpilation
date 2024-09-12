@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-    <HediffDef Name="BaseTemporaryFluidChange" Abstract="True">
+    <HediffDef Name="Cumpilation_BaseTemporaryFluidChange" Abstract="True">
         <hediffClass>HediffWithComps</hediffClass>
         <tendable>false</tendable>
         <isBad>false</isBad>
-        <scenarioCanAdd>false</scenarioCanAdd>    
+        <scenarioCanAdd>false</scenarioCanAdd>
         <maxSeverity>1.0</maxSeverity>
         <comps>
             <li Class="HediffCompProperties_SeverityPerDay">
                 <!-- default: Last ~1 Week -->
                 <severityPerDay>-0.15</severityPerDay>
             </li>
-            <comps>
-                <li Class="Cumpilation.Common.HediffCompProperties_FluidChange">
-                    <fluid>Milk</fluid>
-                    <changePenis>true</changePenis>
-                    <changeVagina>true</changeVagina>
-                    <changeBreast>false</changeBreast>
-                    <changeOther>false</changeOther>
-                </li>
-            </comps>
+            <!-- Example how to use: 
+            <li Class="Cumpilation.Common.HediffCompProperties_FluidChange">
+                <fluid>Milk</fluid>
+                <changePenis>true</changePenis>
+                <changeVagina>true</changeVagina>
+                <changeBreast>false</changeBreast>
+                <changeOther>false</changeOther>
+            </li>
+            -->
         </comps>
         <stages>
             <li>
-                <label>wearing off</label>        
+                <label>wearing off</label>
                 <minSeverity>0.0</minSeverity>
             </li>
             <li>
                 <minSeverity>0.3</minSeverity>
-                <label>altered</label>        
+                <label>altered</label>
             </li>
             <li>
                 <minSeverity>0.9</minSeverity>
-                <label>fresh</label>        
+                <label>fresh</label>
             </li>
         </stages>
     </HediffDef>

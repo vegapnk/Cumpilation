@@ -84,7 +84,7 @@ namespace Cumpilation.Common
         /// <returns>True, if the pawn likes cumflation from traits, quirks or zoophile.</returns>
         public static bool LikesCumflation(Pawn inflated)
         {
-            bool likesCumflation = inflated?.story?.traits?.HasTrait(DefOfs.LikesCumflation) ?? false;
+            bool likesCumflation = inflated?.story?.traits?.HasTrait(DefOfs.Cumpilation_LikesCumflation) ?? false;
             if (likesCumflation)
             {
                 return likesCumflation;

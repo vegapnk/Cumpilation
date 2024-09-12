@@ -2,7 +2,7 @@
 <Defs>
 
 	<ThingDef ParentName="BaseCumFilth">
-		<defName>SlugFilth</defName>
+		<defName>Cumpilation_SlugFilth</defName>
 		<label>slugspunk</label>
 		<graphicData>
 			<color>(204, 102, 255, 100)</color>
@@ -21,9 +21,9 @@
 	</ThingDef>
 
     <rjw.SexFluidDef>
-		<defName>Slug</defName>
+		<defName>Cumpilation_Slug</defName>
 		<label>slug</label>
-		<filth>SlugFilth</filth>
+		<filth>Cumpilation_SlugFilth</filth>
 		<alwaysProduceFilth>true</alwaysProduceFilth>
 		<baseNutrition>0.1</baseNutrition>
 		<tags>

@@ -16,7 +16,7 @@ namespace Cumpilation.Fluids.Cum
 			return def.IsIngestible && def.IsProcessedFood;
 		}
 
-		protected bool IsCum(ThingDef t) => t == DefOfs.Cum;
+		protected bool IsCum(ThingDef t) => t == DefOfs.Cumpilation_Cum;
 
 		protected bool IsFoodWithCum(Thing food)
 		{

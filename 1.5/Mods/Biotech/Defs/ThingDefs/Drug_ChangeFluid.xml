@@ -1,18 +1,12 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <ThingDef ParentName="MakeableDrugBase">
-    <defName>slugmorpher</defName>
+    <defName>Cumpilation_Slugmorpher</defName>
     <label>slug morpher</label>
-    <description>A dangerous and creative way to deal with Wastepacks - distilled into a concentrated serum, it permanently changes the users cum into a toxic slug.</description>
-    <!--<descriptionHyperlinks>
-      <HediffDef>FlakeHigh</HediffDef>
-      <HediffDef>PsychiteTolerance</HediffDef>
-      <HediffDef>PsychiteAddiction</HediffDef>
-      <HediffDef>ChemicalDamageSevere</HediffDef>
-    </descriptionHyperlinks>-->
+    <description>A dangerous and creative way to deal with Wastepacks - distilled into a
+      concentrated serum, it permanently changes the users cum into a toxic slug.</description>
     <graphicData>
-      <!-- <texPath>Things/Item/Drug/Yayo</texPath> -->
       <texPath>Things/Item/Special/Genepack/Genepack_f</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <color>(190, 90, 245)</color>
@@ -30,17 +24,6 @@
       <foodType>Processed</foodType>
       <baseIngestTicks>1200</baseIngestTicks>
       <nurseable>true</nurseable>
-      <!-- 
-      <drugCategory>Hard</drugCategory>
-      <ingestSound>Ingest_Smoke</ingestSound>
-      <ingestEffect>Smoke_Flake</ingestEffect>
-      <ingestEffectEat>EatVegetarian</ingestEffectEat>
-      <ingestHoldOffsetStanding>
-        <northDefault>
-          <offset>(0.23,0,0.065)</offset>
-        </northDefault>
-      </ingestHoldOffsetStanding>
-      -->
       <ingestHoldUsesTable>false</ingestHoldUsesTable>
       <ingestCommandString>Inject {0}</ingestCommandString>
       <ingestReportString>Injecting {0}.</ingestReportString>
@@ -51,7 +34,7 @@
           <severity>0.25</severity>
         </li>
         <li Class="Cumpilation.Fluids.Slug.IngestionOutcomeDoer_PermanentSlugChange">
-          <fluid>Slug</fluid>
+          <fluid>Cumpilation_Slug</fluid>
           <changePenis>true</changePenis>
           <changeVagina>false</changeVagina>
           <changeBreast>false</changeBreast>
@@ -72,7 +55,7 @@
       <Wastepack>100</Wastepack>
       <Neutroamine>25</Neutroamine>
     </costList>
-    
+
     <comps>
       <li Class="CompProperties_GasOnDamage">
         <type>ToxGas</type>
@@ -85,8 +68,10 @@
         <dissolutionFactorRain>6</dissolutionFactorRain>
       </li>
       <li Class="CompProperties_DissolutionEffectPollution">
-        <cellsToPollutePerDissolution>180</cellsToPollutePerDissolution> <!-- Normal Wastepack: 6, but we take 30 for one of these babies -->
-        <tilePollutionPerDissolution>0.0015</tilePollutionPerDissolution><!-- 2000 wastepacks fill a tile -->
+        <cellsToPollutePerDissolution>180</cellsToPollutePerDissolution> <!-- Normal Wastepack: 6,
+        but we take 30 for one of these babies -->
+        <tilePollutionPerDissolution>0.0015</tilePollutionPerDissolution><!-- 2000 wastepacks fill a
+        tile -->
         <waterTilePollutionFactor>24</waterTilePollutionFactor>
       </li>
       <li>
@@ -97,9 +82,10 @@
 
 
   <ThingDef ParentName="MakeableDrugBase">
-    <defName>sluggerdrop</defName>
+    <defName>Cumpilation_Sluggerdrop</defName>
     <label>slugger drops</label>
-    <description>A dangerous and creative way to deal with Wastepacks - distilled into a concentrated serum, it changes the users cum temporary into a toxic slug.</description>
+    <description>A dangerous and creative way to deal with Wastepacks - distilled into a
+      concentrated serum, it changes the users cum temporary into a toxic slug.</description>
     <graphicData>
       <texPath>Things/Item/Drug/Yayo</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -128,7 +114,7 @@
           <severity>0.1</severity>
         </li>
         <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>temporarySlugged</hediffDef>
+          <hediffDef>Cumpilation_temporarySlugged</hediffDef>
           <severity>1.0</severity>
         </li>
       </outcomeDoers>
@@ -144,7 +130,7 @@
       <Wastepack>30</Wastepack>
       <Neutroamine>5</Neutroamine>
     </costList>
-    
+
     <comps>
       <li Class="CompProperties_GasOnDamage">
         <type>ToxGas</type>
@@ -157,8 +143,10 @@
         <dissolutionFactorRain>4</dissolutionFactorRain>
       </li>
       <li Class="CompProperties_DissolutionEffectPollution">
-        <cellsToPollutePerDissolution>180</cellsToPollutePerDissolution> <!-- Normal Wastepack: 6, but we take 30 for one of these babies -->
-        <tilePollutionPerDissolution>0.0015</tilePollutionPerDissolution><!-- 2000 wastepacks fill a tile -->
+        <cellsToPollutePerDissolution>180</cellsToPollutePerDissolution> <!-- Normal Wastepack: 6,
+        but we take 30 for one of these babies -->
+        <tilePollutionPerDissolution>0.0015</tilePollutionPerDissolution><!-- 2000 wastepacks fill a
+        tile -->
         <waterTilePollutionFactor>24</waterTilePollutionFactor>
       </li>
       <li>
@@ -167,4 +155,4 @@
     </comps>
   </ThingDef>
 
-  </Defs>
+</Defs>

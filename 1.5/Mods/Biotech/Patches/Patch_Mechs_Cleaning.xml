@@ -9,10 +9,12 @@
                 <supportedFluids>
                   <li>Cum</li>
                   <li>InsectSpunk</li>
+                  <li>Cumpilation_Slug</li>
                 </supportedFluids>
                 <cleanAtmostOne>true</cleanAtmostOne>
                 <cleanChance>1.00</cleanChance>
-                <tickIntervall>150</tickIntervall>
+                <!-- 125 ticks ~ 8 times per hour -->
+                <tickIntervall>125</tickIntervall>
               </li>
             </comps>
 		</value>

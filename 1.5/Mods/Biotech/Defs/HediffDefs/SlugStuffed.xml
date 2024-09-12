@@ -1,7 +1,7 @@
 <Defs>
     
-  <HediffDef ParentName="BaseStuffed">
-    <defName>SlugStuffed</defName>
+  <HediffDef ParentName="Cumpilation_BaseStuffed">
+    <defName>Cumpilation_SlugStuffed</defName>
     <label>slug-stuffed</label>
     <labelNoun>slug-stuffed</labelNoun>
     <description>You came too close to someone currently slugging.</description>
@@ -90,9 +90,9 @@
   </HediffDef>
 
   <Cumpilation.Cumflation.StuffingDef>
-    <defName>Slug_Stuffing</defName>
-    <fluid>Slug</fluid>
-    <resultingStuffedHediff>SlugStuffed</resultingStuffedHediff>
+    <defName>Cumpilation_Slug_Stuffing</defName>
+    <fluid>Cumpilation_Slug</fluid>
+    <resultingStuffedHediff>Cumpilation_SlugStuffed</resultingStuffedHediff>
     <canStuffAnimals>true</canStuffAnimals>
     <amountOfFluidForFullStuffing>25</amountOfFluidForFullStuffing>
   </Cumpilation.Cumflation.StuffingDef>

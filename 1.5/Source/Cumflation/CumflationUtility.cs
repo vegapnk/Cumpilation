@@ -62,7 +62,7 @@ namespace Cumpilation.Cumflation
         /// <param name="inflated">The pawn that might gets the Job.</param>
         public static void TryQueueOverflowingCumflation(Pawn inflated)
         {
-            var overflowingJob = JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed("OverflowingCumflation"), inflated);
+            var overflowingJob = JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed("Cumpilation_OverflowingCumflation"), inflated);
             inflated.jobs.jobQueue.EnqueueFirst(overflowingJob);
 
         }
@@ -84,10 +84,10 @@ namespace Cumpilation.Cumflation
         {
             BodyPartRecord bodyPartRecord = Genital_Helper.get_genitalsBPR(inflated);
 
-            Hediff cumflationHediff = inflated.health.hediffSet.GetFirstHediffOfDef(DefOfs.Cumflation);
+            Hediff cumflationHediff = inflated.health.hediffSet.GetFirstHediffOfDef(DefOfs.Cumpilation_Cumflation);
             if (cumflationHediff == null)
             {
-                cumflationHediff = HediffMaker.MakeHediff(DefOfs.Cumflation, inflated, bodyPartRecord);
+                cumflationHediff = HediffMaker.MakeHediff(DefOfs.Cumpilation_Cumflation, inflated, bodyPartRecord);
                 cumflationHediff.Severity = 0;
                 inflated.health.AddHediff(cumflationHediff, bodyPartRecord);
             }
@@ -98,9 +98,9 @@ namespace Cumpilation.Cumflation
         public static void GiveCumflationThoughts(Pawn inflated)
         {
             if (FluidUtility.LikesCumflation(inflated))
-                inflated?.needs?.mood?.thoughts?.memories?.TryGainMemory(DefOfs.GotOverCumflatedEnjoyed);
+                inflated?.needs?.mood?.thoughts?.memories?.TryGainMemory(DefOfs.Cumpilation_GotOverCumflatedEnjoyed);
             else
-                inflated?.needs?.mood?.thoughts?.memories?.TryGainMemory(DefOfs.GotOverCumflated);
+                inflated?.needs?.mood?.thoughts?.memories?.TryGainMemory(DefOfs.Cumpilation_GotOverCumflated);
         }
 
         /// <summary>

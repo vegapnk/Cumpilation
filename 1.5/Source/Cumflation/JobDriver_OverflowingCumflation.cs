@@ -42,8 +42,6 @@ namespace Cumpilation.Cumflation
                 }
             };
             toil.defaultCompleteMode = ToilCompleteMode.Never;
-            //TODO: Progress Bar could be funny, lol
-            //toil.WithProgressBar
             toil.PlaySustainerOrSound(() => SoundDefOf.FleshmassBirth);
             yield return toil;
         }

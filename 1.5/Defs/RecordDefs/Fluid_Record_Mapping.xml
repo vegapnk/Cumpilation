@@ -3,31 +3,31 @@
 <Defs>
 
     <Cumpilation.Reactions.Fluid_Record_Mapping>
-        <defName>CumRecordMapping</defName>
+        <defName>Cumpilation_CumRecordMapping</defName>
         <fluid>Cum</fluid>
-        <numConsumedRecord>NumOfConsumedCum</numConsumedRecord>
-        <amountConsumedRecord>AmountConsumedCum</amountConsumedRecord>
+        <numConsumedRecord>Cumpilation_NumOfConsumedCum</numConsumedRecord>
+        <amountConsumedRecord>Cumpilation_AmountConsumedCum</amountConsumedRecord>
     </Cumpilation.Reactions.Fluid_Record_Mapping>
     
     <Cumpilation.Reactions.Fluid_Record_Mapping>
-        <defName>InsectSpunkRecordMapping</defName>
+        <defName>Cumpilation_InsectSpunkRecordMapping</defName>
         <fluid>InsectSpunk</fluid>
-        <numConsumedRecord>NumOfConsumedInsectSpunk</numConsumedRecord>
-        <amountConsumedRecord>AmountConsumedInsectSpunk</amountConsumedRecord>
+        <numConsumedRecord>Cumpilation_NumOfConsumedInsectSpunk</numConsumedRecord>
+        <amountConsumedRecord>Cumpilation_AmountConsumedInsectSpunk</amountConsumedRecord>
     </Cumpilation.Reactions.Fluid_Record_Mapping>
 
     <Cumpilation.Reactions.Fluid_Record_Mapping>
-        <defName>MilkRecordMapping</defName>
+        <defName>Cumpilation_MilkRecordMapping</defName>
         <fluid>Milk</fluid>
-        <numConsumedRecord>NumOfConsumedBreastMilk</numConsumedRecord>
-        <amountConsumedRecord>AmountConsumedBreastMilk</amountConsumedRecord>
+        <numConsumedRecord>Cumpilation_NumOfConsumedBreastMilk</numConsumedRecord>
+        <amountConsumedRecord>Cumpilation_AmountConsumedBreastMilk</amountConsumedRecord>
     </Cumpilation.Reactions.Fluid_Record_Mapping>
 
     <Cumpilation.Reactions.Fluid_Record_Mapping>
-        <defName>GirlcumRecordMapping</defName>
+        <defName>Cumpilation_GirlcumRecordMapping</defName>
         <fluid>GirlCum</fluid>
-        <numConsumedRecord>NumOfConsumedGirlCum</numConsumedRecord>
-        <amountConsumedRecord>AmountConsumedGirlCum</amountConsumedRecord>
+        <numConsumedRecord>Cumpilation_NumOfConsumedGirlCum</numConsumedRecord>
+        <amountConsumedRecord>Cumpilation_AmountConsumedGirlCum</amountConsumedRecord>
     </Cumpilation.Reactions.Fluid_Record_Mapping>
 
 </Defs>

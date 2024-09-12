@@ -13,15 +13,14 @@ namespace Cumpilation
     public static class DefOfs
     {
 
-        public static readonly ThingDef Cum;
+        public static readonly ThingDef Cumpilation_Cum;
 
-        public static readonly SexFluidDef ChocciCum;
 
-        public static readonly TraitDef LikesCumflation;
+        public static readonly TraitDef Cumpilation_LikesCumflation;
 
-        public static readonly ThoughtDef GotOverCumflated;
-        public static readonly ThoughtDef GotOverCumflatedEnjoyed;
+        public static readonly ThoughtDef Cumpilation_GotOverCumflated;
+        public static readonly ThoughtDef Cumpilation_GotOverCumflatedEnjoyed;
 
-        public static readonly HediffDef Cumflation;
+        public static readonly HediffDef Cumpilation_Cumflation;
     }
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-    <HediffDef Parent="BaseTemporaryFluidChange">
-        <defName>temporarySlugged</defName>
+    <HediffDef Parent="Cumpilation_BaseTemporaryFluidChange">
+        <defName>Cumpilation_temporarySlugged</defName>
         <label>temporary slugged</label>
         <description>Due to a drug, the cum has been changed to slug.</description>
         <hediffClass>HediffWithComps</hediffClass>
@@ -13,7 +13,7 @@
                 <severityPerDay>-0.15</severityPerDay>
             </li>
             <li Class="Cumpilation.Common.HediffCompProperties_FluidChangeWithPenalty">
-                <fluid>Slug</fluid>
+                <fluid>Cumpilation_Slug</fluid>
                 <changePenis>true</changePenis>
                 <changeVagina>false</changeVagina>
                 <changeBreast>false</changeBreast>

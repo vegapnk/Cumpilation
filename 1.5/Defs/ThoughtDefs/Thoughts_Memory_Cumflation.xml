@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <ThoughtDef>
-    <defName>GotOverCumflated</defName>
+    <defName>Cumpilation_GotOverCumflated</defName>
     <thoughtClass>Thought_Memory</thoughtClass>
     <durationDays>2.0</durationDays>
     <stackLimit>3</stackLimit>
@@ -15,13 +15,13 @@
       </li>
     </stages>
     <nullifyingTraits>
-	  <li>LikesCumflation</li>
+      <li>Cumpilation_LikesCumflation</li>
       <li>Masochist</li>
     </nullifyingTraits>
   </ThoughtDef>
 
   <ThoughtDef>
-    <defName>GotOverCumflatedEnjoyed</defName>
+    <defName>Cumpilation_GotOverCumflatedEnjoyed</defName>
     <thoughtClass>Thought_Memory</thoughtClass>
     <durationDays>2.0</durationDays>
     <stackLimit>3</stackLimit>
@@ -34,7 +34,7 @@
       </li>
     </stages>
     <requiredTraits>
-	  <li>LikesCumflation</li>
+      <li>Cumpilation_LikesCumflation</li>
       <li>Masochist</li>
     </requiredTraits>
   </ThoughtDef>

@@ -2,7 +2,7 @@
 <Defs>
 
   <JobDef>
-    <defName>VomitFluid</defName>
+    <defName>Cumpilation_VomitFluid</defName>
     <driverClass>Cumpilation.Cumflation.JobDriver_VomitFluid</driverClass>
     <playerInterruptible>false</playerInterruptible>
     <casualInterruptible>false</casualInterruptible>
