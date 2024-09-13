@@ -1,0 +1,72 @@
+<Defs>
+    
+    <ThoughtDef>
+        <defName>Cumpilation_SlugstuffedNegative</defName>
+        <workerClass>ThoughtWorker_Hediff</workerClass>
+        <hediff>Cumpilation_SlugStuffed</hediff>
+        <validWhileDespawned>true</validWhileDespawned>
+        <stages>
+          <li>
+            <label>bloated with slug</label>
+            <description>I hope it's not too unhealthy.</description>
+            <baseMoodEffect>-2</baseMoodEffect>
+          </li>
+          <li>
+            <label>full of slug</label>
+            <description>I should not get any more of this.</description>
+            <baseMoodEffect>-4</baseMoodEffect>
+          </li>
+          <li>
+            <label>stuffed with slug</label>
+            <description>Can I get it out, in any way??</description>
+            <baseMoodEffect>-8</baseMoodEffect>
+          </li>
+          <li>
+            <label>overstuffed with slug</label>
+            <description>Please, get it out, just get it out! Put something else in if necessary!</description>
+            <baseMoodEffect>-12</baseMoodEffect>
+          </li>
+        </stages>
+        <nullifyingTraits>
+          <li>Masochist</li>
+          <li>Pyromaniac</li>
+        </nullifyingTraits>
+      </ThoughtDef>
+    
+      <ThoughtDef>
+        <defName>Cumpilation_SlugstuffedEnjoyed</defName>
+        <workerClass>ThoughtWorker_Hediff</workerClass>
+        <hediff>Cumpilation_SlugStuffed</hediff>
+        <validWhileDespawned>true</validWhileDespawned>
+        <stages>
+          <li>
+            <visible>false</visible>
+          </li>
+          <li>
+            <label>latent slug-bomb</label>
+            <description>Damage, Incorporated</description>
+            <baseMoodEffect>1</baseMoodEffect>
+          </li>
+          <li>
+            <label>armed slug-bomb</label>
+            <description>TNT - I'm dynamite!</description>
+            <baseMoodEffect>2</baseMoodEffect>
+          </li>
+          <li>
+            <label>military-grade slug-bomb</label>
+            <description>Do it baby, do it baby</description>
+            <baseMoodEffect>3</baseMoodEffect>
+          </li>
+          <li>
+            <label>nuclear slug-bomb</label>
+            <description>I'm a fire starter, twisted fire starter</description>
+            <baseMoodEffect>5</baseMoodEffect>
+          </li>
+        </stages>
+        <requiredTraits>
+          <li>Masochist</li>
+          <li>Pyromaniac</li>
+        </requiredTraits>
+      </ThoughtDef>
+
+</Defs>

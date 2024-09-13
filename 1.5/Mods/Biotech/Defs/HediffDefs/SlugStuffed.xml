@@ -60,7 +60,7 @@
         </capMods>
       </li>
       <li>
-        <label>full</label>
+        <label>over-stuffed</label>
         <minSeverity>0.7</minSeverity>
         <statOffsets>
           <Vulnerability>-0.3</Vulnerability>
