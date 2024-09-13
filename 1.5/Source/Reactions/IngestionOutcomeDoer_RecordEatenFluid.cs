@@ -22,6 +22,7 @@ namespace Cumpilation.Reactions
         protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount)
         {
             if (pawn == null || pawn.IsAnimal()) return;
+            if (ingested == null || ingestedCount == 0) return;
             
             int amount = ingested.stackCount * (int)unitAmount;
             ModLog.Debug($"{pawn} ingested {ingested}, updating records for {fluid} by {amount} ml");

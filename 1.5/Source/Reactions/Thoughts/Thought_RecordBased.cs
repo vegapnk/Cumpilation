@@ -22,12 +22,19 @@ namespace Cumpilation.Reactions
         /// </summary>
         public override bool TryMergeWithExistingMemory(out bool showBubble)
         {
+            if (pawn == null)
+            {
+                showBubble = false;
+                return false;
+            }
+
             UpdateCurStage();
             return base.TryMergeWithExistingMemory(out showBubble);
         }
 
         public void UpdateCurStage()
         {
+            if (pawn == null) return;
             ModLog.Debug($"Trying to add / update thought {this.def.defName} for {pawn}");
             if(extension == null)
             {

@@ -23,14 +23,21 @@ namespace Cumpilation.Reactions.Patches
     {
         public static void Postfix(Pawn ingester, ThingComp __instance)
         {
-            if (ingester == null || ingester.IsAnimal()) return; 
+            if (ingester == null || ingester.IsAnimal()) return;
+            if (__instance == null) return;
 
-            if (__instance is CompIngredients meal)
+            if (__instance is CompIngredients meal && meal.ingredients != null && meal.ingredients.Count > 0)
             {
                 foreach (var ingredient in meal.ingredients)
                 {
-                    foreach (IngestionOutcomeDoer_RecordEatenFluid fluidIngestionDoer in ingredient.ingestible.outcomeDoers
-                        .Where(doer => doer is IngestionOutcomeDoer_RecordEatenFluid).Cast<IngestionOutcomeDoer_RecordEatenFluid>())
+                    if (ingredient == null || ingredient.ingestible == null || ingredient.ingestible.outcomeDoers == null) continue;
+
+                    IEnumerable<IngestionOutcomeDoer_RecordEatenFluid> eatenFluidsOutcomeDoers = 
+                        ingredient.ingestible.outcomeDoers
+                        .Where(doer => doer is IngestionOutcomeDoer_RecordEatenFluid)
+                        .Cast<IngestionOutcomeDoer_RecordEatenFluid>();
+
+                    foreach (IngestionOutcomeDoer_RecordEatenFluid fluidIngestionDoer in eatenFluidsOutcomeDoers)
                     {
                         ModLog.Debug($"{ingester} ate {meal.parent} with ingredient {ingredient}");
                         fluidIngestionDoer.DoIngestionOutcome(ingester, meal.parent, 10);
