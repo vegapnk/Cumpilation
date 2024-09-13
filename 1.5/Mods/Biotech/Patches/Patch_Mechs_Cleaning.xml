@@ -1,23 +1,30 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Patch>
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="Mech_Cleansweeper"]</xpath>
-		<value>
-            <comps>
-                <li Class="Cumpilation.Gathering.MechPassiveFluidGathererCompProperties">
-                <range>5</range>
-                <supportedFluids>
-                  <li>Cum</li>
-                  <li>InsectSpunk</li>
-                  <li>Cumpilation_Slug</li>
-                </supportedFluids>
-                <cleanAtmostOne>true</cleanAtmostOne>
-                <cleanChance>1.00</cleanChance>
-                <!-- 125 ticks ~ 8 times per hour -->
-                <tickIntervall>125</tickIntervall>
-              </li>
-            </comps>
-		</value>
-	</Operation>
-    
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Mech_Cleansweeper"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Mech_Cleansweeper"]</xpath>
+      <value>
+        <comps />
+      </value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Mech_Cleansweeper"]/comps</xpath>
+    <value>
+      <li Class="Cumpilation.Gathering.MechPassiveFluidGathererCompProperties">
+        <range>5</range>
+        <supportedFluids>
+          <li>Cum</li>
+          <li>InsectSpunk</li>
+          <li>Cumpilation_Slug</li>
+        </supportedFluids>
+        <cleanAtmostOne>true</cleanAtmostOne>
+        <cleanChance>1.00</cleanChance>
+        <!-- 125 ticks ~ 8 times per hour -->
+        <tickIntervall>125</tickIntervall>
+      </li>
+    </value>
+  </Operation>
 </Patch>
