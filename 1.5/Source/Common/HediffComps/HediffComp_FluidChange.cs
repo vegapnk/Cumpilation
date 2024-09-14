@@ -15,9 +15,6 @@ namespace Cumpilation.Common
 
         public HediffCompProperties_FluidChange Props => (HediffCompProperties_FluidChange)this.props;
 
-
-        //Dictionary<Hediff,SexFluidDef> changedParts = new Dictionary<Hediff,SexFluidDef>();
-
         List<Hediff> storedHediffs = new List<Hediff>();
         List<SexFluidDef> storedDefs = new List<SexFluidDef>();
 
@@ -28,26 +25,10 @@ namespace Cumpilation.Common
             ModLog.Debug($"Running HediffComp_FluidChange PostPostAdd for {this.parent.pawn}");
             Pawn pawn = this.parent.pawn;
 
-            foreach (Hediff part in Genital_Helper.get_AllPartsHediffList(pawn))
-            {
-                if (part is ISexPartHediff sexPart)
-                {
-                    if (Props.changePenis && Genital_Helper.is_penis(part) && sexPart.GetPartComp().Fluid != Props.fluid)
-                    {
-                        StoreAndChangeFluid(part);
-                    }
-                    else if (Props.changeVagina && Genital_Helper.is_vagina(part) && sexPart.GetPartComp().Fluid != Props.fluid)
-                    {
-                        StoreAndChangeFluid(part);
-                    }
-                    else if (Props.changeBreast && (part.def.defName.ToLower().Contains("breast") || part.def.defName.ToLower().Contains("udder")) && sexPart.GetPartComp().Fluid != Props.fluid)
-                        StoreAndChangeFluid(part);
-                    else if (Props.changeOther && sexPart.GetPartComp().Fluid != Props.fluid)
-                    {
-                        StoreAndChangeFluid(part);
-                    }
-                }
+            foreach (Hediff partToChange in Props.GetSexPartHediffs(pawn)){
+                StoreAndChangeFluid(partToChange);
             }
+
             ModLog.Debug($"Changed {storedHediffs.Count()} fluids for {this.parent.pawn} to {Props.fluid}");
         }
 
@@ -81,7 +62,13 @@ namespace Cumpilation.Common
 
             Scribe_Collections.Look<Hediff>(ref storedHediffs, "storedHediffs", LookMode.Reference);
             Scribe_Collections.Look<SexFluidDef>(ref storedDefs, "storedDefs", LookMode.Def);
-            /*
+            
+        }
+
+
+        public bool WasSuccessfullyApplied() => storedHediffs.Any();
+
+        /*
              * DevNote: Originally I had a Dictionary, but this was giving me a big big headache with the Scribes. 
              * Someone from the Rimworld Discord tried to help me but I kept getting errors and weird values. 
              * So for now it is two lists, because why not actually. Two lists work quite reliably.
@@ -94,9 +81,5 @@ namespace Cumpilation.Common
                 ,log
                 );
             */
-        }
-
-
-        public bool WasSuccessfullyApplied() => storedHediffs.Any();
     }
 }

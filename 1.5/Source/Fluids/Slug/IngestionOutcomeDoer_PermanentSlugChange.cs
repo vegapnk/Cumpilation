@@ -18,7 +18,7 @@ namespace Cumpilation.Fluids.Slug
         {
             base.DoIngestionOutcomeSpecial(pawn,ingested,ingestedCount);
 
-            if (!wasSuccessfullyApplied)
+            if (!wasApplied)
             {
                 ModLog.Debug($"IngestionOutcomeDoer_PermanentSlugChange was not successfully applied for {pawn}, adding a penalty ToxicBuildup with severity {nonApplicationPenalityBuildUp}");
                 Hediff toxicBuildup = SlugUtility.GetOrCreateToxicBuildUpHediff(pawn);

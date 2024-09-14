@@ -9,14 +9,9 @@ using Verse;
 
 namespace Cumpilation.Common
 {
-    public class HediffCompProperties_FluidChange : HediffCompProperties
+    public class HediffCompProperties_FluidChange : HediffCompProperties_PartTargetting
     {
         public SexFluidDef fluid;
-
-        public bool changePenis = false;
-        public bool changeVagina = false;
-        public bool changeBreast = false;
-        public bool changeOther = false;
 
         public HediffCompProperties_FluidChange() => this.compClass = typeof(HediffComp_FluidChange);
     }

@@ -8,14 +8,9 @@ using Verse;
 
 namespace Cumpilation.Common
 {
-    public class HediffCompProperties_FluidAmountChange : HediffCompProperties
+    public class HediffCompProperties_FluidAmountChange : HediffCompProperties_PartTargetting
     {
         public float multiplier = 1.0f;
-
-        public bool changePenis = false;
-        public bool changeVagina = false;
-        public bool changeBreast = false;
-        public bool changeOther = false;
 
         public HediffCompProperties_FluidAmountChange() => this.compClass = typeof(HediffComp_FluidAmountChange);
     }

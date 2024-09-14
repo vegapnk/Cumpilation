@@ -21,26 +21,10 @@ namespace Cumpilation.Common
 
             Pawn pawn = this.parent.pawn;
 
-            foreach (Hediff part in Genital_Helper.get_AllPartsHediffList(pawn))
-            {
-                if (part is ISexPartHediff sexPart)
-                {
-                    if (Props.changePenis && Genital_Helper.is_penis(part) && sexPart.GetPartComp().Fluid != null)
-                    {
-                        StoreAndChangeFluidAmount(part);
-                    }
-                    else if (Props.changeVagina && Genital_Helper.is_vagina(part) && sexPart.GetPartComp().Fluid != null)
-                    {
-                        StoreAndChangeFluidAmount(part);
-                    }
-                    else if (Props.changeBreast && (part.def.defName.ToLower().Contains("breast") || part.def.defName.ToLower().Contains("udder")) && sexPart.GetPartComp().Fluid != null)
-                        StoreAndChangeFluidAmount(part);
-                    else if (Props.changeOther && sexPart.GetPartComp().Fluid != null)
-                    {
-                        StoreAndChangeFluidAmount(part);
-                    }
-                }
+            foreach (Hediff partToChange in Props.GetSexPartHediffs(pawn)) {
+                StoreAndChangeFluidAmount(partToChange);
             }
+
             ModLog.Debug($"Changed {storedHediffs.Count()} fluids for {this.parent.pawn}: multiplied by {Props.multiplier}");
         }
 
