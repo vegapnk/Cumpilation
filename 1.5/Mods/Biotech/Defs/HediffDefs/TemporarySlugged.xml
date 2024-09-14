@@ -14,17 +14,29 @@
             </li>
             <li Class="Cumpilation.Common.HediffCompProperties_FluidChangeWithPenalty">
                 <fluid>Cumpilation_Slug</fluid>
-                <changePenis>true</changePenis>
-                <changeVagina>false</changeVagina>
-                <changeBreast>false</changeBreast>
-                <changeOther>false</changeOther>
+
+                <allowMen>true</allowMen>
+                <allowWomen>true</allowWomen>
+                <allowFutas>true</allowFutas>
+                <allowAnimals>false</allowAnimals>
+                <targetPenis>true</targetPenis>
+                <targetVagina>false</targetVagina>
+                <targetBreast>false</targetBreast>
+                <targetAnus>false</targetAnus>
+                <targetOther>false</targetOther>
+                <needsFluid>true</needsFluid>
+                <onlyFirst>true</onlyFirst>
 
                 <penaltyHediff>ToxicBuildup</penaltyHediff>
                 <penaltySeverity>0.4</penaltySeverity>
             </li>
             <li Class="Cumpilation.Common.HediffCompProperties_FluidAmountChange">
                 <multiplier>1.2</multiplier>
-                <changePenis>true</changePenis>
+                <allowMen>true</allowMen>
+                <allowFutas>true</allowFutas>
+                <targetPenis>true</targetPenis>
+                <needsFluid>true</needsFluid>
+                <onlyFirst>false</onlyFirst>
             </li>
         </comps>
         <stages>

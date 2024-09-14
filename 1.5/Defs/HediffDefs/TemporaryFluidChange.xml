@@ -12,13 +12,21 @@
                 <!-- default: Last ~1 Week -->
                 <severityPerDay>-0.15</severityPerDay>
             </li>
-            <!-- Example how to use: 
+            <!-- Example how to use: --> 
+            <!-- 
             <li Class="Cumpilation.Common.HediffCompProperties_FluidChange">
                 <fluid>Milk</fluid>
-                <changePenis>true</changePenis>
-                <changeVagina>true</changeVagina>
-                <changeBreast>false</changeBreast>
-                <changeOther>false</changeOther>
+                <allowMen>true</allowMen>
+                <allowWomen>true</allowWomen>
+                <allowFutas>true</allowFutas>
+                <allowAnimals>false</allowAnimals>
+                <targetPenis>true</targetPenis>
+                <targetVagina>false</targetVagina>
+                <targetBreast>false</targetBreast>
+                <targetAnus>false</targetAnus>
+                <targetOther>false</targetOther>
+                <needsFluid>true</needsFluid>
+                <onlyFirst>true</onlyFirst>
             </li>
             -->
         </comps>

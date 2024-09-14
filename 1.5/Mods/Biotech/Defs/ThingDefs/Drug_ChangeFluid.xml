@@ -35,11 +35,17 @@
         </li>
         <li Class="Cumpilation.Fluids.Slug.IngestionOutcomeDoer_PermanentSlugChange">
           <fluid>Cumpilation_Slug</fluid>
-          <changePenis>true</changePenis>
-          <changeVagina>false</changeVagina>
-          <changeBreast>false</changeBreast>
-          <changeOther>false</changeOther>
-          <onlyChangeOne>false</onlyChangeOne>
+          <allowMen>true</allowMen>
+          <allowWomen>false</allowWomen>
+          <allowFutas>true</allowFutas>
+          <allowAnimals>false</allowAnimals>
+          <targetPenis>true</targetPenis>
+          <targetVagina>false</targetVagina>
+          <targetBreast>false</targetBreast>
+          <targetAnus>false</targetAnus>
+          <targetOther>false</targetOther>
+          <needsFluid>true</needsFluid>
+          <onlyFirst>true</onlyFirst>
           <nonApplicationPenalityBuildUp>0.6</nonApplicationPenalityBuildUp>
         </li>
       </outcomeDoers>
