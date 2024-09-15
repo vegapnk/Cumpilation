@@ -27,7 +27,8 @@
 		<alwaysProduceFilth>true</alwaysProduceFilth>
 		<baseNutrition>0.1</baseNutrition>
 		<tags>
-			<li>canCumflate</li>
+			<li>CanCumflate</li>
+			<li>CanBlueBall</li>
 		</tags>
 		<ingestionDoers>
 			<li Class="Cumpilation.Fluids.Slug.SexFluidIngestionDoer_ConsumeSlug" />

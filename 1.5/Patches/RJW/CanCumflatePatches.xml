@@ -1,20 +1,38 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Patch>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/rjw.SexFluidDef[defName="Cum"]/tags</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/rjw.SexFluidDef[defName="Cum"]</xpath>
+			<value>
+				<tags />
+			</value>
+		</nomatch>
+	</Operation>
+
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/rjw.SexFluidDef[defName="Cum"]</xpath>
+		<xpath>Defs/rjw.SexFluidDef[defName="Cum"]/tags</xpath>
 		<value>
-            <tags>
-                <li>CanCumflate</li>
-            </tags>
+			<li>CanCumflate</li>
 		</value>
 	</Operation>
-		
+
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/rjw.SexFluidDef[defName="InsectSpunk"]/tags</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/rjw.SexFluidDef[defName="InsectSpunk"]</xpath>
+			<value>
+				<tags />
+			</value>
+		</nomatch>
+	</Operation>
+
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/rjw.SexFluidDef[defName="InsectSpunk"]</xpath>
+		<xpath>Defs/rjw.SexFluidDef[defName="InsectSpunk"]/tags</xpath>
 		<value>
-            <tags>
-                <li>CanCumflate</li>
-            </tags>
+			<li>CanCumflate</li>
 		</value>
 	</Operation>
 

@@ -70,6 +70,7 @@
     <Compile Include="Common\IngestionOutcomeDoers\IngestionOutcomeDoer_PermanentFluidChange.cs" />
     <Compile Include="Common\IPartTargetter.cs" />
     <Compile Include="Common\PartUtility.cs" />
+    <Compile Include="Fluids\Cum\Patch_HediffSexPart_Tick_GetBlueBalls.cs" />
     <Compile Include="Gathering\Comps\MechPassiveFluidGathererComp.cs" />
     <Compile Include="Gathering\Comps\MechPassiveFluidGathererCompProperties.cs" />
     <Compile Include="Gathering\Patches\Patch_CasualSexHelper_FindNearbyBucketToMasturbate.cs" />
