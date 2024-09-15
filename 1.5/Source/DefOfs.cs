@@ -22,5 +22,7 @@ namespace Cumpilation
         public static readonly ThoughtDef Cumpilation_GotOverCumflatedEnjoyed;
 
         public static readonly HediffDef Cumpilation_Cumflation;
+
+        public static readonly HediffDef Cumpilation_BlueBalls;
     }
 }

@@ -30,15 +30,29 @@ namespace Cumpilation.Common
         {
             base.CompPostTick(ref severityAdjustment);
 
-            if (severityAdjustment != 0) {
+            if (parent.pawn.IsHashIntervalTick(2000)) {
                 foreach (ISexPartHediff sexPart in Props.GetSexPartHediffs(parent.pawn)) {
-
+                    // Adjust back to before this Comp
                     if ( (lastMultiplier != float.MinValue) && lastMultiplier != 0) 
                     {
                         sexPart.GetPartComp().partFluidFactor /= lastMultiplier;
                     }
+                    // Re-Adjust based on the new change by this Hediff
                     sexPart.GetPartComp().partFluidFactor *= CalculateOutput();
                     lastMultiplier = CalculateOutput();
+                }
+            }
+        }
+
+        public override void CompPostPostRemoved()
+        {
+            base.CompPostPostRemoved();
+
+            // DevNote: As the Orgasm removes (or is planned to remove) this Hediff, it's important to also reset the value back to what it was before. 
+            if (Pawn != null && !Pawn.Dead && lastMultiplier != float.MinValue && lastMultiplier != 0.0) { 
+                foreach(ISexPartHediff sexPart in Props.GetSexPartHediffs(Pawn))
+                {
+                    sexPart.GetPartComp().partFluidFactor /= lastMultiplier;
                 }
             }
         }

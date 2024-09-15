@@ -24,7 +24,8 @@ The cum-stuffing will make a different effect depending on the fluid, and the cu
 - Passive Cum-Cleaning (idea from [rjw-bucket](https://gitgud.io/Thomas404/rjw-bucket))
 - Progressive Eat-((Fluid))-Thoughts (originally / partly from [Ameravashi-Sexperience](https://gitgud.io/amevarashi/rjw-sexperience))
 - Gathering (originally from [Tory](https://gitgud.io/Tory/gathered-rjw), updated [by Nil](https://gitgud.io/MimiNil/gathering)
-- Cleansweeper Mechs slowly gather Cum and Insect Jelly 
+- Cleansweeper Mechs slowly gather Cum and Insect Jelly
+- Penis-equipped pawns will stack-up blue balls until release. 
 - {Biotech} Slug, a Wastepack based, negative Fluid.
 
 ## Planned Content
@@ -37,11 +38,6 @@ The cum-stuffing will make a different effect depending on the fluid, and the cu
 
 - Bukkake (originally [Ed86-Cum](https://gitgud.io/Ed86/rjw-cum))
 - Royal-Insect-Jelly Fluid for [Vanilla-Factions-Expanded-Insectoids-2](https://steamcommunity.com/sharedfiles/filedetails/?id=3309003431)
-
-## Far-Future Planned Content 
-
-- VE Fluid System ... 
-- Maybe: "Likes Cumflating" Trait
 
 ## Conflicts 
 
