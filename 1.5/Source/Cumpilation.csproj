@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\DefModExtension_PartTargetting.cs" />
     <Compile Include="Common\FluidUtility.cs" />
     <Compile Include="Common\HediffComps\HediffCompProperties_FluidAmountChange.cs" />
     <Compile Include="Common\HediffComps\HediffCompProperties_FluidChange.cs" />
@@ -72,9 +73,12 @@
     <Compile Include="Common\PartUtility.cs" />
     <Compile Include="Common\HediffComps\HediffCompProperties_ChangeFluidfactorBasedOnSeverity.cs" />
     <Compile Include="Common\HediffComps\HediffComp_ChangeFluidfactorBasedOnSeverity.cs" />
-    <Compile Include="Fluids\Cum\CumHelper.cs" />
-    <Compile Include="Fluids\Cum\Patch_HediffSexPart_Tick_GetBlueBalls.cs" />
-    <Compile Include="Fluids\Cum\Patch_OnOrgasm_ResetBlueBalls.cs" />
+    <Compile Include="Oscillation\HediffComps\HediffCompProperties_ChangeSeverityOnOrgasm.cs" />
+    <Compile Include="Oscillation\HediffComps\HediffComp_ChangeSeverityOnOrgasm.cs" />
+    <Compile Include="Oscillation\HediffDefModExtension_SpawnOnOrgasm.cs" />
+    <Compile Include="Oscillation\OscillationHelper.cs" />
+    <Compile Include="Oscillation\Patch_HediffSexPart_Tick_GetBlueBalls.cs" />
+    <Compile Include="Oscillation\Patch_OnOrgasm_SpawnHediffs_And_ChangeSeverityOfHediffs.cs" />
     <Compile Include="Gathering\Comps\MechPassiveFluidGathererComp.cs" />
     <Compile Include="Gathering\Comps\MechPassiveFluidGathererCompProperties.cs" />
     <Compile Include="Gathering\Patches\Patch_CasualSexHelper_FindNearbyBucketToMasturbate.cs" />

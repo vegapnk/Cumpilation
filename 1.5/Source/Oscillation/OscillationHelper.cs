@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace Cumpilation.Fluids.Cum
+namespace Cumpilation.Oscillation
 {
-    public class CumHelper
+    public class OscillationHelper
     {
         /// <summary>
         /// Gets (or creates) a BlueBall Hediff for the pawn, 

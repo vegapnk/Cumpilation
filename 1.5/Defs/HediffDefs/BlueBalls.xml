@@ -19,6 +19,9 @@
                 <needsFluid>true</needsFluid>
                 <onlyFirst>false</onlyFirst>
             </li>
+            <li Class="Cumpilation.Oscillation.HediffCompProperties_ChangeSeverityOnOrgasm">
+                <severityChange>-1.0</severityChange>
+            </li>
         </comps>
         <stages>
             <li>

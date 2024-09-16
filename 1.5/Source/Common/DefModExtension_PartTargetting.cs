@@ -1,5 +1,4 @@
-﻿using RimWorld;
-using rjw;
+﻿using rjw;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,7 @@ using Verse;
 
 namespace Cumpilation.Common
 {
-    public abstract class IngestionOutcomeDoer_PartTargetting : IngestionOutcomeDoer, IPartTargetter
+    public class DefModExtension_PartTargetting : DefModExtension, IPartTargetter
     {
         public bool allowMen = true;
         public bool allowWomen = true;
@@ -24,15 +23,22 @@ namespace Cumpilation.Common
 
         public bool needsFluid = true;
 
-        public bool onlyFirst = false;
-        public IEnumerable<HediffDef> blockingHediffs = new List<HediffDef>();
+
+        /// <summary>
+        /// A list of hediffs that block spawning of this Hediff.
+        /// If any is present, at any severity other than 0, `CanTargetPawn` will return false.
+        /// </summary>
+        public List<HediffDef> blockingHediffs = new List<HediffDef>();
 
         public IEnumerable<ISexPartHediff> GetSexPartHediffs(Pawn pawn)
         {
             return PartUtility.FindFittingSexParts(pawn,
                 targetPenis: this.targetPenis, targetVagina: this.targetVagina, targetBreast: this.targetBreast, targetAnus: this.targetAnus, targetOther: this.targetOther,
-                allowMen: this.allowMen, allowWomen: this.allowWomen, allowAnimals: this.allowAnimals, allowFutas: this.allowFutas, onlyFirst: this.onlyFirst, needsFluid: this.needsFluid, blockingHediffs: this.blockingHediffs);
+                allowMen: this.allowMen, allowWomen: this.allowWomen, allowAnimals: this.allowAnimals, allowFutas: this.allowFutas, 
+                needsFluid: this.needsFluid, blockingHediffs: this.blockingHediffs);
         }
+
+        public virtual bool CanTargetPawn (Pawn pawn) => GetSexPartHediffs(pawn).Count() > 0;
 
     }
 }

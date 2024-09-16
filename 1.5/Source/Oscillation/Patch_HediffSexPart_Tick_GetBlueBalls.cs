@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using Cumpilation.Oscillation;
+using HarmonyLib;
 using rjw;
 using System;
 using System.Collections.Generic;
@@ -40,7 +41,7 @@ namespace Cumpilation.Fluids.Cum
                 if (__instance.pawn != null && __instance.pawn.IsHashIntervalTick(BLUEBALL_TICK_INTERVALL))
                 {
                     //ModLog.Debug($"Postfixing Patch_HediffSexPart_Tick_GetBlueBalls for {__instance.def.defName} of {__instance.pawn}, bumping by {BLUEBALL_SEVERITY_INCREASE}");
-                    var blueBallHediff = CumHelper.GetOrCreateBlueBallsHediff(pawn);
+                    var blueBallHediff = OscillationHelper.GetOrCreateBlueBallsHediff(pawn);
                     blueBallHediff.Severity += BLUEBALL_SEVERITY_INCREASE;
                 }
             }

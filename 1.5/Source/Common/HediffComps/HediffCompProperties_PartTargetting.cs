@@ -26,13 +26,13 @@ namespace Cumpilation.Common
 
         public bool onlyFirst = false;
 
+        public IEnumerable<HediffDef> blockingHediffs = new List<HediffDef>();
+
         public IEnumerable<ISexPartHediff> GetSexPartHediffs(Pawn pawn)
         {
-#pragma warning disable CS1717 // Assignment made to same variable
             return PartUtility.FindFittingSexParts(pawn, 
-                targetPenis = this.targetPenis, targetVagina = this.targetVagina, targetBreast=this.targetBreast, targetAnus = this.targetAnus, targetOther = this.targetOther,
-                allowMen = this.allowMen, allowWomen = this.allowWomen, allowAnimals = this.allowAnimals, allowFutas = this.allowFutas, onlyFirst = this.onlyFirst, needsFluid = this.needsFluid);
-#pragma warning restore CS1717 // Assignment made to same variable
+                targetPenis: this.targetPenis, targetVagina: this.targetVagina, targetBreast: this.targetBreast, targetAnus: this.targetAnus, targetOther: this.targetOther,
+                allowMen: this.allowMen, allowWomen: this.allowWomen, allowAnimals: this.allowAnimals, allowFutas: this.allowFutas, onlyFirst: this.onlyFirst, needsFluid: this.needsFluid, blockingHediffs: this.blockingHediffs);
         }
     }
 }
