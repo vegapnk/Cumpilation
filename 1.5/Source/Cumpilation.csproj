@@ -73,6 +73,8 @@
     <Compile Include="Common\PartUtility.cs" />
     <Compile Include="Common\HediffComps\HediffCompProperties_ChangeFluidfactorBasedOnSeverity.cs" />
     <Compile Include="Common\HediffComps\HediffComp_ChangeFluidfactorBasedOnSeverity.cs" />
+    <Compile Include="Common\HediffComps\HediffCompProperties_RandomlySpawnFilth.cs" />
+    <Compile Include="Common\HediffComps\HediffComp_RandomlySpawnFilth.cs" />
     <Compile Include="Oscillation\HediffComps\HediffCompProperties_ChangeSeverityOnOrgasm.cs" />
     <Compile Include="Oscillation\HediffComps\HediffComp_ChangeSeverityOnOrgasm.cs" />
     <Compile Include="Oscillation\HediffDefModExtension_SpawnOnOrgasm.cs" />

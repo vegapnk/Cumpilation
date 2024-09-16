@@ -25,6 +25,13 @@
             <li Class="Cumpilation.Oscillation.HediffCompProperties_ChangeSeverityOnOrgasm">
                 <severityChange>-1.0</severityChange>
             </li>
+            <li Class="Cumpilation.Common.HediffCompProperties_RandomlySpawnFilth">
+                <ticksBetweenCheck>2500</ticksBetweenCheck>
+                <chanceToSpawn>0.75</chanceToSpawn>
+                <chanceBasedOnSeverity>true</chanceBasedOnSeverity>
+                <targetPenis>true</targetPenis>
+                <needsFluid>true</needsFluid>
+            </li>
         </comps>
         <stages>
             <li>
@@ -170,6 +177,14 @@
             <li Class="HediffCompProperties_SeverityPerDay">
                 <!-- Hold a bit longer than 1/2 day-->
                 <severityPerDay>-1.75</severityPerDay>
+            </li>
+            
+            <li Class="Cumpilation.Common.HediffCompProperties_RandomlySpawnFilth">
+                <ticksBetweenCheck>1500</ticksBetweenCheck>
+                <chanceToSpawn>0.5</chanceToSpawn>
+                <chanceBasedOnSeverity>true</chanceBasedOnSeverity>
+                <targetVagina>true</targetVagina>
+                <needsFluid>true</needsFluid>
             </li>
         </comps>
         <stages>
