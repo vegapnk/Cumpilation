@@ -25,7 +25,7 @@ The cum-stuffing will make a different effect depending on the fluid, and the cu
 - Progressive Eat-((Fluid))-Thoughts (originally / partly from [Ameravashi-Sexperience](https://gitgud.io/amevarashi/rjw-sexperience))
 - Gathering (originally from [Tory](https://gitgud.io/Tory/gathered-rjw), updated [by Nil](https://gitgud.io/MimiNil/gathering)
 - Cleansweeper Mechs slowly gather Cum and Insect Jelly
-- Penis-equipped pawns will stack-up blue balls until release. 
+- Penis-equipped pawns will stack-up blue balls until release. Consequent releases make pawns `drained`. Vaginas get `wet`ter on orgasms.
 - {Biotech} Slug, a Wastepack based, negative Fluid.
 
 ## Planned Content
