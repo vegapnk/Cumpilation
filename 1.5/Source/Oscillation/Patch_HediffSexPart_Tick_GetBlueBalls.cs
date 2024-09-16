@@ -36,7 +36,10 @@ namespace Cumpilation.Fluids.Cum
                 // Requirement: The fluid must be "storable", defined as a tag. 
                 // DevNote: I wanted this to be at the Genital, but 
                 if (!sexPart.GetPartComp().Def.fluid.tags.Contains("CanBlueBall"))
-                    return; 
+                    return;
+
+                if (pawn.health.hediffSet.HasHediff(DefOfs.Cumpilation_Drained))
+                    return;
 
                 if (__instance.pawn != null && __instance.pawn.IsHashIntervalTick(BLUEBALL_TICK_INTERVALL))
                 {

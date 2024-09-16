@@ -26,7 +26,7 @@ namespace Cumpilation.Common
 
         public bool onlyFirst = false;
 
-        public IEnumerable<HediffDef> blockingHediffs = new List<HediffDef>();
+        public List<HediffDef> blockingHediffs = new List<HediffDef>();
 
         public IEnumerable<ISexPartHediff> GetSexPartHediffs(Pawn pawn)
         {
