@@ -28,6 +28,8 @@ namespace Cumpilation.Cumflation
             if (props.usedCondom) return;
             if (!IsSexTypeThatCanCumflate(props)) return;
 
+
+
             if (!CanBeCumflated(inflated)) return;
 
             //TODO: can we add a check/filter for the involved genitals? 

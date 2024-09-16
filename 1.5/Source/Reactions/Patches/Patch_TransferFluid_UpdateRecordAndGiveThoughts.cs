@@ -23,11 +23,18 @@ namespace Cumpilation.Reactions
             if (props.usedCondom) return;
             if (!StuffingUtility.IsSexTypeThatCanCumstuff(props)) return;
 
-            if (props.isReceiver)
+            /// DevNote: See `Patch_TransferFluids_Stuff` at the Bottom for how to figure out the cases.
+            if (props.isReceiver && !props.isRevese)
             {
-                //ModLog.Debug($"{pawn} is receiver, {partner} is source --- aborting and waiting for second transfer");
+                // Case A: The pawn fucks the partner, and shoots.
                 return;
             }
+            if (!props.isReceiver && props.isRevese)
+            {
+                // Case B: The pawn reverse-fucks the partner, and the partner shoots.
+                return;
+            }
+
 
             var parts = FluidUtility.GetGenitalsWithFluids(pawn)
                 .Where(p => p.Def.genitalTags.Contains(GenitalTag.CanPenetrate));

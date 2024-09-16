@@ -26,4 +26,5 @@ namespace Cumpilation
         public static readonly HediffDef Cumpilation_BlueBalls;
         public static readonly HediffDef Cumpilation_Drained;
     }
+
 }

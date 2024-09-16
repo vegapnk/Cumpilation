@@ -14,7 +14,17 @@ namespace Cumpilation.Cumflation
         public static void Postfix(SexProps props)
         {
             if (Settings.EnableCumflation) {
-                CumflationUtility.CumflatePawn(props.pawn, props.partner,props);
+                /// DevNote: See `Patch_TransferFluids_Stuff` at the Bottom for how to figure out the cases.
+                if (!props.isReceiver && !props.isRevese)
+                {
+                    // Case A: The pawn fucks the partner, and shoots.
+                    CumflationUtility.CumflatePawn(props.pawn, props.partner, props);
+                }
+                if (props.isReceiver && props.isRevese)
+                {
+                    // Case B: The pawn reverse-fucks the partner, and the partner shoots.
+                    CumflationUtility.CumflatePawn(props.pawn, props.partner, props);
+                }
             }
         }
 
