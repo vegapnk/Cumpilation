@@ -61,15 +61,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\DefModExtension_PartTargetting.cs" />
+    <Compile Include="Common\DefModExtension_PawnTargetting.cs" />
     <Compile Include="Common\FluidUtility.cs" />
     <Compile Include="Common\HediffComps\HediffCompProperties_FluidAmountChange.cs" />
     <Compile Include="Common\HediffComps\HediffCompProperties_FluidChange.cs" />
     <Compile Include="Common\HediffComps\HediffCompProperties_PartTargetting.cs" />
+    <Compile Include="Common\HediffComps\HediffCompProperties_PawnTargetting.cs" />
     <Compile Include="Common\HediffComps\HediffComp_FluidChange.cs" />
     <Compile Include="Common\HediffComps\HediffComp_FluidAmountChange.cs" />
+    <Compile Include="Common\IngestionOutcomeDoers\IngestionOutcomeDoer_PawnTargetting.cs" />
     <Compile Include="Common\IngestionOutcomeDoers\IngestionOutcomeDoer_PermanentFluidAmountChange.cs" />
     <Compile Include="Common\IngestionOutcomeDoers\IngestionOutcomeDoer_PermanentFluidChange.cs" />
     <Compile Include="Common\IPartTargetter.cs" />
+    <Compile Include="Common\IPawnTargetter.cs" />
     <Compile Include="Common\PartUtility.cs" />
     <Compile Include="Common\HediffComps\HediffCompProperties_ChangeFluidfactorBasedOnSeverity.cs" />
     <Compile Include="Common\HediffComps\HediffComp_ChangeFluidfactorBasedOnSeverity.cs" />

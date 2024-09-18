@@ -23,7 +23,7 @@ namespace Cumpilation.Oscillation
             foreach (HediffDef hediffDef in DefDatabase<HediffDef>.AllDefsListForReading.Where(hDef => hDef.HasModExtension<HediffDefModExtension_SpawnOnOrgasm>()))
             {
                 HediffDefModExtension_SpawnOnOrgasm spawnExt = hediffDef.GetModExtension<HediffDefModExtension_SpawnOnOrgasm>();
-                if (spawnExt != null && spawnExt.CanTargetPawn(pawn))
+                if (spawnExt != null && spawnExt.IsValidPawn(pawn))
                 {
                     // If the pawn has the hediff, do nothing
                     if (pawn.health.hediffSet.HasHediff(hediffDef)) continue;

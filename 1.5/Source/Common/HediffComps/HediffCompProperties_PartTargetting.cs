@@ -9,13 +9,8 @@ using static HarmonyLib.Code;
 
 namespace Cumpilation.Common
 {
-    public abstract class HediffCompProperties_PartTargetting : HediffCompProperties, IPartTargetter
+    public abstract class HediffCompProperties_PartTargetting : HediffCompProperties_PawnTargetting, IPartTargetter
     {
-        public bool allowMen = true;
-        public bool allowWomen = true;
-        public bool allowFutas = true;
-        public bool allowAnimals = false;
-
         public bool targetPenis = false;
         public bool targetVagina = false;
         public bool targetBreast = false;
@@ -26,13 +21,17 @@ namespace Cumpilation.Common
 
         public bool onlyFirst = false;
 
-        public List<HediffDef> blockingHediffs = new List<HediffDef>();
 
         public IEnumerable<ISexPartHediff> GetSexPartHediffs(Pawn pawn)
         {
-            return PartUtility.FindFittingSexParts(pawn, 
-                targetPenis: this.targetPenis, targetVagina: this.targetVagina, targetBreast: this.targetBreast, targetAnus: this.targetAnus, targetOther: this.targetOther,
-                allowMen: this.allowMen, allowWomen: this.allowWomen, allowAnimals: this.allowAnimals, allowFutas: this.allowFutas, onlyFirst: this.onlyFirst, needsFluid: this.needsFluid, blockingHediffs: this.blockingHediffs);
+            if (IsValidPawn(pawn))
+            {
+                return PartUtility.FindFittingSexParts(pawn,
+                    targetPenis: this.targetPenis, targetVagina: this.targetVagina, targetBreast: this.targetBreast, targetAnus: this.targetAnus, targetOther: this.targetOther,
+                    needsFluid: this.needsFluid);
+            }
+            else
+                return new List<ISexPartHediff>();
         }
     }
 }
