@@ -43,6 +43,9 @@ namespace Cumpilation.Gathering
                 .OrderByDescending(f => f.GetPartComp().FluidAmount)
                 .FirstOrFallback();
 
+            if (genitalWithMostFluid == null)
+                return true;
+
             Building fluidSink = GatheringUtility.FindClosestFluidSink(pawn, genitalWithMostFluid.GetPartComp().Fluid);
 
             if (fluidSink == null)
