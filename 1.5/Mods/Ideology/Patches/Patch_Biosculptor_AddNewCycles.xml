@@ -8,9 +8,10 @@
             <key>fluidincrease</key>
             <increaseFactor>1.3</increaseFactor>
             <label>fluid increase</label>
+            <!-- I first tried to use the <GainThoughtOnCompletion> here but it always gave the age reversal one -->
             <description>Permanently increase all fluid-output.</description>
             <iconPath>UI/Gizmos/BiosculpterCyclePleasure</iconPath>
-            <durationDays>2.5</durationDays>
+            <durationDays>2.25</durationDays>
             <operatingColor>(1.000,0.918,0.000)</operatingColor>
           </li>
           <li Class="Cumpilation.Fluids.CompProperties_BiosculpterPod_ResetFluidAmountCycle">

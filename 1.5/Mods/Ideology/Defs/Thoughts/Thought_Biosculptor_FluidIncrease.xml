@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<ThoughtDef>
+		<defName>Cumpilation_Juiced_Up</defName>
+		<durationDays>4.0</durationDays>
+		<stages>
+			<li>
+				<label>juiced up</label>
+				<description>There's more going on in my private parts.</description>
+				<baseMoodEffect>+3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+</Defs>

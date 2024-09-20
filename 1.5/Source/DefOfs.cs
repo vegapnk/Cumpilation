@@ -25,6 +25,9 @@ namespace Cumpilation
 
         public static readonly HediffDef Cumpilation_BlueBalls;
         public static readonly HediffDef Cumpilation_Drained;
+
+        [MayRequireIdeology]
+        public static readonly ThoughtDef Cumpilation_Juiced_Up;
     }
 
 }

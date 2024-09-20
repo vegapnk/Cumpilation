@@ -28,6 +28,7 @@ namespace Cumpilation.Fluids
                 if (part is ISexPartHediff sexPart && sexPart.GetPartComp().Fluid != null)
                 {
                     sexPart.GetPartComp().partFluidFactor *= Props.increaseFactor;
+                    occupant?.needs?.mood?.thoughts?.memories?.TryGainMemory(DefOfs.Cumpilation_Juiced_Up);
                 }
             }
         }
