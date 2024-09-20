@@ -6,6 +6,7 @@
 		<li>1.5</li>		
 		<li IfModActive="ludeon.rimworld.Biotech">1.5/Mods/Biotech</li>
 		<li IfModActive="ludeon.rimworld.Ideology">1.5/Mods/Ideology</li>
+		<li IfModNotActive="winderig.processor">1.5/Mods/Not-Semen-Processor</li>
 	</v1.5>
 
 </loadFolders>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Campfire"]/recipes</xpath>
+        <value>
+            <li>Make_Samenstein</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="FueledStove"]/recipes</xpath>
+        <value>
+            <li>Make_Samenstein</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="ElectricStove"]/recipes</xpath>
+        <value>
+            <li>Make_Samenstein</li>
+        </value>
+    </Operation>
+
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Brewery"]/recipes</xpath>
+        <value>
+            <li>Make_Spermatuch</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="BiofuelRefinery"]/recipes</xpath>
+        <value>
+            <li>Make_Spermatuch</li>
+            <li>Make_Samenstein</li>
+        </value>
+    </Operation>
+
+</Patch>
