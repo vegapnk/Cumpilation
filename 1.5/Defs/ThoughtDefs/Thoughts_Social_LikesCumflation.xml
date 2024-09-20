@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+    <ThoughtDef>
+        <defName>cumpilation_can_cumflate_me</defName>
+        <thoughtClass>Thought_SituationalSocial</thoughtClass>
+        <workerClass>Cumpilation.Reactions.ThoughtWorker_Cumslut_LookingForJuicyPenetrators</workerClass>
+        <validWhileDespawned>false</validWhileDespawned>
+        
+        <stages>
+          <li>
+            <label>disappointingly low fluid output</label>
+            <baseOpinionOffset>-8</baseOpinionOffset>
+          </li>
+          <li>
+            <label>uninteresting fluid output</label>
+            <baseOpinionOffset>-2</baseOpinionOffset>
+          </li>
+          <li>
+            <label>acceptable fluid output</label>
+            <baseOpinionOffset>+4</baseOpinionOffset>
+          </li>
+          <li>
+            <label>lust for cascading eruptions</label>
+            <baseOpinionOffset>+9</baseOpinionOffset>
+          </li>
+        </stages>
+      </ThoughtDef>
+
+</Defs>

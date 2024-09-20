@@ -74,6 +74,7 @@
     <Compile Include="Common\IngestionOutcomeDoers\IngestionOutcomeDoer_PermanentFluidChange.cs" />
     <Compile Include="Common\IPartTargetter.cs" />
     <Compile Include="Common\IPawnTargetter.cs" />
+    <Compile Include="Common\MapUtility.cs" />
     <Compile Include="Common\PartUtility.cs" />
     <Compile Include="Common\HediffComps\HediffCompProperties_ChangeFluidfactorBasedOnSeverity.cs" />
     <Compile Include="Common\HediffComps\HediffComp_ChangeFluidfactorBasedOnSeverity.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="Reactions\Patches\Patch_IngestMeal_UpdateRecordAndGiveThoughts.cs" />
     <Compile Include="Reactions\Patches\Patch_TransferFluid_UpdateRecordAndGiveThoughts.cs" />
     <Compile Include="Reactions\ReactionUtility.cs" />
+    <Compile Include="Reactions\Thoughts\ThoughtWorker_Cumslut_LookingForJuicyPenetrators.cs" />
     <Compile Include="Reactions\Thoughts\Thought_RecordBased.cs" />
     <Compile Include="Settings\Cumpilation_SettingsController.cs" />
     <Compile Include="Settings\Settings.cs" />
