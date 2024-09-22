@@ -14,7 +14,7 @@
     <tendable>false</tendable>
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
-        <severityPerDay>-0.75</severityPerDay>
+        <severityPerDay>-0.85</severityPerDay>
       </li>
       <li Class="Cumpilation.Cumflation.HediffCompProperties_SourceStorage"/>
     </comps>
@@ -45,7 +45,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>-0.3</offset>
+            <offset>-0.25</offset>
           </li>
         </capMods>
         <painOffset>0.1</painOffset>
@@ -59,10 +59,10 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>-0.6</offset>
+            <offset>-0.55</offset>
           </li>
         </capMods>
-        <painOffset>0.3</painOffset>
+        <painOffset>0.15</painOffset>
       </li>
       <li>
         <label>extreme</label>
@@ -73,10 +73,10 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>-1.0</offset>
+            <offset>-0.85</offset>
           </li>
         </capMods>
-        <painOffset>0.5</painOffset>
+        <painOffset>0.25</painOffset>
       </li>
     </stages>
   </HediffDef>

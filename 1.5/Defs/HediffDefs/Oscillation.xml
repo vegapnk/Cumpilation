@@ -26,8 +26,8 @@
                 <severityChange>-1.0</severityChange>
             </li>
             <li Class="Cumpilation.Common.HediffCompProperties_RandomlySpawnFilth">
-                <ticksBetweenCheck>2500</ticksBetweenCheck>
-                <chanceToSpawn>0.75</chanceToSpawn>
+                <ticksBetweenCheck>4500</ticksBetweenCheck>
+                <chanceToSpawn>0.50</chanceToSpawn>
                 <chanceBasedOnSeverity>true</chanceBasedOnSeverity>
                 <targetPenis>true</targetPenis>
                 <needsFluid>true</needsFluid>
@@ -52,7 +52,7 @@
                 <label>swollen</label>
                 <becomeVisible>true</becomeVisible>
                 <statFactors>
-                    <SexFrequency>1.4</SexFrequency>
+                    <SexFrequency>1.3</SexFrequency>
                 </statFactors>
             </li>
             <li>
@@ -60,7 +60,7 @@
                 <label>aching</label>
                 <becomeVisible>true</becomeVisible>
                 <statFactors>
-                    <SexFrequency>2</SexFrequency>
+                    <SexFrequency>1.7</SexFrequency>
                 </statFactors>
             </li>
         </stages>
@@ -180,8 +180,8 @@
             </li>
             
             <li Class="Cumpilation.Common.HediffCompProperties_RandomlySpawnFilth">
-                <ticksBetweenCheck>1500</ticksBetweenCheck>
-                <chanceToSpawn>0.5</chanceToSpawn>
+                <ticksBetweenCheck>2750</ticksBetweenCheck>
+                <chanceToSpawn>0.35</chanceToSpawn>
                 <chanceBasedOnSeverity>true</chanceBasedOnSeverity>
                 <targetVagina>true</targetVagina>
                 <needsFluid>true</needsFluid>
@@ -214,7 +214,7 @@
                 <label>dripping</label>
                 <becomeVisible>true</becomeVisible>
                 <statFactors>
-                    <SexFrequency>1.75</SexFrequency>
+                    <SexFrequency>1.5</SexFrequency>
                 </statFactors>
             </li>
         </stages>

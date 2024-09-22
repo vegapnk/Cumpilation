@@ -10,7 +10,7 @@
     <tendable>false</tendable>
     <comps>
       <li Class="Cumpilation.Cumflation.HediffCompProperties_SharedSeverityPerDay">
-        <severityPerDay>-0.75</severityPerDay>
+        <severityPerDay>-0.85</severityPerDay>
       </li>
       <li Class="Cumpilation.Cumflation.HediffCompProperties_SourceStorage" />
       <!-- For mtb in VomitFluidMtb keep in mind that this chance triggers for every potential
@@ -73,7 +73,7 @@
             <offset>-0.2</offset>
           </li>
         </capMods>
-        <painOffset>0.15</painOffset>
+        <painOffset>0.1</painOffset>
       </li>
       <li>
         <label>overstuffed</label>
@@ -88,7 +88,7 @@
             <offset>-0.3</offset>
           </li>
         </capMods>
-        <painOffset>0.3</painOffset>
+        <painOffset>0.2</painOffset>
       </li>
     </stages>
   </HediffDef>
