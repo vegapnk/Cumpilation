@@ -70,9 +70,10 @@ namespace Cumpilation.Cumflation
         }
 
         public static bool IsSexTypeThatCanCumflate(SexProps props) {
-            return props.sexType == xxx.rjwSextype.Vaginal 
-                || props.sexType == xxx.rjwSextype.DoublePenetration 
-                || props.sexType == xxx.rjwSextype.Scissoring;
+            return props.sexType == xxx.rjwSextype.Vaginal
+                || props.sexType == xxx.rjwSextype.DoublePenetration;
+                // Related: Issue #7
+                //|| props.sexType == xxx.rjwSextype.Scissoring;
         }
 
         /// <summary>
