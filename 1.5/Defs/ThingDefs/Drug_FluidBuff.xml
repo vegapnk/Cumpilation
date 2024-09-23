@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="MakeableDrugBase">
+    <defName>Cumpilation_Lecithin</defName>
+    <label>lecithin</label>
+    <description>This (non-prescription) supplement temporarily increases the activity of the cowper's gland, resulting in bigger penile fluid output.</description>
+    <graphicData>
+      <texPath>Things/Item/Drug/Yayo</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(245, 240, 220)</color>
+      <drawSize>0.65</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>250</WorkToMake>
+      <MarketValue>14</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <minRewardCount>10</minRewardCount>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <baseIngestTicks>400</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Take {0}</ingestCommandString>
+      <ingestReportString>Taking {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>Cumpilation_ActiveCowpersGland</hediffDef>
+          <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>1850</displayPriority>
+    </recipeMaker>
+    <costList>
+      <Steel>3</Steel>
+      <MedicineHerbal>2</MedicineHerbal>
+      <Neutroamine>3</Neutroamine>
+    </costList>
+
+  </ThingDef>
+
+  <ThingDef ParentName="MakeableDrugBase">
+    <defName>Cumpilation_Galactogogues</defName>
+    <label>galactagogues</label>
+    <description>This (non-prescription) supplement temporarily increases the activity of the cowper's gland, resulting in bigger penile fluid output.</description>
+    <graphicData>
+      <texPath>Things/Item/Drug/Yayo</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(45, 66, 50)</color>
+      <drawSize>0.75</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>250</WorkToMake>
+      <MarketValue>14</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <minRewardCount>10</minRewardCount>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <baseIngestTicks>300</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Take {0}</ingestCommandString>
+      <ingestReportString>Taking {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>Cumpilation_ActiveMammaries</hediffDef>
+          <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>1850</displayPriority>
+    </recipeMaker>
+    <costList>
+      <MedicineHerbal>3</MedicineHerbal>
+    </costList>
+
+  </ThingDef>
+
+  
+</Defs>

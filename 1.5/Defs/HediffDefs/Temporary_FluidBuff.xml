@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <HediffDef Parent="Cumpilation_BaseTemporaryFluidChange">
+        <defName>Cumpilation_ActiveCowpersGland</defName>
+        <label>stimulated prostate</label>
+        <description>Due to a drug, the cowpers gland produces more fluid than usual.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>true</isBad>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <!-- default: Last  2 days  -->
+                <severityPerDay>-0.5</severityPerDay>
+            </li>
+            <li Class="Cumpilation.Common.HediffCompProperties_FluidAmountChange">
+                <multiplier>1.5</multiplier>
+                <allowMen>true</allowMen>
+                <allowFutas>true</allowFutas>
+                <targetPenis>true</targetPenis>
+                <needsFluid>true</needsFluid>
+                <onlyFirst>false</onlyFirst>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <label>wearing off</label>
+                <minSeverity>0.0</minSeverity>
+            </li>
+            <li>
+                <minSeverity>0.3</minSeverity>
+                <label>altered</label>
+            </li>
+            <li>
+                <minSeverity>0.9</minSeverity>
+                <label>fresh</label>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef Parent="Cumpilation_BaseTemporaryFluidChange">
+        <defName>Cumpilation_ActiveMammaries</defName>
+        <label>stimulated mammaries</label>
+        <description>The mammary glands got stimulated and produce more fluid.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>true</isBad>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <!-- default: Last  3 days  -->
+                <severityPerDay>-0.33</severityPerDay>
+            </li>
+            <li Class="Cumpilation.Common.HediffCompProperties_FluidAmountChange">
+                <multiplier>1.4</multiplier>
+                <allowMen>false</allowMen>
+                <allowFutas>true</allowFutas>
+                <allowWomen>true</allowWomen>
+                <targetBreast>true</targetBreast>
+                <needsFluid>true</needsFluid>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <label>wearing off</label>
+                <minSeverity>0.0</minSeverity>
+            </li>
+            <li>
+                <minSeverity>0.3</minSeverity>
+                <label>altered</label>
+            </li>
+            <li>
+                <minSeverity>0.9</minSeverity>
+                <label>fresh</label>
+            </li>
+        </stages>
+    </HediffDef>
+
+</Defs>
