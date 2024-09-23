@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using rjw;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,27 +18,35 @@ namespace Cumpilation.Cumflation
     public class JobDriver_OverflowingCumflation : JobDriver
     {
         IntVec3 orientation = new IntVec3();
+        Random random = new Random();
         public override bool TryMakePreToilReservations(bool errorOnFailed) => true;
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
             orientation = GetRandomOrientation();
+            Hediff cumflationHediff_for_debug = CumflationUtility.GetOrCreateCumflationHediff(pawn);
+            ModLog.Debug($"{this.pawn} got over-inflated and has Cumflation Severity {cumflationHediff_for_debug.Severity} - spraying cum until reaching severity 1.0");
+            ModLog.Debug($"\tSpraying from {this.pawn}@{this.pawn.PositionHeld} towards {orientation}");
+
+            int spawned_filth = 0;
 
             var toil = new Toil();
             toil.tickAction = delegate ()
             {
-                if (ShouldEnd()) { 
+                if (ShouldEnd()) {
+                    ModLog.Debug($"Finished overflowing for {this.pawn} - severity is back down to 1.0. Spawned a total of {spawned_filth} filth.");
                     base.ReadyForNextToil();
                     // TODO: TaleRecorder.RecordTale
                 }
                 else
                 {
-                    if (pawn.IsHashIntervalTick(50))
+                    if (pawn.IsHashIntervalTick(75))
                     {
                         //ModLog.Debug("Spawning Filth from Emptying Cumflation");
                         SpawnFilth();
                         Hediff cumflationHediff = CumflationUtility.GetOrCreateCumflationHediff(pawn);
                         cumflationHediff.Severity -= 0.075f;
+                        spawned_filth++;
                     }
                 }
             };
@@ -67,15 +76,19 @@ namespace Cumpilation.Cumflation
             FilthMaker.TryMakeFilth(filthPosition, pawn.Map, chosenFluid.fluid.filth);
         }
 
-        private IntVec3 GetRandomNearbyPosition(int maxDistance = 3)
+        private IntVec3 GetRandomNearbyPosition(int maxDistance = 3, int retries = 6)
         {
-            IntVec3 offset = orientation * (new Random()).Next(0, maxDistance);
+            IntVec3 offset = orientation * random.Next(0, maxDistance);
             IntVec3 positionCandidate = pawn.PositionHeld + offset;
+            if (retries <= 0) { 
+                // In case we are unable to spawn things for too many times, we just put it below the pawn. That should always be fine. 
+                return positionCandidate;
+            }
             // Quick Check whether the cell is in the room, not to spawn through walls etc. 
             if (pawn.GetRoom().ContainsCell(positionCandidate))
                 return positionCandidate;
             else 
-                return GetRandomNearbyPosition(maxDistance);
+                return GetRandomNearbyPosition(maxDistance, retries-1);
         }
 
         public override bool CanBeginNowWhileLyingDown() => true;
