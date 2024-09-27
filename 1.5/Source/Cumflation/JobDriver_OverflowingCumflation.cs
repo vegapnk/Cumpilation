@@ -3,6 +3,7 @@ using rjw;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using Verse;
@@ -59,6 +60,13 @@ namespace Cumpilation.Cumflation
         {
             Hediff cumflationHediff = CumflationUtility.GetOrCreateCumflationHediff(pawn);
             return cumflationHediff == null || cumflationHediff.Severity <= 1.0;
+        }
+
+        private static int getGenitalBPR(Pawn pawn)
+        {
+            BodyPartRecord genital_bodypart = Genital_Helper.get_genitalsBPR(pawn);
+            var genital_id = genital_bodypart.Index; 
+            return genital_id;
         }
 
         private void SpawnFilth()

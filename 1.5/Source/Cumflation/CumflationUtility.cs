@@ -37,12 +37,19 @@ namespace Cumpilation.Cumflation
                 FluidUtility.GetGenitalsWithFluids(inflator)
                 .Where(genital => CanCumflate(genital));
 
+            if (inflatorGenitals.Count() > 0)
+                ModLog.Debug($"{inflator} tries to inflate {inflated} with {inflatorGenitals.Count()} fitting genitals");
+            else
+                ModLog.Debug($"{inflator} did not have qualified genitalia to inflate {inflated}");
+
             foreach(ISexPartHediff genital in inflatorGenitals)
             {
                 float necessaryAmount = FluidAmountRequiredToCumflatePawn(inflated, genital.GetPartComp().Fluid);
                 float resultingSeverity = DetermineCumflationSeverity(inflated, genital.GetPartComp().FluidAmount, genital.GetPartComp().Fluid);
+
                 if (resultingSeverity > 0)
                 {
+                    ModLog.Debug($"{inflator} is inflating {inflated} with {genital.Def.defName}, adding {resultingSeverity} severity to cumflation-hediff");
                     Hediff cumflationHediff = GetOrCreateCumflationHediff(inflated);
                     cumflationHediff.Severity += resultingSeverity;
                     // Only give thoughts on more serious cumflations.
@@ -50,7 +57,7 @@ namespace Cumpilation.Cumflation
                         GiveCumflationThoughts(inflated);
                     FluidUtility.StoreFluidSource(cumflationHediff,inflator,genital.GetPartComp().Fluid,genital.GetPartComp().FluidAmount);
 
-                    if (cumflationHediff.Severity > 1.01) 
+                    if (cumflationHediff.Severity > 1.01)
                         TryQueueOverflowingCumflation(inflated);
                 }
             }
@@ -64,7 +71,9 @@ namespace Cumpilation.Cumflation
         /// <param name="inflated">The pawn that might gets the Job.</param>
         public static void TryQueueOverflowingCumflation(Pawn inflated)
         {
+            ModLog.Debug($"{inflated} got over-inflated, trying to schedule Job for Cumpilation_OverflowingCumflation");
             var overflowingJob = JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed("Cumpilation_OverflowingCumflation"), inflated);
+
             inflated.jobs.jobQueue.EnqueueFirst(overflowingJob);
 
         }
