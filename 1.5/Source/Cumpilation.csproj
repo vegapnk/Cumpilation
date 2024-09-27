@@ -60,6 +60,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bukkake\BukkakeUtility.cs" />
+    <Compile Include="Bukkake\HediffComps\HediffCompProperties_BukkakeSpawnedByFluid.cs" />
+    <Compile Include="Bukkake\HediffComps\HediffCompProperties_SpawnOrAdjustControllerHediff.cs" />
+    <Compile Include="Bukkake\HediffComps\HediffComp_BukkakeSpawnedByFluid.cs" />
+    <Compile Include="Bukkake\HediffComps\HediffComp_SpawnOrAdjustControllerHediff.cs" />
+    <Compile Include="Bukkake\Hediffs\Hediff_Cum.cs" />
+    <Compile Include="Bukkake\Hediffs\Hediff_CumController.cs" />
+    <Compile Include="Bukkake\Patch_TransferFluids_ApplyBukkake.cs" />
     <Compile Include="Common\DefModExtension_PartTargetting.cs" />
     <Compile Include="Common\DefModExtension_PawnTargetting.cs" />
     <Compile Include="Common\FluidUtility.cs" />
