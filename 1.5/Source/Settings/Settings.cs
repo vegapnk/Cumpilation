@@ -30,6 +30,16 @@ namespace Cumpilation
         /// E.g. if set to 2, you will need twice as much fluid to stuff any given pawn.
         /// </summary>
         public static float GlobalStuffingModifier = 1.0f;
+        /// <summary>
+        /// Whether or not Covering-Code is run at all
+        /// </summary>
+        public static bool EnableBukkake = true;
+        /// <summary>
+        /// A global multiplier how much fluid is needed to cover all pawns. 
+        /// Their size will also still be taken into account. 
+        /// E.g. if set to 2, you will need twice as much fluid to cover any given pawn.
+        /// </summary>
+        public static float GlobaleBukkakeModifier = 1.0f;
 
         /// <summary>
         /// When enabled, there is a chance to gather fluids while doing the normal cleaning Task. 
@@ -64,6 +74,8 @@ namespace Cumpilation
             Scribe_Values.Look<float>(ref GlobalCumflationModifier, "GlobalCumflationModifier", 1.0f);
             Scribe_Values.Look<bool>(ref EnableStuffing, "EnableStuffing", true);
             Scribe_Values.Look<float>(ref GlobalStuffingModifier, "GlobalStuffingModifier", 1.0f);
+            Scribe_Values.Look<bool>(ref EnableBukkake, "EnableBukkake", true);
+            Scribe_Values.Look<float>(ref GlobaleBukkakeModifier, "GlobaleBukkakeModifier", 1.0f);
 
             Scribe_Values.Look<bool>(ref EnableFluidGatheringWhileCleaning, "EnableFluidGatheringWhileCleaning", true);
             Scribe_Values.Look<bool>(ref EnableProgressingConsumptionThoughts, "EnableProgressingConsumptionThoughts", true);
@@ -103,7 +115,17 @@ namespace Cumpilation
                 listingStandard.Label("cumpilation_settings_stuffing_modifier_key".Translate() + ": " + Math.Round((double)(GlobalStuffingModifier), 1).ToString(), tooltip: "cumpilation_settings_stuffing_modifier_desc".Translate());
                 GlobalStuffingModifier = listingStandard.Slider(GlobalStuffingModifier, 0.1f, 5f);
             }
-            listingStandard.Gap(10f);
+            listingStandard.Gap(5f);
+
+
+            listingStandard.CheckboxLabeled("cumpilation_settings_enable_bukkake_key".Translate() + ": ", ref EnableBukkake, "cumpilation_settings_enable_bukkake_desc".Translate());
+            if (EnableBukkake)
+            {
+                listingStandard.Gap(4f);
+                listingStandard.Label("cumpilation_settings_bukkake_modifier_key".Translate() + ": " + Math.Round((double)(GlobaleBukkakeModifier), 1).ToString(), tooltip: "cumpilation_settings_bukkake_modifier_desc".Translate());
+                GlobaleBukkakeModifier = listingStandard.Slider(GlobaleBukkakeModifier, 0.1f, 5f);
+            }
+            listingStandard.Gap(5f);
 
             listingStandard.CheckboxLabeled("cumpilation_settings_enable_fluid_gathering_while_cleaning_key".Translate() + ": ", ref EnableFluidGatheringWhileCleaning, "cumpilation_settings_enable_fluid_gathering_while_cleaning_desc".Translate());
             listingStandard.Gap(4f);

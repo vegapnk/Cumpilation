@@ -11,6 +11,11 @@
     <cumpilation_settings_stuffing_modifier_key>Global Stuffing Modifier</cumpilation_settings_stuffing_modifier_key>
     <cumpilation_settings_stuffing_modifier_desc>Modifies how much fluid is necessary for a full stuffing. Higher number mean more fluid necessary, lower numbers less.</cumpilation_settings_stuffing_modifier_desc>
 
+    <cumpilation_settings_enable_bukkake_key>Bukkake</cumpilation_settings_enable_bukkake_key>
+    <cumpilation_settings_enable_bukkake_desc>Enables Bukkake and other Fluid-based body-covers.</cumpilation_settings_enable_bukkake_desc>
+    <cumpilation_settings_bukkake_modifier_key>Global Covering Modifier</cumpilation_settings_bukkake_modifier_key>
+    <cumpilation_settings_bukkake_modifier_desc>Modifies how much fluid is necessary for a full covering. Higher number mean more fluid necessary, lower numbers less.</cumpilation_settings_bukkake_modifier_desc>
+
     <cumpilation_settings_enable_fluid_gathering_while_cleaning_key>Fluid-gathering while cleaning</cumpilation_settings_enable_fluid_gathering_while_cleaning_key>
     <cumpilation_settings_enable_fluid_gathering_while_cleaning_desc>When enabled, cleaning fluid-filth can spawn respective items (Chance based on FluidGatheringDefs).</cumpilation_settings_enable_fluid_gathering_while_cleaning_desc>
 
