@@ -1,9 +1,11 @@
-﻿using HarmonyLib;
+﻿using Cumpilation.Common;
+using HarmonyLib;
 using RimWorld;
 using rjw;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -15,126 +17,115 @@ namespace Cumpilation.Bukkake
     public class BukkakeUtility
     {
 
-        public static void CumOn(Pawn receiver, BodyPartRecord bodyPart, float amount = 0.2f, Pawn giver = null)
+        public static void CumOn(Pawn receiver, BodyPartRecord bodyPart, SexFluidDef fluid, float amount, Pawn giver)
         {
-            Hediff_Cum hediff = null;
-            // TODO: find right type from Fluid ... 
-
-            hediff.Severity = amount;//if this body part is already maximally full -> spill over to other parts
-
-            //idea: here, a log entry that can act as source could be linked to the hediff - maybe reuse the playlog entry of rjw:
-            try
+            var HediffDef = LookupCoverageHediff(fluid);
+            if (HediffDef == null)
             {
-                //error when adding to missing part
-                receiver.health.AddHediff(hediff, bodyPart, null, null);
+                ModLog.Warning($"Tried to cum on {receiver} with {fluid}, did not find a matching coverage hediff");
+                return;
             }
-            catch
-            {
 
+            HediffCompProperties_BukkakeSpawnedByFluid spawnProps =
+                        (HediffCompProperties_BukkakeSpawnedByFluid) HediffDef.comps.First(comp => comp is HediffCompProperties_BukkakeSpawnedByFluid);
+            if (spawnProps == null) return;
+
+            float totalSeverityToSpawn = amount / spawnProps.fluidRequiredForSeverityOne;
+            if (totalSeverityToSpawn <= 0.1) return;
+
+            ModLog.Debug($"Spawning {totalSeverityToSpawn} severity of {HediffDef.defName} on {receiver}s {bodyPart.def.defName}");
+
+            Hediff splash = HediffMaker.MakeHediff(HediffDef, receiver, bodyPart);
+            splash.Severity = Math.Min(totalSeverityToSpawn,1.0f);
+            receiver.health.AddHediff(splash);
+            totalSeverityToSpawn -= 1.0f;
+
+            //TODO: Overflow Spilling improvements - only goes once ... 
+            while (totalSeverityToSpawn >= 0.1)
+            {
+                var spillPart = SpillOver(bodyPart.def);
+                if (spillPart != null)
+                {
+                    var record = receiver.RaceProps.body.GetPartsWithDef(spillPart).RandomElementWithFallback(null);
+                    if (record != null)
+                    {
+                        Hediff overSpillSplash = HediffMaker.MakeHediff(HediffDef, receiver, bodyPart);
+                        overSpillSplash.Severity = Math.Min(totalSeverityToSpawn, 1.0f);
+                        receiver.health.AddHediff(overSpillSplash);
+                    }
+                }
+                totalSeverityToSpawn -= 1.0f;
             }
-            //always also add cumcontroller hediff as manager
-            //receiver.health.AddHediff(HediffDefOf.Hediff_CumController);
+
+
+            if (HediffDef.HasComp(typeof(HediffComp_SpawnOrAdjustControllerHediff))) {
+                HediffCompProperties_SpawnOrAdjustControllerHediff controllerProps = 
+                    (HediffCompProperties_SpawnOrAdjustControllerHediff) HediffDef.comps.First(comp => comp is HediffCompProperties_SpawnOrAdjustControllerHediff);
+                if (controllerProps == null || controllerProps.controller == null) return;
+                Hediff controller = HediffMaker.MakeHediff(controllerProps.controller, receiver);
+                //TODO: Calculate the Severity / Auto-Calculate it for the Controller
+                receiver.health.AddHediff(controller);
+                ModLog.Debug($"Spawned Controller {controller.def.defName} on {receiver} with {controller.Severity}");
+            }
+            
         }
 
-        //determines who is the active male (or equivalent) in the exchange and the amount of cum dispensed and where to
-        //[SyncMethod]
         public static void CalculateAndApplyCum(Pawn giver, Pawn receiver, SexProps props)
         {
             if (!Settings.EnableBukkake) return;
+            if (!CanBeCovered(receiver)) return;
+            if (!FluidUtility.IsSexWithFluidFlyingAround(props)) return;
 
-            ModLog.Debug($"Firing Bukkake Code {giver} ==> {receiver}");
-            /*
-            List<Hediff> giverparts;
-            List<Hediff> pawnparts;
-            List<Hediff> partnerparts = partner != pawn ? partner.GetGenitalsList() : null; // masturbation
+            var giverGenitals =
+                FluidUtility.GetGenitalsWithFluids(giver, true);
 
-
-
-            float cumAmount = giver.BodySize; //fallback for mechanoinds and w/e without hediffs
-            float horniness = 1f;
-            float ageScale = Math.Min(80 / SexUtility.ScaleToHumanAge(giver), 1.0f);//calculation lifted from rjw
-
-            if (xxx.is_mechanoid(giver) && giverparts.NullOrEmpty())
-            {
-                //use default above
-            }
-            else if (giverparts.NullOrEmpty())
-                return;
+            if (giverGenitals.Count() > 0)
+                ModLog.Debug($"{giver} tries to cover {receiver} with {giverGenitals.Count()} fitting genitals");
             else
+                ModLog.Debug($"{giver} did not have qualified genitalia to cover {receiver}");
+
+            foreach (ISexPartHediff shootingGenital in giverGenitals)
             {
-                var penisHediff = giverparts.FindAll((Hediff hed) => hed.def.defName.ToLower().Contains("penis")).InRandomOrder().FirstOrDefault();
-
-                if (penisHediff == null)
-                    penisHediff = giverparts.FindAll((Hediff hed) => hed.def.defName.ToLower().Contains("ovipositorf")).InRandomOrder().FirstOrDefault();
-                if (penisHediff == null)
-                    penisHediff = giverparts.FindAll((Hediff hed) => hed.def.defName.ToLower().Contains("ovipositorm")).InRandomOrder().FirstOrDefault();
-                if (penisHediff == null)
-                    penisHediff = giverparts.FindAll((Hediff hed) => hed.def.defName.ToLower().Contains("tentacle")).InRandomOrder().FirstOrDefault();
-
-                if (penisHediff != null)
+                var randomPart = FindFittingBodyParts(receiver, props).RandomElementWithFallback(null);
+                if (randomPart != null)
                 {
-                    cumAmount = penisHediff.Severity * giver.BodySize;
-
-                    HediffComp_SexPart chdf = penisHediff.TryGetComp<rjw.HediffComp_SexPart>();
-                    if (chdf != null)
-                    {
-                        if (chdf.FluidAmount != 0)
-                            cumAmount = chdf.FluidAmount;
-                    }
-                    //ModLog.Message("cumAmount base " + cumAmount);
-
-                    Need sexNeed = giver?.needs?.AllNeeds.Find(x => string.Equals(x.def.defName, "Sex"));
-                    if (sexNeed != null)//non-humans don't have it - therefore just use the default value
-                    {
-                        horniness = 1f - sexNeed.CurLevel;
-                    }
-                }
-                else
-                {
-                    //something is wrong... vagina?
-                    return;
+                    ModLog.Debug($"{giver} is covering {receiver}s {randomPart} with {shootingGenital.Def.defName}");
+                    CumOn(receiver, randomPart, fluid: shootingGenital.GetPartComp().Fluid, amount: shootingGenital.GetPartComp().FluidAmount, giver:giver);
                 }
             }
+        }
 
-            cumAmount *= Settings.GlobaleBukkakeModifier;
-            if (receiver != null)
-            {
-                List<BodyPartRecord> targetParts = FindFittingBodyParts(receiver,props);//which to apply cum on
-                BodyPartRecord randomPart;//not always needed
+        /// <summary>
+        /// Simple check if the pawn can be covered with fluids.
+        /// Only some sanity checks and ruling animals out.
+        /// </summary>
+        /// <param name="pawn">The pawn that might be covered.</param>
+        /// <returns>True if the pawn can be covered by fluid, false otherwise.</returns>
+        public static bool CanBeCovered(Pawn pawn)
+        {
+            if (pawn == null) return false;
+            if (pawn.IsAnimal()) return false;
+            if (!pawn.Spawned) return false;
 
-
-                if (cumAmount > 0)
-                {
-                    cumOn(giver, genitals, cumAmount * 0.3f, giver, entityType);//cum on self - smaller amount
-                    if (receiver != null)
-                        foreach (BodyPartRecord bpr in targetParts)
-                        {
-                            if (bpr != null)
-                            {
-                                cumOn(receiver, bpr, cumAmount, giver, entityType);//cum on partner
-                            }
-                        }
-                    
-                }
-            }
-            */
+            return true;
         }
 
         public static HediffDef LookupCoverageHediff(Hediff sexPart) => sexPart is ISexPartHediff ? LookupCoverageHediff((ISexPartHediff)sexPart) : null;
-
         public static HediffDef LookupCoverageHediff(ISexPartHediff sexPart) => sexPart.GetPartComp().Fluid != null ? LookupCoverageHediff(sexPart.GetPartComp().Fluid) : null; 
-
         public static HediffDef LookupCoverageHediff(SexFluidDef fluid) {
             if (fluid == null) return null;
 
-            return DefDatabase<HediffDef>.AllDefs
-                .Where(def => def.comps.Any(comp => comp is HediffCompProperties_BukkakeSpawnedByFluid))
-                .Where(def => {
-                    HediffCompProperties_BukkakeSpawnedByFluid compProps = 
-                        (HediffCompProperties_BukkakeSpawnedByFluid) def.comps.First(comp => comp is HediffCompProperties_BukkakeSpawnedByFluid);
-                    return compProps.sexFluidDefs.Contains(fluid);
-                })
-                .FirstOrDefault(null);
+            foreach (HediffDef def in DefDatabase<HediffDef>.AllDefs) {
+                if (!def.HasComp(typeof(HediffComp_BukkakeSpawnedByFluid))) continue;
+
+                HediffCompProperties_BukkakeSpawnedByFluid compProps =
+                    (HediffCompProperties_BukkakeSpawnedByFluid)def.comps.FirstOrFallback(comp => comp is HediffCompProperties_BukkakeSpawnedByFluid,null);
+                if (compProps == null) continue;
+
+                if (compProps.sexFluidDefs.Contains(fluid))
+                    return def;
+            }
+            return null;
         }
 
 
@@ -219,7 +210,7 @@ namespace Cumpilation.Bukkake
             }
 
             targetParts = targetParts.Where(f => f != null).ToList();
-            ModLog.Debug($"Got {targetParts.Count} for {receiver} pawns Bukkake with {props.sexType}");
+            //ModLog.Debug($"Got {targetParts.Count} for {receiver} pawns Bukkake with {props.sexType}");
             return targetParts;
         }
 

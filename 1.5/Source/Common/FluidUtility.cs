@@ -22,8 +22,7 @@ namespace Cumpilation.Common
 
         public static List<ISexPartHediff> GetGenitalsWithFluids(Pawn pawn, bool filterForShootsOnOrgasm = false)
         {
-            List<ISexPartHediff> results = new List<ISexPartHediff>();
-            ;
+            List<ISexPartHediff> results = new List<ISexPartHediff>();            
             foreach (var part in rjw.Genital_Helper.get_AllPartsHediffList(pawn))
             {
                 var def = GetHediffDefSexPart(part);
@@ -51,7 +50,8 @@ namespace Cumpilation.Common
             bool fluidFlyingAroundSexType =
                 // Base: Fill Cumbuckets on Masturbation. Having no partner means it must be masturbation too
                 sextype == xxx.rjwSextype.Masturbation || props.partner == null
-                || sextype == xxx.rjwSextype.Boobjob || sextype == xxx.rjwSextype.Footjob || sextype == xxx.rjwSextype.Handjob;
+                || sextype == xxx.rjwSextype.Boobjob || sextype == xxx.rjwSextype.Footjob 
+                || sextype == xxx.rjwSextype.Handjob || sextype == xxx.rjwSextype.Scissoring;
             return fluidFlyingAroundSexType;
             //TODO: Return true if there is a heavy missmatch of fluid-amount and body-size, or on full cumflation etc. 
             //return false;

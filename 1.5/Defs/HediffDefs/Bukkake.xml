@@ -4,7 +4,7 @@
     <!--master hediff adding up the smaller Cum splatches-->
 	<HediffDef>
 		<defName>Cumpilation_Hediff_CumController</defName>
-		<hediffClass>Cumpilaton.Bukkake.Hediff_CumController</hediffClass>
+		<hediffClass>Cumpilation.Bukkake.Hediff_CumController</hediffClass>
 		<label>Cum</label>
 		<description>Covered in cum.</description>
 		<makesSickThought>false</makesSickThought>
@@ -51,7 +51,7 @@
     -->
 
 	<HediffDef Name="Cumpilation_Hediff_Cum_Base" Abstract="True">
-		<hediffClass>Cumpilaton.Bukkake.Hediff_Cum</hediffClass>
+		<hediffClass>Cumpilation.Bukkake.Hediff_Cum</hediffClass>
 		<defaultLabelColor>(0.95,0.95,0.95)</defaultLabelColor>	
 		<isBad>false</isBad>
 		<tendable>false</tendable>
@@ -94,7 +94,20 @@
 		<labelNoun>cum</labelNoun>
 		<description>cum</description>
 		<labelNounPretty>cum on {1}</labelNounPretty>
-		<defaultLabelColor>(0.95,0.95,0.95)</defaultLabelColor>	
+		<defaultLabelColor>(0.95,0.95,0.95)</defaultLabelColor>
+		<comps>
+			<li Class="Cumpilation.Bukkake.HediffCompProperties_BukkakeSpawnedByFluid">
+				<!-- default: Last  3 days  -->
+				<sexFluidDefs>
+					<li>Cum</li>
+				</sexFluidDefs>
+				<fluidRequiredForSeverityOne>10</fluidRequiredForSeverityOne>
+			</li>
+			<li Class="Cumpilation.Bukkake.HediffCompProperties_SpawnOrAdjustControllerHediff">
+				<controller>Cumpilation_Hediff_CumController</controller>
+				<summedSeverityRequiredForFullController>4.5</summedSeverityRequiredForFullController>
+			</li>
+		</comps>
 	</HediffDef>
 	
 	<HediffDef ParentName="Cumpilation_Hediff_Cum_Base">	
@@ -103,16 +116,20 @@
 		<label>insect spunk</label>
 		<labelNoun>insect spunk</labelNoun>
 		<labelNounPretty>insect spunk on {1}</labelNounPretty>
-		<defaultLabelColor>(0.6,0.83,0.35)</defaultLabelColor>	
-	</HediffDef>
-	
-	<HediffDef ParentName="Cumpilation_Hediff_Cum_Base">	
-		<defName>Cumpilation_Hediff_MechaFluids</defName>
-		<description>Mechanoid fluids.</description>
-		<label>mechanoid fluids</label>
-		<labelNoun>mechanoid fluids</labelNoun>
-		<labelNounPretty>mecha fluids on {1}</labelNounPretty>
-		<defaultLabelColor>(0.37,0.71,0.82)</defaultLabelColor>	
+		<defaultLabelColor>(0.6,0.83,0.35)</defaultLabelColor>
+		<comps>
+			<li Class="Cumpilation.Bukkake.HediffCompProperties_BukkakeSpawnedByFluid">
+				<!-- default: Last  3 days  -->
+				<sexFluidDefs>
+					<li>InsectSpunk</li>
+				</sexFluidDefs>
+				<fluidRequiredForSeverityOne>15</fluidRequiredForSeverityOne>
+			</li>
+			<li Class="Cumpilation.Bukkake.HediffCompProperties_SpawnOrAdjustControllerHediff">
+				<controller>Cumpilation_Hediff_CumController</controller>
+				<summedSeverityRequiredForFullController>5.5</summedSeverityRequiredForFullController>
+			</li>
+		</comps>	
 	</HediffDef>
     
 	<HediffDef ParentName="Cumpilation_Hediff_Cum_Base">	
@@ -121,7 +138,20 @@
 		<label>squirt fluids</label>
 		<labelNoun>squirt fluids</labelNoun>
 		<labelNounPretty>squirted on {1}</labelNounPretty>
-		<defaultLabelColor>(0.37,0.71,0.55)</defaultLabelColor>	
+		<defaultLabelColor>(0.37,0.71,0.55)</defaultLabelColor>
+		<comps>
+			<li Class="Cumpilation.Bukkake.HediffCompProperties_BukkakeSpawnedByFluid">
+				<!-- default: Last  3 days  -->
+				<sexFluidDefs>
+					<li>GirlCum</li>
+				</sexFluidDefs>
+				<fluidRequiredForSeverityOne>6</fluidRequiredForSeverityOne>
+			</li>
+			<li Class="Cumpilation.Bukkake.HediffCompProperties_SpawnOrAdjustControllerHediff">
+				<controller>Cumpilation_Hediff_CumController</controller>
+				<summedSeverityRequiredForFullController>3.5</summedSeverityRequiredForFullController>
+			</li>
+		</comps>
 	</HediffDef>
-    
+
 </Defs>
