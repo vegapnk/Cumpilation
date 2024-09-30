@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
@@ -14,61 +15,22 @@ using static HarmonyLib.Code;
 
 namespace Cumpilation.Bukkake
 {
+    /// <summary>
+    /// Initializes and Manages both the "Per Body-Part" Splashes on Bukkake as well as their controllers. 
+    /// 
+    /// DevNote: 
+    /// Initially, the Bukkake implementation from Ed86-Cum had two mechanics that got removed. 
+    /// 1) The body-parts had a "Overspill" logic which means that if your chest was full, 
+    ///    you'd get splashes on the arms and legs. 
+    /// 2) The Controller would calculate itself regularly. 
+    ///    This is now done upon spawning parts and the controller just ticks down.  
+    /// 
+    /// Also, all drawing got removed. The drawing framework people should take care of that (#Innocent)
+    /// </summary>
     public class BukkakeUtility
     {
 
-        public static void CumOn(Pawn receiver, BodyPartRecord bodyPart, SexFluidDef fluid, float amount, Pawn giver)
-        {
-            var HediffDef = LookupCoverageHediff(fluid);
-            if (HediffDef == null)
-            {
-                ModLog.Warning($"Tried to cum on {receiver} with {fluid}, did not find a matching coverage hediff");
-                return;
-            }
 
-            HediffCompProperties_BukkakeSpawnedByFluid spawnProps =
-                        (HediffCompProperties_BukkakeSpawnedByFluid) HediffDef.comps.First(comp => comp is HediffCompProperties_BukkakeSpawnedByFluid);
-            if (spawnProps == null) return;
-
-            float totalSeverityToSpawn = amount / spawnProps.fluidRequiredForSeverityOne;
-            if (totalSeverityToSpawn <= 0.1) return;
-
-            ModLog.Debug($"Spawning {totalSeverityToSpawn} severity of {HediffDef.defName} on {receiver}s {bodyPart.def.defName}");
-
-            Hediff splash = HediffMaker.MakeHediff(HediffDef, receiver, bodyPart);
-            splash.Severity = Math.Min(totalSeverityToSpawn,1.0f);
-            receiver.health.AddHediff(splash);
-            totalSeverityToSpawn -= 1.0f;
-
-            //TODO: Overflow Spilling improvements - only goes once ... 
-            while (totalSeverityToSpawn >= 0.1)
-            {
-                var spillPart = SpillOver(bodyPart.def);
-                if (spillPart != null)
-                {
-                    var record = receiver.RaceProps.body.GetPartsWithDef(spillPart).RandomElementWithFallback(null);
-                    if (record != null)
-                    {
-                        Hediff overSpillSplash = HediffMaker.MakeHediff(HediffDef, receiver, bodyPart);
-                        overSpillSplash.Severity = Math.Min(totalSeverityToSpawn, 1.0f);
-                        receiver.health.AddHediff(overSpillSplash);
-                    }
-                }
-                totalSeverityToSpawn -= 1.0f;
-            }
-
-
-            if (HediffDef.HasComp(typeof(HediffComp_SpawnOrAdjustControllerHediff))) {
-                HediffCompProperties_SpawnOrAdjustControllerHediff controllerProps = 
-                    (HediffCompProperties_SpawnOrAdjustControllerHediff) HediffDef.comps.First(comp => comp is HediffCompProperties_SpawnOrAdjustControllerHediff);
-                if (controllerProps == null || controllerProps.controller == null) return;
-                Hediff controller = HediffMaker.MakeHediff(controllerProps.controller, receiver);
-                //TODO: Calculate the Severity / Auto-Calculate it for the Controller
-                receiver.health.AddHediff(controller);
-                ModLog.Debug($"Spawned Controller {controller.def.defName} on {receiver} with {controller.Severity}");
-            }
-            
-        }
 
         public static void CalculateAndApplyCum(Pawn giver, Pawn receiver, SexProps props)
         {
@@ -86,12 +48,67 @@ namespace Cumpilation.Bukkake
 
             foreach (ISexPartHediff shootingGenital in giverGenitals)
             {
-                var randomPart = FindFittingBodyParts(receiver, props).RandomElementWithFallback(null);
-                if (randomPart != null)
+
+                var sexPartComp = shootingGenital.GetPartComp();
+
+                var splashDef = LookupCoverageHediff(sexPartComp.Fluid);
+                if (splashDef == null)
                 {
-                    ModLog.Debug($"{giver} is covering {receiver}s {randomPart} with {shootingGenital.Def.defName}");
-                    CumOn(receiver, randomPart, fluid: shootingGenital.GetPartComp().Fluid, amount: shootingGenital.GetPartComp().FluidAmount, giver:giver);
+                    ModLog.Debug($"Tried to cum on {receiver} with {sexPartComp.Fluid} from {shootingGenital.Def}, did not find a matching coverage hediff");
+                    continue;
                 }
+
+
+                HediffCompProperties_BukkakeSpawnedByFluid spawnProps =
+                            (HediffCompProperties_BukkakeSpawnedByFluid)splashDef.comps.First(comp => comp is HediffCompProperties_BukkakeSpawnedByFluid);
+                if (spawnProps == null) continue;
+
+                float totalSeverityToSpawn = sexPartComp.FluidAmount / spawnProps.fluidRequiredForSeverityOne;
+                if (totalSeverityToSpawn <= 0.1) continue;
+
+                var targets = 
+                    PartitionSeverity(totalSeverityToSpawn)
+                    .Select(p => (p,FindFittingBodyParts(receiver,props).RandomElementWithFallback(null)))
+                    .Where( (a,bpr) => bpr != null && bpr != 0);
+
+                ModLog.Debug($"Split {giver}s cumshot of {totalSeverityToSpawn} severity into {targets.Count()} sub-targets");
+                ModLog.Debug($"Partitions: {PartitionSeverity(totalSeverityToSpawn).Count}");
+
+                foreach( (float,BodyPartRecord) target in targets)
+                {
+                    CumOn(receiver:receiver, splashDef:splashDef, bodyPart: target.Item2, severity:target.Item1, giver:giver);
+                }
+
+                AddAndCalculateControllers(splashDef, receiver);
+            }
+        }
+
+        public static void CumOn(Pawn receiver, HediffDef splashDef, BodyPartRecord bodyPart, float severity, Pawn giver)
+        {
+            Hediff splash = HediffMaker.MakeHediff(splashDef, receiver, bodyPart);
+            splash.Severity = Math.Min(severity, 1.0f);
+            receiver.health.AddHediff(splash);
+        }
+
+        public static  void AddAndCalculateControllers(HediffDef splashDef, Pawn carrier)
+        {
+            if (splashDef.HasComp(typeof(HediffComp_SpawnOrAdjustControllerHediff)))
+            {
+                HediffCompProperties_SpawnOrAdjustControllerHediff controllerProps =
+                    (HediffCompProperties_SpawnOrAdjustControllerHediff) splashDef.comps.First(comp => comp is HediffCompProperties_SpawnOrAdjustControllerHediff);
+
+                float totalSplashSeverity = carrier.health.hediffSet.hediffs.Where(hed => hed.def == splashDef).Sum(hed => hed.Severity);
+
+                if (controllerProps == null || controllerProps.controller == null || totalSplashSeverity <= 0.1) return;
+
+                Hediff controller = HediffMaker.MakeHediff(controllerProps.controller, carrier);
+                controller.Severity = totalSplashSeverity / controllerProps.summedSeverityRequiredForFullController;
+                if (controller.Severity <= 0.1) return;
+                carrier.health.AddHediff(controller);
+                ModLog.Debug($"Spawned Controller {controller.def.defName} on {carrier} with {controller.Severity}");
+            } else
+            {
+                ModLog.Debug($"Did not find a controller-hediff for a bukkake-splash of def {splashDef.defName}");
             }
         }
 
@@ -128,6 +145,33 @@ namespace Cumpilation.Bukkake
             return null;
         }
 
+        /// <summary>
+        /// Partitions a float into a sub-list of smaller floats whose sum is the initialSeverity. 
+        /// There will be atmost 3 * initialseverity parts, or max_parts, whatever is smaller. 
+        /// The size of each partition is capped at 1.0 (default).
+        /// </summary>
+        /// <param name="initialSeverity"></param>
+        /// <param name="max_parts">Max number of partitions to create, default capped at 10</param>
+        /// <param name="max_severity_on_part">Max value for each entry, default capped at 1.0</param>
+        /// <returns>A list of floats whose sum is the original severity.</returns>
+        public static List<float> PartitionSeverity(float initialSeverity, int max_parts = 10, float max_severity_on_part = 1.0f)
+        {
+            int parts = Math.Min( Convert.ToInt32(initialSeverity) * 3 + 1, max_parts);
+            List<float> results = new List<float>();
+            float remaining_severity = initialSeverity;
+            var random = new System.Random();
+            for (int i = 0; i < parts; i++)
+            {
+                float substract_severity = 
+                    (float) (random.NextDouble() *initialSeverity); 
+                substract_severity = Math.Min(substract_severity, max_severity_on_part);
+                results.Add(substract_severity);
+                remaining_severity -= substract_severity;
+            }
+            results.Add(remaining_severity);
+            results.Shuffle();
+            return results;
+        }
 
 
         //get defs of the rjw parts
@@ -212,6 +256,23 @@ namespace Cumpilation.Bukkake
             targetParts = targetParts.Where(f => f != null).ToList();
             //ModLog.Debug($"Got {targetParts.Count} for {receiver} pawns Bukkake with {props.sexType}");
             return targetParts;
+        }
+
+        public static List<HediffDef> FindHediffDefsThatSpawnController(HediffDef controller)
+        {
+            HediffCompProperties_SpawnOrAdjustControllerHediff controllerProps =
+                    (HediffCompProperties_SpawnOrAdjustControllerHediff)controller.comps.First(comp => comp is HediffCompProperties_SpawnOrAdjustControllerHediff);
+
+            if (controllerProps == null) return new List<HediffDef>();
+
+            return DefDatabase<HediffDef>.AllDefsListForReading
+                .Where(
+                  hed => hed.HasComp(typeof(HediffComp_SpawnOrAdjustControllerHediff))
+                )
+                .Where(
+                  hed => hed.comps.Any(comp => comp is HediffCompProperties_SpawnOrAdjustControllerHediff && ((HediffCompProperties_SpawnOrAdjustControllerHediff)comp).controller == controller)
+                )
+                .ToList();
         }
 
 

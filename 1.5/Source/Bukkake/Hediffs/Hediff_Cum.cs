@@ -55,47 +55,5 @@ namespace Cumpilation.Bukkake
             }
         }
 
-        //[SyncMethod]
-        public override bool TryMergeWith(Hediff other)
-        {
-            //if a new cum hediff is added to the same body part, they are combined. if severity reaches more than 1, spillover to other body parts occurs
-
-            /*
-            Hediff_Cum hediff_cum = other as Hediff_Cum;
-            if (hediff_cum != null && hediff_cum.def == this.def && hediff_cum.Part == base.Part && this.def.injuryProps.canMerge)
-            {
-                cumType = hediff_cum.cumType;//take over new creature color
-
-                float totalAmount = hediff_cum.Severity + this.Severity;
-                if (totalAmount > 1.0f)
-                {
-                    BodyPartDef spillOverTo = BukkakeUtility.spillover(this.Part.def);//cumHelper saves valid other body parts for spillover
-                    if (spillOverTo != null)
-                    {
-                        //Rand.PopState();
-                        //Rand.PushState(RJW_Multiplayer.PredictableSeed());
-                        IEnumerable<BodyPartRecord> availableParts = BukkakeUtility.getAvailableBodyParts(pawn);//gets all non missing, valid body parts
-                        IEnumerable<BodyPartRecord> filteredParts = availableParts.Where(x => x.def == spillOverTo);//filters again for valid spill target
-                        if (!filteredParts.EnumerableNullOrEmpty())
-                        {
-                            BodyPartRecord spillPart = null;
-                            spillPart = filteredParts.RandomElement<BodyPartRecord>();//then pick one
-                            if (spillPart != null)
-                            {
-                                BukkakeUtility.cumOn(pawn, spillPart, totalAmount - this.Severity, null, cumType);
-                            }
-                        }
-                    }
-                }
-
-                return (base.TryMergeWith(other));
-
-            }
-            */
-            return (false);
-        }
-
-
-
     }
 }
