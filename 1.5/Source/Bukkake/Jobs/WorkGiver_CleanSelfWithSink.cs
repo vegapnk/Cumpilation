@@ -12,7 +12,19 @@ namespace Cumpilation.Bukkake
 {
     public class WorkGiver_CleanSelfWithSink : WorkGiver_Scanner
     {
-        //public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForDef(ThingDefOf.);
+
+        //public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForUndefined();
+
+        public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
+        {
+
+            DefDatabase<ThingDef>.AllDefs.Where(def => def.HasModExtension<FluidGatheringBuilding>());
+            
+            return pawn.Map.spawnedThings.Where(thing => thing.def.HasModExtension<FluidGatheringBuilding>());
+
+            return base.PotentialWorkThingsGlobal(pawn);
+        }
+
         public override PathEndMode PathEndMode => PathEndMode.ClosestTouch;
         public override bool ShouldSkip(Pawn pawn, bool forced = false)
         {
@@ -25,6 +37,8 @@ namespace Cumpilation.Bukkake
                 if (!GatheringUtility.IsFluidSink(potentialSink))
                     return false;
 
+            //TODO: Add check for "is this the right bucket for right fluid"
+
             return true;
             //return bucket.StoredStackCount < ThingDefOf.GatheredCum.stackLimit;
         }
@@ -33,6 +47,12 @@ namespace Cumpilation.Bukkake
         {
             return JobMaker.MakeJob(DefOfs.Cumpilation_CleanSelfWithSink, pawn, t);
         }
+
+        public ThingRequest RequestSink()
+        {
+            return ThingRequest.ForUndefined();
+        }
+    
     }
 
 }
