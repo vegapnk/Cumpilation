@@ -252,5 +252,20 @@ namespace Cumpilation.Bukkake
             return targetParts;
         }
 
+        public static bool IsSplashHediff(Hediff hediff) => hediff == null ? false : IsSplashHediff(hediff.def);
+        public static bool IsSplashHediff(HediffDef def) {
+            if (def == null) return false;
+            return def.HasComp(typeof(HediffComp_BukkakeSpawnedByFluid));
+        }
+
+        public static (SexFluidDef,float) SplashToFluidAmount(HediffDef splashDef, float severity, float bodysize = 1.0f)
+        {
+            if (splashDef == null || severity <= 0.0) return (null,0.0f);
+            HediffCompProperties_BukkakeSpawnedByFluid compProps =
+                (HediffCompProperties_BukkakeSpawnedByFluid)splashDef.comps.FirstOrFallback(comp => comp is HediffCompProperties_BukkakeSpawnedByFluid, null);
+            if (compProps == null) return (null,0.0f);
+
+            return (compProps.sexFluidDefs.FirstOrFallback(null),compProps.fluidRequiredForSeverityOne * severity * bodysize);
+        }
     }
 }

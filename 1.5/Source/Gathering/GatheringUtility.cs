@@ -221,6 +221,32 @@ namespace Cumpilation.Gathering
             return isInFluidDefsAsFilth || isInFluidGatheringDefsAsBackup;
         }
 
+        /// <summary>
+        /// Other big method, used when there are other sources of fluid coming into the Sinks. 
+        /// This happens for example on JobDrivers that Clean Bukkake.
+        /// 
+        /// If everything works out, the correct item is spawned, following the FluidGatheringDef.
+        /// </summary>
+        /// <param name="fluid">The fluid coming in, can be unsupported and nothing will happen.</param>
+        /// <param name="fluidAmount">The amount of fluid coming in.</param>
+        /// <param name="sink">The potential sink that the building </param>
+        public static void AddFluidToSink(SexFluidDef fluid, float fluidAmount, Building sink)
+        {
+            if (fluid == null || fluidAmount <= 0 || sink == null || sink.Map == null || sink.PositionHeld == null ) return;
+            if (!IsFluidSinkFor(sink,fluid)) return;
+
+            FluidGatheringDef fgDef = LookupFluidGatheringDef(fluid);
+            if (fgDef == null) return;
+
+            //TODO: I had some logging here, but it was rather noisy. 
+
+            int toMake = (int)Math.Round(fluidAmount / fgDef.fluidRequiredForOneUnit + (fgDef.roundUp ? 0.5 : 0), 0);
+            toMake = fgDef.canProduceMoreThanOne ? toMake : 1;
+            Thing gatheredFluid = ThingMaker.MakeThing(fgDef.thingDef);
+            gatheredFluid.stackCount = toMake;
+            GenPlace.TryPlaceThing(gatheredFluid, sink.PositionHeld, sink.Map, ThingPlaceMode.Direct, out Thing res);
+        }
+
         public static bool IsFluidSink(Building building) => building.def.GetModExtension<FluidGatheringBuilding>() != null;
 
 

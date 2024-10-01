@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<JobDef>
+		<defName>Cumpilation_CleanSelfWithSink</defName>
+		<driverClass>Cumpilation.Bukkake.JobDriver_CleanSelfWithSink</driverClass>
+		<reportString>collecting fluids</reportString>
+		<casualInterruptible>true</casualInterruptible>
+	</JobDef>
+</Defs>

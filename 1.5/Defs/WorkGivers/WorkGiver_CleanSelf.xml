@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<WorkGiverDef>
+		<defName>Cumpilation_CleanSelfWithSink</defName>
+		<label>collect cum into a bucket</label>
+		<giverClass>Cumpilation.Bukkake.WorkGiver_CleanSelfWithSink</giverClass>
+		<workType>BasicWorker</workType>
+		<verb>collect fluids into a</verb>
+		<gerund>collecting fluids into a</gerund>
+		<scanCells>false</scanCells>
+		<priorityInType>12</priorityInType>
+		<nonColonistsCanDo>true</nonColonistsCanDo>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+</Defs>
