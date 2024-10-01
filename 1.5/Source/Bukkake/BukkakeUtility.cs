@@ -29,9 +29,6 @@ namespace Cumpilation.Bukkake
     /// </summary>
     public class BukkakeUtility
     {
-
-
-
         public static void CalculateAndApplyCum(Pawn giver, Pawn receiver, SexProps props)
         {
             if (!Settings.EnableBukkake) return;
@@ -58,7 +55,6 @@ namespace Cumpilation.Bukkake
                     continue;
                 }
 
-
                 HediffCompProperties_BukkakeSpawnedByFluid spawnProps =
                             (HediffCompProperties_BukkakeSpawnedByFluid)splashDef.comps.First(comp => comp is HediffCompProperties_BukkakeSpawnedByFluid);
                 if (spawnProps == null) continue;
@@ -71,9 +67,7 @@ namespace Cumpilation.Bukkake
                     .Select(p => (p,FindFittingBodyParts(receiver,props).RandomElementWithFallback(null)))
                     .Where( (a,bpr) => bpr != null && bpr != 0);
 
-                ModLog.Debug($"Split {giver}s cumshot of {totalSeverityToSpawn} severity into {targets.Count()} sub-targets");
-                ModLog.Debug($"Partitions: {PartitionSeverity(totalSeverityToSpawn).Count}");
-
+                ModLog.Debug($"Split {giver}s cumshot of (total) {totalSeverityToSpawn} severity into {targets.Count()} sub-targets on {receiver}");
                 foreach( (float,BodyPartRecord) target in targets)
                 {
                     CumOn(receiver:receiver, splashDef:splashDef, bodyPart: target.Item2, severity:target.Item1, giver:giver);
@@ -90,22 +84,22 @@ namespace Cumpilation.Bukkake
             receiver.health.AddHediff(splash);
         }
 
-        public static  void AddAndCalculateControllers(HediffDef splashDef, Pawn carrier)
+        public static void AddAndCalculateControllers(HediffDef splashDef, Pawn carrier)
         {
             if (splashDef.HasComp(typeof(HediffComp_SpawnOrAdjustControllerHediff)))
             {
                 HediffCompProperties_SpawnOrAdjustControllerHediff controllerProps =
                     (HediffCompProperties_SpawnOrAdjustControllerHediff) splashDef.comps.First(comp => comp is HediffCompProperties_SpawnOrAdjustControllerHediff);
 
-                float totalSplashSeverity = carrier.health.hediffSet.hediffs.Where(hed => hed.def == splashDef).Sum(hed => hed.Severity);
-
-                if (controllerProps == null || controllerProps.controller == null || totalSplashSeverity <= 0.1) return;
+                if (controllerProps == null || controllerProps.controller == null) return;
 
                 Hediff controller = HediffMaker.MakeHediff(controllerProps.controller, carrier);
-                controller.Severity = totalSplashSeverity / controllerProps.summedSeverityRequiredForFullController;
-                if (controller.Severity <= 0.1) return;
-                carrier.health.AddHediff(controller);
-                ModLog.Debug($"Spawned Controller {controller.def.defName} on {carrier} with {controller.Severity}");
+                if (controller is Hediff_CumController cumController) {
+                    cumController.CalculateSeverity();
+                    if (cumController.Severity <= 0.1) return;
+                    carrier.health.AddHediff(cumController);
+                    ModLog.Debug($"Spawned Controller {cumController.def.defName} on {carrier} with {cumController.Severity} severity");
+                }
             } else
             {
                 ModLog.Debug($"Did not find a controller-hediff for a bukkake-splash of def {splashDef.defName}");
@@ -256,23 +250,6 @@ namespace Cumpilation.Bukkake
             targetParts = targetParts.Where(f => f != null).ToList();
             //ModLog.Debug($"Got {targetParts.Count} for {receiver} pawns Bukkake with {props.sexType}");
             return targetParts;
-        }
-
-        public static List<HediffDef> FindHediffDefsThatSpawnController(HediffDef controller)
-        {
-            HediffCompProperties_SpawnOrAdjustControllerHediff controllerProps =
-                    (HediffCompProperties_SpawnOrAdjustControllerHediff)controller.comps.First(comp => comp is HediffCompProperties_SpawnOrAdjustControllerHediff);
-
-            if (controllerProps == null) return new List<HediffDef>();
-
-            return DefDatabase<HediffDef>.AllDefsListForReading
-                .Where(
-                  hed => hed.HasComp(typeof(HediffComp_SpawnOrAdjustControllerHediff))
-                )
-                .Where(
-                  hed => hed.comps.Any(comp => comp is HediffCompProperties_SpawnOrAdjustControllerHediff && ((HediffCompProperties_SpawnOrAdjustControllerHediff)comp).controller == controller)
-                )
-                .ToList();
         }
 
 
