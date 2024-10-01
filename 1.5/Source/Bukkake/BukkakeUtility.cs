@@ -59,7 +59,7 @@ namespace Cumpilation.Bukkake
                             (HediffCompProperties_BukkakeSpawnedByFluid)splashDef.comps.First(comp => comp is HediffCompProperties_BukkakeSpawnedByFluid);
                 if (spawnProps == null) continue;
 
-                float totalSeverityToSpawn = sexPartComp.FluidAmount / spawnProps.fluidRequiredForSeverityOne;
+                float totalSeverityToSpawn = sexPartComp.FluidAmount / spawnProps.fluidRequiredForSeverityOne / receiver.BodySize;
                 if (totalSeverityToSpawn <= 0.1) continue;
 
                 var targets = 
