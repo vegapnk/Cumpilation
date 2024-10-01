@@ -31,6 +31,7 @@
 				<statOffsets>
 					<Vulnerability>0.3</Vulnerability>			
 					<SocialImpact>-0.3</SocialImpact>
+					<ComfyTemperatureMax>1</ComfyTemperatureMax>
 				</statOffsets>
 			</li>
 			<li>
@@ -39,7 +40,109 @@
 				<statOffsets>
 					<Vulnerability>-0.1</Vulnerability><!--pawns prefer victims not being completely drenched-->
 					<SocialImpact>-0.5</SocialImpact>
+					<ComfyTemperatureMax>3</ComfyTemperatureMax>
 				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>Cumpilation_Hediff_SpunkkakeController</defName>
+		<hediffClass>Cumpilation.Bukkake.Hediff_CoverageController</hediffClass>
+		<label>Spunkkake</label>
+		<description>Covered in Insectspunk.</description>
+		<makesSickThought>false</makesSickThought>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<isBad>false</isBad>
+		<tendable>false</tendable>
+		<stages>
+			<li>
+				<label>minor</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+			<li>
+				<minSeverity>0.3</minSeverity>
+				<label>little</label>
+				<statOffsets>
+					<Vulnerability>-0.1</Vulnerability>
+					<SocialImpact>-0.3</SocialImpact>
+					<ComfyTemperatureMin>2</ComfyTemperatureMin>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<label>extensive</label>
+				<statOffsets>
+					<Vulnerability>-0.2</Vulnerability>			
+					<SocialImpact>-0.6</SocialImpact>
+					<ComfyTemperatureMin>4</ComfyTemperatureMin>
+				</statOffsets>
+				<painOffset>-0.05</painOffset>
+			</li>
+			<li>
+				<minSeverity>0.8</minSeverity>
+				<label>full</label>
+				<statOffsets>
+					<Vulnerability>-0.3</Vulnerability><!--pawns prefer victims not being completely drenched-->
+					<SocialImpact>-0.7</SocialImpact>
+					<ComfyTemperatureMin>7</ComfyTemperatureMin>
+				</statOffsets>
+				<painOffset>-0.1</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-0.03</offset>
+                    </li>
+                </capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>Cumpilation_Hediff_GirlcumkakeController</defName>
+		<hediffClass>Cumpilation.Bukkake.Hediff_CoverageController</hediffClass>
+		<label>Squirtcoated</label>
+		<description>Covered in girl-cum.</description>
+		<makesSickThought>false</makesSickThought>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<isBad>false</isBad>
+		<tendable>false</tendable>
+		<stages>
+			<li>
+				<label>minor</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+			<li>
+				<minSeverity>0.3</minSeverity>
+				<label>moisturized</label>
+				<statOffsets>
+					<SocialImpact>0.1</SocialImpact>
+					<ComfyTemperatureMax>2</ComfyTemperatureMax>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<label>drenched</label>
+				<statOffsets>
+					<SocialImpact>0.2</SocialImpact>
+					<ComfyTemperatureMax>4</ComfyTemperatureMax>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.8</minSeverity>
+				<label>soaked</label>
+				<statOffsets>
+					<SocialImpact>0.25</SocialImpact>
+					<ComfyTemperatureMax>6</ComfyTemperatureMax>
+				</statOffsets>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>0.03</offset>
+                    </li>
+                </capMods>
 			</li>
 		</stages>
 	</HediffDef>
@@ -84,6 +187,7 @@
 				<!--0.01*100*1800/60.0000-->
 				<healIntervalTicksStanding>1800</healIntervalTicksStanding><!-- 1 day = 60.000 ticks -->
 				<healAmount>0.01</healAmount><!--dries by itself, completely drying from 1.0 to 0.0 takes ~72h-->
+				<!-- default: Last  3 days  -->
 			</li>
 		</comps>	
 	</HediffDef>
@@ -97,7 +201,6 @@
 		<defaultLabelColor>(0.95,0.95,0.95)</defaultLabelColor>
 		<comps>
 			<li Class="Cumpilation.Bukkake.HediffCompProperties_BukkakeSpawnedByFluid">
-				<!-- default: Last  3 days  -->
 				<sexFluidDefs>
 					<li>Cum</li>
 				</sexFluidDefs>
@@ -119,14 +222,13 @@
 		<defaultLabelColor>(0.6,0.83,0.35)</defaultLabelColor>
 		<comps>
 			<li Class="Cumpilation.Bukkake.HediffCompProperties_BukkakeSpawnedByFluid">
-				<!-- default: Last  3 days  -->
 				<sexFluidDefs>
 					<li>InsectSpunk</li>
 				</sexFluidDefs>
 				<fluidRequiredForSeverityOne>15</fluidRequiredForSeverityOne>
 			</li>
 			<li Class="Cumpilation.Bukkake.HediffCompProperties_SpawnOrAdjustControllerHediff">
-				<controller>Cumpilation_Hediff_BukkakeController</controller>
+				<controller>Cumpilation_Hediff_SpunkkakeController</controller>
 				<summedSeverityRequiredForFullController>5.5</summedSeverityRequiredForFullController>
 			</li>
 		</comps>	
@@ -141,14 +243,13 @@
 		<defaultLabelColor>(0.37,0.71,0.55)</defaultLabelColor>
 		<comps>
 			<li Class="Cumpilation.Bukkake.HediffCompProperties_BukkakeSpawnedByFluid">
-				<!-- default: Last  3 days  -->
 				<sexFluidDefs>
 					<li>GirlCum</li>
 				</sexFluidDefs>
 				<fluidRequiredForSeverityOne>6</fluidRequiredForSeverityOne>
 			</li>
 			<li Class="Cumpilation.Bukkake.HediffCompProperties_SpawnOrAdjustControllerHediff">
-				<controller>Cumpilation_Hediff_BukkakeController</controller>
+				<controller>Cumpilation_Hediff_GirlcumkakeController</controller>
 				<summedSeverityRequiredForFullController>3.5</summedSeverityRequiredForFullController>
 			</li>
 		</comps>
