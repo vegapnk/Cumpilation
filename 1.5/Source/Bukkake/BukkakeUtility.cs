@@ -94,7 +94,7 @@ namespace Cumpilation.Bukkake
                 if (controllerProps == null || controllerProps.controller == null) return;
 
                 Hediff controller = HediffMaker.MakeHediff(controllerProps.controller, carrier);
-                if (controller is Hediff_CumController cumController) {
+                if (controller is Hediff_CoverageController cumController) {
                     cumController.CalculateSeverity();
                     if (cumController.Severity <= 0.1) return;
                     carrier.health.AddHediff(cumController);

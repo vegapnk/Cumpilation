@@ -10,9 +10,8 @@ using Verse;
 
 namespace Cumpilation.Bukkake
 {
-    public class Hediff_CumController : HediffWithComps
+    public class Hediff_CoverageController : HediffWithComps
     {
-        
         public override bool TryMergeWith(Hediff other)
         {
             if (other == null || other.def != this.def)

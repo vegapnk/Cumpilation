@@ -3,8 +3,8 @@
 
     <!--master hediff adding up the smaller Cum splatches-->
 	<HediffDef>
-		<defName>Cumpilation_Hediff_CumController</defName>
-		<hediffClass>Cumpilation.Bukkake.Hediff_CumController</hediffClass>
+		<defName>Cumpilation_Hediff_BukkakeController</defName>
+		<hediffClass>Cumpilation.Bukkake.Hediff_CoverageController</hediffClass>
 		<label>Bukkake</label>
 		<description>Covered in cum.</description>
 		<makesSickThought>false</makesSickThought>
@@ -51,7 +51,7 @@
     -->
 
 	<HediffDef Name="Cumpilation_Hediff_Cum_Base" Abstract="True">
-		<hediffClass>Cumpilation.Bukkake.Hediff_Cum</hediffClass>
+		<hediffClass>HediffWithComps</hediffClass>
 		<defaultLabelColor>(0.95,0.95,0.95)</defaultLabelColor>	
 		<isBad>false</isBad>
 		<tendable>false</tendable>
@@ -104,7 +104,7 @@
 				<fluidRequiredForSeverityOne>10</fluidRequiredForSeverityOne>
 			</li>
 			<li Class="Cumpilation.Bukkake.HediffCompProperties_SpawnOrAdjustControllerHediff">
-				<controller>Cumpilation_Hediff_CumController</controller>
+				<controller>Cumpilation_Hediff_BukkakeController</controller>
 				<summedSeverityRequiredForFullController>4.5</summedSeverityRequiredForFullController>
 			</li>
 		</comps>
@@ -126,7 +126,7 @@
 				<fluidRequiredForSeverityOne>15</fluidRequiredForSeverityOne>
 			</li>
 			<li Class="Cumpilation.Bukkake.HediffCompProperties_SpawnOrAdjustControllerHediff">
-				<controller>Cumpilation_Hediff_CumController</controller>
+				<controller>Cumpilation_Hediff_BukkakeController</controller>
 				<summedSeverityRequiredForFullController>5.5</summedSeverityRequiredForFullController>
 			</li>
 		</comps>	
@@ -148,7 +148,7 @@
 				<fluidRequiredForSeverityOne>6</fluidRequiredForSeverityOne>
 			</li>
 			<li Class="Cumpilation.Bukkake.HediffCompProperties_SpawnOrAdjustControllerHediff">
-				<controller>Cumpilation_Hediff_CumController</controller>
+				<controller>Cumpilation_Hediff_BukkakeController</controller>
 				<summedSeverityRequiredForFullController>3.5</summedSeverityRequiredForFullController>
 			</li>
 		</comps>
