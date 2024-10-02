@@ -102,7 +102,6 @@
     <Compile Include="Oscillation\HediffComps\HediffComp_ChangeSeverityOnOrgasm.cs" />
     <Compile Include="Oscillation\HediffDefModExtension_SpawnOnOrgasm.cs" />
     <Compile Include="Oscillation\OscillationHelper.cs" />
-    <Compile Include="Oscillation\Patch_HediffSexPart_Tick_GetBlueBalls.cs" />
     <Compile Include="Oscillation\Patch_OnOrgasm_SpawnHediffs_And_ChangeSeverityOfHediffs.cs" />
     <Compile Include="Gathering\Comps\MechPassiveFluidGathererComp.cs" />
     <Compile Include="Gathering\Comps\MechPassiveFluidGathererCompProperties.cs" />

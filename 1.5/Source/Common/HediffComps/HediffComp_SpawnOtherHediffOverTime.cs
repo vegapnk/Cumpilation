@@ -15,14 +15,16 @@ namespace Cumpilation.Common
         {
             base.CompPostTick(ref severityAdjustment);
 
-            if (this.props != null && Pawn.IsHashIntervalTick(Props.tickInterval) && Props.IsValidPawn(Pawn)) { 
-                if ((new Random()).NextDouble() <= Props.applicationChance){
+            if (this.props == null || parent == null || parent.pawn == null || !parent.pawn.Spawned) return;
 
-                    Hediff spawnedHediff = Pawn.health.hediffSet.GetFirstHediffOfDef(Props.hediff);
+            if (this.props != null && parent.pawn.IsHashIntervalTick(Props.tickInterval) && Props.IsValidPawn(parent.pawn)) {
+                if ((new Random()).NextDouble() <= Props.applicationChance){
+                    Hediff spawnedHediff = parent.pawn.health.hediffSet.GetFirstHediffOfDef(Props.hediff);
                     if (spawnedHediff == null)
                     {
                         BodyPartRecord bpr = Props.TryToSpawnInSameBodyPart ? parent.Part : null;
-                        Hediff hediff = HediffMaker.MakeHediff(Props.hediff, Pawn, bpr);
+                        spawnedHediff = HediffMaker.MakeHediff(Props.hediff, parent.pawn, bpr);
+                        Pawn.health.AddHediff(spawnedHediff);
                     }
                     spawnedHediff.Severity += Props.severityIncrease;
                 }

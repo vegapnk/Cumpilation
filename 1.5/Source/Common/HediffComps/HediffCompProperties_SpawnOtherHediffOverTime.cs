@@ -17,5 +17,6 @@ namespace Cumpilation.Common
         public bool TryToSpawnInSameBodyPart = true;
         public float applicationChance = 1.0f;
 
+        public HediffCompProperties_SpawnOtherHediffOverTime() => this.compClass = typeof(HediffComp_SpawnOtherHediffOverTime);
     }
 }
