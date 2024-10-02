@@ -4,8 +4,7 @@
   <ThingDef ParentName="MakeableDrugBase">
     <defName>Cumpilation_Slugmorpher</defName>
     <label>slug morpher</label>
-    <description>A dangerous and creative way to deal with Wastepacks - distilled into a
-      concentrated serum, it permanently changes the users cum into a toxic slug.</description>
+    <description>A dangerous and creative way to deal with Wastepacks - distilled into a concentrated serum, it permanently changes the users cum into a toxic slug. Consumption will also lead to toxic buildup, which gets drastically worse if the users body cannot have its fluids changed.</description>
     <graphicData>
       <texPath>Things/Item/Special/Genepack/Genepack_f</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -90,8 +89,7 @@
   <ThingDef ParentName="MakeableDrugBase">
     <defName>Cumpilation_Sluggerdrop</defName>
     <label>slugger drops</label>
-    <description>A dangerous and creative way to deal with Wastepacks - distilled into a
-      concentrated serum, it changes the users cum temporary into a toxic slug.</description>
+    <description>A dangerous and creative way to deal with Wastepacks - distilled into a concentrated serum, it changes the users cum temporary into a toxic slug. Consumption will also lead to minor toxic buildup, which might get worse if the users body cannot have its fluids changed.</description>
     <graphicData>
       <texPath>Things/Item/Drug/Yayo</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
