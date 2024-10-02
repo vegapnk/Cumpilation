@@ -79,8 +79,10 @@
     <Compile Include="Common\HediffComps\HediffCompProperties_FluidChange.cs" />
     <Compile Include="Common\HediffComps\HediffCompProperties_PartTargetting.cs" />
     <Compile Include="Common\HediffComps\HediffCompProperties_PawnTargetting.cs" />
+    <Compile Include="Common\HediffComps\HediffCompProperties_SpawnOtherHediffOverTime.cs" />
     <Compile Include="Common\HediffComps\HediffComp_FluidChange.cs" />
     <Compile Include="Common\HediffComps\HediffComp_FluidAmountChange.cs" />
+    <Compile Include="Common\HediffComps\HediffComp_SpawnOtherHediffOverTime.cs" />
     <Compile Include="Common\IngestionOutcomeDoers\IngestionOutcomeDoer_PawnTargetting.cs" />
     <Compile Include="Common\IngestionOutcomeDoers\IngestionOutcomeDoer_PermanentFluidAmountChange.cs" />
     <Compile Include="Common\IngestionOutcomeDoers\IngestionOutcomeDoer_PermanentFluidChange.cs" />
