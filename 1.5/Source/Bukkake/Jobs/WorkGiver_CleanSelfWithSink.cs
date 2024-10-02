@@ -36,11 +36,13 @@ namespace Cumpilation.Bukkake
             if (t is Building potentialSink)
                 if (!GatheringUtility.IsFluidSink(potentialSink))
                     return false;
-
-            //TODO: Add check for "is this the right bucket for right fluid"
-
+                else
+                {
+                    return BukkakeUtility.SplashesOnPawn(pawn)
+                        .Any(hed => BukkakeUtility.IsSupportedSink(hed.def, potentialSink));
+                    //TODO: Check also on the "is sink already full"
+                }
             return true;
-            //return bucket.StoredStackCount < ThingDefOf.GatheredCum.stackLimit;
         }
 
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
@@ -52,7 +54,7 @@ namespace Cumpilation.Bukkake
         {
             return ThingRequest.ForUndefined();
         }
-    
+        
     }
 
 }

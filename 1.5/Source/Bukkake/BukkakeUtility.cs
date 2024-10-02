@@ -1,4 +1,5 @@
 ﻿using Cumpilation.Common;
+using Cumpilation.Gathering;
 using HarmonyLib;
 using RimWorld;
 using rjw;
@@ -266,6 +267,23 @@ namespace Cumpilation.Bukkake
             if (compProps == null) return (null,0.0f);
 
             return (compProps.sexFluidDefs.FirstOrFallback(null),compProps.fluidRequiredForSeverityOne * severity * bodysize);
+        }
+
+        public static bool IsSupportedSink(HediffDef splashDef, Building sink)
+        {
+            if (splashDef == null || !IsSplashHediff(splashDef)) return false;
+            var fluid = SplashToFluidAmount(splashDef,1,1).Item1;
+
+            if (!GatheringUtility.IsFluidSink(sink) || fluid == null) return false;
+
+            return GatheringUtility.IsFluidSinkFor(sink,fluid);
+        }
+
+        public static IEnumerable<Hediff> SplashesOnPawn(Pawn pawn)
+        {
+            if (pawn == null) return new List<Hediff>();
+
+            return pawn.health.hediffSet.hediffs.Where(x => IsSplashHediff(x));
         }
     }
 }
