@@ -21,17 +21,19 @@ namespace Cumpilation.Oscillation
 
             Pawn pawn = props.pawn;
 
-            // First: Spawn all Orgasms that spawn on Orgasm. This has to be handled first, as maybe "blocking" hediffs appear, or we want to increase the severity of something that first has to spawn.
+            // First: Spawn all Hediffs that spawn on Orgasm. This has to be handled first, as maybe "blocking" hediffs appear, or we want to increase the severity of something that first has to spawn.
             foreach (HediffDef hediffDef in DefDatabase<HediffDef>.AllDefsListForReading.Where(hDef => hDef.HasModExtension<HediffDefModExtension_SpawnOnOrgasm>()))
             {
+                // If the pawn has the hediff, do nothing
+                if (pawn.health.hediffSet.HasHediff(hediffDef)) continue;
+
                 HediffDefModExtension_SpawnOnOrgasm spawnExt = hediffDef.GetModExtension<HediffDefModExtension_SpawnOnOrgasm>();
-                if (spawnExt != null && spawnExt.IsValidPawn(pawn))
+                if (spawnExt != null && spawnExt.IsValidPawn(pawn) &&spawnExt.GetSexPartHediffs(pawn).Count() > 0)
                 {
-                    // If the pawn has the hediff, do nothing
-                    if (pawn.health.hediffSet.HasHediff(hediffDef)) continue;
                     // Otherwise: Spawn the Hediff with Severity 0
                     Hediff spawned = pawn.health.AddHediff(hediffDef);
                     spawned.Severity = 0;
+                    ModLog.Debug($"Spawned {spawned.def.defName} on {pawn} because of orgasm. {pawn} was valid because of Part(s): {spawnExt.GetSexPartHediffs(pawn).Select(hed => hed.Def.defName).Cast<String>().Join()}");
                 }
             }
 
@@ -44,6 +46,8 @@ namespace Cumpilation.Oscillation
                 {
                     var comp = hediff.TryGetComp<HediffComp_ChangeSeverityOnOrgasm>();
                     hediff.Severity += comp.Props.severityChange;
+
+                    ModLog.Debug($"Changed Severity for  {hediff.def.defName} on {pawn} by {comp.Props.severityChange} because of orgasm.");
                     if (hediff.Severity <= 0)
                     {
                         HediffsToRemove.AddItem(hediff);

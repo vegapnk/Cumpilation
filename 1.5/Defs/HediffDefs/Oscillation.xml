@@ -222,6 +222,7 @@
             <li Class="Cumpilation.Oscillation.HediffDefModExtension_SpawnOnOrgasm">
                 <targetVagina>true</targetVagina>
                 <needsFluid>true</needsFluid>
+                <targetPenis>false</targetPenis>
             </li>
         </modExtensions>
     </HediffDef>
