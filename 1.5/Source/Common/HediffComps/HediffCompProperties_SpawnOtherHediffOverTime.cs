@@ -14,7 +14,8 @@ namespace Cumpilation.Common
         public float severityIncrease;
         public HediffDef hediff;
 
-        public bool TryToSpawnInSameBodyPart = true;
+        public bool tryToSpawnInSameBodyPart = true;
+        public bool scaleWithHediffSeverity = false;
         public float applicationChance = 1.0f;
 
         public HediffCompProperties_SpawnOtherHediffOverTime() => this.compClass = typeof(HediffComp_SpawnOtherHediffOverTime);

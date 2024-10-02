@@ -22,11 +22,12 @@ namespace Cumpilation.Common
                     Hediff spawnedHediff = parent.pawn.health.hediffSet.GetFirstHediffOfDef(Props.hediff);
                     if (spawnedHediff == null)
                     {
-                        BodyPartRecord bpr = Props.TryToSpawnInSameBodyPart ? parent.Part : null;
+                        BodyPartRecord bpr = Props.tryToSpawnInSameBodyPart ? parent.Part : null;
                         spawnedHediff = HediffMaker.MakeHediff(Props.hediff, parent.pawn, bpr);
+                        spawnedHediff.Severity = 0.0f;
                         Pawn.health.AddHediff(spawnedHediff);
                     }
-                    spawnedHediff.Severity += Props.severityIncrease;
+                    spawnedHediff.Severity += Props.scaleWithHediffSeverity ? parent.Severity * Props.severityIncrease : Props.severityIncrease;
                 }
             }
         }

@@ -1,5 +1,5 @@
 <Defs>
-    
+
 	<HediffDef>
 		<defName>Cumpilation_Hediff_SlugCoverageController</defName>
 		<hediffClass>Cumpilation.Bukkake.Hediff_CoverageController</hediffClass>
@@ -19,55 +19,65 @@
 				<minSeverity>0.3</minSeverity>
 				<label>little</label>
 				<statOffsets>
-                    <Vulnerability>-0.1</Vulnerability>
-                    <ComfyTemperatureMax>-5</ComfyTemperatureMax>
-                    <ArmorRating_Heat>-1.0</ArmorRating_Heat>
-                  </statOffsets>
+					<Vulnerability>-0.1</Vulnerability>
+					<ComfyTemperatureMax>-5</ComfyTemperatureMax>
+					<ArmorRating_Heat>-1.0</ArmorRating_Heat>
+				</statOffsets>
 			</li>
 			<li>
 				<minSeverity>0.6</minSeverity>
 				<label>extensive</label>
 				<statOffsets>
-                    <Vulnerability>-0.2</Vulnerability>
-                    <ComfyTemperatureMax>-8</ComfyTemperatureMax>
-                    <ImmunityGainSpeed>-0.05</ImmunityGainSpeed>
-                    <ArmorRating_Heat>-1.5</ArmorRating_Heat>
-                  </statOffsets>
-                  <capMods>
-                    <li>
-                      <capacity>Manipulation</capacity>
-                      <offset>-0.05</offset>
-                    </li>
-                  </capMods>
+					<Vulnerability>-0.2</Vulnerability>
+					<ComfyTemperatureMax>-8</ComfyTemperatureMax>
+					<ImmunityGainSpeed>-0.05</ImmunityGainSpeed>
+					<ArmorRating_Heat>-1.5</ArmorRating_Heat>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
 			</li>
 			<li>
 				<minSeverity>0.8</minSeverity>
 				<label>full</label>
-                <statOffsets>
-                    <Vulnerability>-0.3</Vulnerability>
-                    <ComfyTemperatureMax>-15</ComfyTemperatureMax>
-                    <MoveSpeed>0.05</MoveSpeed>
-                    <ImmunityGainSpeed>-0.10</ImmunityGainSpeed>
-                    <ArmorRating_Heat>-3.5</ArmorRating_Heat>
-                  </statOffsets>
-                  <capMods>
-                    <li>
-                      <capacity>Moving</capacity>
-                      <offset>+0.05</offset>
-                    </li>
-                    <li>
-                      <capacity>Manipulation</capacity>
-                      <offset>-0.1</offset>
-                    </li>
-                    <li>
-                      <capacity>BloodPumping</capacity>
-                      <offset>0.05</offset>
-                    </li>
-                  </capMods>
+				<statOffsets>
+					<Vulnerability>-0.3</Vulnerability>
+					<ComfyTemperatureMax>-15</ComfyTemperatureMax>
+					<MoveSpeed>0.05</MoveSpeed>
+					<ImmunityGainSpeed>-0.10</ImmunityGainSpeed>
+					<ArmorRating_Heat>-3.5</ArmorRating_Heat>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>+0.05</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.1</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
 			</li>
 		</stages>
+		<comps>
+			<li Class="Cumpilation.Common.HediffCompProperties_SpawnOtherHediffOverTime">
+				<tickInterval>2400</tickInterval>
+				<hediff>ToxicBuildup</hediff>
+				<severityIncrease>0.02</severityIncrease>
+				<scaleWithHediffSeverity>true</scaleWithHediffSeverity>
+				<tryToSpawnInSameBodyPart>false</tryToSpawnInSameBodyPart>
+				<applicationChance>0.25</applicationChance>
+			</li>
+		</comps>
 	</HediffDef>
-    
+
 	<HediffDef ParentName="Cumpilation_Hediff_Cum_Base">
 		<defName>Cumpilation_Hediff_Slugsplash</defName>
 		<label>Slug</label>
@@ -88,6 +98,6 @@
 			</li>
 		</comps>
 	</HediffDef>
-	
+
 
 </Defs>

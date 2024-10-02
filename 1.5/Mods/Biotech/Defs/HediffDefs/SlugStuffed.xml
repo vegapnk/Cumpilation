@@ -1,20 +1,28 @@
 <Defs>
-    
+
   <HediffDef ParentName="Cumpilation_BaseStuffed">
     <defName>Cumpilation_SlugStuffed</defName>
     <label>slug-stuffed</label>
     <labelNoun>slug-stuffed</labelNoun>
     <description>You came too close to someone currently slugging.</description>
     <comps>
-        <!-- DevNote: The "normal" comps are inherited, apparently. -->
-        <li Class="Cumpilation.Fluids.Slug.HediffCompProperties_SlugExplosionOnDeath">
-            <baseRadius>4</baseRadius>
-            <radiusMultipliedByBodySize>true</radiusMultipliedByBodySize>
-            <radiusMultipliedBySeverity>true</radiusMultipliedBySeverity>
-            <doToxicCloud>true</doToxicCloud>
-            <doFireExplosion>true</doFireExplosion>
-        </li>
-      </comps>
+      <!-- DevNote: The "normal" comps are inherited, apparently. -->
+      <li Class="Cumpilation.Fluids.Slug.HediffCompProperties_SlugExplosionOnDeath">
+        <baseRadius>4</baseRadius>
+        <radiusMultipliedByBodySize>true</radiusMultipliedByBodySize>
+        <radiusMultipliedBySeverity>true</radiusMultipliedBySeverity>
+        <doToxicCloud>true</doToxicCloud>
+        <doFireExplosion>true</doFireExplosion>
+      </li>
+      <li Class="Cumpilation.Common.HediffCompProperties_SpawnOtherHediffOverTime">
+        <tickInterval>3000</tickInterval>
+        <hediff>ToxicBuildup</hediff>
+        <severityIncrease>0.03</severityIncrease>
+        <scaleWithHediffSeverity>true</scaleWithHediffSeverity>
+        <tryToSpawnInSameBodyPart>false</tryToSpawnInSameBodyPart>
+        <applicationChance>0.35</applicationChance>
+      </li>
+    </comps>
     <stages>
       <li>
         <label>slightly bloated</label>
