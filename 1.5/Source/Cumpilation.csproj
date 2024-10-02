@@ -66,8 +66,10 @@
     <Compile Include="Bukkake\HediffComps\HediffComp_BukkakeSpawnedByFluid.cs" />
     <Compile Include="Bukkake\HediffComps\HediffComp_SpawnOrAdjustControllerHediff.cs" />
     <Compile Include="Bukkake\Hediffs\Hediff_CoverageController.cs" />
+    <Compile Include="Bukkake\Jobs\JobDriver_CleanSelf.cs" />
     <Compile Include="Bukkake\Jobs\JobDriver_CleanSelfWithSink.cs" />
     <Compile Include="Bukkake\Jobs\JobGiver_CleanSelfWithSink.cs" />
+    <Compile Include="Bukkake\Jobs\WorkGiver_CleanSelf.cs" />
     <Compile Include="Bukkake\Jobs\WorkGiver_CleanSelfWithSink.cs" />
     <Compile Include="Bukkake\Patch_TransferFluids_ApplyBukkake.cs" />
     <Compile Include="Common\DefModExtension_PartTargetting.cs" />

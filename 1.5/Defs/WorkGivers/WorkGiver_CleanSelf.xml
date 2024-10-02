@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<WorkGiverDef>
+		<defName>Cumpilation_CleanSelf</defName>
+		<label>clean self</label>
+		<giverClass>Cumpilation.Bukkake.WorkGiver_CleanSelf</giverClass>
+		<workType>Cleaning</workType>
+		<verb>clean self</verb>
+		<gerund>cleaning self</gerund>
+		<scanCells>false</scanCells>
+		<priorityInType>11</priorityInType><!-- slightly higher than normal cleaning (relatively unimportant)-->
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
 		<defName>Cumpilation_CleanSelfWithSink</defName>
 		<label>collect cum into a bucket</label>
 		<giverClass>Cumpilation.Bukkake.WorkGiver_CleanSelfWithSink</giverClass>
@@ -8,7 +22,7 @@
 		<verb>collect fluids into a</verb>
 		<gerund>collecting fluids into a</gerund>
 		<scanCells>false</scanCells>
-		<priorityInType>12</priorityInType>
+		<priorityInType>12</priorityInType> <!-- Higher than "non" sink cleaning-->
 		<nonColonistsCanDo>true</nonColonistsCanDo>
 		<requiredCapacities>
 			<li>Manipulation</li>

@@ -29,6 +29,7 @@ namespace Cumpilation
         [MayRequireIdeology]
         public static readonly ThoughtDef Cumpilation_Juiced_Up;
 
+        public static readonly JobDef Cumpilation_CleanSelf;
         public static readonly JobDef Cumpilation_CleanSelfWithSink;
     }
 
