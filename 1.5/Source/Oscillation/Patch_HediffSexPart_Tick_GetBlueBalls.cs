@@ -22,6 +22,8 @@ namespace Cumpilation.Fluids.Cum
 
         public static void Postfix(Hediff __instance)
         {
+            if (!Settings.EnableOscillationMechanics) return;
+
             if (__instance != null && __instance is ISexPartHediff sexPart)
             {
                 Pawn pawn = __instance.pawn;

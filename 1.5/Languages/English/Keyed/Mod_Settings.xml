@@ -25,6 +25,9 @@
     <cumpilation_settings_enable_progressing_consumption_thoughts_key>Progressing Consumption Thoughts</cumpilation_settings_enable_progressing_consumption_thoughts_key>
     <cumpilation_settings_enable_progressing_consumption_thoughts_desc>When enabled, the pawns will gain thoughts on Fluid-Consumption, depending on their preferences and how much of it they consumed already.</cumpilation_settings_enable_progressing_consumption_thoughts_desc>
 
+    <cumpilation_settings_enable_oscillation_mechanics_key>Oscillation Mechanics</cumpilation_settings_enable_oscillation_mechanics_key>
+    <cumpilation_settings_enable_oscillation_mechanics_desc>When enabled, Hediffs are added post-sex and on celibacy that change fluid-amount (Blue balls, drained and wet).</cumpilation_settings_enable_oscillation_mechanics_desc>
+
     <cumpilation_settings_enable_debug_logging_key>Debug Logging</cumpilation_settings_enable_debug_logging_key>
     <cumpilation_settings_enable_debug_logging_desc>When enabled, more detailed logging will take place.</cumpilation_settings_enable_debug_logging_desc>
 

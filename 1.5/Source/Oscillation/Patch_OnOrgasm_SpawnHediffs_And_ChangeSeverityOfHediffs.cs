@@ -14,6 +14,8 @@ namespace Cumpilation.Oscillation
     {
         public static void Postfix(SexProps props)
         {
+            if (!Settings.EnableOscillationMechanics) return;
+
             if (props == null || props.pawn == null) return;
             if (props.orgasms == 0) return;
 
