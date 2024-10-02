@@ -23,7 +23,7 @@ namespace Cumpilation.Bukkake
         {
             get
             {
-                return (hediffcache != null ) ? BukkakeUtility.TicksToCleanSplashFromSelf(hediffcache) : severitycache * UNITTIME;
+                return (hediffcache != null ) ? BukkakeUtility.TicksToCleanSplashFromSelf(hediffcache, globalFactor:2.5f) : severitycache * UNITTIME;
             }
         }
 
