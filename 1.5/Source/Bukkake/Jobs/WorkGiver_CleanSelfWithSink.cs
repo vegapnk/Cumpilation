@@ -13,16 +13,12 @@ namespace Cumpilation.Bukkake
     public class WorkGiver_CleanSelfWithSink : WorkGiver_Scanner
     {
 
-        //public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForUndefined();
-
         public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
         {
 
             DefDatabase<ThingDef>.AllDefs.Where(def => def.HasModExtension<FluidGatheringBuilding>());
             
             return pawn.Map.spawnedThings.Where(thing => thing.def.HasModExtension<FluidGatheringBuilding>());
-
-            return base.PotentialWorkThingsGlobal(pawn);
         }
 
         public override PathEndMode PathEndMode => PathEndMode.ClosestTouch;

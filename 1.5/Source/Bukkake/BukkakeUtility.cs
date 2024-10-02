@@ -285,5 +285,19 @@ namespace Cumpilation.Bukkake
 
             return pawn.health.hediffSet.hediffs.Where(x => IsSplashHediff(x));
         }
+
+        /// <summary>
+        /// Looks up the ticks (time) required to clean a splash from a body-part. 
+        /// In case of any error, null value or other issues, 240 (2s) is returned, which was the original cleanup time from frameworks.
+        /// If the severity is lower (or higher) than 1, it is considerd as a linear co-efficient. 
+        /// </summary>
+        public static int TicksToCleanSplashFromSelf(Hediff splash, float globalFactor = 1.0f) {
+            // 200 was the default from previous cleanup jobs in Sexperience / Eds86Cum
+            if (splash == null || !IsSplashHediff(splash)) return 240;
+            var fluid = SplashToFluidAmount(splash.def, 1, 1).Item1;
+            if (fluid == null || fluid.filth == null) return 240;
+
+            return (int) (fluid.filth.filth.cleaningWorkToReduceThickness * splash.Severity * globalFactor);
+        }
     }
 }

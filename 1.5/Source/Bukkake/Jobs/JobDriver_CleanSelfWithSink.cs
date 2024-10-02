@@ -12,6 +12,7 @@ namespace Cumpilation.Bukkake
 {
     public class JobDriver_CleanSelfWithSink : JobDriver
     {
+        //TODO: Make Unit-Time dependend on the Fluid 
         protected const int UNITTIME = 240;//ticks - 120 = 2 real seconds, 3 in-game minutes
         protected float progress = 0;
         protected float severitycache = 1;
@@ -22,7 +23,7 @@ namespace Cumpilation.Bukkake
         {
             get
             {
-                return severitycache * UNITTIME;
+                return (hediffcache != null ) ? BukkakeUtility.TicksToCleanSplashFromSelf(hediffcache) : severitycache * UNITTIME;
             }
         }
 
@@ -56,7 +57,7 @@ namespace Cumpilation.Bukkake
 
         protected void CleaningInit()
         {
-            hediffcache = pawn.health.hediffSet.hediffs.Find(x => BukkakeUtility.IsSplashHediff(x));
+            hediffcache = pawn.health.hediffSet.hediffs.Find(x => BukkakeUtility.IsSplashHediff(x) && BukkakeUtility.IsSupportedSink(x.def,FluidSink));
             controllers = pawn.health.hediffSet.hediffs.Where(c => c is Hediff_CoverageController).Cast<Hediff_CoverageController>().ToList();
 
             GatherBuilding = FluidSink.def.GetModExtension<FluidGatheringBuilding>();

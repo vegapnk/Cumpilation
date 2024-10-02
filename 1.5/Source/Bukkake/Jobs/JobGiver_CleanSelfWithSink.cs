@@ -33,7 +33,7 @@ namespace Cumpilation.Bukkake
             foreach (SexFluidDef fluid in fluids)
             {
                 var sink = GatheringUtility.FindClosestFluidSink(pawn, fluid);
-                if (sink == null) continue;
+                if (sink == null || !GatheringUtility.IsFluidSinkFor(sink, fluid)) continue;
                 if (pawn.Position.DistanceTo(sink.Position) > MAX_DISTANCE_TO_BUCKET) continue;
 
                 ModLog.Debug($"Had a nearby sink {sink} for {fluid} near {pawn}, trying to Make Job");
