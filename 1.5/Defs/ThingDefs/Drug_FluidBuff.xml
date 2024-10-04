@@ -52,7 +52,7 @@
   <ThingDef ParentName="MakeableDrugBase">
     <defName>Cumpilation_Galactogogues</defName>
     <label>galactagogues</label>
-    <description>This (non-prescription) supplement temporarily increases the activity of the cowper's gland, resulting in bigger penile fluid output.</description>
+    <description>This (non-prescription) supplement temporarily increases the activity of the mammary glands, resulting in higher milkproduction.</description>
     <graphicData>
       <texPath>Things/Item/Drug/Yayo</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
