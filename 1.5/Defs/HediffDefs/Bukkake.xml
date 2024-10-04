@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-    <!--master hediff adding up the smaller Cum splatches-->
+	<!--master hediff adding up the
+	smaller Cum splatches-->
 	<HediffDef>
 		<defName>Cumpilation_Hediff_BukkakeController</defName>
 		<hediffClass>Cumpilation.Bukkake.Hediff_CoverageController</hediffClass>
@@ -29,7 +30,7 @@
 				<minSeverity>0.6</minSeverity>
 				<label>extensive</label>
 				<statOffsets>
-					<Vulnerability>0.3</Vulnerability>			
+					<Vulnerability>0.3</Vulnerability>
 					<SocialImpact>-0.3</SocialImpact>
 					<ComfyTemperatureMax>1</ComfyTemperatureMax>
 				</statOffsets>
@@ -38,7 +39,8 @@
 				<minSeverity>0.8</minSeverity>
 				<label>full</label>
 				<statOffsets>
-					<Vulnerability>-0.1</Vulnerability><!--pawns prefer victims not being completely drenched-->
+					<Vulnerability>-0.1</Vulnerability><!--pawns
+					prefer victims not being completely drenched-->
 					<SocialImpact>-0.5</SocialImpact>
 					<ComfyTemperatureMax>3</ComfyTemperatureMax>
 				</statOffsets>
@@ -74,7 +76,7 @@
 				<minSeverity>0.6</minSeverity>
 				<label>extensive</label>
 				<statOffsets>
-					<Vulnerability>-0.2</Vulnerability>			
+					<Vulnerability>-0.2</Vulnerability>
 					<SocialImpact>-0.6</SocialImpact>
 					<ComfyTemperatureMin>4</ComfyTemperatureMin>
 				</statOffsets>
@@ -84,17 +86,18 @@
 				<minSeverity>0.8</minSeverity>
 				<label>full</label>
 				<statOffsets>
-					<Vulnerability>-0.3</Vulnerability><!--pawns prefer victims not being completely drenched-->
+					<Vulnerability>-0.3</Vulnerability><!--pawns
+					prefer victims not being completely drenched-->
 					<SocialImpact>-0.7</SocialImpact>
 					<ComfyTemperatureMin>7</ComfyTemperatureMin>
 				</statOffsets>
 				<painOffset>-0.1</painOffset>
-                <capMods>
-                    <li>
-                        <capacity>Moving</capacity>
-                        <offset>-0.03</offset>
-                    </li>
-                </capMods>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.03</offset>
+					</li>
+				</capMods>
 			</li>
 		</stages>
 	</HediffDef>
@@ -137,17 +140,17 @@
 					<SocialImpact>0.25</SocialImpact>
 					<ComfyTemperatureMax>6</ComfyTemperatureMax>
 				</statOffsets>
-                <capMods>
-                    <li>
-                        <capacity>Moving</capacity>
-                        <offset>0.03</offset>
-                    </li>
-                </capMods>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.03</offset>
+					</li>
+				</capMods>
 			</li>
 		</stages>
 	</HediffDef>
 
-    <!-- 
+	<!-- 
     =======================================================
                         Individual Splashes
     =======================================================
@@ -155,16 +158,16 @@
 
 	<HediffDef Name="Cumpilation_Hediff_Cum_Base" Abstract="True">
 		<hediffClass>HediffWithComps</hediffClass>
-		<defaultLabelColor>(0.95,0.95,0.95)</defaultLabelColor>	
+		<defaultLabelColor>(0.95,0.95,0.95)</defaultLabelColor>
 		<isBad>false</isBad>
 		<tendable>false</tendable>
 		<makesSickThought>false</makesSickThought>
-		<makesAlert>false</makesAlert>	
+		<makesAlert>false</makesAlert>
 		<maxSeverity>1</maxSeverity>
 		<initialSeverity>0.001</initialSeverity>
 		<injuryProps>
 			<canMerge>true</canMerge>
-		</injuryProps>	
+		</injuryProps>
 		<stages>
 			<li>
 				<label>little</label>
@@ -181,17 +184,18 @@
 				<minSeverity>0.8</minSeverity>
 				<label>drenched</label>
 			</li>
-		</stages>	
+		</stages>
 		<comps>
 			<li Class="HediffCompProperties_SelfHeal">
 				<!--0.01*100*1800/60.0000-->
-				<healIntervalTicksStanding>1800</healIntervalTicksStanding><!-- 1 day = 60.000 ticks -->
-				<healAmount>0.01</healAmount><!--dries by itself, completely drying from 1.0 to 0.0 takes ~72h-->
+				<healIntervalTicksStanding>1800</healIntervalTicksStanding>
+				<healAmount>0.01</healAmount>
+				<!--dries by itself, completely drying from 1.0 to 0.0 takes ~72h-->
 				<!-- default: Last  3 days  -->
 			</li>
-		</comps>	
+		</comps>
 	</HediffDef>
-	
+
 	<HediffDef ParentName="Cumpilation_Hediff_Cum_Base">
 		<defName>Cumpilation_Hediff_Cum</defName>
 		<label>Cum</label>
@@ -212,8 +216,8 @@
 			</li>
 		</comps>
 	</HediffDef>
-	
-	<HediffDef ParentName="Cumpilation_Hediff_Cum_Base">	
+
+	<HediffDef ParentName="Cumpilation_Hediff_Cum_Base">
 		<defName>Cumpilation_Hediff_InsectSpunk</defName>
 		<description>Insect spunk.</description>
 		<label>insect spunk</label>
@@ -231,10 +235,10 @@
 				<controller>Cumpilation_Hediff_SpunkkakeController</controller>
 				<summedSeverityRequiredForFullController>5.5</summedSeverityRequiredForFullController>
 			</li>
-		</comps>	
+		</comps>
 	</HediffDef>
-    
-	<HediffDef ParentName="Cumpilation_Hediff_Cum_Base">	
+
+	<HediffDef ParentName="Cumpilation_Hediff_Cum_Base">
 		<defName>Cumpilation_Hediff_SquirtFluids</defName>
 		<description>squirt fluids.</description>
 		<label>squirt fluids</label>

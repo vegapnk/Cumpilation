@@ -1,147 +1,147 @@
 <Defs>
-    
-    <ThoughtDef>
-        <defName>Cumpilation_CumstuffedNegative</defName>
-        <workerClass>ThoughtWorker_Hediff</workerClass>
-        <hediff>Cumpilation_Cumstuffed</hediff>
-        <validWhileDespawned>true</validWhileDespawned>
-        <stages>
-          <li>
-            <visible>false</visible>
-          </li>
-          <li>
-            <label>bloated with cum</label>
-            <description>I feel full.</description>
-            <baseMoodEffect>0</baseMoodEffect>
-          </li>
-          <li>
-            <label>full of cum</label>
-            <description>I can't drink another drop.</description>
-            <baseMoodEffect>-1</baseMoodEffect>
-          </li>
-          <li>
-            <label>stuffed with cum</label>
-            <description>Hrkkk... I'm gonna throw up...</description>
-            <baseMoodEffect>-3</baseMoodEffect>
-          </li>
-          <li>
-            <label>overstuffed with cum</label>
-            <description>Hghhh... *urp*, my stomach hurts...</description>
-            <baseMoodEffect>-5</baseMoodEffect>
-          </li>
-        </stages>
-        <nullifyingTraits>
-          <li>Cumpilation_LikesCumflation</li>
-          <li>Masochist</li>
-        </nullifyingTraits>
-      </ThoughtDef>
-    
-      <ThoughtDef>
-        <defName>Cumpilation_CumstuffedEnjoyed</defName>
-        <workerClass>ThoughtWorker_Hediff</workerClass>
-        <hediff>Cumpilation_Cumstuffed</hediff>
-        <validWhileDespawned>true</validWhileDespawned>
-        <stages>
-          <li>
-            <visible>false</visible>
-          </li>
-          <li>
-            <label>enjoying being bloated with cum</label>
-            <description>I can feel it sloshing inside me.</description>
-            <baseMoodEffect>2</baseMoodEffect>
-          </li>
-          <li>
-            <label>enjoying being full of cum</label>
-            <description>I can still take more!</description>
-            <baseMoodEffect>3</baseMoodEffect>
-          </li>
-          <li>
-            <label>enjoying being stuffed with cum</label>
-            <description>Mmm... it hurts but I still want more.</description>
-            <baseMoodEffect>5</baseMoodEffect>
-          </li>
-          <li>
-            <label>enjoying being overstuffed with cum</label>
-            <description>Ughhh... more...</description>
-            <baseMoodEffect>7</baseMoodEffect>
-          </li>
-        </stages>
-        <requiredTraits>
-          <li>Cumpilation_LikesCumflation</li>
-          <li>Masochist</li>
-        </requiredTraits>
-      </ThoughtDef>
-    
-      
-    <ThoughtDef>
-        <defName>Cumpilation_InsectSpunkStuffedNegative</defName>
-        <workerClass>ThoughtWorker_Hediff</workerClass>
-        <hediff>Cumpilation_InsectSpunkStuffed</hediff>
-        <validWhileDespawned>true</validWhileDespawned>
-        <stages>
-          <li>
-            <label>bloated with insect-spunk</label>
-            <description>This is not a normal feeling.</description>
-            <baseMoodEffect>-1</baseMoodEffect>
-          </li>
-          <li>
-            <label>full of insect-spunk</label>
-            <description>I am filled with the brink with this nasty stuff.</description>
-            <baseMoodEffect>-2</baseMoodEffect>
-          </li>
-          <li>
-            <label>stuffed with insect-spunk</label>
-            <description>No more ... please</description>
-            <baseMoodEffect>-4</baseMoodEffect>
-          </li>
-          <li>
-            <label>overstuffed with insect-spunk</label>
-            <description>Please, make these insects stop!</description>
-            <baseMoodEffect>-6</baseMoodEffect>
-          </li>
-        </stages>
-        <nullifyingTraits>
-          <li>Cumpilation_LikesCumflation</li>
-          <li>Masochist</li>
-          <li>Zoophile</li>
-        </nullifyingTraits>
-      </ThoughtDef>
-    
-      <ThoughtDef>
-        <defName>Cumpilation_InsectSpunkstuffedEnjoyed</defName>
-        <workerClass>ThoughtWorker_Hediff</workerClass>
-        <hediff>Cumpilation_InsectSpunkStuffed</hediff>
-        <validWhileDespawned>true</validWhileDespawned>
-        <stages>
-          <li>
-            <visible>false</visible>
-          </li>
-          <li>
-            <label>enjoying being bloated with insect-spunk</label>
-            <description>Well, there is more room, but for now this is fine.</description>
-            <baseMoodEffect>3</baseMoodEffect>
-          </li>
-          <li>
-            <label>enjoying being full of insect-spunk</label>
-            <description>Give me more, please!</description>
-            <baseMoodEffect>4</baseMoodEffect>
-          </li>
-          <li>
-            <label>enjoying being stuffed with insect-spunk</label>
-            <description>It ... must ... fit ... somehow ...</description>
-            <baseMoodEffect>6</baseMoodEffect>
-          </li>
-          <li>
-            <label>enjoying being overstuffed with insect-spunk</label>
-            <description>Please ... more ...</description>
-            <baseMoodEffect>8</baseMoodEffect>
-          </li>
-        </stages>
-        <requiredTraits>
-          <li>Cumpilation_LikesCumflation</li>
-          <li>Zoophile</li>
-          <li>Masochist</li>
-        </requiredTraits>
-      </ThoughtDef>
-    
+
+  <ThoughtDef>
+    <defName>Cumpilation_CumstuffedNegative</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>Cumpilation_Cumstuffed</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <visible>false</visible>
+      </li>
+      <li>
+        <label>bloated with cum</label>
+        <description>I feel full.</description>
+        <baseMoodEffect>0</baseMoodEffect>
+      </li>
+      <li>
+        <label>full of cum</label>
+        <description>I can't drink another drop.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+      <li>
+        <label>stuffed with cum</label>
+        <description>Hrkkk... I'm gonna throw up...</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+      <li>
+        <label>overstuffed with cum</label>
+        <description>Hghhh... *urp*, my stomach hurts...</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>Cumpilation_LikesCumflation</li>
+      <li>Masochist</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Cumpilation_CumstuffedEnjoyed</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>Cumpilation_Cumstuffed</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <visible>false</visible>
+      </li>
+      <li>
+        <label>enjoying being bloated with cum</label>
+        <description>I can feel it sloshing inside me.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>enjoying being full of cum</label>
+        <description>I can still take more!</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>enjoying being stuffed with cum</label>
+        <description>Mmm... it hurts but I still want more.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>enjoying being overstuffed with cum</label>
+        <description>Ughhh... more...</description>
+        <baseMoodEffect>7</baseMoodEffect>
+      </li>
+    </stages>
+    <requiredTraits>
+      <li>Cumpilation_LikesCumflation</li>
+      <li>Masochist</li>
+    </requiredTraits>
+  </ThoughtDef>
+
+
+  <ThoughtDef>
+    <defName>Cumpilation_InsectSpunkStuffedNegative</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>Cumpilation_InsectSpunkStuffed</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>bloated with insect-spunk</label>
+        <description>This is not a normal feeling.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+      <li>
+        <label>full of insect-spunk</label>
+        <description>I am filled with the brink with this nasty stuff.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>stuffed with insect-spunk</label>
+        <description>No more ... please</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+      <li>
+        <label>overstuffed with insect-spunk</label>
+        <description>Please, make these insects stop!</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+    <nullifyingTraits>
+      <li>Cumpilation_LikesCumflation</li>
+      <li>Masochist</li>
+      <li>Zoophile</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Cumpilation_InsectSpunkstuffedEnjoyed</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>Cumpilation_InsectSpunkStuffed</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <visible>false</visible>
+      </li>
+      <li>
+        <label>enjoying being bloated with insect-spunk</label>
+        <description>Well, there is more room, but for now this is fine.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>enjoying being full of insect-spunk</label>
+        <description>Give me more, please!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>enjoying being stuffed with insect-spunk</label>
+        <description>It ... must ... fit ... somehow ...</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+      <li>
+        <label>enjoying being overstuffed with insect-spunk</label>
+        <description>Please ... more ...</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+    <requiredTraits>
+      <li>Cumpilation_LikesCumflation</li>
+      <li>Zoophile</li>
+      <li>Masochist</li>
+    </requiredTraits>
+  </ThoughtDef>
+
 </Defs>

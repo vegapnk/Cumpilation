@@ -4,8 +4,7 @@
   <ThingDef ParentName="FurnitureWithQualityBase">
     <defName>Cumpilation_CumBucket</defName>
     <label>cum bucket</label>
-    <description>A bucket for collecting cum. Colonists and prisoners will go masturbate near a
-      bucket if possible.</description>
+    <description>A bucket for collecting cum. Colonists and prisoners will go masturbate near a bucket if possible.</description>
     <graphicData>
       <texPath>Things/Item/CumBucket</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -69,8 +68,7 @@
   <ThingDef ParentName="FurnitureBase">
     <defName>Cumpilation_Advanced_Cum_Bucket</defName>
     <label>Advanced cum bucket</label>
-    <description>A bucket to collect fluid and keep the area around it clean. Slowly removes cum and
-      insect-spunk in a 10 Cell radius.</description>
+    <description>A bucket to collect fluid and keep the area around it clean. Slowly removes cum and insect-spunk in a 10 Cell radius.</description>
     <graphicData>
       <texPath>Things/Item/Advanced_CumBucket</texPath>
       <drawSize>(1,1)</drawSize>

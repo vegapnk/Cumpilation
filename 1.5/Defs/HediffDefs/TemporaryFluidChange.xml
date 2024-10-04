@@ -12,7 +12,7 @@
                 <!-- default: Last ~1 Week -->
                 <severityPerDay>-0.15</severityPerDay>
             </li>
-            <!-- Example how to use: --> 
+            <!-- Example how to use: -->
             <!-- 
             <li Class="Cumpilation.Common.HediffCompProperties_FluidChange">
                 <fluid>Milk</fluid>

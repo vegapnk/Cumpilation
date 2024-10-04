@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <Defs>
 
@@ -8,7 +8,7 @@
         <numConsumedRecord>Cumpilation_NumOfConsumedCum</numConsumedRecord>
         <amountConsumedRecord>Cumpilation_AmountConsumedCum</amountConsumedRecord>
     </Cumpilation.Reactions.Fluid_Record_Mapping>
-    
+
     <Cumpilation.Reactions.Fluid_Record_Mapping>
         <defName>Cumpilation_InsectSpunkRecordMapping</defName>
         <fluid>InsectSpunk</fluid>

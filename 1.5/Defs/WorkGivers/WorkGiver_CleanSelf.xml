@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<WorkGiverDef>
 		<defName>Cumpilation_CleanSelf</defName>
@@ -8,7 +8,8 @@
 		<verb>clean self</verb>
 		<gerund>cleaning self</gerund>
 		<scanCells>false</scanCells>
-		<priorityInType>11</priorityInType><!-- slightly higher than normal cleaning (relatively unimportant)-->
+		<!-- slightly higher than normal cleaning (relatively unimportant)-->
+		<priorityInType>11</priorityInType>
 		<requiredCapacities>
 			<li>Manipulation</li>
 		</requiredCapacities>
@@ -22,7 +23,8 @@
 		<verb>collect fluids into a</verb>
 		<gerund>collecting fluids into a</gerund>
 		<scanCells>false</scanCells>
-		<priorityInType>12</priorityInType> <!-- Higher than "non" sink cleaning-->
+		<!-- Higher than "non" sink cleaning-->
+		<priorityInType>12</priorityInType>
 		<nonColonistsCanDo>true</nonColonistsCanDo>
 		<requiredCapacities>
 			<li>Manipulation</li>

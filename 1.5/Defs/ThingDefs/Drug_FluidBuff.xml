@@ -46,7 +46,6 @@
       <MedicineHerbal>2</MedicineHerbal>
       <Neutroamine>3</Neutroamine>
     </costList>
-
   </ThingDef>
 
   <ThingDef ParentName="MakeableDrugBase">
@@ -92,8 +91,6 @@
     <costList>
       <MedicineHerbal>3</MedicineHerbal>
     </costList>
-
   </ThingDef>
 
-  
 </Defs>
