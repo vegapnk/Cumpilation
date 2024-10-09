@@ -19,10 +19,17 @@
 		</li>
 	</modDependencies>
 	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>Ludeon.RimWorld.Ideology</li>
+		<li>Ludeon.RimWorld.Biotech</li>
 		<li>brrainz.harmony</li>
 		<li>rim.job.world</li>
 	</loadAfter>
+	<loadBefore>
+		<li>Vegapnk.rjw.genes</li>
+	</loadBefore>
 
 	<description>Various fluid-based mechanics for RJW</description>
-	<url>https://steamcommunity.com/id/Vegapnk/myworkshopfiles/?appid=294100</url>
+	<url>https://github.com/vegapnk/Cumpilation</url>
 </ModMetaData>
