@@ -33,6 +33,18 @@
 		<li>tory187.rjw.gatheredrjw</li>
 		<li>rjw.bucket</li>
 	</incompatibleWith>
-	<description>Various fluid-based mechanics for RJW</description>
+	<description>
+Fluid-based mechanics for RJW.
+Adds:
+- Bukkake (from external fluids)
+- Cumflation (from vaginal fluids)
+- Stuffing (from anal and oral fluids)
+- Cum as a consumable Item and Ingredient
+- Cum-Buckets and Auto-Cum-Buckets
+- Thoughts on Fluid-Consumption, progressing with more consumption
+- Interfaces for Drugs to change fluid-types and alter fluid-amounts
+- Oscillation Mechanics that increase or decrease cum amounts for a genital after usage
+- [Biotech] Slug, a Fluid Type to recycle/reuse wastepacks
+	</description>
 	<url>https://github.com/vegapnk/Cumpilation</url>
 </ModMetaData>
