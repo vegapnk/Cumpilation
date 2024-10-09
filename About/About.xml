@@ -29,7 +29,10 @@
 	<loadBefore>
 		<li>Vegapnk.rjw.genes</li>
 	</loadBefore>
-
+	<incompatibleWith>
+		<li>tory187.rjw.gatheredrjw</li>
+		<li>rjw.bucket</li>
+	</incompatibleWith>
 	<description>Various fluid-based mechanics for RJW</description>
 	<url>https://github.com/vegapnk/Cumpilation</url>
 </ModMetaData>

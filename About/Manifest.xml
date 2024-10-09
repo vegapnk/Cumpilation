@@ -9,6 +9,7 @@
 	<incompatibleWith> 
 		<li>RJW-LicentiaLabs</li>
 		<li>RJW Bucket</li>
+		<li>Gathered RJW</li>
 	</incompatibleWith>
 	<loadAfter>
         <li>RimJobWorld</li>

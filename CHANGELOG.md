@@ -197,11 +197,19 @@ Slug is also meant to be an example for how people can design their own fluids, 
 - No Tales, e.g. Cumflation used to have a Tale and it would appear on art etc.
 - The Bukkake is not drawn; This is intentional as it is hard on rendering, and I don't know how to do it. I leave it up for the individual frameworks to patch it in if they want. 
 
+## Known Incompatibilities
+
+- Bodyparts added by other mods might not / never be covered in bukkakes. Please let me know about it. 
+- Licentia is currently marked as incompatible. This is temporary, but Licentia is not moved up above RJW 5.5.0.0
+- Gathering and Cum-Bucket were fully _swallowed_ and have been marked as incompatible to avoid collisions. 
+- If any of the other mods are still used in (old?) versions, the hediffs will just co-exist unless they are turned off in settings
+
 ## Contributing & Helping 
 
 - Bug Reports help a lot. If you report a bug, please give me a hugslog, screenshot, and especially error messages if you have any. 
 - Writing in the form of Tales, Hediff-Texts, Thought-Texts etc. are very welcome as I ran a bit out of imagination here. Just open a feature request issue and provide what you have - once I get to it I will add them. 
 - Drawings! I wanted to add more buildings but I can't draw. Lol.
 - Testing! Maybe things are still not balanced, or something weird happens for prisoners and caravans. 
+- If I missed anything from migrating in the other mods, feel free to salvage it. Most mods gave explicit consent or have an permissive licence. 
 
 If you have anything please stay polite, I will read everything and will try to address everything (or tell you that I won't do it). 
