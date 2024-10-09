@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+<!-- 
+    Discussed in Issue #5
+    Makes the sexfluid have the effect of "Cumpilation Cum" at a ratio of 25 Fluid = 1 Cum Item
+    The base-rjw logic makes it so that all other consumption effects are ignored if a consumable is present. 
+    Currently Disabled for reasons. 
+-->
+
+<Operation Class="PatchOperationConditional">
+<xpath>Defs/rjw.SexFluidDef[defName="Cum"]/consumable</xpath>
+<nomatch Class="PatchOperationAdd">
+<xpath>Defs/rjw.SexFluidDef[defName="Cum"]</xpath>
+<value>
+        <consumable>Cumpilation_Cum</consumable>
+</value>
+</nomatch>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/rjw.SexFluidDef[defName="Cum"]/consumable</xpath>
+      <value>
+        <consumable>Cumpilation_Cum</consumable>
+      </value>
+    </match>
+</Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/rjw.SexFluidDef[defName="Cum"]</xpath>
+    <value>
+      <consumableFluidRatio>0.025</consumableFluidRatio>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/rjw.SexFluidDef[defName="Cum"]/baseNutrition</xpath>
+  </Operation>
+</Patch>
