@@ -20,7 +20,7 @@
 		</filth>
 	</ThingDef>
 
-    <rjw.SexFluidDef>
+	<rjw.SexFluidDef>
 		<defName>Cumpilation_Slug</defName>
 		<label>slug</label>
 		<filth>Cumpilation_SlugFilth</filth>
@@ -34,5 +34,5 @@
 			<li Class="Cumpilation.Fluids.Slug.SexFluidIngestionDoer_ConsumeSlug" />
 		</ingestionDoers>
 	</rjw.SexFluidDef>
-	
+
 </Defs>

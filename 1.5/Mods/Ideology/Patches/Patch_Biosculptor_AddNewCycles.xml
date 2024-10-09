@@ -4,24 +4,25 @@
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="BiosculpterPod"]/comps</xpath>
     <value>
-        <li Class="Cumpilation.Fluids.CompProperties_BiosculpterPod_FluidIncreaseCycle">
-            <key>fluidincrease</key>
-            <increaseFactor>1.3</increaseFactor>
-            <label>fluid increase</label>
-            <!-- I first tried to use the <GainThoughtOnCompletion> here but it always gave the age reversal one -->
-            <description>Permanently increase all fluid-output.</description>
-            <iconPath>UI/Gizmos/BiosculpterCyclePleasure</iconPath>
-            <durationDays>2.25</durationDays>
-            <operatingColor>(1.000,0.918,0.000)</operatingColor>
-          </li>
-          <li Class="Cumpilation.Fluids.CompProperties_BiosculpterPod_ResetFluidAmountCycle">
-            <key>fluidreset</key>
-            <label>fluid reset</label>
-            <description>Resets the fluid-type and output to un-modified amount.</description>
-            <iconPath>UI/Gizmos/BiosculpterCyclePleasure</iconPath>
-            <durationDays>1.2</durationDays>
-            <operatingColor>(1.000,0.918,0.000)</operatingColor>
-          </li>
+      <li Class="Cumpilation.Fluids.CompProperties_BiosculpterPod_FluidIncreaseCycle">
+        <key>fluidincrease</key>
+        <increaseFactor>1.3</increaseFactor>
+        <label>fluid increase</label>
+        <!-- I first tried to use the <GainThoughtOnCompletion> here but it always gave the age
+        reversal one -->
+        <description>Permanently increase all fluid-output.</description>
+        <iconPath>UI/Gizmos/BiosculpterCyclePleasure</iconPath>
+        <durationDays>2.25</durationDays>
+        <operatingColor>(1.000,0.918,0.000)</operatingColor>
+      </li>
+      <li Class="Cumpilation.Fluids.CompProperties_BiosculpterPod_ResetFluidAmountCycle">
+        <key>fluidreset</key>
+        <label>fluid reset</label>
+        <description>Resets the fluid-type and output to un-modified amount.</description>
+        <iconPath>UI/Gizmos/BiosculpterCyclePleasure</iconPath>
+        <durationDays>1.2</durationDays>
+        <operatingColor>(1.000,0.918,0.000)</operatingColor>
+      </li>
     </value>
   </Operation>
 

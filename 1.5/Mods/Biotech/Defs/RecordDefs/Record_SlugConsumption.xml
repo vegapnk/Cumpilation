@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <Defs>
 	<RecordDef>
@@ -15,11 +15,11 @@
 		<type>Int</type>
 	</RecordDef>
 
-    <Cumpilation.Reactions.Fluid_Record_Mapping>
-        <defName>Cumpilation_SlugRecordMapping</defName>
-        <fluid>Cumpilation_Slug</fluid>
-        <numConsumedRecord>Cumpilation_NumOfConsumedSlug</numConsumedRecord>
-        <amountConsumedRecord>Cumpilation_AmountConsumedSlug</amountConsumedRecord>
-    </Cumpilation.Reactions.Fluid_Record_Mapping>
+	<Cumpilation.Reactions.Fluid_Record_Mapping>
+		<defName>Cumpilation_SlugRecordMapping</defName>
+		<fluid>Cumpilation_Slug</fluid>
+		<numConsumedRecord>Cumpilation_NumOfConsumedSlug</numConsumedRecord>
+		<amountConsumedRecord>Cumpilation_AmountConsumedSlug</amountConsumedRecord>
+	</Cumpilation.Reactions.Fluid_Record_Mapping>
 
 </Defs>

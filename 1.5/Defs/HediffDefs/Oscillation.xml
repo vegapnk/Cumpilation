@@ -178,7 +178,7 @@
                 <!-- Hold a bit longer than 1/2 day-->
                 <severityPerDay>-1.75</severityPerDay>
             </li>
-            
+
             <li Class="Cumpilation.Common.HediffCompProperties_RandomlySpawnFilth">
                 <ticksBetweenCheck>2750</ticksBetweenCheck>
                 <chanceToSpawn>0.35</chanceToSpawn>

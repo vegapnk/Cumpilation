@@ -1,12 +1,14 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!-- Note: Unlike the version from LicentiaLabs, the pawns can only be inflated with Fluids that have the tag `canCumflate` -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Note: Unlike the version from LicentiaLabs, the pawns can only be inflated with Fluids that
+have the tag `canCumflate` -->
 <Defs>
   <HediffDef>
     <defName>Cumpilation_Cumflation</defName>
     <hediffClass>HediffWithComps</hediffClass>
     <label>cumflation</label>
     <labelNoun>cumflation</labelNoun>
-    <description>When a creature with prodigious fluid production releases its contents into another creature, the receiving creature can get inflated if there is too much fluid.</description>
+    <description>When a creature with prodigious fluid production releases its contents into another
+      creature, the receiving creature can get inflated if there is too much fluid.</description>
     <defaultLabelColor>(240,200,110)</defaultLabelColor>
     <scenarioCanAdd>false</scenarioCanAdd>
     <maxSeverity>3.0</maxSeverity>
@@ -16,7 +18,7 @@
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-0.85</severityPerDay>
       </li>
-      <li Class="Cumpilation.Cumflation.HediffCompProperties_SourceStorage"/>
+      <li Class="Cumpilation.Cumflation.HediffCompProperties_SourceStorage" />
     </comps>
     <stages>
       <li>
