@@ -1,4 +1,4 @@
-# 1.0.0
+# 1.0.0 (09-10-2024)
 
 First version. Released on an unsuspecting world.
 
@@ -17,7 +17,7 @@ The cum-stuffing will make a different effect depending on the fluid, and the cu
 ## Content Summary
 
 - Cumflation (originally from [LicentiaLabs](https://gitgud.io/John-the-Anabaptist/licentia-labs))
-- Cum-Stuffed (originally from [LicentiaLabs](https://gitgud.io/John-the-Anabaptist/licentia-labs))
+- Cum-Stuffed (originally from [LicentiaLabs](https://gitgud.io/John-the-Anabaptist/licentia-labs), extended per fluid)
 - Cum-Item (originally from [Ameravashi-Sexperience](https://gitgud.io/amevarashi/rjw-sexperience))
 - Cum-bucket (originally from [Ameravashi-Sexperience](https://gitgud.io/amevarashi/rjw-sexperience))
 - Passive Cum-Cleaning (idea from [rjw-bucket](https://gitgud.io/Thomas404/rjw-bucket))
@@ -29,7 +29,7 @@ The cum-stuffing will make a different effect depending on the fluid, and the cu
 - Penis-equipped pawns will stack-up blue balls until release. Consequent releases make pawns `drained`. Vaginas get `wet`ter on orgasms.
 - {Biotech} Slug, a Wastepack based, negative Fluid.
 
-Detailed Content & Mechanics: 
+## Detailed Content & Mechanics
 
 ### Cumflation 
 
@@ -182,3 +182,26 @@ Intended Playstyle:
 See [Wiki](https://github.com/vegapnk/Cumpilation/wiki/%5BWIP%5D-Slug) for motivation and some details. 
 
 Slug is also meant to be an example for how people can design their own fluids, apply them, and configure different follow up effects like stuffing. 
+
+### Settings, Options & Other Information 
+
+- Bukkake, Cumflation, Cumstuffing and Cum-Eating-Thoughts can be turned off 
+- If turned off, the hediffs cannot be gained - but if there are any left you have to "sit them out"
+- Bukkake, Cumflation and Cumstuffing can get a global multiplier to have them appear more or less often. These apply for all fluids as a linear coefficient and still take body-size into account. 
+- If any of the other mods are still used in (old?) versions, the hediffs will just co-exist unless they are turned off in settings
+- Condoms disable most functions. They will not result in cumflation, cumstuffing or bukkake.
+- Sexperience already announced to rotate out their Cum-Parts once Cumpilation is released.
+
+### Known Missing Content 
+
+- No Tales, e.g. Cumflation used to have a Tale and it would appear on art etc.
+- The Bukkake is not drawn; This is intentional as it is hard on rendering, and I don't know how to do it. I leave it up for the individual frameworks to patch it in if they want. 
+
+## Contributing & Helping 
+
+- Bug Reports help a lot. If you report a bug, please give me a hugslog, screenshot, and especially error messages if you have any. 
+- Writing in the form of Tales, Hediff-Texts, Thought-Texts etc. are very welcome as I ran a bit out of imagination here. Just open a feature request issue and provide what you have - once I get to it I will add them. 
+- Drawings! I wanted to add more buildings but I can't draw. Lol.
+- Testing! Maybe things are still not balanced, or something weird happens for prisoners and caravans. 
+
+If you have anything please stay polite, I will read everything and will try to address everything (or tell you that I won't do it). 
