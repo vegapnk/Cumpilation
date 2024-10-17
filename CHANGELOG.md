@@ -1,5 +1,9 @@
 # 1.0.1 (17-10-2024)
 
+**Changes**:
+
+- Covered in Squirt now has slighty different wording and a light-blue colour as a hediff (#13)
+
 **Fixes**:
 
 - BlueBalls now only spawn when Oscillation is on in the Settings (#15)

@@ -106,6 +106,7 @@
 		<defName>Cumpilation_Hediff_GirlcumkakeController</defName>
 		<hediffClass>Cumpilation.Bukkake.Hediff_CoverageController</hediffClass>
 		<label>Squirtcoated</label>
+		<defaultLabelColor>(0.4,0.6,0.85)</defaultLabelColor>
 		<description>Covered in girl-cum.</description>
 		<makesSickThought>false</makesSickThought>
 		<initialSeverity>0.01</initialSeverity>
@@ -219,7 +220,7 @@
 
 	<HediffDef ParentName="Cumpilation_Hediff_Cum_Base">
 		<defName>Cumpilation_Hediff_InsectSpunk</defName>
-		<description>Insect spunk.</description>
+		<description>splash of insect spunk.</description>
 		<label>insect spunk</label>
 		<labelNoun>insect spunk</labelNoun>
 		<labelNounPretty>insect spunk on {1}</labelNounPretty>
@@ -240,11 +241,11 @@
 
 	<HediffDef ParentName="Cumpilation_Hediff_Cum_Base">
 		<defName>Cumpilation_Hediff_SquirtFluids</defName>
-		<description>squirt fluids.</description>
+		<description>splash of squirt fluids.</description>
 		<label>squirt fluids</label>
 		<labelNoun>squirt fluids</labelNoun>
 		<labelNounPretty>squirted on {1}</labelNounPretty>
-		<defaultLabelColor>(0.37,0.71,0.55)</defaultLabelColor>
+		<defaultLabelColor>(0.4,0.6,0.85)</defaultLabelColor>
 		<comps>
 			<li Class="Cumpilation.Bukkake.HediffCompProperties_BukkakeSpawnedByFluid">
 				<sexFluidDefs>
