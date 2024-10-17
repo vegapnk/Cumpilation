@@ -70,8 +70,7 @@
         <defName>Cumpilation_Drained</defName>
         <label>drained</label>
         <labelNoun>drained</labelNoun>
-        <description>something recently emptied your balls - well done, but be careful for
-            over-usage.</description>
+        <description>something recently emptied your balls - well done, but be careful for over-usage.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <tendable>false</tendable>
         <isBad>true</isBad>

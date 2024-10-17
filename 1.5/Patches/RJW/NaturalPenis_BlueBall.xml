@@ -21,6 +21,9 @@
                 <hediff>Cumpilation_BlueBalls</hediff>
                 <severityIncrease>0.01</severityIncrease>
 				<needsOscillationSettingOn>true</needsOscillationSettingOn>
+				<blockingHediffs>
+					<li>Cumpilation_Drained</li>
+				</blockingHediffs>
             </li>
 		</value>
 	</Operation>

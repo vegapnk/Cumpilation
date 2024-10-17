@@ -4,6 +4,8 @@
 
 - BlueBalls now only spawn when Oscillation is on in the Settings (#15)
 - BlueBalls and Drained do not null the fluid amount anymore (#14)
+- Drained now successfully blocks BlueBalls (#15)
+- Display of Drained Text was off. 
 
 # 1.0.0 (09-10-2024)
 
