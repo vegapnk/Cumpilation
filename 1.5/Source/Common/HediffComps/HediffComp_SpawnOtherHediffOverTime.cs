@@ -17,6 +17,10 @@ namespace Cumpilation.Common
 
             if (this.props == null || parent == null || parent.pawn == null || !parent.pawn.Spawned) return;
 
+            // See #15, this was missing and Blue Balls would spawn all the time. 
+            if (Props.needsOscillationSettingOn && !Settings.EnableOscillationMechanics)
+                return; 
+
             if (this.props != null && parent.pawn.IsHashIntervalTick(Props.tickInterval) && Props.IsValidPawn(parent.pawn)) {
                 if ((new Random()).NextDouble() <= Props.applicationChance){
                     Hediff spawnedHediff = parent.pawn.health.hediffSet.GetFirstHediffOfDef(Props.hediff);

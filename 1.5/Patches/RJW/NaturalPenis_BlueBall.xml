@@ -20,6 +20,7 @@
                 <tickInterval>2400</tickInterval>
                 <hediff>Cumpilation_BlueBalls</hediff>
                 <severityIncrease>0.01</severityIncrease>
+				<needsOscillationSettingOn>true</needsOscillationSettingOn>
             </li>
 		</value>
 	</Operation>

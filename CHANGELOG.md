@@ -1,3 +1,9 @@
+# 1.0.1 (17-10-2024)
+
+**Fixes**:
+
+- BlueBalls now only spawn when Oscillation is on in the Settings (#15)
+
 # 1.0.0 (09-10-2024)
 
 First version. Released on an unsuspecting world.

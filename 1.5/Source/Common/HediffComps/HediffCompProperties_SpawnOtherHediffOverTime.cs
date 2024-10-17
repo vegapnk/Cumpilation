@@ -18,6 +18,8 @@ namespace Cumpilation.Common
         public bool scaleWithHediffSeverity = false;
         public float applicationChance = 1.0f;
 
+        public bool needsOscillationSettingOn = false;
+
         public HediffCompProperties_SpawnOtherHediffOverTime() => this.compClass = typeof(HediffComp_SpawnOtherHediffOverTime);
     }
 }
