@@ -22,7 +22,7 @@ namespace Cumpilation.Common
     public class HediffComp_ChangeFluidfactorBasedOnSeverity : HediffComp
     {
 
-        protected float lastMultiplier = float.MinValue;
+        protected float lastMultiplier = 1.0f;
 
         public new HediffCompProperties_ChangeFluidfactorBasedOnSeverity Props => (HediffCompProperties_ChangeFluidfactorBasedOnSeverity)this.props;
 
@@ -33,7 +33,7 @@ namespace Cumpilation.Common
             if (parent.pawn.IsHashIntervalTick(2000)) {
                 foreach (ISexPartHediff sexPart in Props.GetSexPartHediffs(parent.pawn)) {
                     // Adjust back to before this Comp
-                    if ( (lastMultiplier != float.MinValue) && lastMultiplier != 0) 
+                    if ( (lastMultiplier != float.MinValue) && lastMultiplier > 0) 
                     {
                         sexPart.GetPartComp().partFluidFactor /= lastMultiplier;
                     }
@@ -49,7 +49,7 @@ namespace Cumpilation.Common
             base.CompPostPostRemoved();
 
             // DevNote: As the Orgasm removes (or is planned to remove) this Hediff, it's important to also reset the value back to what it was before. 
-            if (Pawn != null && !Pawn.Dead && lastMultiplier != float.MinValue && lastMultiplier != 0.0) { 
+            if (Pawn != null && !Pawn.Dead && lastMultiplier != float.MinValue && lastMultiplier > 0.0) { 
                 foreach(ISexPartHediff sexPart in Props.GetSexPartHediffs(Pawn))
                 {
                     sexPart.GetPartComp().partFluidFactor /= lastMultiplier;
