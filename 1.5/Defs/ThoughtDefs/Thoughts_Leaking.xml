@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThoughtDef>
+        <defName>Cumpilation_Thought_WearingPlug</defName>
+        <workerClass>Cumpilation.Leaking.ThoughtWorker_WearingPlug</workerClass>
+        <nullifyingTraits>
+            <li>Masochist</li>
+        </nullifyingTraits>
+        <stages>
+            <li>
+                <label>wearing plug</label>
+                <description>I am wearing a plug. It makes me uncomfortable.</description>
+                <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>Cumpilation_Thought_WearingPlugMasochist</defName>
+        <workerClass>Cumpilation.Leaking.ThoughtWorker_WearingPlug</workerClass>
+        <requiredTraits>
+            <li>Masochist</li>
+        </requiredTraits>
+        <stages>
+            <li>
+                <label>wearing plug</label>
+                <description>I am wearing a plug. I love it!</description>
+                <baseMoodEffect>5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>Cumpilation_Thought_SeenWhenDeflating</defName>
+        <showBubble>true</showBubble>
+        <durationDays>0.5</durationDays>
+        <stackLimit>5</stackLimit>
+        <stackedEffectMultiplier>0.6</stackedEffectMultiplier>
+        <stages>
+            <li>
+                <label>seen when deflating</label>
+                <description>I got seen with a belly full of cum leaking out of my hole.</description>
+                <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>
