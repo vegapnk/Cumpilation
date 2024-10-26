@@ -210,6 +210,7 @@
         <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
         <researchPrerequisites>
             <li>ComplexFurniture</li>
+            <li>Electricity</li>
         </researchPrerequisites>
         <comps>
             <li Class="Cumpilation.Leaking.CompProperties_DeflateBucket">
