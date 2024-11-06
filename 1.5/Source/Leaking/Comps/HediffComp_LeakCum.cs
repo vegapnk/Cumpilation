@@ -66,7 +66,7 @@ namespace Cumpilation.Leaking
 			FluidGatheringDef fgDef = GatheringUtility.LookupFluidGatheringDef(fluid);
 			while (amountLeaked >= fgDef.fluidRequiredForOneUnit / fgDef.filthNecessaryForOneUnit)
 			{
-				FilthMaker.TryMakeFilth(parent.pawn.Position, parent.pawn.Map, fluid.filth);
+				FilthMaker.TryMakeFilth(parent.pawn.PositionHeld, parent.pawn.MapHeld, fluid.filth);
 				amountLeaked -= fgDef.fluidRequiredForOneUnit / fgDef.filthNecessaryForOneUnit;
 			}
 		}

@@ -18,6 +18,10 @@ have the tag `canCumflate` -->
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-0.001</severityPerDay>
       </li>
+      <li Class="Cumpilation.Leaking.HediffCompProperties_LeakCum">
+        <leakRate>1</leakRate>
+        <leakMult>1</leakMult>
+      </li>
       <li Class="Cumpilation.Cumflation.HediffCompProperties_SourceStorage" />
     </comps>
     <stages>
