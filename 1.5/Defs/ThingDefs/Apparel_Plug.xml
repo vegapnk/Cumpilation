@@ -51,7 +51,7 @@
             <tags>
                 <li>Industrial</li>
             </tags>
-            <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+            <developmentalStageFilter>Adult</developmentalStageFilter>
         </apparel>
         <tradeTags>
             <li>BasicClothing</li>
