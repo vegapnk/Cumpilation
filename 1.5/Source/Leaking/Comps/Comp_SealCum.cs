@@ -22,8 +22,8 @@ namespace Cumpilation.Leaking
         private bool cumSealed = false;
         private bool canDeflate = true;
         private static readonly CachedTexture Icon1 = new CachedTexture("UI/Plug");
-        private static readonly CachedTexture Icon2 = new CachedTexture("UI/Womb_01");
-        private static readonly CachedTexture Icon3 = new CachedTexture("UI/Womb_Cum_01");
+        private static readonly CachedTexture Icon2 = new CachedTexture("UI/DeflateAllowed");
+        private static readonly CachedTexture Icon3 = new CachedTexture("UI/DeflateForbidden");
 
         public override void PostExposeData()
         {
