@@ -19,7 +19,7 @@ namespace Cumpilation.Common
             ModLog.Debug($"{pawn} is consuming {ingestedCount} counts of {ingested}");
 
             foreach (ISexPartHediff part in GetSexPartHediffs(pawn)){
-                part.GetPartComp().partFluidFactor *= multiplier;
+                part.GetPartComp().partFluidMultiplier *= multiplier;
             }
 
         }
