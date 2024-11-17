@@ -35,7 +35,7 @@ namespace Cumpilation.Common
             ISexPartHediff sexPart = (ISexPartHediff)part;
             var comp = sexPart.GetPartComp();
             storedHediffs.Add(part);
-            comp.partFluidFactor *= Props.multiplier;
+            comp.partFluidMultiplier *= Props.multiplier;
         }
 
         public override void CompPostPostRemoved()
@@ -47,7 +47,7 @@ namespace Cumpilation.Common
                 Hediff part = storedHediffs[i];
                 if (part is ISexPartHediff sexPart)
                 {
-                    sexPart.GetPartComp().partFluidFactor *= 1/ Props.multiplier;
+                    sexPart.GetPartComp().partFluidMultiplier *= 1/ Props.multiplier;
                 }
             }
         }

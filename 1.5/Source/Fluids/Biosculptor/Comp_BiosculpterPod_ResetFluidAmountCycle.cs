@@ -26,7 +26,7 @@ namespace Cumpilation.Fluids
                 {
                     sexPart.GetPartComp().Fluid = sexPart.GetPartComp().Def.fluid;
                     if (sexPart.GetPartComp().Fluid != null)
-                        sexPart.GetPartComp().partFluidFactor = sexPart.GetPartComp().Def.GetRandomFluidAmount(occupant.BodySize, sexPart.GetPartComp().Size);
+                        sexPart.GetPartComp().partFluidMultiplier = sexPart.GetPartComp().Def.fluidMultiplier;
                 }
             }
         }
