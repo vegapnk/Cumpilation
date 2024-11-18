@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <ThingDef ParentName="ApparelNoQualityBase">
+        <defName>Cumpilation_Apparel_Plug</defName>
+        <label>plug</label>
+        <description>A plug to stop cum from leaking. Most people will find it uncomfortable to wear.</description>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <texPath>Things/Item/VagPlugLarge</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <Mass>0.01</Mass>
+            <WorkToMake>1000</WorkToMake>
+            <Flammability>0</Flammability>
+            <EquipDelay>5</EquipDelay>
+            <StuffEffectMultiplierArmor>0</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+        </statBases>
+        <costStuffCount>5</costStuffCount>
+        <stuffCategories>
+            <li>Metallic</li>
+            <li>Woody</li>
+            <li>Stony</li>
+        </stuffCategories>
+        <recipeMaker>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smith</effectWorking>
+            <soundWorking>Recipe_Smith</soundWorking>
+            <recipeUsers>
+                <li>TableMachining</li>
+                <li>ElectricSmithy</li>
+                <li>FueledSmithy</li>
+                <li>CraftingSpot</li>
+            </recipeUsers>
+        </recipeMaker>
+        <thingCategories>
+            <li>ApparelUtility</li>
+        </thingCategories>
+        <apparel>
+            <countsAsClothingForNudity>false</countsAsClothingForNudity>
+            <bodyPartGroups>
+                <li>GenitalsBPG</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Belt</li>
+            </layers>
+            <tags>
+                <li>Industrial</li>
+            </tags>
+            <developmentalStageFilter>Adult</developmentalStageFilter>
+        </apparel>
+        <tradeTags>
+            <li>BasicClothing</li>
+        </tradeTags>
+        <comps>
+            <li Class="Cumpilation.Leaking.CompProperties_ApparelSealCum" />
+        </comps>
+    </ThingDef>
+</Defs>
