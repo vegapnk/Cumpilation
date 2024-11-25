@@ -57,6 +57,10 @@
     <surfaceType>Item</surfaceType>
     <canOverlapZones>false</canOverlapZones>
 
+    <comps>
+      <li Class="Cumpilation.Leaking.CompProperties_DeflateBucket" />
+    </comps>
+
     <modExtensions>
       <li Class="Cumpilation.Gathering.FluidGatheringBuilding">
         <range>3</range>
@@ -151,6 +155,10 @@
         <basePowerConsumption>50</basePowerConsumption>
       </li>
       <li Class="CompProperties_Flickable" />
+      <li Class="Cumpilation.Leaking.CompProperties_DeflateBucket">
+        <deflateMult>1.5</deflateMult>
+        <deflateRate>1</deflateRate>
+      </li>
     </comps>
 
     <modExtensions>

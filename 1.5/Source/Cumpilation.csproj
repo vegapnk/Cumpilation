@@ -13,6 +13,8 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -23,17 +25,17 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <Reference Include="0Harmony, Version=2.3.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Lib.Harmony.2.3.3\lib\net48\0Harmony.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Steam\steamapps\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>C:\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RJW">
-      <HintPath>..\..\..\rjw\1.5\Assemblies\RJW.dll</HintPath>
+      <HintPath>..\..\..\..\ModReferences\rjw-5.6\1.5\Assemblies\RJW.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -43,7 +45,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>C:\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <None Include="..\About\**" />
@@ -51,11 +53,11 @@
     <None Include="..\Common\Languages\**" />
     <None Include="..\Common\Patches\**" />
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>C:\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <HintPath>C:\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -98,6 +100,28 @@
     <Compile Include="Fluids\Biosculptor\CompProperties_BiosculpterPod_ResetFluidAmountCycle.cs" />
     <Compile Include="Fluids\Biosculptor\Comp_BiosculpterPod_FluidIncreaseCycle.cs" />
     <Compile Include="Fluids\Biosculptor\Comp_BiosculpterPod_ResetFluidAmountCycle.cs" />
+    <Compile Include="Leaking\Comps\CompProperties_ApparelSealCum.cs" />
+    <Compile Include="Leaking\Comps\CompProperties_DeflateBucket.cs" />
+    <Compile Include="Leaking\Comps\CompProperties_DeflateClean.cs" />
+    <Compile Include="Leaking\Comps\CompProperties_SealCum.cs" />
+    <Compile Include="Leaking\Comps\Comp_ApparelSealCum.cs" />
+    <Compile Include="Leaking\Comps\Comp_DeflateBucket.cs" />
+    <Compile Include="Leaking\Comps\Comp_DeflateClean.cs" />
+    <Compile Include="Leaking\Comps\Comp_SealCum.cs" />
+    <Compile Include="Leaking\Comps\HediffCompProperties_LeakCum.cs" />
+    <Compile Include="Leaking\Comps\HediffComp_LeakCum.cs" />
+    <Compile Include="Leaking\Jobs\JobDriver_DeflateBucket.cs" />
+    <Compile Include="Leaking\Jobs\JobDriver_DeflateClean.cs" />
+    <Compile Include="Leaking\Jobs\JobDriver_DeflateDirty.cs" />
+    <Compile Include="Leaking\Jobs\JobGiver_Deflate.cs" />
+    <Compile Include="Leaking\Jobs\ThinkNode_ConditionalCumflationSeverity.cs" />
+    <Compile Include="Leaking\Patch\CompAdder.cs" />
+    <Compile Include="Leaking\Patch\GetThingDefsDeflate.cs" />
+    <Compile Include="Leaking\Recipe_ExtractCum.cs" />
+    <Compile Include="Leaking\Settings\Settings.cs" />
+    <Compile Include="Leaking\Settings\SettingsController.cs" />
+    <Compile Include="Leaking\ThoughtWorker_WearingPlug.cs" />
+    <Compile Include="Leaking\Util\LeakCum_PrivacyUtil.cs" />
     <Compile Include="Oscillation\HediffComps\HediffCompProperties_ChangeSeverityOnOrgasm.cs" />
     <Compile Include="Oscillation\HediffComps\HediffComp_ChangeSeverityOnOrgasm.cs" />
     <Compile Include="Oscillation\HediffDefModExtension_SpawnOnOrgasm.cs" />
@@ -155,6 +179,5 @@
     <Compile Include="Settings\Cumpilation_SettingsController.cs" />
     <Compile Include="Settings\Settings.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

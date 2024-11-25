@@ -1,3 +1,16 @@
+# 1.1.0 (25-11-2024)
+
+**Changes**:
+
+- Added Plugs that stop leaking (Thanks @Nazeeem , #17)
+- Added Furniture that allows for deflation (Thanks @Toro, #23)
+- Thoughts, JobGivers, ThinkNodes around these two items
+- Dubs Bad Hygene Support (Thanks @Toro)
+
+**Fixes**:
+
+- Fix to how Cum-Leaking is done, should be less crazy (Thanks @Toro)
+
 # 1.0.1 (17-10-2024)
 
 **Changes**:
