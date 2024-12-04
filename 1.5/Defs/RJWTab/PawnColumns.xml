@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<PawnColumnDef>
+		<defName>RJW_AllowDeflate</defName>
+		<headerTip>Allow Deflate</headerTip>
+        <headerIcon>UI/DeflateForbidden</headerIcon>
+		<workerClass>Cumpilation.Leaking.MainTab.PawnColumnWorker_AllowDeflate</workerClass>
+		<sortable>true</sortable>
+		<width>80</width>
+	</PawnColumnDef>
+
+	<PawnColumnDef>
+		<defName>RJW_Plugged</defName>
+		<headerTip>Plugged</headerTip>
+        <headerIcon>UI/Plug</headerIcon>
+		<workerClass>Cumpilation.Leaking.MainTab.PawnColumnWorker_Plugged</workerClass>
+		<width>80</width>
+	</PawnColumnDef>
+
+</Defs>
