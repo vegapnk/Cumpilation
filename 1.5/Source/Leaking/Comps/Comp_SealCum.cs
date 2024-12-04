@@ -39,7 +39,7 @@ namespace Cumpilation.Leaking
                 yield return gizmo;
             }
             Pawn pawn = (Pawn)parent;
-            if (pawn.DevelopmentalStage != DevelopmentalStage.Adult || !Genital_Helper.has_vagina(pawn))
+            if (pawn.DevelopmentalStage != DevelopmentalStage.Adult || !Genital_Helper.has_vagina(pawn) || !Settings.ShowDeflationWidget)
                 yield break;
             if (canSeal())
             {
@@ -75,11 +75,6 @@ namespace Cumpilation.Leaking
             }
         }
 
-        public bool CanDeflate()
-        {
-            return canDeflate;
-        }
-
         public bool PlayerControlled
         {
             get
@@ -97,9 +92,25 @@ namespace Cumpilation.Leaking
             }
         }
 
+        public bool CanDeflate()
+        {
+            return canDeflate;
+        }
+
+        public void ToggleDeflate()
+        {
+            canDeflate = !canDeflate;
+        }
+
+
         public bool IsSealed()
         {
             return canSeal() && cumSealed;
+        }
+
+        public void ToggleSeal()
+        {
+            cumSealed = !cumSealed;
         }
 
         public bool canSeal()
