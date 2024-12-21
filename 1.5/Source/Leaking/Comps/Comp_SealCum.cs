@@ -39,8 +39,10 @@ namespace Cumpilation.Leaking
                 yield return gizmo;
             }
             Pawn pawn = (Pawn)parent;
-            if (pawn.DevelopmentalStage != DevelopmentalStage.Adult || !Genital_Helper.has_vagina(pawn) || !Settings.ShowDeflationWidget)
+            if (pawn.DevelopmentalStage != DevelopmentalStage.Adult || !Genital_Helper.has_vagina(pawn) || !Settings.ShowDeflationWidget || pawn.Dead)
+            {
                 yield break;
+            }
             if (canSeal())
             {
                 Command_Toggle seal_Toggle = new Command_Toggle();
