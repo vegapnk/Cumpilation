@@ -25,7 +25,7 @@ namespace Cumpilation.Leaking
         }
         public static void AddLeakCumComp()
         {
-            foreach (ThingDef thingDef in DefDatabase<ThingDef>.AllDefs.Where(x => x.race != null && x.race.Humanlike && x.thingClass != typeof(Corpse)))
+            foreach (ThingDef thingDef in DefDatabase<ThingDef>.AllDefs.Where(x => x.race != null && x.race.Humanlike && !x.IsCorpse))
             {
                 thingDef.comps.Add(new CompProperties_SealCum());
             }
