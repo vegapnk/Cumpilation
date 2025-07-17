@@ -1,5 +1,5 @@
 # 1.2.0 (25-11-2024) 
-(@Telanda)
+(Commit by @Telanda-DDS)
 
 **Changes**
 
