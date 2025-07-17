@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="MakeableDrugBase">
+    <defName>Cumpilation_Slugmorpher</defName>
+    <label>slug morpher</label>
+    <description>A dangerous and creative way to deal with Wastepacks - distilled into a concentrated serum, it permanently changes the users cum into a toxic slug. Consumption will also lead to toxic buildup, which gets drastically worse if the users body cannot have its fluids changed.</description>
+    <graphicData>
+      <texPath>Things/Item/Special/Genepack/Genepack_f</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(190, 90, 245)</color>
+      <drawSize>0.75</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>250</WorkToMake>
+      <MarketValue>14</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <minRewardCount>10</minRewardCount>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <baseIngestTicks>1200</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Inject {0}</ingestCommandString>
+      <ingestReportString>Injecting {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>ToxicBuildup</hediffDef>
+          <severity>0.25</severity>
+        </li>
+        <li Class="Cumpilation.Fluids.Slug.IngestionOutcomeDoer_PermanentSlugChange">
+          <fluid>Cumpilation_Slug</fluid>
+          <allowMen>true</allowMen>
+          <allowWomen>false</allowWomen>
+          <allowFutas>true</allowFutas>
+          <allowAnimals>false</allowAnimals>
+          <targetPenis>true</targetPenis>
+          <targetVagina>false</targetVagina>
+          <targetBreast>false</targetBreast>
+          <targetAnus>false</targetAnus>
+          <targetOther>false</targetOther>
+          <needsFluid>true</needsFluid>
+          <onlyFirst>true</onlyFirst>
+          <nonApplicationPenalityBuildUp>0.6</nonApplicationPenalityBuildUp>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>1800</displayPriority>
+    </recipeMaker>
+    <costList>
+      <Wastepack>100</Wastepack>
+      <Neutroamine>25</Neutroamine>
+    </costList>
+
+    <comps>
+      <li Class="CompProperties_GasOnDamage">
+        <type>ToxGas</type>
+        <damageFactor>40</damageFactor>
+        <useStackCountAsFactor>true</useStackCountAsFactor>
+      </li>
+      <li Class="CompProperties_Dissolution">
+        <dissolutionAfterDays>2</dissolutionAfterDays>
+        <dissolutinFactorIndoors>0.5</dissolutinFactorIndoors>
+        <dissolutionFactorRain>6</dissolutionFactorRain>
+      </li>
+      <li Class="CompProperties_DissolutionEffectPollution">
+        <cellsToPollutePerDissolution>180</cellsToPollutePerDissolution> <!-- Normal Wastepack: 6,
+        but we take 30 for one of these babies -->
+        <tilePollutionPerDissolution>0.0015</tilePollutionPerDissolution><!-- 2000 wastepacks fill a
+        tile -->
+        <waterTilePollutionFactor>24</waterTilePollutionFactor>
+      </li>
+      <li>
+        <compClass>CompDissolutionEffect_Goodwill</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+  <ThingDef ParentName="MakeableDrugBase">
+    <defName>Cumpilation_Sluggerdrop</defName>
+    <label>slugger drops</label>
+    <description>A dangerous and creative way to deal with Wastepacks - distilled into a concentrated serum, it changes the users cum temporary into a toxic slug. Consumption will also lead to minor toxic buildup, which might get worse if the users body cannot have its fluids changed.</description>
+    <graphicData>
+      <texPath>Things/Item/Drug/Yayo</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(170, 70, 220)</color>
+      <drawSize>0.75</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>250</WorkToMake>
+      <MarketValue>14</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <minRewardCount>10</minRewardCount>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <baseIngestTicks>650</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Inject {0}</ingestCommandString>
+      <ingestReportString>Injecting {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>ToxicBuildup</hediffDef>
+          <severity>0.1</severity>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>Cumpilation_temporarySlugged</hediffDef>
+          <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <soundWorking>Recipe_Drug</soundWorking>
+      <displayPriority>1800</displayPriority>
+    </recipeMaker>
+    <costList>
+      <Wastepack>30</Wastepack>
+      <Neutroamine>5</Neutroamine>
+    </costList>
+
+    <comps>
+      <li Class="CompProperties_GasOnDamage">
+        <type>ToxGas</type>
+        <damageFactor>10</damageFactor>
+        <useStackCountAsFactor>true</useStackCountAsFactor>
+      </li>
+      <li Class="CompProperties_Dissolution">
+        <dissolutionAfterDays>4</dissolutionAfterDays>
+        <dissolutinFactorIndoors>0.5</dissolutinFactorIndoors>
+        <dissolutionFactorRain>4</dissolutionFactorRain>
+      </li>
+      <li Class="CompProperties_DissolutionEffectPollution">
+        <cellsToPollutePerDissolution>180</cellsToPollutePerDissolution> <!-- Normal Wastepack: 6,
+        but we take 30 for one of these babies -->
+        <tilePollutionPerDissolution>0.0015</tilePollutionPerDissolution><!-- 2000 wastepacks fill a
+        tile -->
+        <waterTilePollutionFactor>24</waterTilePollutionFactor>
+      </li>
+      <li>
+        <compClass>CompDissolutionEffect_Goodwill</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

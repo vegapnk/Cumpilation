@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <HediffDef Abstract="True" Name="Cumpilation_BaseStuffed">
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(240,200,110)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <tendable>false</tendable>
+    <comps>
+      <li Class="Cumpilation.Cumflation.HediffCompProperties_SharedSeverityPerDay">
+        <severityPerDay>-0.85</severityPerDay>
+      </li>
+      <li Class="Cumpilation.Cumflation.HediffCompProperties_SourceStorage" />
+      <!-- For mtb in VomitFluidMtb keep in mind that this chance triggers for every potential
+      stuffing. -->
+      <li Class="Cumpilation.Cumflation.HediffCompProperties_VomitFluidMtb">
+        <mtbDays>1.0</mtbDays>
+        <scaleWithSeverity>true</scaleWithSeverity>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="Cumpilation_BaseStuffed">
+    <defName>Cumpilation_Cumstuffed</defName>
+    <label>cumstuffed</label>
+    <labelNoun>cumstuffed</labelNoun>
+    <description>Drinking a large quantity of cum at once has to send the cum somewhere.</description>
+    <stages>
+      <li>
+        <label>slightly bloated</label>
+        <becomeVisible>false</becomeVisible>
+      </li>
+      <li>
+        <label>bloated</label>
+        <minSeverity>0.2</minSeverity>
+        <hungerRateFactor>0.95</hungerRateFactor>
+        <statOffsets>
+          <Vulnerability>0.05</Vulnerability>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.03</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>full</label>
+        <minSeverity>0.4</minSeverity>
+        <hungerRateFactor>0.9</hungerRateFactor>
+        <statOffsets>
+          <Vulnerability>0.1</Vulnerability>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>stuffed</label>
+        <minSeverity>0.6</minSeverity>
+        <hungerRateFactor>0.75</hungerRateFactor>
+        <statOffsets>
+          <Vulnerability>0.15</Vulnerability>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.2</offset>
+          </li>
+        </capMods>
+        <painOffset>0.1</painOffset>
+      </li>
+      <li>
+        <label>overstuffed</label>
+        <minSeverity>0.8</minSeverity>
+        <hungerRateFactor>0.5</hungerRateFactor>
+        <statOffsets>
+          <Vulnerability>0.2</Vulnerability>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.3</offset>
+          </li>
+        </capMods>
+        <painOffset>0.2</painOffset>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="Cumpilation_BaseStuffed">
+    <defName>Cumpilation_InsectSpunkStuffed</defName>
+    <label>insect-spunk stuffed</label>
+    <labelNoun>insect-spunk stuffed</labelNoun>
+    <description>There are not only eggs coming from insects, you know.</description>
+    <stages>
+      <li>
+        <label>slightly bloated</label>
+        <becomeVisible>false</becomeVisible>
+      </li>
+      <li>
+        <label>bloated</label>
+        <minSeverity>0.2</minSeverity>
+        <hungerRateFactor>0.95</hungerRateFactor>
+        <statOffsets>
+          <Vulnerability>0.05</Vulnerability>
+          <MoveSpeed>-0.05</MoveSpeed>
+          <RestFallRateFactor>0.1</RestFallRateFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <label>full</label>
+        <minSeverity>0.4</minSeverity>
+        <hungerRateFactor>0.9</hungerRateFactor>
+        <statOffsets>
+          <Vulnerability>0.2</Vulnerability>
+          <RestFallRateFactor>-0.25</RestFallRateFactor>
+          <ComfyTemperatureMax>5</ComfyTemperatureMax>
+          <ComfyTemperatureMin>5</ComfyTemperatureMin>
+          <GlobalLearningFactor>-0.1</GlobalLearningFactor>
+          <MentalBreakThreshold>-0.1</MentalBreakThreshold>
+          <WorkSpeedGlobal>-0.15</WorkSpeedGlobal>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>over-stuffed</label>
+        <minSeverity>0.7</minSeverity>
+        <hungerRateFactor>0.8</hungerRateFactor>
+        <statOffsets>
+          <Vulnerability>0.45</Vulnerability>
+          <ComfyTemperatureMax>10</ComfyTemperatureMax>
+          <ComfyTemperatureMin>10</ComfyTemperatureMin>
+          <GlobalLearningFactor>-0.2</GlobalLearningFactor>
+          <MentalBreakThreshold>-0.2</MentalBreakThreshold>
+          <WorkSpeedGlobal>-0.25</WorkSpeedGlobal>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.05</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="InsectJelly"]/ingestible</xpath>
+		<value>
+            <outcomeDoers>
+				<li Class="Cumpilation.Reactions.IngestionOutcomeDoer_RecordEatenFluid">
+					<fluid>InsectSpunk</fluid>
+					<unitAmount>2</unitAmount>
+				</li>
+			</outcomeDoers>
+		</value>
+	</Operation>
+
+</Patch>

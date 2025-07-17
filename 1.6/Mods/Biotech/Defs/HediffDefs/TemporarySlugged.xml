@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <HediffDef Parent="Cumpilation_BaseTemporaryFluidChange">
+        <defName>Cumpilation_temporarySlugged</defName>
+        <label>temporary slugged</label>
+        <description>Due to a drug, the cum has been changed to slug.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>true</isBad>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <!-- default: Last ~1 Week -->
+                <severityPerDay>-0.15</severityPerDay>
+            </li>
+            <li Class="Cumpilation.Common.HediffCompProperties_FluidChangeWithPenalty">
+                <fluid>Cumpilation_Slug</fluid>
+
+                <allowMen>true</allowMen>
+                <allowWomen>true</allowWomen>
+                <allowFutas>true</allowFutas>
+                <allowAnimals>false</allowAnimals>
+                <targetPenis>true</targetPenis>
+                <targetVagina>false</targetVagina>
+                <targetBreast>false</targetBreast>
+                <targetAnus>false</targetAnus>
+                <targetOther>false</targetOther>
+                <needsFluid>true</needsFluid>
+                <onlyFirst>true</onlyFirst>
+
+                <penaltyHediff>ToxicBuildup</penaltyHediff>
+                <penaltySeverity>0.4</penaltySeverity>
+            </li>
+            <li Class="Cumpilation.Common.HediffCompProperties_FluidAmountChange">
+                <multiplier>1.2</multiplier>
+                <allowMen>true</allowMen>
+                <allowFutas>true</allowFutas>
+                <targetPenis>true</targetPenis>
+                <needsFluid>true</needsFluid>
+                <onlyFirst>false</onlyFirst>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <label>wearing off</label>
+                <minSeverity>0.0</minSeverity>
+            </li>
+            <li>
+                <minSeverity>0.3</minSeverity>
+                <label>altered</label>
+            </li>
+            <li>
+                <minSeverity>0.9</minSeverity>
+                <label>fresh</label>
+            </li>
+        </stages>
+    </HediffDef>
+
+</Defs>

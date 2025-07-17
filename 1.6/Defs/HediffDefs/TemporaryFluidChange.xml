@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <HediffDef Name="Cumpilation_BaseTemporaryFluidChange" Abstract="True">
+        <hediffClass>HediffWithComps</hediffClass>
+        <tendable>false</tendable>
+        <isBad>false</isBad>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <maxSeverity>1.0</maxSeverity>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <!-- default: Last ~1 Week -->
+                <severityPerDay>-0.15</severityPerDay>
+            </li>
+            <!-- Example how to use: -->
+            <!-- 
+            <li Class="Cumpilation.Common.HediffCompProperties_FluidChange">
+                <fluid>Milk</fluid>
+                <allowMen>true</allowMen>
+                <allowWomen>true</allowWomen>
+                <allowFutas>true</allowFutas>
+                <allowAnimals>false</allowAnimals>
+                <targetPenis>true</targetPenis>
+                <targetVagina>false</targetVagina>
+                <targetBreast>false</targetBreast>
+                <targetAnus>false</targetAnus>
+                <targetOther>false</targetOther>
+                <needsFluid>true</needsFluid>
+                <onlyFirst>true</onlyFirst>
+            </li>
+            -->
+        </comps>
+        <stages>
+            <li>
+                <label>wearing off</label>
+                <minSeverity>0.0</minSeverity>
+            </li>
+            <li>
+                <minSeverity>0.3</minSeverity>
+                <label>altered</label>
+            </li>
+            <li>
+                <minSeverity>0.9</minSeverity>
+                <label>fresh</label>
+            </li>
+        </stages>
+    </HediffDef>
+
+</Defs>

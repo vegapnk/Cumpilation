@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <TraitDef>
+    <defName>Cumpilation_LikesCumflation</defName>
+    <commonality>0.2</commonality>
+    <degreeDatas>
+      <li>
+        <label>likes cumflation</label>
+        <description>[PAWN_nameDef] likes the sensation of filling and being filled with large quantities of cum or other fluids.</description>
+        <statOffsets>
+          <SexFrequency>0.5</SexFrequency>
+        </statOffsets>
+        <allowedMeditationFocusTypes>
+          <li>Sex</li>
+        </allowedMeditationFocusTypes>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+</Defs>

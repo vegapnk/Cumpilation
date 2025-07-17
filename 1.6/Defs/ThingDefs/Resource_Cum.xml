@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef Name="Cum" ParentName="OrganicProductBase">
+		<defName>Cumpilation_Cum</defName>
+		<label>cum</label>
+		<description>Gathered cum.</description>
+		<thingCategories>
+			<li>AnimalProductRaw</li>
+		</thingCategories>
+		<graphicData>
+			<texPath>Things/Item/GatheredCum</texPath>
+			<drawSize>1</drawSize>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<stackLimit>250</stackLimit>
+
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<statBases>
+			<MarketValue>0.1</MarketValue>
+			<Mass>0.1</Mass>
+			<Nutrition>0.02</Nutrition>
+			<Beauty>-4</Beauty>
+			<Cleanliness>-1</Cleanliness>
+			<FoodPoisonChanceFixedHuman>0.00</FoodPoisonChanceFixedHuman>
+			<DeteriorationRate>30</DeteriorationRate>
+			<Flammability>0.1</Flammability>
+		</statBases>
+
+		<ingestible>
+			<foodType>Fluid, AnimalProduct</foodType>
+			<preferability>DesperateOnlyForHumanlikes</preferability>
+			<baseIngestTicks>250</baseIngestTicks>
+
+			<optimalityOffsetHumanlikes>-10</optimalityOffsetHumanlikes>
+			<optimalityOffsetFeedingAnimals>-10</optimalityOffsetFeedingAnimals>
+			<outcomeDoers>
+				<li Class="Cumpilation.Reactions.IngestionOutcomeDoer_RecordEatenFluid">
+					<fluid>Cum</fluid>
+					<unitAmount>1</unitAmount>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+
+		<ingredient>
+			<mergeCompatibilityTags>
+				<li MayRequire="Ludeon.RimWorld.Ideology">Cum</li>
+			</mergeCompatibilityTags>
+		</ingredient>
+	</ThingDef>
+
+</Defs>

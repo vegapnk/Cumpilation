@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/rjw.HediffDef_SexPart[@Name="NaturalPrivatePartPenis"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/rjw.HediffDef_SexPart[@Name="NaturalPrivatePartPenis"]</xpath>
+			<value>
+				<comps />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/rjw.HediffDef_SexPart[@Name="NaturalPrivatePartPenis"]/comps</xpath>
+		<value>
+			<li Class="Cumpilation.Common.HediffCompProperties_SpawnOtherHediffOverTime">
+                <!-- Check (& Increase) every 2400 ticks; Had 2000 first but if it's divisble by 3 and 4 we get a nice number for increase every bump. -->
+                 <!-- For a natural penis, things should be 'full' after 4 days-->
+                <tickInterval>2400</tickInterval>
+                <hediff>Cumpilation_BlueBalls</hediff>
+                <severityIncrease>0.01</severityIncrease>
+				<needsOscillationSettingOn>true</needsOscillationSettingOn>
+				<blockingHediffs>
+					<li>Cumpilation_Drained</li>
+				</blockingHediffs>
+            </li>
+		</value>
+	</Operation>
+
+</Patch>

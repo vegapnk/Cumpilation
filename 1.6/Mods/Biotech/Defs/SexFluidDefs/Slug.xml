@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<ThingDef ParentName="BaseCumFilth">
+		<defName>Cumpilation_SlugFilth</defName>
+		<label>slugspunk</label>
+		<graphicData>
+			<color>(204, 102, 255, 100)</color>
+		</graphicData>
+		<statBases>
+			<!-- vomit is -40 / -15, cum shouldn't be that bad -->
+			<Beauty>-45</Beauty>
+			<Cleanliness>-20</Cleanliness>
+		</statBases>
+
+		<filth>
+			<rainWashes>false</rainWashes>
+			<!-- animal filth and such is 35, so this is still relatively high -->
+			<cleaningWorkToReduceThickness>60</cleaningWorkToReduceThickness>
+		</filth>
+	</ThingDef>
+
+	<rjw.SexFluidDef>
+		<defName>Cumpilation_Slug</defName>
+		<label>slug</label>
+		<filth>Cumpilation_SlugFilth</filth>
+		<alwaysProduceFilth>true</alwaysProduceFilth>
+		<baseNutrition>0.1</baseNutrition>
+		<tags>
+			<li>CanCumflate</li>
+			<li>CanBlueBall</li>
+		</tags>
+		<ingestionDoers>
+			<li Class="Cumpilation.Fluids.Slug.SexFluidIngestionDoer_ConsumeSlug" />
+		</ingestionDoers>
+	</rjw.SexFluidDef>
+
+</Defs>

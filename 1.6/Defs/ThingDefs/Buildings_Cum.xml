@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>Cumpilation_CumBucket</defName>
+    <label>cum bucket</label>
+    <description>A bucket for collecting cum. Colonists and prisoners will go masturbate near a
+      bucket if possible.</description>
+    <graphicData>
+      <texPath>Things/Item/CumBucket</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <pathCost>50</pathCost>
+    <rotatable>false</rotatable>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>10</costStuffCount>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>8</Mass>
+      <WorkToBuild>200</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Beauty>-5</Beauty>
+    </statBases>
+    <size>(1,1)</size>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <fixedStorageSettings>
+        <filter>
+          <disallowNotEverStorable>true</disallowNotEverStorable>
+          <thingDefs>
+            <li>Cumpilation_Cum</li>
+          </thingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Low</priority>
+        <filter>
+          <thingDefs>
+            <li>Cumpilation_Cum</li>
+          </thingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+
+    <comps>
+      <li Class="Cumpilation.Leaking.CompProperties_DeflateBucket" />
+    </comps>
+
+    <modExtensions>
+      <li Class="Cumpilation.Gathering.FluidGatheringBuilding">
+        <range>3</range>
+        <supportedFluids>
+          <li>Cum</li>
+        </supportedFluids>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="FurnitureBase">
+    <defName>Cumpilation_Advanced_Cum_Bucket</defName>
+    <label>Advanced cum bucket</label>
+    <description>A bucket to collect fluid and keep the area around it clean. Slowly removes cum and
+      insect-spunk in a 10 Cell radius.</description>
+    <graphicData>
+      <texPath>Things/Item/Advanced_CumBucket</texPath>
+      <drawSize>(1,1)</drawSize>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <tickerType>Normal</tickerType>
+    <fillPercent>0.20</fillPercent>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>495</WorkToBuild>
+      <Mass>2</Mass>
+      <Flammability>1.0</Flammability>
+      <Cleanliness>2</Cleanliness>
+      <Beauty>4</Beauty>
+    </statBases>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>20</costStuffCount>
+    <costList>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <size>(1,1)</size>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <fixedStorageSettings>
+        <filter>
+          <disallowNotEverStorable>true</disallowNotEverStorable>
+          <thingDefs>
+            <li>Cumpilation_Cum</li>
+            <li>InsectJelly</li>
+          </thingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Low</priority>
+        <filter>
+          <thingDefs>
+            <li>Cumpilation_Cum</li>
+            <li>InsectJelly</li>
+          </thingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <rotatable>false</rotatable>
+    <surfaceType>Item</surfaceType>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <specialDisplayRadius>10</specialDisplayRadius>
+    <comps>
+      <li Class="Cumpilation.Gathering.PassiveFluidGathererCompProperties">
+        <range>10</range>
+        <supportedFluids>
+          <li>Cum</li>
+          <li>InsectSpunk</li>
+        </supportedFluids>
+        <cleanAtmostOne>true</cleanAtmostOne>
+        <cleanChance>0.30</cleanChance>
+        <!-- 250 ticks ~ 4 times per hour-->
+        <tickIntervall>250</tickIntervall>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>50</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="Cumpilation.Leaking.CompProperties_DeflateBucket">
+        <deflateMult>1.5</deflateMult>
+        <deflateRate>1</deflateRate>
+      </li>
+    </comps>
+
+    <modExtensions>
+      <li Class="Cumpilation.Gathering.FluidGatheringBuilding">
+        <range>4</range>
+        <supportedFluids>
+          <li>Cum</li>
+          <li>InsectSpunk</li>
+        </supportedFluids>
+      </li>
+    </modExtensions>
+    <researchPrerequisites>
+      <li>Electricity</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+</Defs>

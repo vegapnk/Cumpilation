@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <Cumpilation.Cumflation.StuffingDef>
+        <defName>Cumpilation_Basic_Cumstuffed</defName>
+        <fluid>Cum</fluid>
+        <resultingStuffedHediff>Cumpilation_Cumstuffed</resultingStuffedHediff>
+        <amountOfFluidForFullStuffing>200</amountOfFluidForFullStuffing>
+    </Cumpilation.Cumflation.StuffingDef>
+
+    <Cumpilation.Cumflation.StuffingDef>
+        <defName>Cumpilation_Insect_Stuffing</defName>
+        <fluid>InsectSpunk</fluid>
+        <resultingStuffedHediff>Cumpilation_InsectSpunkStuffed</resultingStuffedHediff>
+        <amountOfFluidForFullStuffing>150</amountOfFluidForFullStuffing>
+    </Cumpilation.Cumflation.StuffingDef>
+
+</Defs>

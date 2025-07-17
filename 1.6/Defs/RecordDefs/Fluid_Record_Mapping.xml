@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+    <Cumpilation.Reactions.Fluid_Record_Mapping>
+        <defName>Cumpilation_CumRecordMapping</defName>
+        <fluid>Cum</fluid>
+        <numConsumedRecord>Cumpilation_NumOfConsumedCum</numConsumedRecord>
+        <amountConsumedRecord>Cumpilation_AmountConsumedCum</amountConsumedRecord>
+    </Cumpilation.Reactions.Fluid_Record_Mapping>
+
+    <Cumpilation.Reactions.Fluid_Record_Mapping>
+        <defName>Cumpilation_InsectSpunkRecordMapping</defName>
+        <fluid>InsectSpunk</fluid>
+        <numConsumedRecord>Cumpilation_NumOfConsumedInsectSpunk</numConsumedRecord>
+        <amountConsumedRecord>Cumpilation_AmountConsumedInsectSpunk</amountConsumedRecord>
+    </Cumpilation.Reactions.Fluid_Record_Mapping>
+
+    <Cumpilation.Reactions.Fluid_Record_Mapping>
+        <defName>Cumpilation_MilkRecordMapping</defName>
+        <fluid>Milk</fluid>
+        <numConsumedRecord>Cumpilation_NumOfConsumedBreastMilk</numConsumedRecord>
+        <amountConsumedRecord>Cumpilation_AmountConsumedBreastMilk</amountConsumedRecord>
+    </Cumpilation.Reactions.Fluid_Record_Mapping>
+
+    <Cumpilation.Reactions.Fluid_Record_Mapping>
+        <defName>Cumpilation_GirlcumRecordMapping</defName>
+        <fluid>GirlCum</fluid>
+        <numConsumedRecord>Cumpilation_NumOfConsumedGirlCum</numConsumedRecord>
+        <amountConsumedRecord>Cumpilation_AmountConsumedGirlCum</amountConsumedRecord>
+    </Cumpilation.Reactions.Fluid_Record_Mapping>
+
+</Defs>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <JobDef>
+    <defName>Cumpilation_OverflowingCumflation</defName>
+    <driverClass>Cumpilation.Cumflation.JobDriver_OverflowingCumflation</driverClass>
+    <playerInterruptible>false</playerInterruptible>
+    <casualInterruptible>false</casualInterruptible>
+    <reportString>Overflowing Cumflation</reportString>
+    <suspendable>false</suspendable>
+  </JobDef>
+
+</Defs>

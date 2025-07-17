@@ -15,6 +15,10 @@ But please consider also the following:
 * Target the `Dev`-Branch with new features, and `Main`-Branch with Fixes.
 * When coding new things, or changing things, make sure that it builds but you don't have to commit the `.dll` (reason: size of git history)
 
+## Contributors 
+
+- Telanda - Rimworld 1.6 Migration
+
 ## Acknowledgements
 
 - The Cum-Bucket, and Cum-item have been taken from [Ameravashi`s Sexperience](https://gitgud.io/amevarashi/rjw-sexperience/)

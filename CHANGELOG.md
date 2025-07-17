@@ -1,3 +1,14 @@
+# 1.2.0 (25-11-2024) 
+(@Telanda)
+
+**Changes**
+
+- Rimworld 1.6 Migration.
+- Added EnableFilthGeneration option to leaking settings, Defaults to Enabled - controls if a pawn creates filth while inflated.
+
+**Known Issues**
+- Cumpilation.Leaking Settings Menu is Untranslated.
+
 # 1.1.0 (25-11-2024)
 
 **Changes**:

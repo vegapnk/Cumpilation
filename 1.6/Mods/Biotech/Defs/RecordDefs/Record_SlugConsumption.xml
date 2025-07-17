@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<RecordDef>
+		<defName>Cumpilation_NumOfConsumedSlug</defName>
+		<label>consumed slug</label>
+		<description>The number of times that i consumed slug.</description>
+		<type>Int</type>
+	</RecordDef>
+
+	<RecordDef>
+		<defName>Cumpilation_AmountConsumedSlug</defName>
+		<label>consumed slug(mL)</label>
+		<description>The amount of slug that i consumed.</description>
+		<type>Int</type>
+	</RecordDef>
+
+	<Cumpilation.Reactions.Fluid_Record_Mapping>
+		<defName>Cumpilation_SlugRecordMapping</defName>
+		<fluid>Cumpilation_Slug</fluid>
+		<numConsumedRecord>Cumpilation_NumOfConsumedSlug</numConsumedRecord>
+		<amountConsumedRecord>Cumpilation_AmountConsumedSlug</amountConsumedRecord>
+	</Cumpilation.Reactions.Fluid_Record_Mapping>
+
+</Defs>

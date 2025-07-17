@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7D21B4A-1DA7-41D8-B202-C58CA8FA62AA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cumpilation</RootNamespace>
+    <AssemblyName>Cumpilation</AssemblyName>
+    <LangVersion>9</LangVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Assemblies\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony, Version=2.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Steam\steamapps\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\..\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RJW">
+      <HintPath>..\..\..\rjw\1.6\Assemblies\RJW.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <None Include="..\About\**" />
+    <None Include="..\Common\Defs\**" />
+    <None Include="..\Common\Languages\**" />
+    <None Include="..\Common\Patches\**" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\..\..\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\..\..\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bukkake\BukkakeUtility.cs" />
+    <Compile Include="Bukkake\HediffComps\HediffCompProperties_BukkakeSpawnedByFluid.cs" />
+    <Compile Include="Bukkake\HediffComps\HediffCompProperties_SpawnOrAdjustControllerHediff.cs" />
+    <Compile Include="Bukkake\HediffComps\HediffComp_BukkakeSpawnedByFluid.cs" />
+    <Compile Include="Bukkake\HediffComps\HediffComp_SpawnOrAdjustControllerHediff.cs" />
+    <Compile Include="Bukkake\Hediffs\Hediff_CoverageController.cs" />
+    <Compile Include="Bukkake\Jobs\JobDriver_CleanSelf.cs" />
+    <Compile Include="Bukkake\Jobs\JobDriver_CleanSelfWithSink.cs" />
+    <Compile Include="Bukkake\Jobs\JobGiver_CleanSelfWithSink.cs" />
+    <Compile Include="Bukkake\Jobs\WorkGiver_CleanSelf.cs" />
+    <Compile Include="Bukkake\Jobs\WorkGiver_CleanSelfWithSink.cs" />
+    <Compile Include="Bukkake\Patch_TransferFluids_ApplyBukkake.cs" />
+    <Compile Include="Common\DefModExtension_PartTargetting.cs" />
+    <Compile Include="Common\DefModExtension_PawnTargetting.cs" />
+    <Compile Include="Common\FluidUtility.cs" />
+    <Compile Include="Common\HediffComps\HediffCompProperties_FluidAmountChange.cs" />
+    <Compile Include="Common\HediffComps\HediffCompProperties_FluidChange.cs" />
+    <Compile Include="Common\HediffComps\HediffCompProperties_PartTargetting.cs" />
+    <Compile Include="Common\HediffComps\HediffCompProperties_PawnTargetting.cs" />
+    <Compile Include="Common\HediffComps\HediffCompProperties_SpawnOtherHediffOverTime.cs" />
+    <Compile Include="Common\HediffComps\HediffComp_FluidChange.cs" />
+    <Compile Include="Common\HediffComps\HediffComp_FluidAmountChange.cs" />
+    <Compile Include="Common\HediffComps\HediffComp_SpawnOtherHediffOverTime.cs" />
+    <Compile Include="Common\IngestionOutcomeDoers\IngestionOutcomeDoer_PawnTargetting.cs" />
+    <Compile Include="Common\IngestionOutcomeDoers\IngestionOutcomeDoer_PermanentFluidAmountChange.cs" />
+    <Compile Include="Common\IngestionOutcomeDoers\IngestionOutcomeDoer_PermanentFluidChange.cs" />
+    <Compile Include="Common\IPartTargetter.cs" />
+    <Compile Include="Common\IPawnTargetter.cs" />
+    <Compile Include="Common\MapUtility.cs" />
+    <Compile Include="Common\PartUtility.cs" />
+    <Compile Include="Common\HediffComps\HediffCompProperties_ChangeFluidfactorBasedOnSeverity.cs" />
+    <Compile Include="Common\HediffComps\HediffComp_ChangeFluidfactorBasedOnSeverity.cs" />
+    <Compile Include="Common\HediffComps\HediffCompProperties_RandomlySpawnFilth.cs" />
+    <Compile Include="Common\HediffComps\HediffComp_RandomlySpawnFilth.cs" />
+    <Compile Include="Fluids\Biosculptor\CompProperties_BiosculpterPod_FluidIncreaseCycle.cs" />
+    <Compile Include="Fluids\Biosculptor\CompProperties_BiosculpterPod_ResetFluidAmountCycle.cs" />
+    <Compile Include="Fluids\Biosculptor\Comp_BiosculpterPod_FluidIncreaseCycle.cs" />
+    <Compile Include="Fluids\Biosculptor\Comp_BiosculpterPod_ResetFluidAmountCycle.cs" />
+    <Compile Include="Leaking\Comps\CompProperties_ApparelSealCum.cs" />
+    <Compile Include="Leaking\Comps\CompProperties_DeflateBucket.cs" />
+    <Compile Include="Leaking\Comps\CompProperties_DeflateClean.cs" />
+    <Compile Include="Leaking\Comps\CompProperties_SealCum.cs" />
+    <Compile Include="Leaking\Comps\Comp_ApparelSealCum.cs" />
+    <Compile Include="Leaking\Comps\Comp_DeflateBucket.cs" />
+    <Compile Include="Leaking\Comps\Comp_DeflateClean.cs" />
+    <Compile Include="Leaking\Comps\Comp_SealCum.cs" />
+    <Compile Include="Leaking\Comps\HediffCompProperties_LeakCum.cs" />
+    <Compile Include="Leaking\Comps\HediffComp_LeakCum.cs" />
+    <Compile Include="Leaking\Jobs\JobDriver_DeflateBucket.cs" />
+    <Compile Include="Leaking\Jobs\JobDriver_DeflateClean.cs" />
+    <Compile Include="Leaking\Jobs\JobDriver_DeflateDirty.cs" />
+    <Compile Include="Leaking\Jobs\JobGiver_Deflate.cs" />
+    <Compile Include="Leaking\Jobs\ThinkNode_ConditionalCumflationSeverity.cs" />
+    <Compile Include="Leaking\Patch\CompAdder.cs" />
+    <Compile Include="Leaking\Patch\GetThingDefsDeflate.cs" />
+    <Compile Include="Leaking\Recipe_ExtractCum.cs" />
+    <Compile Include="Leaking\Settings\Settings.cs" />
+    <Compile Include="Leaking\Settings\SettingsController.cs" />
+    <Compile Include="Leaking\ThoughtWorker_WearingPlug.cs" />
+    <Compile Include="Leaking\Util\LeakCum_PrivacyUtil.cs" />
+    <Compile Include="Oscillation\HediffComps\HediffCompProperties_ChangeSeverityOnOrgasm.cs" />
+    <Compile Include="Oscillation\HediffComps\HediffComp_ChangeSeverityOnOrgasm.cs" />
+    <Compile Include="Oscillation\HediffDefModExtension_SpawnOnOrgasm.cs" />
+    <Compile Include="Oscillation\OscillationHelper.cs" />
+    <Compile Include="Oscillation\Patch_OnOrgasm_SpawnHediffs_And_ChangeSeverityOfHediffs.cs" />
+    <Compile Include="Gathering\Comps\MechPassiveFluidGathererComp.cs" />
+    <Compile Include="Gathering\Comps\MechPassiveFluidGathererCompProperties.cs" />
+    <Compile Include="Gathering\Patches\Patch_CasualSexHelper_FindNearbyBucketToMasturbate.cs" />
+    <Compile Include="Common\IngestionOutcomeDoers\IngestionOutcomeDoer_PartTargetting.cs" />
+    <Compile Include="Reactions\IngestionOutcomeDoer_RecordEatenFluid.cs" />
+    <Compile Include="Common\ModLog.cs" />
+    <Compile Include="Cumflation\CumflationUtility.cs" />
+    <Compile Include="Cumflation\Defs\StuffingDef.cs" />
+    <Compile Include="Cumflation\FluidSource.cs" />
+    <Compile Include="Cumflation\HediffComps\HediffCompProperties_SharedSeverityPerDay.cs" />
+    <Compile Include="Cumflation\HediffComps\HediffCompProperties_SourceStorage.cs" />
+    <Compile Include="Cumflation\HediffComps\HediffCompProperties_VomitFluidMtb.cs" />
+    <Compile Include="Cumflation\HediffComps\HediffComp_SharedSeverityPerDay.cs" />
+    <Compile Include="Cumflation\HediffComps\HediffComp_SourceStorage.cs" />
+    <Compile Include="Cumflation\HediffComps\HediffComp_VomitFluidMtb.cs" />
+    <Compile Include="Cumflation\JobDriver_OverflowingCumflation.cs" />
+    <Compile Include="Cumflation\JobDriver_VomitFluid.cs" />
+    <Compile Include="Cumflation\Patch_TransferFluids_Cumflate.cs" />
+    <Compile Include="Cumflation\Patch_TransferFluids_Stuff.cs" />
+    <Compile Include="Cumflation\StuffingUtility.cs" />
+    <Compile Include="Cumpilation.cs" />
+    <Compile Include="DefOfs.cs" />
+    <Compile Include="Common\HediffComps\HediffCompProperties_FluidChangeWithPenalty.cs" />
+    <Compile Include="Common\HediffComps\HediffComp_FluidChangeWithPenalty.cs" />
+    <Compile Include="Fluids\Cum\FilterWorkers\SpecialThingFilterWorker_Cum.cs" />
+    <Compile Include="Fluids\Cum\FilterWorkers\SpecialThingFilterWorker_CumBase.cs" />
+    <Compile Include="Fluids\Cum\FilterWorkers\SpecialThingFilterWorker_NoCum.cs" />
+    <Compile Include="Fluids\Slug\HediffCompProperties_SlugExplosionOnDeath.cs" />
+    <Compile Include="Fluids\Slug\HediffComp_SlugExplosionOnDeath.cs" />
+    <Compile Include="Fluids\Slug\SexFluidIngestionDoer_ConsumeSlug.cs" />
+    <Compile Include="Fluids\Slug\IngestionOutcomeDoer_PermanentSlugChange.cs" />
+    <Compile Include="Fluids\Slug\Patch_OnDeath_TriggerSlugExplosions.cs" />
+    <Compile Include="Fluids\Slug\SlugUtility.cs" />
+    <Compile Include="Gathering\Defs\FluidGatheringBuilding.cs" />
+    <Compile Include="Gathering\Defs\FluidGatheringDef.cs" />
+    <Compile Include="Gathering\GatheringUtility.cs" />
+    <Compile Include="Gathering\Comps\PassiveFluidGathererComp.cs" />
+    <Compile Include="Gathering\Comps\PassiveFluidGathererCompProperties.cs" />
+    <Compile Include="Gathering\Patches\Patch_JobDriverCleaning_TrySpawnItem.cs" />
+    <Compile Include="Gathering\Patches\Patch_SatisfyPersonal_FillFluidGatherers.cs" />
+    <Compile Include="HarmonyInit.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reactions\Defs\Fluid_Record_Mapping.cs" />
+    <Compile Include="Reactions\Defs\ThoughtDefExtension_StageFromConsumption.cs" />
+    <Compile Include="Reactions\Patches\Patch_IngestMeal_UpdateRecordAndGiveThoughts.cs" />
+    <Compile Include="Reactions\Patches\Patch_TransferFluid_UpdateRecordAndGiveThoughts.cs" />
+    <Compile Include="Reactions\ReactionUtility.cs" />
+    <Compile Include="Reactions\Thoughts\ThoughtWorker_Cumslut_LookingForJuicyPenetrators.cs" />
+    <Compile Include="Reactions\Thoughts\Thought_RecordBased.cs" />
+    <Compile Include="Settings\Cumpilation_SettingsController.cs" />
+    <Compile Include="Settings\Settings.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

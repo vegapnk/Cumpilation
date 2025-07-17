@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <RecipeDef>
+        <defName>Make_Samenstein</defName>
+        <label>make samenstein</label>
+        <description>Make samenstein with some semen.</description>
+        <jobString>Making samenstein.</jobString>
+        <workAmount>3000</workAmount>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Cumpilation_Cum</li>
+                    </thingDefs>
+                </filter>
+                <count>12</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>Cumpilation_Cum</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <Cumpilation_Samenstein>8</Cumpilation_Samenstein>
+        </products>
+        <displayPriority>800</displayPriority>
+        <workSkill>Cooking</workSkill>
+        <workSpeedStat>CookSpeed</workSpeedStat>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Brewing</soundWorking>
+        <allowMixingIngredients>true</allowMixingIngredients>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>Make_Spermatuch</defName>
+        <label>make spermatuch</label>
+        <description>Make spermatuch with some semen.</description>
+        <jobString>Making spermatuch.</jobString>
+        <workAmount>3200</workAmount>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Cumpilation_Cum</li>
+                    </thingDefs>
+                </filter>
+                <count>15</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>Cumpilation_Cum</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <Cumpilation_Spermatuch>6</Cumpilation_Spermatuch>
+        </products>
+        <displayPriority>1000</displayPriority>
+        <workSkill>Cooking</workSkill>
+        <workSpeedStat>CookSpeed</workSpeedStat>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Brewing</soundWorking>
+        <allowMixingIngredients>true</allowMixingIngredients>
+    </RecipeDef>
+
+</Defs>

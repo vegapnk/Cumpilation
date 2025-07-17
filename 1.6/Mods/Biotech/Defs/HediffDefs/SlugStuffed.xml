@@ -1,0 +1,108 @@
+<Defs>
+
+  <HediffDef ParentName="Cumpilation_BaseStuffed">
+    <defName>Cumpilation_SlugStuffed</defName>
+    <label>slug-stuffed</label>
+    <labelNoun>slug-stuffed</labelNoun>
+    <description>You came too close to someone currently slugging.</description>
+    <comps>
+      <!-- DevNote: The "normal" comps are inherited, apparently. -->
+      <li Class="Cumpilation.Fluids.Slug.HediffCompProperties_SlugExplosionOnDeath">
+        <baseRadius>4</baseRadius>
+        <radiusMultipliedByBodySize>true</radiusMultipliedByBodySize>
+        <radiusMultipliedBySeverity>true</radiusMultipliedBySeverity>
+        <doToxicCloud>true</doToxicCloud>
+        <doFireExplosion>true</doFireExplosion>
+      </li>
+      <li Class="Cumpilation.Common.HediffCompProperties_SpawnOtherHediffOverTime">
+        <tickInterval>3000</tickInterval>
+        <hediff>ToxicBuildup</hediff>
+        <severityIncrease>0.03</severityIncrease>
+        <scaleWithHediffSeverity>true</scaleWithHediffSeverity>
+        <tryToSpawnInSameBodyPart>false</tryToSpawnInSameBodyPart>
+        <applicationChance>0.35</applicationChance>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>slightly bloated</label>
+        <becomeVisible>false</becomeVisible>
+      </li>
+      <li>
+        <label>bloated</label>
+        <minSeverity>0.2</minSeverity>
+        <statOffsets>
+          <Vulnerability>0.05</Vulnerability>
+          <ComfyTemperatureMax>-5</ComfyTemperatureMax>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>+0.05</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>full</label>
+        <minSeverity>0.4</minSeverity>
+        <statOffsets>
+          <ComfyTemperatureMax>-10</ComfyTemperatureMax>
+          <Vulnerability>-0.2</Vulnerability>
+          <RestFallRateFactor>0.25</RestFallRateFactor>
+          <MoveSpeed>0.1</MoveSpeed>
+          <ArmorRating_Heat>-0.5</ArmorRating_Heat>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>+0.1</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.05</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.05</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>over-stuffed</label>
+        <minSeverity>0.7</minSeverity>
+        <statOffsets>
+          <Vulnerability>-0.3</Vulnerability>
+          <ComfyTemperatureMax>-20</ComfyTemperatureMax>
+          <RestFallRateFactor>0.5</RestFallRateFactor>
+          <MoveSpeed>0.25</MoveSpeed>
+          <ImmunityGainSpeed>-0.10</ImmunityGainSpeed>
+          <ArmorRating_Heat>-1.5</ArmorRating_Heat>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>+0.25</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.1</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.10</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+
+  </HediffDef>
+
+  <Cumpilation.Cumflation.StuffingDef>
+    <defName>Cumpilation_Slug_Stuffing</defName>
+    <fluid>Cumpilation_Slug</fluid>
+    <resultingStuffedHediff>Cumpilation_SlugStuffed</resultingStuffedHediff>
+    <canStuffAnimals>true</canStuffAnimals>
+    <amountOfFluidForFullStuffing>25</amountOfFluidForFullStuffing>
+  </Cumpilation.Cumflation.StuffingDef>
+
+</Defs>

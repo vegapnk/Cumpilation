@@ -9,5 +9,13 @@
 		<li IfModActive="Dubwise.DubsBadHygiene,Dubwise.DubsBadHygiene.Lite">1.5/Mods/DBH</li>
 		<li IfModNotActive="winderig.processor">1.5/Mods/Not-Semen-Processor</li>
 	</v1.5>
+	<v1.6>
+		<li>Common</li>
+		<li>1.6</li>		
+		<li IfModActive="ludeon.rimworld.Biotech">1.6/Mods/Biotech</li>
+		<li IfModActive="ludeon.rimworld.Ideology">1.6/Mods/Ideology</li>
+		<li IfModActive="Dubwise.DubsBadHygiene,Dubwise.DubsBadHygiene.Lite">1.6/Mods/DBH</li>
+		<li IfModNotActive="winderig.processor">1.6/Mods/Not-Semen-Processor</li>
+	</v1.6>
 
 </loadFolders>
