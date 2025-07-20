@@ -1,4 +1,10 @@
-# 1.2.0 (25-11-2024) 
+#1.2.1 (20-07-2025)
+(Commit by @Telanda-DDS)
+
+**Fixes**
+- Fixed debug message Spamming user logs.
+
+# 1.2.0 (25-11-2025) 
 (Commit by @Telanda-DDS)
 
 **Changes**

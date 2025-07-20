@@ -29,7 +29,7 @@ namespace Cumpilation.Reactions
             float recordValue = pawn?.records?.GetValue(recordDef) ?? 0f;
 
             // We first check: If there are any traits, and no "counter-traits" that ruin it, we make things the worst or best respectively. 
-            ModLog.Message("CHecking for CumSlut trait.");
+            ModLog.Debug($"Checking for CumSlut trait on pawn named - {pawn.Name}.");
             if (ReactionUtility.PawnHasFittingTrait(pawn, traitsThatLike) && !ReactionUtility.PawnHasFittingTrait(pawn, traitsThatDislike))
                 return LastStage();
             if (ReactionUtility.PawnHasFittingTrait(pawn, traitsThatDislike) && !ReactionUtility.PawnHasFittingTrait(pawn, traitsThatLike))
