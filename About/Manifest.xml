@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Manifest>
 	<identifier>Cumpilation</identifier>
-	<version>1.2.1</version>
+	<version>1.2.2</version>
 	<dependencies>
         <li>RimJobWorld</li>
 		<li>HugsLib</li>

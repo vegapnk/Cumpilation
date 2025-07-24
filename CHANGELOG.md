@@ -1,3 +1,9 @@
+#1.2.2 (24-07-2025)
+(Commit by @Telanda-DDS)
+
+**Fixes**
+- Change Oscelation hediff tags so they no longer absorb healing items. ( <isBad> )
+
 #1.2.1 (20-07-2025)
 (Commit by @Telanda-DDS)
 
