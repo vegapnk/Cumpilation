@@ -8,7 +8,7 @@
         <description>there is a tension building up.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <tendable>false</tendable>
-        <isBad>true</isBad>
+        <isBad>false</isBad>
         <scenarioCanAdd>false</scenarioCanAdd>
         <maxSeverity>1.0</maxSeverity>
         <comps>
@@ -73,7 +73,7 @@
         <description>something recently emptied your balls - well done, but be careful for over-usage.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <tendable>false</tendable>
-        <isBad>true</isBad>
+        <isBad>false</isBad>
         <scenarioCanAdd>false</scenarioCanAdd>
         <maxSeverity>1.0</maxSeverity>
         <comps>
@@ -160,7 +160,7 @@
         <description>stimulation (temporarily) increases the fluid-amount of vaginas.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <tendable>false</tendable>
-        <isBad>true</isBad>
+        <isBad>false</isBad>
         <scenarioCanAdd>false</scenarioCanAdd>
         <maxSeverity>1.0</maxSeverity>
         <comps>
