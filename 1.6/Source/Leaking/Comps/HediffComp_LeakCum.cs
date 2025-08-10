@@ -24,7 +24,8 @@ namespace Cumpilation.Leaking
 				if (Rand.Chance(num))
 				{
 					parent.Severity -= 0.005f;
-					DropCumFilth();
+                    if (parent.pawn.MapHeld == null) return;	//No filth if pawn is out of map.
+                    DropCumFilth();
 				}
 			}
 		}
