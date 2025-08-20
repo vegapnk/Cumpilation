@@ -19,7 +19,7 @@ namespace Cumpilation.Leaking
 
         public override string SettingsCategory()
         {
-            return "Cum Leaking";
+            return "cumpilation_cumsettings_menuname".Translate();
         }
 
         public override void DoSettingsWindowContents(Rect inRect)

@@ -19,7 +19,7 @@ namespace Cumpilation
 
         public override string SettingsCategory()
         {
-            return "Cumpilation";
+            return "cumpilation_settings_menuname".Translate();
         }
 
         public override void DoSettingsWindowContents(Rect inRect)
