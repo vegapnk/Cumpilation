@@ -52,6 +52,10 @@ namespace Cumpilation.Leaking
 
 		private void DropCumFilth()
 		{
+			if (!parent.pawn.Spawned)
+			{
+				return;
+			}
 			rjw.SexFluidDef fluid;
 			IEnumerable<FluidSource> sources = parent.TryGetComp<HediffComp_SourceStorage>().sources;
 			if (sources.TryRandomElementByWeight(source => source.amount, out FluidSource chosenFluid))

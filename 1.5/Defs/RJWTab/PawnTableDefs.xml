@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<PawnTableDef>
+		<defName>DeflateTab</defName>
+		<workerClass>Cumpilation.Leaking.MainTab.PawnTable_Deflate</workerClass>
+		<columns>
+			<li>Label</li>
+			<li>GapTiny</li>
+			<li>RJW_Gender</li>
+			<li>GapTiny</li>
+			<li>LifeStage</li>
+			<li>GapTiny</li>
+			<li>RJW_IsPrisoner</li>
+			<li>RJW_IsSlave</li>
+			<li>GapTiny</li>
+			<li>RJW_AllowDeflate</li>
+			<li>RJW_Plugged</li>
+			<li>RemainingSpace</li>
+		</columns>
+		<modExtensions>
+			<li Class="rjw.MainTab.DefModExtensions.RJW_PawnTable">
+				<label>Deflation</label>
+			</li>
+		</modExtensions>
+	</PawnTableDef>
+
+</Defs>
