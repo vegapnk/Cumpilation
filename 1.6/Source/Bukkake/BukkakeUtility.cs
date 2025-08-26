@@ -65,7 +65,7 @@ namespace Cumpilation.Bukkake
                 ModLog.Debug($"Split {giver}s cumshot of (total) {totalSeverityToSpawn} severity into {targets.Count()} sub-targets on {receiver}");
                 foreach( (float,BodyPartRecord) target in targets)
                 {
-                    CumOn(receiver:receiver, splashDef:splashDef, bodyPart: target.Item2, severity:target.Item1, giver:giver);
+                    CumOn(receiver:receiver, splashDef:splashDef, bodyPart: target.Item2, severity:totalSeverityToSpawn / targets.Count(), giver:giver);
                 }
 
                 AddAndCalculateControllers(splashDef, receiver);
