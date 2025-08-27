@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<cumpilation_button_cumseal_desc>Toggle cum leaking for this pawn.</cumpilation_button_cumseal_desc>
+	<cumpilation_button_cumseal_sealed>Sealed</cumpilation_button_cumseal_sealed>
+	<cumpilation_button_cumseal_unsealed>Unsealed</cumpilation_button_cumseal_unsealed>
+
+	<cumpilation_button_cumdeflate_desc>Toggle automatic deflating for this pawn.</cumpilation_button_cumdeflate_desc>
+	<cumpilation_button_cumdeflate_deflate>Deflate</cumpilation_button_cumdeflate_deflate>
+	<cumpilation_button_cumdeflate_nodeflate>No Deflate</cumpilation_button_cumdeflate_nodeflate>
+
+</LanguageData>
