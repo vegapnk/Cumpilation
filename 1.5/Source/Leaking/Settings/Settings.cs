@@ -15,6 +15,7 @@ namespace Cumpilation.Leaking
         public static bool EnableAutoDeflateClean = false;
         public static bool EnableAutoDeflateDirty = false;
         public static bool EnablePrivacy = true;
+        public static bool ShowDeflationWidget = true;
         public static float AutoDeflateMinSeverity = 0.4f;
         public static float AutoDeflateMaxDistance = 100f;
         public static float LeakMult = 5.0f;
@@ -30,6 +31,7 @@ namespace Cumpilation.Leaking
             Scribe_Values.Look<bool>(ref EnableAutoDeflateClean, "EnableAutoDeflateClean", false);
             Scribe_Values.Look<bool>(ref EnableAutoDeflateDirty, "EnableAutoDeflateDirty", false);
             Scribe_Values.Look<bool>(ref EnablePrivacy, "EnablePrivacy", true);
+            Scribe_Values.Look<bool>(ref EnablePrivacy, "ShowDeflationWidget", true);
 
             Scribe_Values.Look<float>(ref AutoDeflateMinSeverity, "AutoDeflateMinSeverity", 0.4f);
             Scribe_Values.Look<float>(ref AutoDeflateMaxDistance, "AutoDeflateMaxDistance", 100f);
@@ -65,6 +67,9 @@ namespace Cumpilation.Leaking
             listingStandard.Gap(4f);
 
             listingStandard.CheckboxLabeled("Enable privacy checks", ref EnablePrivacy, "If enabled, pawns will get upset if they are seen while deflating themselves. They will also try to find a private spot to do so.");
+            listingStandard.Gap(4f);
+
+            listingStandard.CheckboxLabeled("Show deflation widgets", ref ShowDeflationWidget, "Disable this if you don't want the widgets on the pawn hotbar. Permissions can still be adjusted in the RJW tab.");
             listingStandard.Gap(4f);
 
             listingStandard.Label("Minimum severity for auto deflate: " + Math.Round(AutoDeflateMinSeverity, 2).ToString(), tooltip: "Pawns will only automatically deflate themselves when cumflation severity is above this value.\nFor reference, severity below 0.2 usually has no effect, and severity above 0.9 will usually immobilize the pawn. Severity will almost never exceed 1.0.\nDefault: 0.4");
