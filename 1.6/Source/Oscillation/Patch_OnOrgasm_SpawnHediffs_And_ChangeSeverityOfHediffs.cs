@@ -20,6 +20,7 @@ namespace Cumpilation.Oscillation
             if (props.orgasms == 0) return;
 
             Pawn pawn = props.pawn;
+            BodyPartRecord bodyPartRecord = Genital_Helper.get_genitalsBPR(pawn);
 
             // First: Spawn all Hediffs that spawn on Orgasm. This has to be handled first, as maybe "blocking" hediffs appear, or we want to increase the severity of something that first has to spawn.
             foreach (HediffDef hediffDef in DefDatabase<HediffDef>.AllDefsListForReading.Where(hDef => hDef.HasModExtension<HediffDefModExtension_SpawnOnOrgasm>()))
@@ -31,7 +32,7 @@ namespace Cumpilation.Oscillation
                 if (spawnExt != null && spawnExt.IsValidPawn(pawn) &&spawnExt.GetSexPartHediffs(pawn).Count() > 0)
                 {
                     // Otherwise: Spawn the Hediff with Severity 0
-                    Hediff spawned = pawn.health.AddHediff(hediffDef);
+                    Hediff spawned = pawn.health.AddHediff(hediffDef, bodyPartRecord);
                     spawned.Severity = 0;
                     ModLog.Debug($"Spawned {spawned.def.defName} on {pawn} because of orgasm. {pawn} was valid because of Part(s): {spawnExt.GetSexPartHediffs(pawn).Select(hed => hed.Def.defName).Cast<String>().Join()}");
                 }

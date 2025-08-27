@@ -1,3 +1,22 @@
+#1.2.3 (27-08-2025)
+(Commit by @Telanda-DDS)
+
+**Fixes**
+- Fixed missing translation keys in Cum settings Option Panel
+- Added in translation fields for Seal & deflate Buttons.
+- Updated Drugs to show up in the management schedule pane.
+- Altered values for samenstein so that it no longer is used for Ruin walls. (It not supposed to be Durable.)
+- Fix way too much severity going to each body part. (Thanks for your contribution RB!)
+- Moved on-Orgasm Oscillation hediffs into the genitals (Drained & Wet)
+
+**Known Issues**
+- There is currently a bug that causes a pawn to pick up and carry far to many meals being reported but 
+  I have unable to be reproduce it. I think Cumpilation in combination with Big & Small is a trigger 
+  rather then cause (Rolling back to an older version of B&S as well have removing Cumpilation have 
+  both been reported as solutions to the problem.)
+  
+
+
 #1.2.2 (24-07-2025)
 (Commit by @Telanda-DDS)
 
