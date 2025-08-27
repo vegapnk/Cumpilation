@@ -49,9 +49,9 @@ namespace Cumpilation.Leaking
                 {
                     cumSealed = !cumSealed;
                 };
-                seal_Toggle.defaultDesc = "Toggle cum leaking for this pawn.";
+                seal_Toggle.defaultDesc = "cumpilation_button_cumseal_desc".Translate();
                 seal_Toggle.icon = Icon1.Texture;
-                seal_Toggle.defaultLabel = cumSealed ? "Sealed" : "Unsealed";
+                seal_Toggle.defaultLabel = cumSealed ? "cumpilation_button_cumseal_sealed".Translate() : "cumpilation_button_cumseal_unsealed".Translate();
                 seal_Toggle.activateSound = SoundDefOf.Tick_Tiny;
                 yield return seal_Toggle;
             }
@@ -63,9 +63,9 @@ namespace Cumpilation.Leaking
                 {
                     canDeflate = !canDeflate;
                 };
-                deflate_Toggle.defaultDesc = "Toggle automatic deflating for this pawn.";
+                deflate_Toggle.defaultDesc = "cumpilation_button_cumdeflate_desc".Translate();
                 deflate_Toggle.icon = canDeflate ? Icon2.Texture : Icon3.Texture;
-                deflate_Toggle.defaultLabel = canDeflate ? "Deflate" : "No deflate";
+                deflate_Toggle.defaultLabel = canDeflate ? "cumpilation_button_cumdeflate_deflate".Translate() : "cumpilation_button_cumdeflate_nodeflate".Translate();
                 deflate_Toggle.activateSound = SoundDefOf.Tick_Tiny;
                 yield return deflate_Toggle;
             }

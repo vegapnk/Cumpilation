@@ -4,7 +4,7 @@
   <ThingDef ParentName="MakeableDrugBase">
     <defName>Cumpilation_Lecithin</defName>
     <label>lecithin</label>
-    <description>This (non-prescription) supplement temporarily increases the activity of the cowper's gland, resulting in bigger penile fluid output.</description>
+    <description>This (non-prescription) supplement temporarily increases the activity of the cowpers gland, resulting in bigger penile fluid output for ~2 days.</description>
     <graphicData>
       <texPath>Things/Item/Drug/Yayo</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -20,19 +20,20 @@
     <techLevel>Industrial</techLevel>
     <minRewardCount>10</minRewardCount>
     <ingestible>
-      <foodType>Processed</foodType>
-      <baseIngestTicks>400</baseIngestTicks>
-      <nurseable>true</nurseable>
-      <ingestHoldUsesTable>false</ingestHoldUsesTable>
-      <ingestCommandString>Take {0}</ingestCommandString>
-      <ingestReportString>Taking {0}.</ingestReportString>
-      <useEatingSpeedStat>false</useEatingSpeedStat>
-      <outcomeDoers>
-        <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>Cumpilation_ActiveCowpersGland</hediffDef>
-          <severity>1.0</severity>
-        </li>
-      </outcomeDoers>
+		<drugCategory>Medical</drugCategory>
+		<foodType>Processed</foodType>
+		<baseIngestTicks>400</baseIngestTicks>
+		<nurseable>true</nurseable>
+		<ingestHoldUsesTable>false</ingestHoldUsesTable>
+		<ingestCommandString>Take {0}</ingestCommandString>
+		<ingestReportString>Taking {0}.</ingestReportString>
+		<useEatingSpeedStat>false</useEatingSpeedStat>
+		<outcomeDoers>
+		<li Class="IngestionOutcomeDoer_GiveHediff">
+		  <hediffDef>Cumpilation_ActiveCowpersGland</hediffDef>
+		  <severity>1.0</severity>
+		</li>
+		</outcomeDoers>
     </ingestible>
     <recipeMaker>
       <recipeUsers>
@@ -46,12 +47,22 @@
       <MedicineHerbal>2</MedicineHerbal>
       <Neutroamine>3</Neutroamine>
     </costList>
+	<comps>
+		<li Class="CompProperties_Drug">
+			<addictiveness>0</addictiveness>
+			<listOrder>1001</listOrder>
+			<overdoseSeverityOffset>
+				<min>0.08</min>
+				<max>0.14</max>
+			</overdoseSeverityOffset>
+		</li>
+	</comps>	
   </ThingDef>
 
   <ThingDef ParentName="MakeableDrugBase">
     <defName>Cumpilation_Galactogogues</defName>
     <label>galactagogues</label>
-    <description>This (non-prescription) supplement temporarily increases the activity of the mammary glands, resulting in higher milkproduction.</description>
+    <description>This (non-prescription) supplement temporarily increases the activity of the mammary glands, resulting in higher milk production for ~3 Days.</description>
     <graphicData>
       <texPath>Things/Item/Drug/Yayo</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -67,19 +78,20 @@
     <techLevel>Industrial</techLevel>
     <minRewardCount>10</minRewardCount>
     <ingestible>
-      <foodType>Processed</foodType>
-      <baseIngestTicks>300</baseIngestTicks>
-      <nurseable>true</nurseable>
-      <ingestHoldUsesTable>false</ingestHoldUsesTable>
-      <ingestCommandString>Take {0}</ingestCommandString>
-      <ingestReportString>Taking {0}.</ingestReportString>
-      <useEatingSpeedStat>false</useEatingSpeedStat>
-      <outcomeDoers>
-        <li Class="IngestionOutcomeDoer_GiveHediff">
-          <hediffDef>Cumpilation_ActiveMammaries</hediffDef>
-          <severity>1.0</severity>
-        </li>
-      </outcomeDoers>
+		<drugCategory>Medical</drugCategory>
+		<foodType>Processed</foodType>
+		<baseIngestTicks>300</baseIngestTicks>
+		<nurseable>true</nurseable>
+		<ingestHoldUsesTable>false</ingestHoldUsesTable>
+		<ingestCommandString>Take {0}</ingestCommandString>
+		<ingestReportString>Taking {0}.</ingestReportString>
+		<useEatingSpeedStat>false</useEatingSpeedStat>
+		<outcomeDoers>
+		<li Class="IngestionOutcomeDoer_GiveHediff">
+			<hediffDef>Cumpilation_ActiveMammaries</hediffDef>
+			<severity>1.0</severity>
+		</li>
+		</outcomeDoers>
     </ingestible>
     <recipeMaker>
       <recipeUsers>
@@ -91,6 +103,16 @@
     <costList>
       <MedicineHerbal>3</MedicineHerbal>
     </costList>
+	<comps>
+		<li Class="CompProperties_Drug">
+			<addictiveness>0</addictiveness>
+			<listOrder>1001</listOrder>
+			<overdoseSeverityOffset>
+				<min>0.08</min>
+				<max>0.14</max>
+			</overdoseSeverityOffset>
+		</li>
+	</comps>		
   </ThingDef>
 
 </Defs>
