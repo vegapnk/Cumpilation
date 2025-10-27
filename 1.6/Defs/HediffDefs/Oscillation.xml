@@ -10,7 +10,8 @@
         <tendable>false</tendable>
         <isBad>false</isBad>
         <scenarioCanAdd>false</scenarioCanAdd>
-        <maxSeverity>1.0</maxSeverity>
+        <allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<maxSeverity>1.0</maxSeverity>
         <comps>
             <li Class="Cumpilation.Common.HediffCompProperties_ChangeFluidfactorBasedOnSeverity">
                 <max>4.0</max>

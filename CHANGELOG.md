@@ -1,3 +1,13 @@
+#1.2.4
+(Commit by @Telanda-DDS)
+
+**Fixes**
+- Added Mothballing tag to blueballs Hediff to stop it from preventing Mothballing of Pawns.
+
+**Changes**
+- Removed cleanliness debuff on stored cum to stop it causing food poisoning when used in cooking.
+
+
 #1.2.3 (27-08-2025)
 (Commit by @Telanda-DDS)
 
@@ -6,7 +16,7 @@
 - Added in translation fields for Seal & deflate Buttons.
 - Updated Drugs to show up in the management schedule pane.
 - Altered values for samenstein so that it no longer is used for Ruin walls. (It not supposed to be Durable.)
-- Fix way too much severity going to each body part. (Thanks for your contribution RB!)
+- Fix way too much severity going to each body part during Bukkake. (Thanks for your contribution RB!)
 - Moved on-Orgasm Oscillation hediffs into the genitals (Drained & Wet)
 
 **Known Issues**
