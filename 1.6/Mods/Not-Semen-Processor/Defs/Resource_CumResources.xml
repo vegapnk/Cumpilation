@@ -23,7 +23,6 @@
             <MarketValue>1</MarketValue>
 			<SharpDamageMultiplier>0.65</SharpDamageMultiplier>
         </statBases>
-		<smallVolume>true</smallVolume>	<!-- To remove it from the ruins ingredients table.-->
 		<burnableByRecipe>true</burnableByRecipe>
         <stuffProps>
             <color>(252, 251, 237)</color>
