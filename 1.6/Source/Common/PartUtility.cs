@@ -91,7 +91,7 @@ namespace Cumpilation.Common
         /// <returns>True if the pawn is a valid target, false if it cannot be targeted</returns>
         public static bool IsValidPawn(Pawn pawn, bool allowMen = true, bool allowWomen = true, bool allowFutas = true,
             bool allowAnimals = false,
-            IEnumerable<HediffDef> blockingHediffs = null, 
+            IEnumerable<HediffDef> blockingHediffs = null,
             IEnumerable<TraitDef> blockingTraits = null, bool onlyAdults = true)
         {
             if (pawn == null) return false;
@@ -100,6 +100,11 @@ namespace Cumpilation.Common
 
             if (!pawn.IsAnimal() && (onlyAdults && !pawn.ageTracker.Adult))
                 return false;
+
+            if (pawn.IsAnimal())  {
+                if (pawn.Faction == null || !pawn.Faction.IsPlayer)
+                    return false;
+            }
 
             if (Genital_Helper.is_futa(pawn) && !allowFutas) { return false; }
             if (pawn.gender == Gender.Male && !allowMen) { return false; }

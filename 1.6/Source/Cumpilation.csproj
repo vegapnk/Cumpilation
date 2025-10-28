@@ -96,6 +96,7 @@
     <Compile Include="Common\HediffComps\HediffComp_ChangeFluidfactorBasedOnSeverity.cs" />
     <Compile Include="Common\HediffComps\HediffCompProperties_RandomlySpawnFilth.cs" />
     <Compile Include="Common\HediffComps\HediffComp_RandomlySpawnFilth.cs" />
+    <Compile Include="Common\Patch_AllowedStuffsFor_noCumRuins.cs" />
     <Compile Include="Fluids\Biosculptor\CompProperties_BiosculpterPod_FluidIncreaseCycle.cs" />
     <Compile Include="Fluids\Biosculptor\CompProperties_BiosculpterPod_ResetFluidAmountCycle.cs" />
     <Compile Include="Fluids\Biosculptor\Comp_BiosculpterPod_FluidIncreaseCycle.cs" />

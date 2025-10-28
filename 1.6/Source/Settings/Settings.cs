@@ -65,6 +65,11 @@ namespace Cumpilation
         /// </summary>
         public static bool EnableOscillationMechanics = true;
         /// <summary>
+        /// Whether or not Drained, Wetness and Blueballs are applied to Player faction Animals, 
+        /// only has a gameplay effect if aniaml sex drive is implmeented through another mod.
+        /// </summary>
+        public static bool EnableOscillationMechanicsForAnimals = false;
+        /// <summary>
         /// Whether or not to have debug-prints on the Mod-Log. 
         /// Passively used in `ModLog.Debug(str)`
         /// </summary>
@@ -87,6 +92,7 @@ namespace Cumpilation
             Scribe_Values.Look<bool>(ref EnableProgressingConsumptionThoughts, "EnableProgressingConsumptionThoughts", true);
             Scribe_Values.Look<float>(ref MaxGatheringCheckDistance, "MaxGatheringCheckDistance", 15.0f);
             Scribe_Values.Look<bool>(ref EnableOscillationMechanics, "EnableOscillationMechanics", true);
+            Scribe_Values.Look<bool>(ref EnableOscillationMechanicsForAnimals, "EnableOscillationMechanicsForAnimals", false);
             Scribe_Values.Look<bool>(ref EnableCumpilationDebugLogging, "EnableCumpilationDebugLogging", true);
         }
 
@@ -138,10 +144,11 @@ namespace Cumpilation
             MaxGatheringCheckDistance = listingStandard.Slider(MaxGatheringCheckDistance, 3.0f, 50f);
             listingStandard.Gap(4f);
             listingStandard.CheckboxLabeled("cumpilation_settings_enable_progressing_consumption_thoughts_key".Translate() + ": ", ref EnableProgressingConsumptionThoughts, "cumpilation_settings_enable_progressing_consumption_thoughts_desc".Translate());
-            listingStandard.Gap(4f);
+            listingStandard.Gap(12f);
             listingStandard.CheckboxLabeled("cumpilation_settings_enable_oscillation_mechanics_key".Translate() + ": ", ref EnableOscillationMechanics, "cumpilation_settings_enable_oscillation_mechanics_desc".Translate());
-
-            listingStandard.Gap(8f);
+            listingStandard.Gap(4f);
+            listingStandard.CheckboxLabeled("cumpilation_settings_enable_oscillation_mechanics_animals_key".Translate() + ": ", ref EnableOscillationMechanicsForAnimals, "cumpilation_settings_enable_oscillation_mechanics_animals_desc".Translate());
+            listingStandard.Gap(12f);
             listingStandard.CheckboxLabeled("cumpilation_settings_enable_debug_logging_key".Translate() + ": ", ref EnableCumpilationDebugLogging, "cumpilation_settings_enable_debug_logging_desc".Translate());
 
             listingStandard.End();

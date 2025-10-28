@@ -20,7 +20,7 @@
 			<Mass>0.1</Mass>
 			<Nutrition>0.02</Nutrition>
 			<Beauty>-4</Beauty>
-			<Cleanliness>-1</Cleanliness>
+			<!--Disabled due to food poisoning chance. <Cleanliness>-1</Cleanliness> -->
 			<FoodPoisonChanceFixedHuman>0.00</FoodPoisonChanceFixedHuman>
 			<DeteriorationRate>30</DeteriorationRate>
 			<Flammability>0.1</Flammability>

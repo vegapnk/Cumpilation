@@ -13,7 +13,8 @@ namespace Cumpilation.Common
         public bool allowMen = true;
         public bool allowWomen = true;
         public bool allowFutas = true;
-        public bool allowAnimals = false;
+        public bool allowAnimals = Settings.EnableOscillationMechanicsForAnimals;
+        //public bool allowAnimals = false;
 
         public List<HediffDef> blockingHediffs = new List<HediffDef>();
         public List<TraitDef> blockingTraits = new List<TraitDef>();
