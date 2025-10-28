@@ -1,11 +1,16 @@
 #1.2.4
 (Commit by @Telanda-DDS)
 
+**Features**
+- Added option to enable Oscillation mechanics for Colony animals.
+
 **Fixes**
 - Added Mothballing tag to blueballs Hediff to stop it from preventing Mothballing of Pawns.
+- Replaced `Cumpilation_Samenstein` XML material cost changes with .dll patch to prevent it from being used for creating ruins when map is generated.
 
 **Changes**
 - Removed cleanliness debuff on stored cum to stop it causing food poisoning when used in cooking.
+
 
 
 #1.2.3 (27-08-2025)
