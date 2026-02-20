@@ -41,7 +41,7 @@ namespace Cumpilation.Leaking
             Pawn pawn = (Pawn)parent;
             if (pawn.DevelopmentalStage != DevelopmentalStage.Adult || !Genital_Helper.has_vagina(pawn))
                 yield break;
-            if (canSeal())
+            if (Settings.EnableCumSealToggle && canSeal())
             {
                 Command_Toggle seal_Toggle = new Command_Toggle();
                 seal_Toggle.isActive = () => cumSealed;
@@ -55,7 +55,7 @@ namespace Cumpilation.Leaking
                 seal_Toggle.activateSound = SoundDefOf.Tick_Tiny;
                 yield return seal_Toggle;
             }
-            if (CumflationUtility.CanBeCumflated(pawn) && PlayerControlled)
+            if (Settings.EnableAutoDeflateToggle && CumflationUtility.CanBeCumflated(pawn) && PlayerControlled)
             {
                 Command_Toggle deflate_Toggle = new Command_Toggle();
                 deflate_Toggle.isActive = () => canDeflate;
