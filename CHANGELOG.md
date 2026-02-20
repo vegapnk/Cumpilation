@@ -1,4 +1,4 @@
-#1.2.4
+#1.2.4 (28-10-2025)
 (Commit by @Telanda-DDS)
 
 **Features**
