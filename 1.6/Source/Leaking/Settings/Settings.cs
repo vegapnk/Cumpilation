@@ -14,6 +14,8 @@ namespace Cumpilation.Leaking
         /// When enabled, pawns with an inflation hediff will leak cum(or other relevent fluids) over the floor as they slowly deflate.
         /// </summary>
         public static bool EnableFilthGeneration = true;
+        public static bool EnableAutoDeflateToggle = true;
+        public static bool EnableCumSealToggle = true;
         public static bool EnableAutoDeflateBucket = false;
         public static bool EnableAutoDeflateClean = false;
         public static bool EnableAutoDeflateDirty = false;
@@ -30,6 +32,8 @@ namespace Cumpilation.Leaking
 
             base.ExposeData();
             Scribe_Values.Look<bool>(ref EnableFilthGeneration, "EnableFilthGeneration", true);
+            Scribe_Values.Look<bool>(ref EnableAutoDeflateToggle, "EnableAutoDeflateToggle", true);
+            Scribe_Values.Look<bool>(ref EnableCumSealToggle, "EnableCumSealToggle", true);
             Scribe_Values.Look<bool>(ref EnableAutoDeflateBucket, "EnableAutoDeflateBucket", true);
             Scribe_Values.Look<bool>(ref EnableAutoDeflateClean, "EnableAutoDeflateClean", false);
             Scribe_Values.Look<bool>(ref EnableAutoDeflateDirty, "EnableAutoDeflateDirty", false);
@@ -59,6 +63,12 @@ namespace Cumpilation.Leaking
             listingStandard.Begin(inRect);
             listingStandard.Gap(4f);
             listingStandard.CheckboxLabeled("cumpilation_cumsettings_enable_filth_key".Translate(), ref EnableFilthGeneration, "cumpilation_cumsettings_enable_filth_desc".Translate());
+            listingStandard.Gap(4f);
+
+            listingStandard.CheckboxLabeled("cumpilation_cumsettings_enable_autodeflate_key".Translate(), ref EnableAutoDeflateToggle, "cumpilation_cumsettings_enable_autodeflate_desc".Translate());
+            listingStandard.Gap(4f);
+
+            listingStandard.CheckboxLabeled("cumpilation_cumsettings_enable_cumseal_key".Translate(), ref EnableCumSealToggle, "cumpilation_cumsettings_enable_cumseal_desc".Translate());
             listingStandard.Gap(4f);
 
             listingStandard.CheckboxLabeled("cumpilation_cumsettings_enable_autodeflatebucket_key".Translate(), ref EnableAutoDeflateBucket, "cumpilation_cumsettings_enable_autodeflatebucket_desc".Translate());
