@@ -41,6 +41,12 @@
 	<cumpilation_cumsettings_enable_filth_key>Enable generation of Filth while deflating over time.</cumpilation_cumsettings_enable_filth_key>
 	<cumpilation_cumsettings_enable_filth_desc>If disabled, pawns that are filled with cum will no longer generate filth as they naturaly deflate.</cumpilation_cumsettings_enable_filth_desc>
 
+	<cumpilation_cumsettings_enable_autodeflate_key>Enable autodeflate toggle</cumpilation_cumsettings_enable_autodeflate_key>
+	<cumpilation_cumsettings_enable_autodeflate_desc>Enables a Gizmo that allows pawns to toggle automatic deflation.</cumpilation_cumsettings_enable_autodeflate_desc>
+
+	<cumpilation_cumsettings_enable_cumseal_key>Enable cum seal toggle</cumpilation_cumsettings_enable_cumseal_key>
+	<cumpilation_cumsettings_enable_cumseal_desc>Enables a Gizmo that allows pawns to toggle whether they can prevent cum from leaking.</cumpilation_cumsettings_enable_cumseal_desc>
+
 	<cumpilation_cumsettings_enable_autodeflatebucket_key>Enable auto deflate into buckets</cumpilation_cumsettings_enable_autodeflatebucket_key>
 	<cumpilation_cumsettings_enable_autodeflatebucket_desc>If enabled, pawns will automatically deflate themselves into buckets when cumflated.</cumpilation_cumsettings_enable_autodeflatebucket_desc>
 
