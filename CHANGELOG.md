@@ -1,3 +1,10 @@
+#1.2.5 (22-02-2026)
+(Commit by @Telanda-DDS)
+
+**Features**
+- Added a setting to Show/Hiding the Gizmo's for toggling Autodeflation & Cum seals. (Thanks Ryufais!)
+
+
 #1.2.4 (28-10-2025)
 (Commit by @Telanda-DDS)
 
