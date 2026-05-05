@@ -1,3 +1,10 @@
+#1.2.6 (05-05-2026)
+(Commit by @Telanda-DDS)
+
+**Feature**
+- Made Hardcoded deflation sound editable Via XML and chose a more appropriate sound effect. (Thanks Ryufais!)
+
+
 #1.2.5 (22-02-2026)
 (Commit by @Telanda-DDS)
 
