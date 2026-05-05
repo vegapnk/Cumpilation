@@ -11,6 +11,10 @@ using Verse.AI;
 
 namespace Cumpilation.Cumflation
 {
+    public class JobDef_OverflowingCumflation : JobDef
+    {
+        public SoundDef overflowSoundDef;
+    }
     /// <summary>
     /// - Stop the pawn flat / make it look like it 
     /// - Spray correct outside of it
@@ -52,7 +56,7 @@ namespace Cumpilation.Cumflation
                 }
             };
             toil.defaultCompleteMode = ToilCompleteMode.Never;
-            toil.PlaySustainerOrSound(() => SoundDefOf.FleshmassBirth);
+            toil.PlaySustainerOrSound(() => ((JobDef_OverflowingCumflation)job.def).overflowSoundDef);
             yield return toil;
         }
 
