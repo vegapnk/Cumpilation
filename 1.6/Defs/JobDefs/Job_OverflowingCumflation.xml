@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <JobDef>
+  <JobDef Class="Cumpilation.Cumflation.JobDef_OverflowingCumflation">
     <defName>Cumpilation_OverflowingCumflation</defName>
     <driverClass>Cumpilation.Cumflation.JobDriver_OverflowingCumflation</driverClass>
     <playerInterruptible>false</playerInterruptible>
     <casualInterruptible>false</casualInterruptible>
     <reportString>Overflowing Cumflation</reportString>
     <suspendable>false</suspendable>
+    <overflowSoundDef>CumflationOverflow</overflowSoundDef>
   </JobDef>
 
 </Defs>
