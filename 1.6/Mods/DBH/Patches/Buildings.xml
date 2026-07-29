@@ -3,8 +3,7 @@
 
     <!-- PatchOperations go here -->
 
-    <Operation Class="PatchOperationConditional"
-        MayRequireAnyOf="Dubwise.DubsBadHygiene,Dubwise.DubsBadHygiene.Lite">
+    <Operation Class="PatchOperationConditional" MayRequireAnyOf="Dubwise.DubsBadHygiene,Dubwise.DubsBadHygiene.Lite">
         <xpath>Defs/ThingDef[@Name="DubsDirtyTerletBase"]/comps</xpath>
         <nomatch Class="PatchOperationAdd">
             <xpath>Defs/ThingDef[@Name="DubsDirtyTerletBase"]</xpath>
@@ -22,8 +21,25 @@
         </match>
     </Operation>
 
-    <Operation Class="PatchOperationConditional"
-        MayRequireAnyOf="Dubwise.DubsBadHygiene,Dubwise.DubsBadHygiene.Lite">
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="ToiletStallDoor"]/modExtensions</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="ToiletStallDoor"]</xpath>
+            <value>
+                <modExtensions>
+                    <li Class="Cumpilation.Reactions.DefModExtension_BlocksLineOfSight"/>
+                </modExtensions>
+            </value>
+        </nomatch>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="ToiletStallDoor"]/modExtensions</xpath>
+            <value>
+                <li Class="Cumpilation.Reactions.DefModExtension_BlocksLineOfSight"/>
+            </value>
+        </match>
+    </Operation>
+
+    <Operation Class="PatchOperationConditional" MayRequireAnyOf="Dubwise.DubsBadHygiene,Dubwise.DubsBadHygiene.Lite">
         <xpath>Defs/ThingDef[@Name="DubsDirtyShowerBase"]/comps</xpath>
         <nomatch Class="PatchOperationAdd">
             <xpath>Defs/ThingDef[@Name="DubsDirtyShowerBase"]</xpath>

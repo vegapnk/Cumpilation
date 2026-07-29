@@ -1,20 +1,6 @@
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using UnityEngine;
 using Verse;
-using Verse.AI;
-using Verse.AI.Group;
-using Verse.Sound;
-using Verse.Noise;
-using Verse.Grammar;
-using RimWorld;
-using RimWorld.Planet;
-
-using System.Reflection;
-using HarmonyLib;
+using Cumpilation.Reactions;
 
 namespace Cumpilation.Leaking
 {
@@ -24,14 +10,39 @@ namespace Cumpilation.Leaking
         {
             foreach (Thing item in GenRadial.RadialDistinctThingsAround(pos, map, 7f, useCenter: true))
             {
-                if (item is Pawn p && !p.RaceProps.Animal && !p.RaceProps.IsMechanoid && !exclude.Contains(p) && GenSight.LineOfSight(pos, p.Position, map))
+                if (item is Pawn p && !p.RaceProps.Animal && !p.RaceProps.IsMechanoid && !exclude.Contains(p))
                 {
-                    pawn = p;
-                    return true;
+                    if (CumpilationLineOfSight(pos, p.Position, map))
+                    {
+                        pawn = p;
+                        return true; 
+                    }
                 }
             }
             pawn = null;
             return false;
+        }
+
+        public static bool CumpilationLineOfSight(IntVec3 start, IntVec3 end, Map map)
+        {
+            if (!GenSight.LineOfSight(start, end, map))
+            {
+                return false;
+            }
+
+            foreach (IntVec3 c in GenSight.PointsOnLineOfSight(start, end))
+            {
+                List<Thing> thingList = map.thingGrid.ThingsListAtFast(c);
+                for (int i = 0; i < thingList.Count; i++)
+                {
+                    if (SightBlockerCache.LOSBlockingDefs.Contains(thingList[i].def))
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true; 
         }
     }
 }
