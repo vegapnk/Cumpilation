@@ -132,6 +132,7 @@
     <Compile Include="Gathering\Comps\MechPassiveFluidGathererCompProperties.cs" />
     <Compile Include="Gathering\Patches\Patch_CasualSexHelper_FindNearbyBucketToMasturbate.cs" />
     <Compile Include="Common\IngestionOutcomeDoers\IngestionOutcomeDoer_PartTargetting.cs" />
+    <Compile Include="Reactions\DefModExtension_BlocksLineOfSight.cs" />
     <Compile Include="Reactions\IngestionOutcomeDoer_RecordEatenFluid.cs" />
     <Compile Include="Common\ModLog.cs" />
     <Compile Include="Cumflation\CumflationUtility.cs" />

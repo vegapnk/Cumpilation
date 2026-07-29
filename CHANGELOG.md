@@ -1,3 +1,12 @@
+#1.2.7 (29-07-2026)
+(Commit by @Telanda-DDS)
+
+**Feature**
+- Made a modextension that can be applied to any ThingDefs, Any ThingDefs with this extension will be considered an object that blocks line of sight during cum leaking
+- Applied new feature to Dubs bad hygiene stall-doors so they now block LOS.
+(Thank Ryufais for both!)
+
+
 #1.2.6 (05-05-2026)
 (Commit by @Telanda-DDS)
 
