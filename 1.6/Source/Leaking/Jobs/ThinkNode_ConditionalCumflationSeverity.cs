@@ -10,7 +10,8 @@ namespace Cumpilation.Leaking
 
         protected override bool Satisfied(Pawn pawn)
         {
-            cumflationHediff = CumflationUtility.GetOrCreateCumflationHediff(pawn);
+            cumflationHediff = pawn.health.hediffSet.GetFirstHediffOfDef(
+                DefOfs.Cumpilation_Cumflation);
             if (cumflationHediff == null)
             {
                 return false;
