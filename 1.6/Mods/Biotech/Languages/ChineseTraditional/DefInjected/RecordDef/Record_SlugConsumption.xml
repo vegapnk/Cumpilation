@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <Cumpilation_NumOfConsumedSlug.label>攝取毒泥次數</Cumpilation_NumOfConsumedSlug.label>
+  <Cumpilation_NumOfConsumedSlug.description>攝取毒泥的次數。</Cumpilation_NumOfConsumedSlug.description>
+  <Cumpilation_AmountConsumedSlug.label>攝取毒泥量（毫升）</Cumpilation_AmountConsumedSlug.label>
+  <Cumpilation_AmountConsumedSlug.description>攝取毒泥的總量。</Cumpilation_AmountConsumedSlug.description>
+</LanguageData>

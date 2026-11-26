@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <Cumpilation_Hediff_SlugCoverageController.label>毒泥覆身</Cumpilation_Hediff_SlugCoverageController.label>
+  <Cumpilation_Hediff_SlugCoverageController.description>身上沾滿毒泥。</Cumpilation_Hediff_SlugCoverageController.description>
+  <Cumpilation_Hediff_SlugCoverageController.stages.0.label>輕微</Cumpilation_Hediff_SlugCoverageController.stages.0.label>
+  <Cumpilation_Hediff_SlugCoverageController.stages.1.label>少量</Cumpilation_Hediff_SlugCoverageController.stages.1.label>
+  <Cumpilation_Hediff_SlugCoverageController.stages.2.label>大範圍</Cumpilation_Hediff_SlugCoverageController.stages.2.label>
+  <Cumpilation_Hediff_SlugCoverageController.stages.3.label>全身</Cumpilation_Hediff_SlugCoverageController.stages.3.label>
+  <Cumpilation_Hediff_Slugsplash.label>毒泥</Cumpilation_Hediff_Slugsplash.label>
+  <Cumpilation_Hediff_Slugsplash.description>毒泥</Cumpilation_Hediff_Slugsplash.description>
+</LanguageData>

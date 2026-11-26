@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <stool_with_cumbucket.label>集精凳</stool_with_cumbucket.label>
+  <stool_with_cumbucket.description>中央有孔、下方放著集精桶的簡易凳子。腹部因體液膨脹的角色可以用它排液。</stool_with_cumbucket.description>
+  <chair_with_cumbucket.label>集精椅</chair_with_cumbucket.label>
+  <chair_with_cumbucket.description>中央有收集裝置、下方放著集精桶的簡易椅子。腹部因體液膨脹的角色可以用它排液。</chair_with_cumbucket.description>
+  <autochair_with_cumtank.label>自動集精椅</autochair_with_cumtank.label>
+  <autochair_with_cumtank.description>配有自動收集裝置並連接儲精槽的進階椅子。腹部因體液膨脹的角色可以用它排液。</autochair_with_cumtank.description>
+</LanguageData>
