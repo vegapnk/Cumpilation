@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <Cumpilation_ActiveCowpersGland.label>尿道球腺受刺激</Cumpilation_ActiveCowpersGland.label>
+  <Cumpilation_ActiveCowpersGland.description>藥物讓尿道球腺分泌比平常更多的體液。</Cumpilation_ActiveCowpersGland.description>
+  <Cumpilation_ActiveCowpersGland.stages.0.label>逐漸消退</Cumpilation_ActiveCowpersGland.stages.0.label>
+  <Cumpilation_ActiveCowpersGland.stages.1.label>受到影響</Cumpilation_ActiveCowpersGland.stages.1.label>
+  <Cumpilation_ActiveCowpersGland.stages.2.label>效果旺盛</Cumpilation_ActiveCowpersGland.stages.2.label>
+  <Cumpilation_ActiveMammaries.label>乳腺受刺激</Cumpilation_ActiveMammaries.label>
+  <Cumpilation_ActiveMammaries.description>乳腺受到刺激，分泌更多乳汁。</Cumpilation_ActiveMammaries.description>
+  <Cumpilation_ActiveMammaries.stages.0.label>逐漸消退</Cumpilation_ActiveMammaries.stages.0.label>
+  <Cumpilation_ActiveMammaries.stages.1.label>受到影響</Cumpilation_ActiveMammaries.stages.1.label>
+  <Cumpilation_ActiveMammaries.stages.2.label>效果旺盛</Cumpilation_ActiveMammaries.stages.2.label>
+</LanguageData>

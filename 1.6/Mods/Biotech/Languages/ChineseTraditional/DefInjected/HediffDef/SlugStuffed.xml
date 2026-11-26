@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <Cumpilation_SlugStuffed.label>毒泥飽腹</Cumpilation_SlugStuffed.label>
+  <Cumpilation_SlugStuffed.description>你靠一個正在排出毒泥的人太近了。</Cumpilation_SlugStuffed.description>
+  <Cumpilation_SlugStuffed.stages.0.label>微脹</Cumpilation_SlugStuffed.stages.0.label>
+  <Cumpilation_SlugStuffed.stages.1.label>腹脹</Cumpilation_SlugStuffed.stages.1.label>
+  <Cumpilation_SlugStuffed.stages.2.label>飽滿</Cumpilation_SlugStuffed.stages.2.label>
+  <Cumpilation_SlugStuffed.stages.3.label>過度脹滿</Cumpilation_SlugStuffed.stages.3.label>
+</LanguageData>

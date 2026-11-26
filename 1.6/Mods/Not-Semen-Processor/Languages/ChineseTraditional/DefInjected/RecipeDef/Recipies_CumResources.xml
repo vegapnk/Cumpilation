@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <Make_Samenstein.label>製作精石</Make_Samenstein.label>
+  <Make_Samenstein.description>使用精液製作精石。</Make_Samenstein.description>
+  <Make_Samenstein.jobString>正在製作精石。</Make_Samenstein.jobString>
+  <Make_Spermatuch.label>製作精纖布</Make_Spermatuch.label>
+  <Make_Spermatuch.description>使用精液製作精纖布。</Make_Spermatuch.description>
+  <Make_Spermatuch.jobString>正在製作精纖布。</Make_Spermatuch.jobString>
+</LanguageData>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <Cumpilation_BlueBalls.label>精液積存</Cumpilation_BlueBalls.label>
+  <Cumpilation_BlueBalls.description>體內逐漸累積了一股脹迫感。</Cumpilation_BlueBalls.description>
+  <Cumpilation_BlueBalls.stages.0.label>微不足道</Cumpilation_BlueBalls.stages.0.label>
+  <Cumpilation_BlueBalls.stages.1.label>明顯</Cumpilation_BlueBalls.stages.1.label>
+  <Cumpilation_BlueBalls.stages.2.label>腫脹</Cumpilation_BlueBalls.stages.2.label>
+  <Cumpilation_BlueBalls.stages.3.label>脹痛</Cumpilation_BlueBalls.stages.3.label>
+  <Cumpilation_Drained.label>精液耗竭</Cumpilation_Drained.label>
+  <Cumpilation_Drained.description>最近排出了大量精液。雖然痛快，但也要小心別過度消耗。</Cumpilation_Drained.description>
+  <Cumpilation_Drained.stages.0.label>微不足道</Cumpilation_Drained.stages.0.label>
+  <Cumpilation_Drained.stages.1.label>疲乏</Cumpilation_Drained.stages.1.label>
+  <Cumpilation_Drained.stages.2.label>耗盡</Cumpilation_Drained.stages.2.label>
+  <Cumpilation_Drained.stages.3.label>疼痛</Cumpilation_Drained.stages.3.label>
+  <Cumpilation_Wet.label>濕潤</Cumpilation_Wet.label>
+  <Cumpilation_Wet.description>受到刺激後，陰道的體液量暫時增加。</Cumpilation_Wet.description>
+  <Cumpilation_Wet.stages.0.label>正常</Cumpilation_Wet.stages.0.label>
+  <Cumpilation_Wet.stages.1.label>濕潤</Cumpilation_Wet.stages.1.label>
+  <Cumpilation_Wet.stages.2.label>濕透</Cumpilation_Wet.stages.2.label>
+  <Cumpilation_Wet.stages.3.label>滴落</Cumpilation_Wet.stages.3.label>
+</LanguageData>

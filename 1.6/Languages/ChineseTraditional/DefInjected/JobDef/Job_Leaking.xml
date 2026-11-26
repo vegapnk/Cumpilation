@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <DeflateBucket.reportString>正在向 TargetA 排液。</DeflateBucket.reportString>
+  <DeflateClean.reportString>正在向 TargetA 排液。</DeflateClean.reportString>
+  <DeflateDirty.reportString>正在向地面排液。</DeflateDirty.reportString>
+</LanguageData>
